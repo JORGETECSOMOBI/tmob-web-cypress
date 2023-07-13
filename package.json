@@ -1,0 +1,28 @@
+{
+  "name": "Testers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tecsomobi/Testers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tecsomobi/Testers/issues"
+  },
+  "homepage": "https://github.com/Tecsomobi/Testers#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@testing-library/cypress": "^9.0.0",
+    "cypress": "^12.14.0"
+  },
+  "dependencies": {
+    "eslint-plugin-cypress": "^2.13.3"
+  }
+}

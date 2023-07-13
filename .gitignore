@@ -1,0 +1,28 @@
+# Ignorar diretório de gravação de vídeos
+cypress/videos/
+
+# Ignorar diretório de screenshots
+cypress/screenshots/
+
+# Ignorar arquivos de relatório de testes
+cypress/reports/
+
+# Ignorar arquivos de backup gerados automaticamente pelo Cypress
+cypress/backups/
+
+# Ignorar arquivos de configuração específicos do usuário
+cypress/.projects/
+cypress/.history/
+
+# Ignorar cache do Cypress
+.cypress/
+
+# Ignorar Cypress binary
+cypress/binary
+
+# Ignorar arquivos de configuração personalizados (dependendo da estrutura do seu projeto)
+cypress.json
+cypress.env.json
+
+# Ignorar arquivos de dependências do Cypress
+/node_modules/
