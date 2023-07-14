@@ -26,7 +26,7 @@ describe('acessando o site Tmob', () => {
 
     it('acessando a home page e testando o redirecionamento para a página "Transporte"', () => {
         home.operacional()
-        cy.wait(4000)
+        cy.wait(7000)
         home.transporte()
     })
 })
