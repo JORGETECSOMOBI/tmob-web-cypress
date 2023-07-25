@@ -7,5 +7,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+
+    timeout: 10000,
+    retries: 3
+
   },
 });
