@@ -15,6 +15,18 @@ class HomePage {
         return this
     }
 
+    idiomaIngles() {
+        cy.get('.ant-select-selection-item').click()     
+        cy.get('div.ant-row').contains('EN').click()
+        return this
+    }
+
+    idiomaPortugues() {
+        cy.get('.ant-select-selection-item').click()  
+        cy.get('p.mastermastertext-0-2-18').contains('PT').click()
+        return this
+    }
+
     tiposDeUso() {
         cy.get('#allServices div div:nth-child(1) div span').click()
         return this
@@ -46,7 +58,7 @@ class HomePage {
     }
 
     operacional() {
-        cy.get('html body div div section div:nth-child(2) div div:nth-child(2) div:nth-child(2) div div:nth-child(2) div:nth-child(1) span').click()
+        cy.get('span.ant-collapse-header-text').contains('Operacional').click()
         return this
     }
 

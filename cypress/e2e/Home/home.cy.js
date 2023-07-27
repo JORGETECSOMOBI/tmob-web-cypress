@@ -7,10 +7,24 @@ describe('acessando o site Tmob', () => {
         login.signin()
     })
 
-    it('acessando a home page e testando o header', () => {
+    it('acessando a home page e testando no header acessos recentes', () => {
         home.recentAcessTitle()
+    })
+
+    it('acessando a home page e validando no header o título "Home"', () => {
         home.hometitle()
+    })
+
+    it('acessando a home page e testando no header "Todos os serviços" ', () => {
         home.todosOsServiçosTitle()
+    })
+
+    it('acessando a home page e testando no header idioma "EN" ', () => {
+        home.idiomaIngles()
+    })
+
+    it('acessando a home page e testando no header idioma "PT" ', () => {
+        home.idiomaPortugues()
     })
 
     it('acessando a home page e testando os menus "Tipos de uso" e "Operacional"', () => {
@@ -39,58 +53,47 @@ describe('acessando o site Tmob', () => {
     })
 
     it('acessando a home page e testando o redirecionamento para a página "Dispositivos"', () => {
-        home.operacional()
-            .dispositivos()
+        home.dispositivos()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "Transporte"', () => {
-        home.operacional()
-            .transporte()
+        home.transporte()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "Tarifário"', () => {
-        home.operacional()
-            .tarifario()
+        home.tarifario()
     })
-
+    
     it('acessando a home page e testando o redirecionamento para a página "Usuário"', () => {
-        home.operacional()
-            .usuario()
+        home.usuario()
     })
 
-    it.only('acessando a home page e testando o redirecionamento para a página "Comercialização"', () => {
-        home.operacional()
-            .comercializacao()
+    it('acessando a home page e testando o redirecionamento para a página "Comercialização"', () => {
+        home.comercializacao()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "Arrecadação"', () => {
-        home.operacional()
-            .arrecadacao()
+        home.arrecadacao()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "garagem"', () => {
-        home.operacional()
-            .garagem()
+        home.garagem()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "AVL"', () => {
-        home.operacional()
-            .avl()
+        home.avl()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "Sistema"', () => {
-        home.operacional()
-            .sistema()
+        home.sistema()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "SAM"', () => {
-        home.operacional()   
-            .sam()
+        home.sam()
     })
 
     it('acessando a home page e testando o redirecionamento para a página "facial"', () => {
-        home.operacional()
-            .facial()
+        home.facial()
     })
 })
 
