@@ -1,0 +1,18 @@
+import login from "../../../pages/Login/LoginPage"
+import home from "../../../pages/Home/HomePage"
+import emv from "../../../pages/Emv/EmvPage"
+import par from "../../../pages/Emv/ParPage"
+
+describe('acessando o site Tmob', () => {
+    beforeEach(() => {
+        login.go()
+        login.signin()
+        home.tiposDeUso()
+        home.emv()
+    })
+
+    it('Cenário: pesquizando usando como filtro o número do "Par', () => {
+        emv.par()
+        par.pesquizaNumeroPar()
+    })
+})

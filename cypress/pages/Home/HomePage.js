@@ -47,7 +47,7 @@ class HomePage {
 
     emv() {
         cy.get('[href="/emv"] > .ant-row > .ant-typography').eq(0).click()
-        cy.get('#root aside div:nth-child(1) ul li:nth-child(2) a').should('have.text', 'Cartões')
+        cy.contains('span', 'Emv').should('have.text', 'Emv')
         return this
     }
 

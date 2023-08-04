@@ -5,7 +5,7 @@ class LoginPage{
             // Retorne false para evitar que o Cypress falhe automaticamente
             return false;
           });     
-          cy.visit('/');
+          cy.visit('/')
     }
 
     signin(){
@@ -14,5 +14,4 @@ class LoginPage{
         cy.get('.amplify-button--primary').click()      
     }
 }
-
 export default new LoginPage
