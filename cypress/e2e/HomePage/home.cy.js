@@ -63,7 +63,7 @@ describe('acessando o site Tmob e validando a Home Page', () => {
     it('Cenário: acessando a home page e testando o redirecionamento para a página "Tarifário"', () => {
         home.tarifario()
     })
-    
+
     it('Cenário: acessando a home page e testando o redirecionamento para a página "Usuário"', () => {
         home.usuario()
     })

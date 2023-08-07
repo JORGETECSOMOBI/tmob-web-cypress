@@ -16,13 +16,13 @@ class HomePage {
     }
 
     idiomaIngles() {
-        cy.get('.ant-select-selection-item').click()     
+        cy.get('.ant-select-selection-item').click()
         cy.get('div.ant-row').contains('EN').click()
         return this
     }
 
     idiomaPortugues() {
-        cy.get('.ant-select-selection-item').click()  
+        cy.get('.ant-select-selection-item').click()
         cy.get('p.mastermastertext-0-2-18').contains('PT').click()
         return this
     }
@@ -34,7 +34,7 @@ class HomePage {
 
     qrCode() {
         cy.get('[href="/qrcode"] > .ant-row > .ant-typography').eq(0).click();
-        cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').click();       
+        cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').click();
         cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').should('have.text', 'QR Code')
         return this
     }
@@ -83,6 +83,7 @@ class HomePage {
     usuario() {
         cy.get('[href="/user"] > .ant-row > .ant-typography').click()
         cy.get('.ant-menu-item-selected > .ant-menu-title-content > a').should('have.text', 'Usuário')
+        cy.reload()
         return this
     }
 

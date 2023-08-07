@@ -26,3 +26,7 @@ cypress.env.json
 
 # Ignorar arquivos de dependências do Cypress
 /node_modules/
+
+# Ignorar pastas do allure
+allure-report/
+allure-results/

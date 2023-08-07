@@ -3,7 +3,7 @@ import home from "../../../pages/Home/HomePage"
 import cartoes from "../../../pages/Emv/CartoesPage"
 import emvPage from "../../../pages/Emv/EmvPage"
 
-describe('acessando o site Tmob', () => {
+describe('acessando emv e testando a página de Cartões', () => {
     beforeEach(() => {
         login.go()
         login.signin()
@@ -11,7 +11,7 @@ describe('acessando o site Tmob', () => {
         home.emv()
     })
 
-    it('Cenário: pesquizando usando o filtro "Pan Token', () => {
+    it('Cenário: pesquisando usando o filtro "Pan Token', () => {
         emvPage.cartoes()
         cartoes.pesquisaPanToken()
     })

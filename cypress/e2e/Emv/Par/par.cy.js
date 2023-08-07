@@ -3,7 +3,7 @@ import home from "../../../pages/Home/HomePage"
 import emv from "../../../pages/Emv/EmvPage"
 import par from "../../../pages/Emv/ParPage"
 
-describe('acessando o site Tmob', () => {
+describe('acessando emv e testando a página Par', () => {
     beforeEach(() => {
         login.go()
         login.signin()
@@ -11,8 +11,8 @@ describe('acessando o site Tmob', () => {
         home.emv()
     })
 
-    it('Cenário: pesquizando usando como filtro o número do "Par', () => {
+    it('Cenário: pesquisando usando como filtro o número do "Par', () => {
         emv.par()
-        par.pesquizaNumeroPar()
+        par.pesquisaNumeroPar()
     })
 })
