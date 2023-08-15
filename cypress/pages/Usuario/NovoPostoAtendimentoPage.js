@@ -45,7 +45,5 @@ class NovoPostoAtendimentoPage {
         return this
     }
 
-
-
 }
 export default new NovoPostoAtendimentoPage
