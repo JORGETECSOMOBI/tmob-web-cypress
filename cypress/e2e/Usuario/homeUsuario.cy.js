@@ -1,6 +1,6 @@
 import login from "../../pages/Login/LoginPage"
 import home from "../../pages/Home/HomePage"
-import usuario from "../../pages/Usuario/UsuarioHome"
+import usuario from "../../pages/Usuario/UsuarioHomePage"
 
 describe('Acessando a home de usuário e validando o acesso de todos os itens do menu', () => {
 
