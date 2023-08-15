@@ -11,12 +11,12 @@ class NovoPostoAtendimentoPage {
     }
 
     nome() {
-        cy.get('#shortName').type("Teste automático", {force: true})
+        cy.get('#shortName').type("Teste automático", { force: true })
         return this
     }
 
     cep() {
-        cy.get('#zipCode').type("12903000", {force: true})
+        cy.get('#zipCode').type("12903000", { force: true })
         return this
     }
 
@@ -25,13 +25,13 @@ class NovoPostoAtendimentoPage {
         return this
     }
 
-    complemento(){
+    complemento() {
         cy.get('#complement').type('não tem')
         return this
     }
 
     salvar() {
-        cy.get('.mastermasteruserspaceButton-0-2-93 > span').click({force: true})
+        cy.get('.mastermasteruserspaceButton-0-2-93 > span').click({ force: true })
         return this
     }
 

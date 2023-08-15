@@ -1,7 +1,7 @@
-import login from "../../pages/Login/LoginPage"
-import home from "../../pages/Home/HomePage"
-import usuario from "../../pages/Usuario/UsuarioHome"
-import novoPostoAtendimento from "../../pages/Usuario/NovoPostoAtendimentoPage"
+import login from "../../../pages/Login/LoginPage"
+import home from "../../../pages/Home/HomePage"
+import usuario from "../../../pages/Usuario/UsuarioHomePage"
+import novoPostoAtendimento from "../../../pages/Usuario/NovoPostoAtendimentoPage"
 
 describe('Acessando a home de usuário e validando o acesso de todos os itens do menu', () => {
 

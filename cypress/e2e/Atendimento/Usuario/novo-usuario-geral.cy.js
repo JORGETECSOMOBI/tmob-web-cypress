@@ -1,6 +1,6 @@
-import login from '../../pages/Login/LoginPage'
-import home from '../../pages/Home/HomePage'
-import novoUsuarioGeral from '../../pages/Usuario/NovoUsuarioGeralPage'
+import login from '../../../pages/Login/LoginPage'
+import home from '../../../pages/Home/HomePage'
+import novoUsuarioGeral from '../../../pages/Usuario/NovoUsuarioGeralPage'
 
 describe('Acessando a página de criação de novo ususário e testando todas as funcionalidades', () => {
 
