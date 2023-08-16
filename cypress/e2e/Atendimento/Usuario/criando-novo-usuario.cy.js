@@ -1,6 +1,6 @@
-import login from '../../pages/Login/LoginPage'
-import home from '../../pages/Home/HomePage'
-import novoUsuarioGeral from '../../pages/Usuario/NovoUsuarioGeralPage'
+import login from '../../../pages/Login/LoginPage'
+import home from '../../../pages/Home/HomePage'
+import novoUsuarioGeral from '../../../pages/Usuario/NovoUsuarioGeralPage'
 
 describe('Editando e criando um novo usuário com sucesso', () => {
 
