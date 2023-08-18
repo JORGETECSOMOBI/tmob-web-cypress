@@ -29,4 +29,31 @@ describe('Acessando a tela de equipamento PcD e etestando todos os itens', () =>
                       .validaPaginaDetalhes()
     })
 
+    it('Cenário: testando o ícone de "Editar"', () => {
+        usuario.acessandoTelaEquipamentoPcD()
+        equipamentoPcD.pesquisaEquipamentoPorId()
+                      .iconeEditar() 
+                      .validaPaginaEditar()
+    })
+    
+    it('Cenário: testando pesquiza por status "Ativo"', () => {
+        usuario.acessandoTelaEquipamentoPcD()
+        equipamentoPcD.filtroStatus()
+                      .selecionaFiltroAtivo()
+                      .validaBuscaSomenteStatusAtivo()
+    })
+
+    it('Cenário: testando pesquiza por status "Inativo"', () => {
+        usuario.acessandoTelaEquipamentoPcD()    
+        equipamentoPcD.filtroStatus()
+                      .selecionaFiltroInativo()
+                      .validaBuscaSomenteStatusInativo()
+    })
+
+    it('Cenário: testando funcionalidade "Limpar filtro"', () => {
+        usuario.acessandoTelaEquipamentoPcD() 
+        equipamentoPcD.pesquisaEquipamentoPorId()
+                      .BotaoLimparFiltro()
+                      .validaFunçãolimparFiltro()
+    })
 })

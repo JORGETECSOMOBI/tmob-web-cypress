@@ -24,5 +24,52 @@ class EquipamentoPcdPage {
         cy.get('.ant-row-space-between > .ant-col > .ant-typography').should('have.text', 'cadeira de rodas')
         return this
     }
+
+    iconeEditar() {
+        cy.contains('Editar').click()
+        return this
+    }
+
+    validaPaginaEditar() {
+        cy.get(':nth-child(5) > .ant-breadcrumb-link').should('have.text', 'Editar')
+        return this
+    }
+
+    filtroStatus() {
+        cy.get('#isActive').click()
+        return this
+    }
+
+    selecionaFiltroAtivo() {
+        cy.contains('div[title="Ativo"]', 'Ativo').click()
+        return this
+    }
+
+    selecionaFiltroInativo() {
+        cy.contains('div[title="Inativo"]', 'Inativo').click()
+        return this
+    }
+
+    validaBuscaSomenteStatusAtivo() {
+        cy.get('[style="flex-direction: row;"] > .ant-layout')
+            .should('not.contain', 'Inativo');
+        return this
+    }
+
+    validaBuscaSomenteStatusInativo() {
+        cy.get('[style="flex-direction: row;"] > .ant-layout')
+            .should('not.contain', 'Ativo');
+        return this
+    }
+
+    BotaoLimparFiltro() {
+        cy.contains('Limpar filtro').click()
+        return this
+    }
+
+    validaFunçãolimparFiltro() {
+        cy.get('#description').should('have.value', '')
+        return this
+    }
 }
 export default new EquipamentoPcdPage
