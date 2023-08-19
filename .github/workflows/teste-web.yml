@@ -11,11 +11,11 @@ on:
 
 jobs:
   cypress:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
 
     - name: Setup Node.js
       uses: actions/setup-node@v1  # Usar a ação setup-node em vez de actions/setup-node@v2
