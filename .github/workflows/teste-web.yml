@@ -4,16 +4,10 @@ on:
   pull_request:
   push:
     branches:
-      - master # Substitua pelo nome da sua branch principal
-
+      - master  # Substitua pelo nome da sua branch principal
   schedule:
     - cron: '0 12,21 * * *'  # Isso executará os testes todos os dias às 8h e 17h (horário de Brasília)
-
-  workflow_dispatch:  # Isso permite a execução manual
-    inputs:
-      run-tests:
-        description: 'Run Cypress tests'
-        required: false
+  workflow_dispatch:  # Isso permitirá a execução manual
 
 jobs:
   cypress:
@@ -47,6 +41,4 @@ jobs:
         path: allure-report
 
     - name: Open Allure Report
-      uses: actions/upload-artifact@v2
-      with:
-        path: allure-report
+      run: allure open allure-report
