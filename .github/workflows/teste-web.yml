@@ -11,7 +11,7 @@ on:
 
 jobs:
   cypress_test:
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
@@ -32,7 +32,7 @@ jobs:
       - name: Execute at specific times
         run: |
           if [ "$(date '+%H')" -eq "8" ] || [ "$(date '+%H')" -eq "17" ]; then
-            npm run cypress:run
+            npx cypress run
           else
             echo "Skipping tests at this time."
           fi
