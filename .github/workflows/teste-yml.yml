@@ -4,10 +4,16 @@ on:
   pull_request:
   push:
     branches:
-      - main  # Substitua pelo nome da sua branch principal
+      - master # Substitua pelo nome da sua branch principal
 
   schedule:
     - cron: '0 12,21 * * *'  # Isso executará os testes todos os dias às 8h e 17h (horário de Brasília)
+
+  workflow_dispatch:  # Isso permite a execução manual
+    inputs:
+      run-tests:
+        description: 'Run Cypress tests'
+        required: false
 
 jobs:
   cypress:
@@ -26,7 +32,7 @@ jobs:
       run: npm install
 
     - name: Run Cypress tests
-      run: npx cypress run  # Substitua pelo comando que você usa para executar seus testes Cypress
+      run: npm run cypress:run  # Substitua pelo comando que você usa para executar seus testes Cypress
 
     - name: Generate Allure Report
       run: |
