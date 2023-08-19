@@ -1,0 +1,46 @@
+name: Cypress Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main  # Substitua pelo nome da sua branch principal
+
+  schedule:
+    - cron: '0 12,21 * * *'  # Isso executará os testes todos os dias às 8h e 17h (horário de Brasília)
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Escolha a versão do Node.js que seu projeto Cypress requer
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Cypress tests
+      run: npx cypress run  # Substitua pelo comando que você usa para executar seus testes Cypress
+
+    - name: Generate Allure Report
+      run: |
+        npm install -g allure-commandline
+        allure generate allure-results --clean -o allure-report
+      if: always()  # Garante que o relatório será gerado mesmo em caso de falhas
+
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: allure-report
+
+    - name: Open Allure Report
+      uses: actions/upload-artifact@v2
+      with:
+        path: allure-report

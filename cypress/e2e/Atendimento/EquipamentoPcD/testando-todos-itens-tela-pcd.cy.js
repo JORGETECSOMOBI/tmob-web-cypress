@@ -16,7 +16,7 @@ describe('Acessando a tela de equipamento PcD e etestando todos os itens', () =>
         equipamentoPcD.validaPaginaEquipamentoPcd()
     })
 
-    it('Cenário: validando a pesquiza por ID do PcD', () => {
+    it('Cenário: validando a pesquisa por ID do PcD', () => {
         usuario.acessandoTelaEquipamentoPcD()
         equipamentoPcD.pesquisaEquipamentoPorId()
                       .validaItemPesquisaPorId()
@@ -36,14 +36,14 @@ describe('Acessando a tela de equipamento PcD e etestando todos os itens', () =>
                       .validaPaginaEditar()
     })
     
-    it('Cenário: testando pesquiza por status "Ativo"', () => {
+    it('Cenário: testando pesquisa por status "Ativo"', () => {
         usuario.acessandoTelaEquipamentoPcD()
         equipamentoPcD.filtroStatus()
                       .selecionaFiltroAtivo()
                       .validaBuscaSomenteStatusAtivo()
     })
 
-    it('Cenário: testando pesquiza por status "Inativo"', () => {
+    it('Cenário: testando pesquisa por status "Inativo"', () => {
         usuario.acessandoTelaEquipamentoPcD()    
         equipamentoPcD.filtroStatus()
                       .selecionaFiltroInativo()
@@ -55,5 +55,21 @@ describe('Acessando a tela de equipamento PcD e etestando todos os itens', () =>
         equipamentoPcD.pesquisaEquipamentoPorId()
                       .BotaoLimparFiltro()
                       .validaFunçãolimparFiltro()
+    })
+
+    it('Cenário: testando funcionalidade recarregar a página', () => {
+        const tempo = '5m'
+        usuario.acessandoTelaEquipamentoPcD() 
+        equipamentoPcD.pesquisaEquipamentoPorId()
+                      .recarregaPagina()
+                      .configuraTimeRecarregar(tempo)
+                      .validaTimeRecargaConfigurado(tempo)
+    })
+
+    it('Cenário: testando e validando o redirecionamento para a página de criação de novo PcD',() => {
+        usuario.acessandoTelaEquipamentoPcD() 
+        equipamentoPcD.pesquisaEquipamentoPorId()
+                      .acessaPaginaCriacaoNovoPcd()
+                      .validaRedirecionamentoPaginaNovoPcD()
     })
 })

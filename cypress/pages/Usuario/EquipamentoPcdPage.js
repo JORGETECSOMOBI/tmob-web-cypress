@@ -26,7 +26,7 @@ class EquipamentoPcdPage {
     }
 
     iconeEditar() {
-        cy.contains('Editar').click()
+        cy.contains('.ant-btn', 'Editar').find('svg').click({force: true})
         return this
     }
 
@@ -71,5 +71,32 @@ class EquipamentoPcdPage {
         cy.get('#description').should('have.value', '')
         return this
     }
+
+    recarregaPagina() {
+        cy.get('#rc_select_3').click()
+        return this
+    }
+
+    configuraTimeRecarregar(tempo) {
+        cy.contains(tempo).click()
+        return this
+    }
+
+    validaTimeRecargaConfigurado(tempo) {
+        cy.wait(3000)
+        cy.get('.ant-select-selection-item').eq(1).should('have.text', tempo)
+        return this
+    }
+
+    acessaPaginaCriacaoNovoPcd() {
+        cy.contains('Novo').click()
+        return this
+    }
+
+    validaRedirecionamentoPaginaNovoPcD() {
+        cy.get(':nth-child(5) > .ant-breadcrumb-link').should('have.text', 'Novo')
+        return this
+    }
 }
+
 export default new EquipamentoPcdPage
