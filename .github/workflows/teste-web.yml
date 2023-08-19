@@ -3,10 +3,10 @@ name: Cypress Tests
 on:
   pull_request:
     branches:
-      - main  # Substitua pela branch alvo das pull requests
+      - master  
   push:
     branches:
-      - main  # Substitua pela branch alvo dos pushes
+      - master 
   workflow_dispatch:  # Evento para execução manual
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npm run cypress:run  # Substitua pelo comando correto para executar seus testes Cypress
+        run: npm cypress run
 
       # Agendamento para executar às 8 horas e 17 horas todos os dias
       - name: Execute at specific times
