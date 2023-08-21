@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run":"cypress run --config video=false --env allure=true",
-    "allure:generate":"allure generate allure-results",
-    "allure:open":"allure open allure-report",
+    "cy:run": "cypress run --config video=false --env allure=true",
+    "allure:generate": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
     "allure:clear": "rmdir /s /q allure-results && rmdir /s /q allure-report || exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,11 +21,12 @@
     "@faker-js/faker": "^8.0.2",
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "@testing-library/cypress": "^9.0.0",
-    "cypress": "^12.14.0",
+    "cypress": "^12.17.4",
     "cypress-downloadfile": "^1.2.3",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
+    "cypress-file-upload": "^5.0.8",
     "eslint-plugin-cypress": "^2.13.3"
   }
 }

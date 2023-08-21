@@ -8,11 +8,11 @@ describe('Editando e criando um novo usuário com sucesso', () => {
         login.go()
         login.signin()
         home.usuario()
+        novoUsuario.botaonovoUsuario()
     })
 
-    it('Editando a página "Geral" e direcionando para a página "Documentos"', () => {
-        novoUsuario.botaonovoUsuario()
-                   .selecionaDataCriacaoUsuario()
-        novoUsuario.selectTipoUsuario()
+    it('Editando a página "Geral" e direcionando para a página "Documentos"', () => {     
+        novoUsuario.selecionaDataCriacaoUsuario()
+                   .selectTipoUsuario()
     })
 })

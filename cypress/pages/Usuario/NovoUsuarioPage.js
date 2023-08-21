@@ -13,7 +13,7 @@ class novoUsuario {
 
     selecionaNomeTipoUsuario(nome) {
         cy.get(".ant-select-item-option-content").contains(nome).click({force: true})
-        return this
+        return this 
     }
 
     botaonovoUsuario() {
