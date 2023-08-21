@@ -1,23 +1,29 @@
-class novoUsuarioGeral {
+class novoUsuario {
 
     selecionaDataCriacaoUsuario() {
-        cy.get('#createUser_birthdate').click()
+        cy.get('.ant-picker-input').click()
+        cy.contains('15').click()
         return this
     }
 
-    selecionaTipoUsuario() {
-        cy.get('.ant-select-selection-overflow')
+    selectTipoUsuario() {
+        cy.get('.ant-select-selection-overflow').click({ force: true })
         return this
     }
 
-    botaonovoUsuarioGeral() {
+    selecionaNomeTipoUsuario(nome) {
+        cy.get(".ant-select-item-option-content").contains(nome).click({force: true})
+        return this
+    }
+
+    botaonovoUsuario() {
         cy.get('span').contains('Novo usuário').click()
         return this
     }
 
     tirarFoto() {
-        cy.get('.ant-btn > .ant-row > [style="padding-left: 5px; padding-right: 5px;"]').click()
-        cy.get('[style="display: flex;"] > .ant-btn').click()
+        cy.get('.ant-btn > .ant-row > [style="padding-left: 5px; padding-right: 5px;"]').click({ force: true })
+        cy.get('.ant-modal-wrap').click({ force: true })
         return this
     }
 
@@ -60,17 +66,17 @@ class novoUsuarioGeral {
         return this
     }
 
-    emailnovoUsuarioGeral() {
+    emailnovoUsuario() {
         cy.get('#createUser_mailAddress').type('joao@gmail.com')
         return this
     }
 
-    filiacao1 () {
+    filiacao1() {
         cy.get('#createUser_filiation1').type('Mamãe')
         return this
     }
 
-    filiacao2 () {
+    filiacao2() {
         cy.get('#createUser_filiation2').type('Papai')
         return this
     }
@@ -85,14 +91,10 @@ class novoUsuarioGeral {
         return this
     }
 
-    botaoProximoErroCamposObrigatorios() {
-        cy.contains('Proximo').click()
-        cy.get('#createUser_birthdate_help > .ant-form-item-explain-error').should('have.text', 'Campo obrigatório')
-        cy.get('#createUser_UsrTypes_connect_help > .ant-form-item-explain-error').should('have.text', 'Campo obrigatório')
-        cy.get('#createUser_name_help > .ant-form-item-explain-error').should('have.text', 'Campo obrigatório')
-        cy.get('#createUser_gender_help > .ant-form-item-explain-error').should('have.text', 'Campo obrigatório')
-        cy.get('#createUser_filiation1_help > .ant-form-item-explain-error').should('have.text', 'Campo obrigatório')
+    clicaBotaoProximo() {
+        // Adicione essa linha no seu teste Cypress
+        cy.get('button:contains("Proximo")').click({ force: true })
         return this
     }
 }
-export default new novoUsuarioGeral
+export default new novoUsuario

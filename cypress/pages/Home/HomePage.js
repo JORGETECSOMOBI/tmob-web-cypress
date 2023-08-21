@@ -6,12 +6,12 @@ class HomePage {
     }
 
     hometitle() {
-        cy.get('a.ant-anchor-link-title[title="Home"]').should("be.visible").click()
+        cy.get('a.ant-anchor-link-title[title="Home"]').eq(1).should("be.visible").click()
         return this
     }
 
     todosOsServiçosTitle() {
-        cy.get('.ant-anchor-link-title"]').click()
+        cy.get('[title="Todos os serviços"]').click()
         return this
     }
 

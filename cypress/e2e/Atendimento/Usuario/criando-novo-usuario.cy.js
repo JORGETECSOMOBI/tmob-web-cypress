@@ -1,18 +1,31 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
-import novoUsuarioGeral from '../../../pages/Usuario/NovoUsuarioGeralPage'
+import novoUsuario from '../../../pages/Usuario/NovoUsuarioPage'
 
-describe('Editando e criando um novo usuário com sucesso', () => {
+describe('Acessando a página de criação de novo ususário e testando todas as funcionalidades', () => {
 
     beforeEach(() => {
         login.go()
         login.signin()
         home.usuario()
+        novoUsuario.botaonovoUsuario()
     })
 
-    it('Editando a página "Geral" e direcionando para a página "Documentos"', () => {
-        novoUsuarioGeral.botaonovoUsuarioGeral()
-                        .selecionaDataCriacaoUsuario()
-        novoUsuarioGeral.selecionaTipoUsuario()
+   
+
+
+    it('Cenario: preenche formuláio criação novo ususário', () => {
+        novoUsuario.selecionaDataCriacaoUsuario()
+                   .tirarFoto()
+                   .selectTipoUsuario()
+                   .selecionaNomeTipoUsuario('Empregado')
+                   .preencheNomeCompleto()
+                   .preencheNomeSocial()
+                   .selecionaGeneroMasculino()
+                   .emailnovoUsuario()
+                   .filiacao1()
+                   .filiacao2()
+                   .statusAtivo()
+                   .clicaBotaoProximo()
     })
 })

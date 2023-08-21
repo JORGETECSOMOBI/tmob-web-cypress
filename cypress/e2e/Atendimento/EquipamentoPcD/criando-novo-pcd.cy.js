@@ -10,10 +10,10 @@ describe('Criando um novo esquipamento PcD', () => {
         login.go()
         login.signin()
         home.usuario()
+        usuario.acessandoTelaEquipamentoPcD()
     })
 
     it('Cenário: criando um novo equipamento PcD ativo', () => {
-        usuario.acessandoTelaEquipamentoPcD()
         equipamentoPcD.acessaPaginaCriacaoNovoPcd()
                       .validaRedirecionamentoPaginaNovoPcD()
         novoEquipamentoPcD.descricaoNovoEquipamentoPcd('Muleta teste novo equipamento')

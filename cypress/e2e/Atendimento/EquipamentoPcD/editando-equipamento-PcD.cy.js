@@ -4,7 +4,7 @@ import equipamentoPcD from "../../../pages/Usuario/EquipamentoPcdPage"
 import usuario from '../../../pages/Usuario/UsuarioHomePage'
 import editar from '../../../pages/Usuario/EditandoEquipamentoPcdPage'
 
-describe('Criando um novo esquipamento PcD', () => {
+describe('editando um novo esquipamento PcD', () => {
 
     beforeEach(() => {
         login.go()
