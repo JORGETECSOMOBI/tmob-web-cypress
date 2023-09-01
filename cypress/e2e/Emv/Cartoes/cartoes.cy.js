@@ -13,6 +13,6 @@ describe('acessando emv e testando a página de Cartões', () => {
 
     it('Cenário: pesquisando usando o filtro "Pan Token', () => {
         emvPage.cartoes()
-        cartoes.pesquisaPanToken()
+        cartoes.pesquisaPanToken('534693BEBF33C10D2237')
     })
 })

@@ -73,7 +73,7 @@ class EquipamentoPcdPage {
     }
 
     recarregaPagina() {
-        cy.get('#rc_select_3').click()
+        cy.get('#rc_select_4').click()
         return this
     }
 
@@ -83,7 +83,6 @@ class EquipamentoPcdPage {
     }
 
     validaTimeRecargaConfigurado(tempo) {
-        cy.wait(3000)
         cy.get('.ant-select-selection-item').eq(1).should('have.text', tempo)
         return this
     }

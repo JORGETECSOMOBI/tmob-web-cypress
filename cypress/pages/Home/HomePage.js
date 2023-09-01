@@ -82,8 +82,7 @@ class HomePage {
 
     usuario() {
         cy.get('[href="/user"] > .ant-row > .ant-typography').click()
-        cy.get('.ant-menu-item-selected > .ant-menu-title-content > a').should('have.text', 'Usuário')
-        cy.reload()
+        cy.get('.ant-menu-item-selected > .ant-menu-title-content > a',{force: true}).should('have.text', 'Usuário', {force: true})
         return this
     }
 

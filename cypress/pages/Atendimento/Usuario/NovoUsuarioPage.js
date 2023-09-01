@@ -1,13 +1,13 @@
 class novoUsuario {
 
     selecionaDataCriacaoUsuario() {
-        cy.get('.ant-picker-input').click()
+        cy.get('.ant-picker-input').eq(0).click()
         cy.contains('15').click()
         return this
     }
 
     selectTipoUsuario() {
-        cy.get('.ant-select-selection-overflow').click({ force: true })
+        cy.get('.ant-select-selection-overflow').eq(0).click({ force: true })
         return this
     }
 

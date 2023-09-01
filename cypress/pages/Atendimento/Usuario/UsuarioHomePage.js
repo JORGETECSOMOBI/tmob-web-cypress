@@ -31,7 +31,10 @@ class UsuarioHome {
 
     acessandoTelaPeriodoEstudantil() {
         cy.get('a[href="/user/userStudentPeriods"]').click()
-        cy.get('.ant-row-start > .ant-typography').should('have.text', 'Período estudantil')
+    }
+
+    validandoTelaPeriodoEstudantil(mensagem) {
+        cy.get('.ant-row-start > .ant-typography').should('have.text', mensagem)
         return this
     }
 

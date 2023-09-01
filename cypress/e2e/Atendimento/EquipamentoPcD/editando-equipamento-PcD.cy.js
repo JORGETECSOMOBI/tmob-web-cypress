@@ -1,8 +1,8 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-import equipamentoPcD from "../../../pages/Usuario/EquipamentoPcdPage"
-import usuario from '../../../pages/Usuario/UsuarioHomePage'
-import editar from '../../../pages/Usuario/EditandoEquipamentoPcdPage'
+import equipamentoPcD from "../../../pages/Atendimento/EquipamentoPCD/EquipamentoPcdPage"
+import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
+import editar from '../../../pages/Atendimento/EquipamentoPCD/EditandoEquipamentoPcdPage'
 
 describe('editando um novo esquipamento PcD', () => {
 
@@ -10,32 +10,30 @@ describe('editando um novo esquipamento PcD', () => {
         login.go()
         login.signin()
         home.usuario()
+        usuario.acessandoTelaEquipamentoPcD()
     })
 
     it('Cenáro: mudando o status de um equipamento "ativo" para "inativo"', () => {
-        usuario.acessandoTelaEquipamentoPcD()
         equipamentoPcD.filtroStatus()
-                      .selecionaFiltroAtivo()
-                      .validaBuscaSomenteStatusAtivo()
-                      .iconeEditar()
+            .selecionaFiltroAtivo()
+            .validaBuscaSomenteStatusAtivo()
+            .iconeEditar()
         editar.botaoInativo()
-              .botaoSalvar()
-              .botaoConfirmarmodificaçoes()
-              .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')
-              .clicaBotaoVerEquipamentoPcD()
-           
+            .botaoSalvar()
+            .botaoConfirmarmodificaçoes()
+            .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')
+            .clicaBotaoVerEquipamentoPcD()
     })
 
     it('Cenáro: mudando o status de um equipamento "Inativo" para "Ativo"', () => {
-        usuario.acessandoTelaEquipamentoPcD()
         equipamentoPcD.filtroStatus()
-                      .selecionaFiltroInativo()
-                      .validaBuscaSomenteStatusInativo()
-                      .iconeEditar()
+            .selecionaFiltroInativo()
+            .validaBuscaSomenteStatusInativo()
+            .iconeEditar()
         editar.botaoAtivo()
-              .botaoSalvar()
-              .botaoConfirmarmodificaçoes()
-              .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')
-              .clicaBotaoVerEquipamentoPcD()          
+            .botaoSalvar()
+            .botaoConfirmarmodificaçoes()
+            .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')
+            .clicaBotaoVerEquipamentoPcD()
     })
 })

@@ -1,6 +1,6 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
-import novoUsuario from '../../../pages/Usuario/novoUsuarioPage'
+import novoUsuario from '../../../pages/Atendimento/NovoUsuarioPage'
 
 describe('Editando e criando um novo usuário com sucesso', () => {
 

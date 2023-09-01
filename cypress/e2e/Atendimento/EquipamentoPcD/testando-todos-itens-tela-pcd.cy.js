@@ -1,9 +1,9 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-import equipamentoPcD from "../../../pages/Usuario/EquipamentoPcdPage"
-import usuario from '../../../pages/Usuario/UsuarioHomePage'
+import equipamentoPcD from "../../../pages/Atendimento/EquipamentoPCD/EquipamentoPcdPage"
+import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
 
-describe('Acessando a tela de equipamento PcD e etestando todos os itens', () => {
+describe('Testando a tela de equipamento PcD ', () => {
 
     beforeEach(() => {
         login.go()

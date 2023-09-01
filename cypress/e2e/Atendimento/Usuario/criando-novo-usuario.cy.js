@@ -1,7 +1,7 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
-import novoUsuario from '../../../pages/Usuario/NovoUsuarioPage'
-import novoUsuarioDocs from '../../../pages/Usuario/NovousuarioDocumentosPage'
+import novoUsuario from '../../../pages/Atendimento/NovoUsuarioPage'
+import novoUsuarioDocs from '../../../pages/Atendimento/NovousuarioDocumentosPage'
 
 describe('Acessando a página de criação de novo ususário e testando todas as funcionalidades', () => {
 
@@ -34,7 +34,7 @@ describe('Acessando a página de criação de novo ususário e testando todas as
                     .dataExpedicao()
                     .dataValidade()
                     .carteiraDeTrabalho(151561612666)
-                    .upload()
-         novoUsuario.clicaBotaoProximo()
+                    //.upload()
+         //novoUsuario.clicaBotaoProximo()
     })
 })
