@@ -21,7 +21,7 @@ class NovoTipoUsuarioPage {
     }
 
     tipo() {
-        cy.get('.ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item').click({ force: true })
+        cy.get('#type').click({ force: true })
         return this
     }
 

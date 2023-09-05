@@ -1,19 +1,25 @@
 class novoUsuario {
 
-    selecionaDataCriacaoUsuario() {
-        cy.get('.ant-picker-input').eq(0).click()
-        cy.contains('15').click()
+    clicaBotaoCadastroAvancado() {
+        cy.contains('Cadastro avançado').click({ force: true })
+        return this
+    }
+
+    selecionaDataNascimento() {
+        cy.get('.ant-picker-input').eq(0).click({ force: true })
+        cy.contains('1').click({force: true})
         return this
     }
 
     selectTipoUsuario() {
-        cy.get('.ant-select-selection-overflow').eq(0).click({ force: true })
+        cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({force: true})
+
         return this
     }
 
     selecionaNomeTipoUsuario(nome) {
-        cy.get(".ant-select-item-option-content").contains(nome).click({force: true})
-        return this 
+        cy.get(".ant-select-item-option-content").contains(nome).click({ force: true })
+        return this
     }
 
     botaonovoUsuario() {

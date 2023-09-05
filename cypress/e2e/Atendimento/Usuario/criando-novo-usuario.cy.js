@@ -1,7 +1,7 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
-import novoUsuario from '../../../pages/Atendimento/NovoUsuarioPage'
-import novoUsuarioDocs from '../../../pages/Atendimento/NovousuarioDocumentosPage'
+import novoUsuario from '../../../pages/Atendimento/Usuario/NovoUsuarioPage'
+import novoUsuarioDocs from '../../../pages/Atendimento/Usuario/NovousuarioDocumentosPage'
 
 describe('Acessando a página de criação de novo ususário e testando todas as funcionalidades', () => {
 
@@ -16,24 +16,25 @@ describe('Acessando a página de criação de novo ususário e testando todas as
 
 
     it('Cenario: preenche formuláio criação novo ususário', () => {
-         novoUsuario.selecionaDataCriacaoUsuario()
-                    .tirarFoto()
-                    .selectTipoUsuario()
-                    .selecionaNomeTipoUsuario('Empregado')
-                    .preencheNomeCompleto()
-                    .preencheNomeSocial()
-                    .selecionaGeneroMasculino()
-                    .emailnovoUsuario()
-                    .filiacao1()
-                    .filiacao2()
-                    .statusAtivo()
-                    .clicaBotaoProximo()
-     novoUsuarioDocs.documentoOpcionalDoc1('123456789')
-                    .carteirinha('45454554554')
-                    .complemento('001')                
-                    .dataExpedicao()
-                    .dataValidade()
-                    .carteiraDeTrabalho(151561612666)
+         novoUsuario.clicaBotaoCadastroAvancado()
+         novoUsuario.selecionaDataNascimento()
+    //                 .selectTipoUsuario()
+    //                 .selecionaNomeTipoUsuario('Empregado')
+    //                 .tirarFoto()
+    //                 .preencheNomeCompleto()
+    //                 .preencheNomeSocial()
+    //                 .selecionaGeneroMasculino()
+    //                 .emailnovoUsuario()
+    //                 .filiacao1()
+    //                 .filiacao2()
+    //                 .statusAtivo()
+    //                 .clicaBotaoProximo()
+    //  novoUsuarioDocs.documentoOpcionalDoc1('123456789')
+    //                 .carteirinha('45454554554')
+    //                 .complemento('001')                
+    //                 .dataExpedicao()
+    //                 .dataValidade()
+    //                 .carteiraDeTrabalho(151561612666)
                     //.upload()
          //novoUsuario.clicaBotaoProximo()
     })
