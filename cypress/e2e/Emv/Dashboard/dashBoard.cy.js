@@ -2,7 +2,7 @@ import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
 import dash from "../../../pages/Emv/DashboardPage"
 
-describe('acessando o emv e testando a página Dashboard', () => {
+describe('acessando o emv e Testando a página Dashboard', () => {
     beforeEach(() => {
         login.go()
         login.signin()
@@ -11,6 +11,7 @@ describe('acessando o emv e testando a página Dashboard', () => {
     })
 
     it('Selecionando um período para pesquisa', () => {
-        dash.periodoPesquisa()
+        dash
+            .periodoPesquisa()
     })
 })

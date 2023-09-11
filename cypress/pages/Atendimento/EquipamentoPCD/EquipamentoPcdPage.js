@@ -87,11 +87,6 @@ class EquipamentoPcdPage {
         return this
     }
 
-    acessaPaginaCriacaoNovoPcd() {
-        cy.contains('Novo').click()
-        return this
-    }
-
     validaRedirecionamentoPaginaNovoPcD() {
         cy.get(':nth-child(5) > .ant-breadcrumb-link').should('have.text', 'Novo')
         return this

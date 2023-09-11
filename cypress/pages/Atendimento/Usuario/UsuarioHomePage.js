@@ -1,6 +1,6 @@
 class UsuarioHome {
 
-    validandoAcessoTelaUsuario() {
+    ValidandoAcessoTelaUsuario() {
         cy.get('.mastermasteruserheader-0-2-58 > .ant-typography').should('have.text', 'Pesquisa de usuário')
         return this
     }
@@ -33,7 +33,7 @@ class UsuarioHome {
         cy.get('a[href="/user/userStudentPeriods"]').click()
     }
 
-    validandoTelaPeriodoEstudantil(mensagem) {
+    ValidandoTelaPeriodoEstudantil(mensagem) {
         cy.get('.ant-row-start > .ant-typography').should('have.text', mensagem)
         return this
     }

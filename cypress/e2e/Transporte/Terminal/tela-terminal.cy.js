@@ -10,36 +10,44 @@ describe('Testando as funcionalidades da tela "Terminal"', () => {
         home.transporte()
     })
 
-    it('Cenário: pesquisa terminal', () => {
-        terminal.pesquisarTerminal('ANCHIETA')
-        terminal.validaResultadoDaPesquisaTerminal('228 - MCC ANCHIETA')
+    it('Pesquisa pelo terminal', () => {
+        terminal
+            .pesquisarTerminal('ANCHIETA')
+            .validaResultadoDaPesquisaTerminal('228 - MCC ANCHIETA')
     })
 
-    it('Cenário: clicar em ver mais', () => {
-        terminal.clicarEmVerMais()
+    it('Clicar em ver mais', () => {
+        terminal
+            .clicarEmVerMais()
     })
 
-    it('Cenário: clicar em fechar tudo', () => {
-        terminal.clicarEmFecharTudo()
+    it('Clicar em fechar tudo', () => {
+        terminal
+            .clicarEmFecharTudo()
     })
 
-    it('Cenário: clicar em mostrar deletados', () => {
-        terminal.clicarEmMostrarDeletados()
+    it('Clicar em mostrar deletados', () => {
+        terminal
+            .clicarEmMostrarDeletados()
     })
 
-    it('Cenário: clicar em mostrar apenas os teminais associados', () => {
-        terminal.clicarEmMostrarTerminaisAssociados()
+    it('Clicar em mostrar apenas os teminais associados', () => {
+        terminal
+            .clicarEmMostrarTerminaisAssociados()
     })
 
-    it('Cenário: clicar em limpar filtros', () => {
-        terminal.clicarEmLimparfiltros()
+    it('Clicar em limpar filtros', () => {
+        terminal
+            .clicarEmLimparfiltros()
     })
 
-    it('Cenário: clicar em recarregar', () => {
-        terminal.clicarEmRecarregar()
+    it('Clicar em recarregar', () => {
+        terminal
+            .clicarEmRecarregar()
     })
 
-    it('Cenário: clicar em ações', () => {
-        terminal.clicarEmAcoes()
+    it('Clicar em ações', () => {
+        terminal
+            .clicarEmAcoes()
     })
 })

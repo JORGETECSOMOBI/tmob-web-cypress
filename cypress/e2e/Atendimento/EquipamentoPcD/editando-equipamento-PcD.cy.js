@@ -13,7 +13,7 @@ describe('editando um novo esquipamento PcD', () => {
         usuario.acessandoTelaEquipamentoPcD()
     })
 
-    it('Cenáro: mudando o status de um equipamento "ativo" para "inativo"', () => {
+    it('Mudando o status de um equipamento "ativo" para "inativo"', () => {
         equipamentoPcD.filtroStatus()
             .selecionaFiltroAtivo()
             .validaBuscaSomenteStatusAtivo()
@@ -25,12 +25,14 @@ describe('editando um novo esquipamento PcD', () => {
             .clicaBotaoVerEquipamentoPcD()
     })
 
-    it('Cenáro: mudando o status de um equipamento "Inativo" para "Ativo"', () => {
-        equipamentoPcD.filtroStatus()
+    it('Mudando o status de um equipamento "Inativo" para "Ativo"', () => {
+        equipamentoPcD
+            .filtroStatus()
             .selecionaFiltroInativo()
             .validaBuscaSomenteStatusInativo()
             .iconeEditar()
-        editar.botaoAtivo()
+        editar
+            .botaoAtivo()
             .botaoSalvar()
             .botaoConfirmarmodificaçoes()
             .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')

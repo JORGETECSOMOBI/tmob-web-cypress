@@ -15,20 +15,27 @@ describe('Editando "tipo de Usuário', () => {
 
     it('Edita com sucesso Tipo de usuário', () => {
 
-        editaTipoUsuario.editaTipoUsuario()
-        editaTipoUsuario.limpaDescricao()
-        novoTipoUsuario.descricao('edição tipo de usuário')
-        editaTipoUsuario.limpaIdadeMinima()
-        novoTipoUsuario.idadeMinima('15')
-        editaTipoUsuario.limpaIdadeMaxima()
-        novoTipoUsuario.idadeMaxima('500')
-        novoTipoUsuario.tipo()
-        novoTipoUsuario.escolheTipoUsuario('Especial')
-        editaTipoUsuario.limpaComentario()
-        novoTipoUsuario.escreveComentario('Uia, Uia, Uia')
-        novoTipoUsuario.salvaNovoTipoDeUsuario()
-        editaTipoUsuario.confirmaEdicaoTipoUsuario()
-        editaTipoUsuario.validaMensagemDeSucessoEdicaoTipousuario('Tipo de usuário foi editado com sucesso!')
+        editaTipoUsuario
+            .editaTipoUsuario()
+            .limpaDescricao()
+        novoTipoUsuario
+            .descricao('edição tipo de usuário')
+        editaTipoUsuario
+            .limpaIdadeMinima()
+        novoTipoUsuario
+            .idadeMinima('15')
+        editaTipoUsuario
+            .limpaIdadeMaxima()
+        novoTipoUsuario
+            .idadeMaxima('500')
+        editaTipoUsuario
+            .limpaComentario()
+        novoTipoUsuario
+            .escreveComentario('Uia, Uia, Uia')
+            .salvaNovoTipoDeUsuario()
+        editaTipoUsuario
+            .confirmaEdicaoTipoUsuario()
+            .validaMensagemDeSucessoEdicaoTipousuario('Tipo de usuário foi editado com sucesso!')
     })
 
 })

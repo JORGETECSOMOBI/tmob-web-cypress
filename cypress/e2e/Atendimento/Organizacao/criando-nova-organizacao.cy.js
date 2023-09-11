@@ -2,7 +2,7 @@ import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 
-describe('testando a tela "Usuário"', () => {
+describe('Testando a tela "Usuário"', () => {
 
     beforeEach(() => {
         login.go()
@@ -12,9 +12,7 @@ describe('testando a tela "Usuário"', () => {
         usuario.acessandoTelaOrganizaçao()
     })
 
-    it('Cenário: Criando nova organização', () => {
+    it('Criando nova organização', () => {
         cy.xpath('//a[contains(., "Novo")]//button').click();
-
-
     })
 })

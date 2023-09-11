@@ -3,7 +3,7 @@ import home from "../../../pages/Home/HomePage"
 import cartoes from "../../../pages/Emv/CartoesPage"
 import emvPage from "../../../pages/Emv/EmvPage"
 
-describe('acessando emv e testando a página de Cartões', () => {
+describe('acessando emv e Testando a página de Cartões', () => {
     beforeEach(() => {
         login.go()
         login.signin()
@@ -11,8 +11,10 @@ describe('acessando emv e testando a página de Cartões', () => {
         home.emv()
     })
 
-    it('Cenário: pesquisando usando o filtro "Pan Token', () => {
-        emvPage.cartoes()
-        cartoes.pesquisaPanToken('534693BEBF33C10D2237')
+    it(' pesquisando usando o filtro "Pan Token', () => {
+        emvPage
+            .cartoes()
+        cartoes
+            .pesquisaPanToken('534693BEBF33C10D2237')
     })
 })

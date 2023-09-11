@@ -13,11 +13,12 @@ describe('Criando um novo nível de escolaridade', () => {
         usuario.acessandoTelaNivelDeEscolaridade()
     })
 
-    it('Cenário: Crinando um novo nível de escolaridade com sucesso', () => {
-        nivelEscolaridade.clicaBotaoNovo({force: true}) 
-                         .escreveNovoNivelEscolaridade('escolaridadeautomatico')
-                         .clicaBotaoSalvar()
-                         .clicaBotaoSalvarModal()
-                         .ValidaMensagemDeSucesso('Nível de escolaridade do usuário foi criado com sucesso!')
+    it(' Criando um novo nível de escolaridade com sucesso', () => {
+        nivelEscolaridade
+            .clicaBotaoNovo({ force: true })
+            .escreveNovoNivelEscolaridade('escolaridadeautomatico')
+            .clicaBotaoSalvar()
+            .clicaBotaoSalvarModal()
+            .ValidaMensagemDeSucesso('Nível de escolaridade do usuário foi criado com sucesso!')
     })
 })

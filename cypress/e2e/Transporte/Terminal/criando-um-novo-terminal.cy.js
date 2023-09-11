@@ -10,7 +10,8 @@ describe('Testando as funcionalidades da tela "Terminal"', () => {
         home.transporte()
     })
 
-    it('Cenário: criando um terminal', () => {
-        terminal.clicarEmCriarTerminal()
+    it('Criando um terminal', () => {
+        terminal
+        .clicarEmCriarTerminal()
     })
 })

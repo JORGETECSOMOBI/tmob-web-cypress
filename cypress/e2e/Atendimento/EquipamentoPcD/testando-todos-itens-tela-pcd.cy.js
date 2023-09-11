@@ -11,65 +11,83 @@ describe('Testando a tela de equipamento PcD ', () => {
         home.usuario()
     })
 
-    it('Cenário: validando o acesso à pagina equipamento PcD', () => {
-        usuario.acessandoTelaEquipamentoPcD()
-        equipamentoPcD.validaPaginaEquipamentoPcd()
+    it(' Validando o acesso à pagina equipamento PcD', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .validaPaginaEquipamentoPcd()
     })
 
-    it('Cenário: validando a pesquisa por ID do PcD', () => {
-        usuario.acessandoTelaEquipamentoPcD()
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .validaItemPesquisaPorId()
+    it(' Validando a pesquisa por ID do PcD', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .validaItemPesquisaPorId()
     })
 
-    it('Cenário: testando o icone "visualizar"', () => {
-        usuario.acessandoTelaEquipamentoPcD()
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .iconeVisualizar()
-                      .validaPaginaDetalhes()
+    it(' Testando o icone "visualizar"', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .iconeVisualizar()
+            .validaPaginaDetalhes()
     })
 
-    it('Cenário: testando o ícone de "Editar"', () => {
-        usuario.acessandoTelaEquipamentoPcD()
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .iconeEditar() 
-                      .validaPaginaEditar()
-    })
-    
-    it('Cenário: testando pesquisa por status "Ativo"', () => {
-        usuario.acessandoTelaEquipamentoPcD()
-        equipamentoPcD.filtroStatus()
-                      .selecionaFiltroAtivo()
-                      .validaBuscaSomenteStatusAtivo()
+    it(' Testando o ícone de "Editar"', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .iconeEditar()
+            .validaPaginaEditar()
     })
 
-    it('Cenário: testando pesquisa por status "Inativo"', () => {
-        usuario.acessandoTelaEquipamentoPcD()    
-        equipamentoPcD.filtroStatus()
-                      .selecionaFiltroInativo()
-                      .validaBuscaSomenteStatusInativo()
+    it(' Testando pesquisa por status "Ativo"', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .filtroStatus()
+            .selecionaFiltroAtivo()
+            .validaBuscaSomenteStatusAtivo()
     })
 
-    it('Cenário: testando funcionalidade "Limpar filtro"', () => {
-        usuario.acessandoTelaEquipamentoPcD() 
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .BotaoLimparFiltro()
-                      .validaFunçãolimparFiltro()
+    it(' Testando pesquisa por status "Inativo"', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .filtroStatus()
+            .selecionaFiltroInativo()
+            .validaBuscaSomenteStatusInativo()
     })
 
-    it('Cenário: testando funcionalidade recarregar a página', () => {
+    it(' Testando funcionalidade "Limpar filtro"', () => {
+        usuario.
+            acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .BotaoLimparFiltro()
+            .validaFunçãolimparFiltro()
+    })
+
+    it(' Testando funcionalidade recarregar a página', () => {
         const tempo = '5m'
-        usuario.acessandoTelaEquipamentoPcD() 
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .recarregaPagina()
-                      .configuraTimeRecarregar(tempo)
-                      .validaTimeRecargaConfigurado(tempo)
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .recarregaPagina()
+            .configuraTimeRecarregar(tempo)
+            .validaTimeRecargaConfigurado(tempo)
     })
 
-    it('Cenário: testando e validando o redirecionamento para a página de criação de novo PcD',() => {
-        usuario.acessandoTelaEquipamentoPcD() 
-        equipamentoPcD.pesquisaEquipamentoPorId()
-                      .acessaPaginaCriacaoNovoPcd()
-                      .validaRedirecionamentoPaginaNovoPcD()
+    it(' Testando e Validando o redirecionamento para a página de criação de novo PcD', () => {
+        usuario
+            .acessandoTelaEquipamentoPcD()
+        equipamentoPcD
+            .pesquisaEquipamentoPorId()
+            .acessaPaginaCriacaoNovoPcd()
+            .validaRedirecionamentoPaginaNovoPcD()
     })
 })

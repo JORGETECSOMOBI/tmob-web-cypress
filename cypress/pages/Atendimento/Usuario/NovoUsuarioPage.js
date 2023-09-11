@@ -5,20 +5,16 @@ class novoUsuario {
         return this
     }
 
-    selecionaDataNascimento() {
-        cy.get('.ant-picker-input').eq(0).click({ force: true })
-        cy.contains('1').click({force: true})
+    selecionaDataNascimento(data) {
+        cy.get('.ant-picker-input').click({ force: true })
+        cy.get('.ant-picker-cell-inner').contains(data).click()
         return this
     }
 
-    selectTipoUsuario() {
-        cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({force: true})
-
-        return this
-    }
-
-    selecionaNomeTipoUsuario(nome) {
-        cy.get(".ant-select-item-option-content").contains(nome).click({ force: true })
+    selecionaTipoUsuario(tipoUsuario) {
+        cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({ force: true })
+        cy.contains(tipoUsuario).click()
+        cy.get('.ant-col-lg-9').click()
         return this
     }
 
@@ -44,46 +40,34 @@ class novoUsuario {
         return this
     }
 
-    preencheNomeCompleto() {
-        cy.get('#createUser_name').type('João teste')
+    preencheNomeCompleto(nomeCompleto) {
+        cy.get('#createUser_name').type(nomeCompleto, { force: true })
         return this
     }
 
-    preencheNomeSocial() {
-        cy.get('#createUser_socialName').type('Social teste')
+    preencheNomeSocial(nomeSocial) {
+        cy.get('#createUser_socialName').type(nomeSocial, { force: true })
         return this
     }
 
-    selecionaGeneroMasculino() {
-        cy.get('#createUser_gender').click()
-        cy.contains('Masculino').click()
+    selecionaGenero(genero) {
+        cy.get('#createUser_gender').click({ force: true })
+        cy.contains(genero).click()
         return this
     }
 
-    selecionaGeneroFeminino() {
-        cy.get('#createUser_gender').click()
-        cy.contains('Feminino').click()
+    emailnovoUsuario(email) {
+        cy.get('#createUser_mailAddress').type(email, { force: true })
         return this
     }
 
-    selecionaGeneroOutro() {
-        cy.get('#createUser_gender').click()
-        cy.contains('Outro').click()
+    filiacao1(filiacao1) {
+        cy.get('#createUser_filiation1').type(filiacao1, { force: true })
         return this
     }
 
-    emailnovoUsuario() {
-        cy.get('#createUser_mailAddress').type('joao@gmail.com')
-        return this
-    }
-
-    filiacao1() {
-        cy.get('#createUser_filiation1').type('Mamãe')
-        return this
-    }
-
-    filiacao2() {
-        cy.get('#createUser_filiation2').type('Papai')
+    filiacao2(filiacao2) {
+        cy.get('#createUser_filiation2').type(filiacao2, {force: true})
         return this
     }
 
@@ -92,13 +76,17 @@ class novoUsuario {
         return this
     }
 
-    statusInativo() {
-        cy.get('.ant-radio-wrapper-checked > :nth-child(2)').click()
+    statusInativo0() {
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(0).click({force: true})
+        return this
+    }
+
+    statusInativo1() {
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({force: true})
         return this
     }
 
     clicaBotaoProximo() {
-        // Adicione essa linha no seu teste Cypress
         cy.get('button:contains("Proximo")').click({ force: true })
         return this
     }

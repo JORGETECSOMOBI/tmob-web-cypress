@@ -20,7 +20,7 @@ class NovoTipoUsuarioPage {
         return this
     }
 
-    tipo() {
+    abreSelectTipo() {
         cy.get('#type').click({ force: true })
         return this
     }
