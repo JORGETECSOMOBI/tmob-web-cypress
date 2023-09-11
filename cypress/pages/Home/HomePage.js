@@ -82,7 +82,7 @@ class HomePage {
 
     usuario() {
         cy.get('[href="/user"] > .ant-row > .ant-typography').click()
-        cy.get('.ant-menu-item-selected > .ant-menu-title-content > a',{force: true}).should('have.text', 'Usuário', {force: true})
+        cy.url({force: true}).should('eq', 'https://web.test.tmob.com.br/user');
         return this
     }
 
