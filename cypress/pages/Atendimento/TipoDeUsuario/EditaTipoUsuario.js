@@ -1,5 +1,10 @@
 class EditaTipoUsuarioPage {
 
+    pesquisaTipoUsuario(Descricao) {
+        cy.get('#description').type(Descricao)
+        return this
+    }
+
     editaTipoUsuario() {
         cy.contains('Editar').click()
         return this

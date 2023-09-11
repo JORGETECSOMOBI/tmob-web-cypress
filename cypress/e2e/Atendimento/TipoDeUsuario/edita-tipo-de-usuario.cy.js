@@ -3,6 +3,7 @@ import home from "../../../pages/Home/HomePage"
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import novoTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/NovoTipoUsuarioPage"
 import editaTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/EditaTipoUsuario"
+import botao from "../../../pages/ComponentesPadrao/botoesPage"
 
 describe('Editando "tipo de Usuário', () => {
 
@@ -16,6 +17,7 @@ describe('Editando "tipo de Usuário', () => {
     it('Edita com sucesso Tipo de usuário', () => {
 
         editaTipoUsuario
+            .pesquisaTipoUsuario('Usuário Automação')
             .editaTipoUsuario()
             .limpaDescricao()
         novoTipoUsuario
@@ -23,19 +25,22 @@ describe('Editando "tipo de Usuário', () => {
         editaTipoUsuario
             .limpaIdadeMinima()
         novoTipoUsuario
-            .idadeMinima('15')
+            .idadeMinima('1')
         editaTipoUsuario
             .limpaIdadeMaxima()
         novoTipoUsuario
-            .idadeMaxima('500')
+            .idadeMaxima('120')
         editaTipoUsuario
             .limpaComentario()
+        botao
+            .clicaStatusInativo()
         novoTipoUsuario
             .escreveComentario('Uia, Uia, Uia')
             .salvaNovoTipoDeUsuario()
         editaTipoUsuario
             .confirmaEdicaoTipoUsuario()
             .validaMensagemDeSucessoEdicaoTipousuario('Tipo de usuário foi editado com sucesso!')
+
     })
 
 })

@@ -4,6 +4,7 @@ import equipamentoPcD from "../../../pages/Atendimento/EquipamentoPCD/Equipament
 import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
 import novoEquipamentoPcD from '../../../pages/Atendimento/equipamentoPcD/NovoEquipamentoPcdPage'
 import clica from '../../../pages/ComponentesPadrao/botoesPage'
+import seleciona from '../../../pages/ComponentesPadrao/selectpage'
 
 describe('Criando um novo esquipamento PcD', () => {
 
@@ -15,6 +16,8 @@ describe('Criando um novo esquipamento PcD', () => {
             .usuario()
         usuario
             .acessandoTelaEquipamentoPcD()
+        seleciona.
+            selectLinguagem('PT')
     })
 
     it('Criando um novo equipamento PcD ativo', () => {
