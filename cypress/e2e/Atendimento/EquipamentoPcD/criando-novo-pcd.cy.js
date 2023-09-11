@@ -20,6 +20,9 @@ describe('Criando um novo esquipamento PcD', () => {
     })
 
     it('Criando um novo equipamento PcD ativo', () => {
+
+        seleciona.
+            selectLinguagem('PT')
         clica.
             clicaBotao('Novo')
         seleciona.
