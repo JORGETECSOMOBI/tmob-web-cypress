@@ -16,13 +16,14 @@ describe('Criando um novo esquipamento PcD', () => {
             .usuario()
         usuario
             .acessandoTelaEquipamentoPcD()
-        seleciona.
-            selectLinguagem('PT')
+
     })
 
     it('Criando um novo equipamento PcD ativo', () => {
         clica.
             clicaBotao('Novo')
+        seleciona.
+            selectLinguagem('PT')
         equipamentoPcD
             .validaRedirecionamentoPaginaNovoPcD()
         novoEquipamentoPcD
