@@ -14,11 +14,13 @@ describe('editando um novo esquipamento PcD', () => {
     })
 
     it('Mudando o status de um equipamento "ativo" para "inativo"', () => {
-        equipamentoPcD.filtroStatus()
+        equipamentoPcD
+            .filtroStatus()
             .selecionaFiltroAtivo()
             .validaBuscaSomenteStatusAtivo()
             .iconeEditar()
-        editar.botaoInativo()
+        editar
+            .botaoInativo()
             .botaoSalvar()
             .botaoConfirmarmodificaçoes()
             .validaMensagemSucessoEdicao('Equipamento PcD foi editado com sucesso!')

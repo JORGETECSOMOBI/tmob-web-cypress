@@ -33,7 +33,7 @@ describe('Editando "tipo de Usuário', () => {
         editaTipoUsuario
             .limpaComentario()
         botao
-            .clicaStatusInativo()
+            .clicaBotao('Inativo')
         novoTipoUsuario
             .escreveComentario('Uia, Uia, Uia')
             .salvaNovoTipoDeUsuario()

@@ -82,8 +82,11 @@ class HomePage {
 
     usuario() {
         cy.get('[href="/user"] > .ant-row > .ant-typography').click()
-        cy.url({force: true}).should('eq', 'https://web.test.tmob.com.br/user');
         return this
+    }
+
+    validaURL(url) {
+        cy.url({force: true}).should('eq', url)
     }
 
     comercializacao() {
