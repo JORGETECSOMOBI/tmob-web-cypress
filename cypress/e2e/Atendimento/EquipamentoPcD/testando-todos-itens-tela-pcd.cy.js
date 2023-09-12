@@ -1,93 +1,71 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-import equipamentoPcD from "../../../pages/Atendimento/EquipamentoPCD/EquipamentoPcdPage"
 import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Testando a tela de equipamento PcD ', () => {
 
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.usuario()
-    })
-
-    it(' Validando o acesso à pagina equipamento PcD', () => {
+        login
+            .go()
+        login
+            .signin()
+        home
+            .usuario()
         usuario
             .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .validaPaginaEquipamentoPcd()
+        componente
+            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
     })
 
-    it(' Validando a pesquisa por ID do PcD', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .validaItemPesquisaPorId()
+    it('Testando filtro por ID', () => {
+        componente
+            .escreveID('100')
+            .validaId('100')
     })
 
-    it(' Testando o icone "visualizar"', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .iconeVisualizar()
-            .validaPaginaDetalhes()
+    it('Testando pesquisa por filtro "Inativo"', () => {
+        componente
+            .selecionaStatus('Inativo')
+            .validaStatusInativo()
     })
 
-    it(' Testando o ícone de "Editar"', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .iconeEditar()
-            .validaPaginaEditar()
+    it('Testando pesquisa por filtro "Ativo"', () => {
+        componente
+            .selecionaStatus('Ativo')
+            .validaStatusAtivo()
     })
 
-    it(' Testando pesquisa por status "Ativo"', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .filtroStatus()
-            .selecionaFiltroAtivo()
-            .validaBuscaSomenteStatusAtivo()
+    it('Testando pesquisa por filtro "descrição"', () => {
+        componente
+            .escreveDescricao('Equipamento editado')
+            .validaDescricao('Equipamento editado')
     })
 
-    it(' Testando pesquisa por status "Inativo"', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .filtroStatus()
-            .selecionaFiltroInativo()
-            .validaBuscaSomenteStatusInativo()
+    it('Testando botão recarregar', () => {
+        componente
+            .clicaBotaoRecarregar()
     })
 
-    it(' Testando funcionalidade "Limpar filtro"', () => {
-        usuario.
-            acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .BotaoLimparFiltro()
+    it('Testa botão visualizar', () => {
+        componente
+            .pesquisaEquipamentoPorId('102')
+            .clicaBotao('Visualizar')
+            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipment/102/')
+    })
+
+    it('Testando botão "Editar"', () => {
+        componente
+            .pesquisaEquipamentoPorId('102')
+            .clicaBotao('Editar')
+            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipment/102/edit')
+    })
+
+    it('testa botão "Limpar filtro"', () => {
+        componente
+            .escreveDescricao('Teste limpar filtro')
+            .selecionaStatus('Ativo')
+            .clicaBotao('Limpar filtro')
             .validaFunçãolimparFiltro()
-    })
-
-    it(' Testando funcionalidade recarregar a página', () => {
-        const tempo = '5m'
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .recarregaPagina()
-            .configuraTimeRecarregar(tempo)
-            .validaTimeRecargaConfigurado(tempo)
-    })
-
-    it(' Testando e Validando o redirecionamento para a página de criação de novo PcD', () => {
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        equipamentoPcD
-            .pesquisaEquipamentoPorId()
-            .acessaPaginaCriacaoNovoPcd()
-            .validaRedirecionamentoPaginaNovoPcD()
     })
 })

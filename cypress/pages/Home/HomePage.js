@@ -85,9 +85,7 @@ class HomePage {
         return this
     }
 
-    validaURL(url) {
-        cy.url({force: true}).should('eq', url)
-    }
+   
 
     comercializacao() {
         cy.get('[href="/commerce"] > .ant-row > .ant-typography').click()
