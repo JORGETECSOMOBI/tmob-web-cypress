@@ -32,20 +32,16 @@ describe('Testando a tela "Usuário"', () => {
         organizacao
             .selecionaTipoDeTelefone0('Celular')
             .selecionaCanais0('SMS')
-            .escreveNumeroTelefone0('11999999009')
-            .adicionaNovoContato()
-            .selecionaTipoDeTelefone1('Celular')
-            // .escreveNumeroTelefone1('11990099009')
-            // .selecionaCanais1('Telegram')
-            
-        // componente
-        //     .clicaBotao('Proximo')
-        // organizacao
-        //     .escreveNumero('23')
-        //     .selecionatipoEndereco('Residencial')
-        //     .escreveCEP('12903000')   
-        // componente
-        //     .clicaBotao('Salvar')
-        //     .clicaBotaoModal('Sim')
+            .escreveNumeroTelefone0('11999999009')        
+        componente
+            .clicaBotao('Proximo')
+        organizacao
+        
+            .escreveNumero('23')
+            .selecionatipoEndereco('Residencial')
+            .escreveCEP('12903000')   
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
     })
 })

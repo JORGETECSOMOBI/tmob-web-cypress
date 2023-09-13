@@ -36,8 +36,13 @@ class OrganizacaoPage {
     }
 
     escreveNumeroTelefone1(numero) {
-        cy.get('#UsrPhones_createMany_data_1_number').type(numero)
+        cy.get('#UsrPhones_createMany_data_1_type').eq(1).type(numero)
+        cy.contains()
         return this
+    }
+
+    escreveComplemento(){
+        
     }
 
     selecionaTipoOperadora(tipoOperadora) {
@@ -64,8 +69,8 @@ class OrganizacaoPage {
     }
 
     selecionaTipoDeTelefone1(tipo) {
-        cy.get('#UsrPhones_createMany_data_1_type').click({ force: true })
-        cy.contains(tipo, { force: true }).click({ force: true })
+        cy.get('#UsrPhones_createMany_data_1_type', { force: true }).click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('Residencial').eq(0).click({ force: true })
         return this
     }
 

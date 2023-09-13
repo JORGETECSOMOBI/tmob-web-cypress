@@ -17,11 +17,11 @@ describe('Criando e editando novo esquipamento PcD', () => {
             .acessandoTelaEquipamentoPcD()
         componente
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
+            .selecionaLinguagem('PT')
     })
 
     it('Criando um novo equipamento PcD ', () => {
         componente
-            .selecionaLinguagem('PT')
             .clicaBotao('Novo')
             .escreveDescricao('novo equipamento')
             .clicaBotao('Ativo')
@@ -34,7 +34,6 @@ describe('Criando e editando novo esquipamento PcD', () => {
 
     it('Editando equipamento PcD ', () => {
         componente
-            .selecionaLinguagem('PT')
             .selecionaStatus('Ativo')
             .clicaBotao('Editar')
             .limpaDescricao()
