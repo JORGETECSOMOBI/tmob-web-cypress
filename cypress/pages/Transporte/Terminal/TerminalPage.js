@@ -49,5 +49,22 @@ class TeminalPage{
         cy.get('.ant-row-space-between > :nth-child(1) > :nth-child(4)').should('have.text', terminal)
         return this
     }
+
+    selecionaGrupoterminal(grupo) {
+        cy.get('#toTerminalGroup').click()
+        cy.get(':nth-child(1) > .ant-select-tree-node-content-wrapper > .ant-select-tree-title').click()
+        return this
+    }
+
+    selecionaCalendarioOperacional(cadastro) {
+        cy.get('#toOperationScheduleId').click({force: true})
+        cy.contains(cadastro).click()
+        return this
+    }
+
+    escreveNumeroTerminal(numero) {
+        cy.get('#code').type(numero)
+        return this
+    }
 }
 export default new TeminalPage

@@ -7,7 +7,7 @@ class novoUsuario {
 
     selecionaDataNascimento(data) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.get('.ant-picker-cell-inner').contains(data).click()
+        cy.get('.ant-picker-cell-inner').contains(data).click({ force: true })
         return this
     }
 
@@ -67,7 +67,7 @@ class novoUsuario {
     }
 
     filiacao2(filiacao2) {
-        cy.get('#createUser_filiation2').type(filiacao2, {force: true})
+        cy.get('#createUser_filiation2').type(filiacao2, { force: true })
         return this
     }
 
@@ -77,12 +77,12 @@ class novoUsuario {
     }
 
     statusInativo0() {
-        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(0).click({force: true})
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(0).click({ force: true })
         return this
     }
 
     statusInativo1() {
-        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({force: true})
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({ force: true })
         return this
     }
 

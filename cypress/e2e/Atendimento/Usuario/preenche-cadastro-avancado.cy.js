@@ -3,15 +3,21 @@ import home from '../../../pages/Home/HomePage'
 import novoUsuario from '../../../pages/Atendimento/Usuario/NovoUsuarioPage'
 import documentos from '../../../pages/Atendimento/Usuario/NovousuarioDocumentosPage'
 import cadastroOpreador from '../../../pages/Atendimento/Usuario/CadastroOperadorPage'
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 
 describe('Preenche cadastro avançado com sucesso', () => {
 
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.usuario()
-        novoUsuario.botaonovoUsuario()
+        login
+            .go()
+            .signin()
+        home
+            .usuario()
+        novoUsuario
+            .botaonovoUsuario()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Criando usuário com documentação não obrigatória', () => {
@@ -36,7 +42,7 @@ describe('Preenche cadastro avançado com sucesso', () => {
         novoUsuario
             .clicaBotaoProximo()
         cadastroOpreador
-             .matricula('123456789')
-             .dataDeAdmissao('Hoje')
+            .matricula('123456789')
+            .dataDeAdmissao('Hoje')
     })
 })

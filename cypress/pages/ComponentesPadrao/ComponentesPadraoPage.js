@@ -6,11 +6,11 @@ class ComponentesPadraoPage {
     }
 
     clicaBotaoRecarregar() {
-        cy.get('[style="flex-direction: row;"] > .ant-layout').click()
+        cy.get('[style="flex-direction: row;"] > .ant-layout').click({ force: true })
     }
 
     clicaBotaoModal(confirmacao) {
-        cy.get('.ant-modal-confirm-btns').contains(confirmacao).click()
+        cy.get('.ant-modal-confirm-btns').contains(confirmacao).click({ force: true })
         return this
     }
 
@@ -20,8 +20,8 @@ class ComponentesPadraoPage {
     }
 
     selecionaLinguagem(lingua) {
-        cy.get('.ant-select-selection-item > .ant-row').click()
-        cy.contains(lingua).click()
+        cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
+        cy.contains(lingua).click({ force: true })
         return this
     }
 
@@ -31,13 +31,9 @@ class ComponentesPadraoPage {
         return this
     }
 
-    pesquisaEquipamentoPorId(id) {
-        cy.get('#description').type(id)
-        return this
-    }
-
-    validaItemPesquisaPorId() {
-        cy.get('.ant-table-row > .ant-table-cell-ellipsis').should('have.text', 'cadeira de rodas')
+    selecionaOperadora(operadora) {
+        cy.get('#toTransportOperator').click()
+        cy.contains(operadora).click()
         return this
     }
 
@@ -58,7 +54,7 @@ class ComponentesPadraoPage {
     }
 
     validaId(id) {
-        cy.contains(id).should('have.text', id)
+        cy.contains(id).should('have.text', id, { force: true })
         return this
     }
 
@@ -83,12 +79,12 @@ class ComponentesPadraoPage {
     }
 
     escreveDescricao(descricao) {
-        cy.get('#description').type(descricao)
+        cy.get('#description').type(descricao, { force: true })
         return this
     }
 
     escreveID(descricao) {
-        cy.get('#description').type(descricao)
+        cy.get('#description').type(descricao, { force: true })
         return this
     }
 
@@ -98,7 +94,7 @@ class ComponentesPadraoPage {
     }
 
     escreveComentario(comentario) {
-        cy.get('#comment').type(comentario)
+        cy.get('#comment').type(comentario, { force: true })
         return this
     }
 

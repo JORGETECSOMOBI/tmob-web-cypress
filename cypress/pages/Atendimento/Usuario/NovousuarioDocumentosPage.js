@@ -1,11 +1,11 @@
 class NovoUsuarioDocumentosPage {
   preencheDocumento0CPF(cpf) {
-    cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cpf, { force: true })
+    cy.get('#createUser_UsrDocuments_createMany_data_4_value').type(cpf, { force: true })
     return this
   }
 
   preencheDocumento0CNPJ(cnpj) {
-    cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cnpj, { force: true })
+    cy.get('#createUser_UsrDocuments_createMany_data_0_value').type(cnpj, { force: true })
     return this
   }
 

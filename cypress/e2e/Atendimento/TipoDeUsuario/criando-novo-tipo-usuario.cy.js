@@ -2,15 +2,22 @@ import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import novoTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/NovoTipoUsuarioPage"
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Testando "tipo de Usuário', () => {
 
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.usuario()
-        usuario.acessandoTelaTiposDeUsuario()
-        novoTipoUsuario.botaoNovoTipousuario()
+        login
+            .go()
+            .signin()
+        home
+            .usuario()
+        usuario
+            .acessandoTelaTiposDeUsuario()
+        novoTipoUsuario
+            .botaoNovoTipousuario()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Criando com sucesso um novo Tipo de usuário', () => {

@@ -12,6 +12,8 @@ describe('Testando a tela "Usuário"', () => {
         home.usuario()
         usuario.acessandoTelaPostosDeAtendimento()
         usuario.acessandoTelaOrganizaçao()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Criando nova organização', () => {
@@ -26,20 +28,20 @@ describe('Testando a tela "Usuário"', () => {
         componente
             .clicaBotao('Proximo')
         organizacao
-            .escreveCNPJ('09.443.830/0001-68')
+            .escreveCNPJ('09443830000168')
         componente
             .clicaBotao('Proximo')
         organizacao
             .selecionaTipoDeTelefone0('Celular')
             .selecionaCanais0('SMS')
-            .escreveNumeroTelefone0('11999999009')        
+            .escreveNumeroTelefone0('11999999009')
         componente
             .clicaBotao('Proximo')
         organizacao
-        
+
             .escreveNumero('23')
             .selecionatipoEndereco('Residencial')
-            .escreveCEP('12903000')   
+            .escreveCEP('12903000')
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')

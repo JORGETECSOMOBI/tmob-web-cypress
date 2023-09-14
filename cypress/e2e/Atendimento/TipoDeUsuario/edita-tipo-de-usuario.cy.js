@@ -4,14 +4,19 @@ import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import novoTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/NovoTipoUsuarioPage"
 import editaTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/EditaTipoUsuario"
 import botao from "../../../pages/ComponentesPadrao/botoesPage"
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Editando "tipo de Usuário', () => {
 
     beforeEach(() => {
         login.go()
-        login.signin()
-        home.usuario()
-        usuario.acessandoTelaTiposDeUsuario()
+            .signin()
+        home
+            .usuario()
+        usuario
+            .acessandoTelaTiposDeUsuario()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Edita com sucesso Tipo de usuário', () => {
