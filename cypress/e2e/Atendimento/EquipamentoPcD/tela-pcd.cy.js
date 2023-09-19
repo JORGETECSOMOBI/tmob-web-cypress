@@ -17,6 +17,10 @@ describe('Testando a tela de equipamento PcD ', () => {
         componente
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
             .selecionaLinguagem('PT')
+<<<<<<< HEAD:cypress/e2e/Atendimento/EquipamentoPcD/tela-pcd.cy.js
+=======
+
+>>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e:cypress/e2e/Atendimento/EquipamentoPcD/testando-todos-itens-tela-pcd.cy.js
     })
 
     it('Testando filtro por ID', () => {
@@ -57,8 +61,13 @@ describe('Testando a tela de equipamento PcD ', () => {
 
     it('Testando botão "Editar"', () => {
         componente
+<<<<<<< HEAD:cypress/e2e/Atendimento/EquipamentoPcD/tela-pcd.cy.js
             .pesquisa('102')
             .clicaBotao('Editar')
+=======
+            .pesquisaEquipamentoPorId('102')
+        componente.clicaBotao('Editar')
+>>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e:cypress/e2e/Atendimento/EquipamentoPcD/testando-todos-itens-tela-pcd.cy.js
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipment/102/edit')
     })
 

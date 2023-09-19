@@ -29,7 +29,8 @@ describe('Criando e editando novo esquipamento PcD', () => {
             .clicaBotao('Sim')
             .validaMensagem('Concluido')
             .clicaBotao('Ver equipamentos PcD')
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')         
+            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
+            .selecionaLinguagem('PT')         
     })
 
     it('Editando equipamento PcD ', () => {

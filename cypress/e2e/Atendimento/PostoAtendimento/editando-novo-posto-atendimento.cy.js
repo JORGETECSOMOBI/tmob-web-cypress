@@ -4,7 +4,7 @@ import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import novoPostoAtendimento from "../../../pages/Atendimento/PostoDeAtendimento/NovoPostoAtendimentoPage"
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
-describe('Testando a tela "Usuário"', () => {
+describe('Acessando a home de usuário e Validando o acesso de todos os itens do menu', () => {
 
     beforeEach(() => {
         login
@@ -16,32 +16,23 @@ describe('Testando a tela "Usuário"', () => {
             .acessandoTelaPostosDeAtendimento()
         componente
             .selecionaLinguagem('PT')
-            .validaURL('https://web.test.tmob.com.br/user/servicestations')
     })
 
-    it(' Criando e salvando com sucesso a criação de um novo"Posto de atendimento"', () => {
+    it('Editando e salvando com sucesso a criação de um novo"Posto de atendimento"', () => {
         componente
             .clicaBotao('Novo')
+            .selecionaStatus('Inativo')
         novoPostoAtendimento
-<<<<<<< HEAD
-            .novo()
-            // .descricao('Teste Automático')
-            // .nome('Teste Automático')
-            // .cep(12903000)
-            // .numero(2000)
-            // .complemento('nãotem')
-            // .salvar()
-            // .cadastrarSim()
-            // .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')
-=======
-            .descricao('Teste Automático')
-            .nome('Teste Automático')
-            .cep(12903000)
+            .limpaDescricao()
+            .descricao('Teste de inativo')
+            .limpaNome()
+            .nome('Teste de edição')
+            .limpaCep()
+            .cep(12903443)
             .numero(2000)
             .complemento('nãotem')
             .salvar()
             .cadastrarSim()
             .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
     })
-})      
+}) 

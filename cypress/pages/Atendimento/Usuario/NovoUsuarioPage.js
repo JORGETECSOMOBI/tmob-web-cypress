@@ -7,7 +7,7 @@ class novoUsuario {
 
     selecionaDataNascimento(data) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.get('.ant-picker-cell-inner').contains(data).click()
+        cy.get('.ant-picker-cell-inner').contains(data).click({ force: true })
         return this
     }
 
@@ -127,6 +127,7 @@ class novoUsuario {
 
     filiacao2(filiacao2) {
         cy.get('#createUser_filiation2').type(filiacao2, { force: true })
+<<<<<<< HEAD
         return this
     }
 
@@ -143,6 +144,8 @@ class novoUsuario {
 
     documentoOpcional2(numero) {
         cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
+=======
+>>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
         return this
     }
 
@@ -158,12 +161,15 @@ class novoUsuario {
 
     statusInativo1() {
         cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({ force: true })
+<<<<<<< HEAD
         return this
     }
     
     dataExpedicao1(data) {
         cy.get('#createUser_UsrDocuments_createMany_data_1_expeditionDate').click({ force: true })
         cy.contains(data).click({ force: true })
+=======
+>>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
         return this
     }
 
