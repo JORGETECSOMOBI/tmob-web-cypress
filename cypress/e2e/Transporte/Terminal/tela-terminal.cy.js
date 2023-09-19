@@ -1,26 +1,17 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-<<<<<<< HEAD
 import terminal from "../../../pages/Transporte/TerminalPage"
-=======
-import terminal from "../../../pages/Transporte/Terminal/TerminalPage"
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Testando as funcionalidades da tela "Terminal"', () => {
 
     beforeEach(() => {
-<<<<<<< HEAD
+
         login
-        .go()
-        .signin()
-        home
-        .transporte()
-=======
-        login.go()
+            .go()
             .signin()
-        home.transporte()
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
+        home
+            .transporte()
         componente
             .selecionaLinguagem('PT')
     })

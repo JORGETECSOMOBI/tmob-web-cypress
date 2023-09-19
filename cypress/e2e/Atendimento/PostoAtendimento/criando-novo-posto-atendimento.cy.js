@@ -23,7 +23,6 @@ describe('Testando a tela "Usuário"', () => {
         componente
             .clicaBotao('Novo')
         novoPostoAtendimento
-<<<<<<< HEAD
             .novo()
             // .descricao('Teste Automático')
             // .nome('Teste Automático')
@@ -33,7 +32,6 @@ describe('Testando a tela "Usuário"', () => {
             // .salvar()
             // .cadastrarSim()
             // .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')
-=======
             .descricao('Teste Automático')
             .nome('Teste Automático')
             .cep(12903000)
@@ -42,6 +40,5 @@ describe('Testando a tela "Usuário"', () => {
             .salvar()
             .cadastrarSim()
             .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
     })
 })      

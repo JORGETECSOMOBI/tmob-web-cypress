@@ -15,13 +15,12 @@ class OrganizacaoPage {
         return this
     }
 
-<<<<<<< HEAD
     escreveCNPJ0(cnpj) {
         cy.get('#createManyMandatoryDocument_0_value').type(cnpj)
-=======
+        return this
+    }
     escreveCNPJ(cnpj) {
         cy.get('#createManyMandatoryDocument_0_value').type(cnpj, {force: true})
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
         return this
     }
 
@@ -49,10 +48,6 @@ class OrganizacaoPage {
         cy.get('#UsrPhones_createMany_data_1_type').eq(1).type(numero)
         cy.contains()
         return this
-    }
-
-    escreveComplemento(){
-        
     }
 
     selecionaTipoOperadora(tipoOperadora) {

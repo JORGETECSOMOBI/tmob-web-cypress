@@ -7,7 +7,6 @@ import organizacao from '../../../pages/Atendimento/Organizacao/OrganizacaoPge'
 describe('Testando a tela "Usuário"', () => {
 
     beforeEach(() => {
-<<<<<<< HEAD
         login
             .go()
             .signin()
@@ -16,13 +15,6 @@ describe('Testando a tela "Usuário"', () => {
         usuario
             .acessandoTelaPostosDeAtendimento()
             .acessandoTelaOrganizaçao()
-=======
-        login.go()
-        login.signin()
-        home.usuario()
-        usuario.acessandoTelaPostosDeAtendimento()
-        usuario.acessandoTelaOrganizaçao()
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
         componente
             .selecionaLinguagem('PT')
     })
@@ -39,12 +31,9 @@ describe('Testando a tela "Usuário"', () => {
         componente
             .clicaBotao('Proximo')
         organizacao
-<<<<<<< HEAD
             .escreveCNPJ0('09.443.830/0001-68')
             .escreveCNPJ1('09.443.830/0001-68')
-=======
             .escreveCNPJ('09443830000168')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
         componente
             .clicaBotao('Proximo')
         organizacao
@@ -54,7 +43,6 @@ describe('Testando a tela "Usuário"', () => {
         componente
             .clicaBotao('Proximo')
         organizacao
-<<<<<<< HEAD
             .escreveNumero('23')
             .selecionatipoEndereco('Residencial')
             .escreveCEP('000')
@@ -62,14 +50,11 @@ describe('Testando a tela "Usuário"', () => {
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
             .validaMensagem('Campo obrigatório')
-=======
-
             .escreveNumero('23')
             .selecionatipoEndereco('Residencial')
             .escreveCEP('12903000')
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
     })
 })

@@ -32,7 +32,7 @@ describe('Testando "tipo de Usuário', () => {
             .validaMensagem('A descrição inserida já existe em Tipo de usuário.')
     })
 
-    it('Editando tipo de usuário ', () => {
+    it('Editando tipo de usuário com descrição já cadastrado no sistema ', () => {
         componente
             .pesquisa('tipousuárioautomaçãoteste')
             .clicaBotao('Editar')

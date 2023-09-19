@@ -63,7 +63,7 @@ class TeminalPage{
     }
 
     escreveNumeroTerminal(numero) {
-        cy.get('#code').type(numero)
+        cy.get('#code').type(numero, {force: true})
         return this
     }
 }

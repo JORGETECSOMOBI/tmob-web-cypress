@@ -1,11 +1,7 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
 import novoUsuario from '../../../pages/Atendimento/Usuario/NovoUsuarioPage'
-<<<<<<< HEAD
-=======
-import documentos from '../../../pages/Atendimento/Usuario/NovousuarioDocumentosPage'
 import cadastroOpreador from '../../../pages/Atendimento/Usuario/CadastroOperadorPage'
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 
@@ -17,17 +13,13 @@ describe('Preenche cadastro avançado com sucesso', () => {
             .signin()
         home
             .usuario()
-<<<<<<< HEAD
         componente
             .clicaBotao('Novo usuário')
             .selecionaLinguagem('PT')
-
-=======
         novoUsuario
             .botaonovoUsuario()
         componente
             .selecionaLinguagem('PT')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
     })
 
     it('Criando usuário "Operador" com documentação não obrigatória', () => {
@@ -52,7 +44,6 @@ describe('Preenche cadastro avançado com sucesso', () => {
         componente
             .clicaBotao('Proximo')
         novoUsuario
-<<<<<<< HEAD
             .dataDeAdmissao('Hoje')
     })
 
@@ -91,11 +82,9 @@ describe('Preenche cadastro avançado com sucesso', () => {
             .selecionatipoEndereco('Trabalho')
             .preencheNumero('200')
             .preencheCEP('12903443')
-=======
             .clicaBotaoProximo()
         cadastroOpreador
             .matricula('123456789')
             .dataDeAdmissao('Hoje')
->>>>>>> 8008ab4d4b57842f31632335a444713d0f355b2e
     })
 })
