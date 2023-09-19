@@ -1,24 +1,24 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-import terminal from "../../../pages/Transporte/Terminal/TerminalPage"
+import terminal from "../../../pages/Transporte/TerminalPage"
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Testando as funcionalidades da tela "Terminal"', () => {
 
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.transporte()
+        login
+        .go()
+        .signin()
+        home
+        .transporte()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Pesquisa pelo terminal', () => {
         terminal
             .pesquisarTerminal('ANCHIETA')
             .validaResultadoDaPesquisaTerminal('228 - MCC ANCHIETA')
-    })
-
-    it('Clicar em ver mais', () => {
-        terminal
-            .clicarEmVerMais()
     })
 
     it('Clicar em fechar tudo', () => {

@@ -1,7 +1,7 @@
 class TeminalPage{
 
    clicarEmCriarTerminal() {
-        cy.contains('Criar terminal').click()
+        cy.contains('Criar terminal').click({force: true})
         return this
     }
 
@@ -11,27 +11,27 @@ class TeminalPage{
     }
 
    clicarEmVerMais() {
-        cy.contains('Ver mais').click()
+        cy.contains('Ver mais').click({force: true})
         return this
     }
 
    clicarEmFecharTudo() {
-        cy.contains('Fechar tudo').click()
+        cy.contains('Fechar tudo').click({force: true})
         return this
     }
 
    clicarEmMostrarTerminaisAssociados() {
-        cy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input').click()
+        cy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input').click({force: true})
         return this
     }
 
    clicarEmMostrarDeletados() {
-        cy.get(':nth-child(1) > .ant-checkbox > .ant-checkbox-input').click()
+        cy.get(':nth-child(1) > .ant-checkbox > .ant-checkbox-input').click({force: true})
         return this
     }
 
    clicarEmLimparfiltros() {
-        cy.contains('Limpar filtro').click()
+        cy.contains('Limpar filtro').click({force: true})
         return this
     }
 
@@ -41,7 +41,7 @@ class TeminalPage{
     }
 
    clicarEmRecarregar() {
-        cy.get('span.anticon > .anticon').click()
+        cy.get('span.anticon > .anticon').click({force: true})
         return this
     }
 

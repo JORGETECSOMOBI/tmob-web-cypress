@@ -15,8 +15,13 @@ class OrganizacaoPage {
         return this
     }
 
-    escreveCNPJ(cnpj) {
+    escreveCNPJ0(cnpj) {
         cy.get('#createManyMandatoryDocument_0_value').type(cnpj)
+        return this
+    }
+
+    escreveCNPJ1(cnpj) {
+        cy.get('#createManyMandatoryDocument_1_value').type(cnpj)
         return this
     }
 

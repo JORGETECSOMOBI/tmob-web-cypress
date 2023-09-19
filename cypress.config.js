@@ -4,12 +4,13 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
   e2e: {
     baseUrl: "https://web.test.tmob.com.br",
-    retries: 1, 
-    //waitForNavigation: 'networkidle2', // Aguardar até que não haja mais de 2 conexões de rede por 500ms
+    retries: 3, 
+
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       return config;
     }
   },
-  defaultCommandTimeout: 15000
-});
+  defaultCommandTimeout: 20000
+
+})

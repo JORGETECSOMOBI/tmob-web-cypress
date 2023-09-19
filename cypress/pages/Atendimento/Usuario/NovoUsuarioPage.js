@@ -11,6 +11,18 @@ class novoUsuario {
         return this
     }
 
+    selecionaDataRegistro(data) {
+        cy.get('.ant-picker-input').click({ force: true })
+        cy.contains(data).click({ force: true })
+        return this
+    }
+
+    selecionaCanais0(canal) {
+        cy.get('.ant-select-selection-overflow').click({ force: true })
+        cy.contains(canal).click({ force: true })
+        return this
+    }
+
     selecionaTipoUsuario(tipoUsuario) {
         cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({ force: true })
         cy.contains(tipoUsuario).click()
@@ -18,8 +30,26 @@ class novoUsuario {
         return this
     }
 
-    botaonovoUsuario() {
-        cy.get('span').contains('Novo usuário').click()
+    selecionaTipoDeTelefone0(tipo) {
+        cy.get('#createUser_UsrPhones_createMany_data_0_type').click({ force: true })
+        cy.contains(tipo).click({ force: true })
+        return this
+    }
+
+    selecionaPostoAtendimento(posto) {
+        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click()
+        cy.contains(posto).click()
+    }
+
+    selecionaGenero(genero) {
+        cy.get('#createUser_gender').click({ force: true })
+        cy.contains(genero).click()
+        return this
+    }
+
+    selecionatipoEndereco(tipo) {
+        cy.get('#createUser_UsrAddresses_createMany_data_0_type').click({ force: true })
+        cy.contains(tipo).click()
         return this
     }
 
@@ -50,9 +80,38 @@ class novoUsuario {
         return this
     }
 
-    selecionaGenero(genero) {
-        cy.get('#createUser_gender').click({ force: true })
-        cy.contains(genero).click()
+    escreveNumeroTelefone0(numero) {
+        cy.get('#createUser_UsrPhones_createMany_data_0_number').type(numero, { force: true })
+        return this
+    }
+
+    preencheCEP(cep) {
+        cy.get('#createUser_UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true })
+        return this
+    }
+
+    preencheNumero(numero) {
+        cy.get('#createUser_UsrAddresses_createMany_data_0_number').type(numero, { force: true })
+        return this
+    }
+
+    preencheDocumento0CNPJ(cnpj) {
+        cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cnpj, { force: true })
+        return this
+    }
+
+    preencheDocumento0CPF(cpf) {
+        cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cpf, { force: true })
+        return this
+    }
+
+    preencheDocumento1(documento) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_value',).type(documento, { force: true })
+        return this
+    }
+
+    documentoOpcional2(numero) {
+        cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
         return this
     }
 
@@ -67,7 +126,23 @@ class novoUsuario {
     }
 
     filiacao2(filiacao2) {
-        cy.get('#createUser_filiation2').type(filiacao2, {force: true})
+        cy.get('#createUser_filiation2').type(filiacao2, { force: true })
+        return this
+    }
+
+    complemento1(numero) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_complement').type(numero)
+        return this
+    }
+
+    dataValidade1() {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_expirationDate').click({ force: true })
+        cy.get('.ant-picker-today-btn').eq(1).click({ force: true })
+        return this
+    }
+
+    documentoOpcional2(numero) {
+        cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
         return this
     }
 
@@ -77,17 +152,52 @@ class novoUsuario {
     }
 
     statusInativo0() {
-        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(0).click({force: true})
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(0).click({ force: true })
         return this
     }
 
     statusInativo1() {
-        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({force: true})
+        cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({ force: true })
+        return this
+    }
+    
+    dataExpedicao1(data) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_expeditionDate').click({ force: true })
+        cy.contains(data).click({ force: true })
         return this
     }
 
-    clicaBotaoProximo() {
-        cy.get('button:contains("Proximo")').click({ force: true })
+    matricula(matricula) {
+        cy.get('#createUser_UsrOperators_create_0_hrid').type(matricula)
+        return this
+    }
+
+    dataDeAdmissao(data) {
+        cy.get('#createUser_UsrOperators_create_0_admissionDate').click({ force: true })
+        cy.contains(data).click()
+        return this
+    }
+
+    dataDeDemissao(data) {
+        cy.get('#createUser_UsrOperators_create_0_resignDate').contains(data).click()
+        return this
+    }
+
+    operadora(operadora) {
+        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click()
+        cy.contains(operadora).click()
+        return this
+    }
+
+    grupoOperadora(grupoOperadora) {
+        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorGroupId').click()
+        cy.contains(grupoOperadora).click()
+        return this
+    }
+
+    grupoOperador(grupoOperador) {
+        cy.get('#createUser_UsrOperators_create_0_toOperatorGroupId').click()
+        cy.contains(grupoOperador).click()
         return this
     }
 }

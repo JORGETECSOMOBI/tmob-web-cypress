@@ -16,6 +16,7 @@ describe('Testando a tela de equipamento PcD ', () => {
             .acessandoTelaEquipamentoPcD()
         componente
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
+            .selecionaLinguagem('PT')
     })
 
     it('Testando filtro por ID', () => {
@@ -49,14 +50,14 @@ describe('Testando a tela de equipamento PcD ', () => {
 
     it('Testa botão visualizar', () => {
         componente
-            .pesquisaEquipamentoPorId('102')
+            .pesquisa('102')
             .clicaBotao('Visualizar')
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipment/102/')
     })
 
     it('Testando botão "Editar"', () => {
         componente
-            .pesquisaEquipamentoPorId('102')
+            .pesquisa('102')
             .clicaBotao('Editar')
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipment/102/edit')
     })

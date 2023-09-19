@@ -6,11 +6,12 @@ class ComponentesPadraoPage {
     }
 
     clicaBotaoRecarregar() {
-        cy.get('[style="flex-direction: row;"] > .ant-layout').click()
+        cy.get('[style="flex-direction: row;"] > .ant-layout').click({ force: true })
+        return this
     }
 
     clicaBotaoModal(confirmacao) {
-        cy.get('.ant-modal-confirm-btns').contains(confirmacao).click()
+        cy.get('.ant-modal-confirm-btns').contains(confirmacao).click({ force: true })
         return this
     }
 
@@ -20,8 +21,8 @@ class ComponentesPadraoPage {
     }
 
     selecionaLinguagem(lingua) {
-        cy.get('.ant-select-selection-item > .ant-row').click()
-        cy.contains(lingua).click()
+        cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
+        cy.contains(lingua).should('have.text', lingua).click({ force: true })
         return this
     }
 
@@ -31,8 +32,21 @@ class ComponentesPadraoPage {
         return this
     }
 
-    pesquisaEquipamentoPorId(id) {
-        cy.get('#description').type(id)
+    selecionaTipo(tipo) {
+        cy.get('#type').click({ force: true })
+        cy.contains(tipo).click()
+        return this
+    }
+
+    selecionadata(data, dia) {
+        cy.get('#createUser_birthdate').type(data, { force: true })
+        cy.get('.ant-picker-cell-inner').contains(dia).click()
+        return this
+    }
+
+    pesquisa(pesquisa) {
+        cy.get('#description').type(pesquisa, { force: true })
+        cy.wait(1000)
         return this
     }
 
@@ -83,7 +97,7 @@ class ComponentesPadraoPage {
     }
 
     escreveDescricao(descricao) {
-        cy.get('#description').type(descricao)
+        cy.get('#description').type(descricao, { force: true })
         return this
     }
 

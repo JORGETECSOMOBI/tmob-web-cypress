@@ -1,8 +1,7 @@
 class DashboardPage {
-    periodoPesquisa() {
-        cy.get('.ant-picker-input-active > input').click()
-        cy.contains('div.ant-picker-cell-inner', '1').click();
-        cy.contains('div.ant-picker-cell-inner', '31').click();
+    periodoPesquisa(dias) {
+        cy.get('.ant-picker-input-active > input').click({ force: true })
+        cy.get('.ant-picker-presets > ul > ').contains(dias).click({ force: true })
         return this
     }
 }

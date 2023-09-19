@@ -2,13 +2,18 @@ import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
 import cartoes from "../../../pages/Emv/CartoesPage"
 import emvPage from "../../../pages/Emv/EmvPage"
+import componente from "../../../pages/ComponentesPadrao/ComponentesPadraoPage"
 
 describe('acessando emv e Testando a página de Cartões', () => {
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.tiposDeUso()
-        home.emv()
+        login
+            .go()
+            .signin()
+        home
+            .tiposDeUso()
+            .emv()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it(' pesquisando usando o filtro "Pan Token', () => {

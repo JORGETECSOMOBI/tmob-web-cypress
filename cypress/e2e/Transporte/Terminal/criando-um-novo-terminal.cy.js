@@ -1,17 +1,22 @@
 import login from "../../../pages/Login/LoginPage"
 import home from "../../../pages/Home/HomePage"
-import terminal from "../../../pages/Transporte/Terminal/TerminalPage"
+import terminal from "../../../pages/Transporte/TerminalPage"
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
-describe('Testando as funcionalidades da tela "Terminal"', () => {
+describe('Criendo um novo terminal', () => {
 
     beforeEach(() => {
-        login.go()
-        login.signin()
-        home.transporte()
+        login
+            .go()
+            .signin()
+        home
+            .transporte()
+        componente
+            .selecionaLinguagem('PT')
     })
 
     it('Criando um terminal', () => {
-        terminal
-        .clicarEmCriarTerminal()
+        componente
+            .clicaBotao('Criar terminal')
     })
 })
