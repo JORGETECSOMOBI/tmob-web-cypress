@@ -62,6 +62,13 @@ class ComponentesPadraoPage {
         return this
     }
 
+    pesquisaId(id) {
+        cy.get('#id').type(id, { force: true })
+        cy.wait(1000)
+        return this
+    }
+
+
     validaItemPesquisaPorId() {
         cy.get('.ant-table-row > .ant-table-cell-ellipsis').should('have.text', 'cadeira de rodas')
     }

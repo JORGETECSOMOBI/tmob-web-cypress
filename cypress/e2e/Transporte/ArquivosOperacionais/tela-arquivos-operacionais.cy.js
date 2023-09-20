@@ -27,12 +27,37 @@ describe('Testando "Arquivos Operacionais', () => {
             .pesquisaTag('Principal')
     })
 
-    it('Forçando geração de arquivo já atualizado', () => {
+    it('Forçando geração de arquivo já anteriormente atualizado', () => {
         componente
             .clicaBotao('Forçar geração')
             .clicaBotaoModal('Sim')
             .validaMensagem('Estamos processando seu arquívo operacional.')
             .validaMensagem('O arquívo operacional já está atualizado.')
-            
+    })
+
+    it('forçando a geração de um novo arquivo operacional', () => {
+        componente
+            .clicaBotao('Grupo de operadora')
+            .pesquisa('16')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao('trilhos')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .clicaBotao('Arquivos Operacionais')
+            .clicaBotao('Forçar geração')
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Estamos processando seu arquívo operacional.')
+            .validaMensagem('Seu arquívo operácional foi gerado com sucesso.')
+    })
+
+    it('Alterando as tags ', () => {
+        componente
+            .pesquisaId('1356')
+        arquivoOperacional
+            .clicaBotaoTag()
+            .SelecionaTag('Alt')
+        componente
+            .clicaBotao('Confirmar')
     })
 })
