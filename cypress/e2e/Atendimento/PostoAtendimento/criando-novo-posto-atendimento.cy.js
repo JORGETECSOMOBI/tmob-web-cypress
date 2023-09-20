@@ -15,23 +15,14 @@ describe('Testando a tela "Usuário"', () => {
         usuario
             .acessandoTelaPostosDeAtendimento()
         componente
-            .selecionaLinguagem('PT')
             .validaURL('https://web.test.tmob.com.br/user/servicestations')
+            .selecionaIdioma('PT')
     })
 
     it(' Criando e salvando com sucesso a criação de um novo"Posto de atendimento"', () => {
         componente
             .clicaBotao('Novo')
         novoPostoAtendimento
-            .novo()
-            // .descricao('Teste Automático')
-            // .nome('Teste Automático')
-            // .cep(12903000)
-            // .numero(2000)
-            // .complemento('nãotem')
-            // .salvar()
-            // .cadastrarSim()
-            // .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')
             .descricao('Teste Automático')
             .nome('Teste Automático')
             .cep(12903000)

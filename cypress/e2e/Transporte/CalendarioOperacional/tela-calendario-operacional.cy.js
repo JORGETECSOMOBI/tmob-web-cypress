@@ -12,7 +12,7 @@ describe('Testando "Arquivos Operacionais', () => {
             .transporte()
         componente
             .validaURL('https://web.test.tmob.com.br/transport')
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
             .clicaBotao('Calendário operacional')
     })
 

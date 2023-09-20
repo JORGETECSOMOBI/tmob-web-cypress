@@ -14,7 +14,7 @@ describe('acessando emv e Testando a página Par', () => {
             .tiposDeUso()
             .emv()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it(' pesquisando usando como filtro o número do "Par', () => {

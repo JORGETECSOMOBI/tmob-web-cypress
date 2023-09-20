@@ -1,7 +1,6 @@
 import login from '../../../pages/Login/LoginPage'
 import home from '../../../pages/Home/HomePage'
 import novoUsuario from '../../../pages/Atendimento/Usuario/NovoUsuarioPage'
-import cadastroOpreador from '../../../pages/Atendimento/Usuario/CadastroOperadorPage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 
@@ -15,11 +14,8 @@ describe('Preenche cadastro avançado com sucesso', () => {
             .usuario()
         componente
             .clicaBotao('Novo usuário')
-            .selecionaLinguagem('PT')
-        novoUsuario
-            .botaonovoUsuario()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Criando usuário "Operador" com documentação não obrigatória', () => {
@@ -72,7 +68,7 @@ describe('Preenche cadastro avançado com sucesso', () => {
             .clicaBotao('Inativo')
         novoUsuario
             .selecionaDataRegistro('Hoje')
-            .selecionaPostoAtendimento('Automação Posto de atendimento')
+            .selecionaPostoAtendimento('Teste Automático')
         componente
             .clicaBotao('Proximo')
         novoUsuario
@@ -82,9 +78,5 @@ describe('Preenche cadastro avançado com sucesso', () => {
             .selecionatipoEndereco('Trabalho')
             .preencheNumero('200')
             .preencheCEP('12903443')
-            .clicaBotaoProximo()
-        cadastroOpreador
-            .matricula('123456789')
-            .dataDeAdmissao('Hoje')
     })
 })

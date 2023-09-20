@@ -127,7 +127,6 @@ class novoUsuario {
 
     filiacao2(filiacao2) {
         cy.get('#createUser_filiation2').type(filiacao2, { force: true })
-
         return this
     }
 

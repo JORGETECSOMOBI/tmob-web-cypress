@@ -15,7 +15,7 @@ describe('Testando "tipo de Usuário', () => {
         usuario
             .acessandoTelaTiposDeUsuario()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Tentativa de criar um novo Tipo de usuário com descrição já cadastrado no sistema', () => {

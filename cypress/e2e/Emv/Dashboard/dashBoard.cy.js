@@ -13,7 +13,7 @@ describe('acessando o emv e Testando a página Dashboard', () => {
             .tiposDeUso()
             .emv()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Selecionando um período para pesquisa', () => {

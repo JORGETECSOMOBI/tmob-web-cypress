@@ -17,7 +17,7 @@ describe('Criando um novo nível de escolaridade', () => {
             .acessandoTelaNivelDeEscolaridade()
         componente
             .validaURL('https://web.test.tmob.com.br/user/userStudentLevels')
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it(' Criando um novo nível de escolaridade com sucesso', () => {

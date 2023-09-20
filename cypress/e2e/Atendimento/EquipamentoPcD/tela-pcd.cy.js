@@ -16,7 +16,7 @@ describe('Testando a tela de equipamento PcD ', () => {
             .acessandoTelaEquipamentoPcD()
         componente
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
 
     })
 

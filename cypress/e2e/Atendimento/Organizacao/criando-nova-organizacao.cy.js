@@ -16,7 +16,7 @@ describe('Testando a tela "Usuário"', () => {
             .acessandoTelaPostosDeAtendimento()
             .acessandoTelaOrganizaçao()
         componente
-            .selecionaLinguagem('PT')
+        .selecionaIdioma('PT')
     })
 
     it('Tentativa de criar nova organização com cep inválido', () => {

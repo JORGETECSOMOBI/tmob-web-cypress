@@ -11,7 +11,7 @@ describe('acessando emv e Testando a página de Cartões', () => {
         home.tiposDeUso()
             .emv()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
 
     })
 

@@ -13,7 +13,7 @@ describe('Testando as funcionalidades da tela "Terminal"', () => {
         home
             .transporte()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Pesquisa pelo terminal', () => {

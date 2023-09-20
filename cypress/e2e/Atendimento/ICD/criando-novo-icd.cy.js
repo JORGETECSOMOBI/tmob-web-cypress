@@ -16,7 +16,7 @@ describe('Testando a tela "Usuário"', () => {
             .acessandoTelaPostosDeAtendimento()
             .acessandoTelaICD()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Criando um novo item "ICD"', () => {

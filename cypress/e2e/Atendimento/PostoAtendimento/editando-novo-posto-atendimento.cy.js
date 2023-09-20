@@ -15,7 +15,7 @@ describe('Acessando a home de usuário e Validando o acesso de todos os itens do
         usuario
             .acessandoTelaPostosDeAtendimento()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Editando e salvando com sucesso a criação de um novo"Posto de atendimento"', () => {

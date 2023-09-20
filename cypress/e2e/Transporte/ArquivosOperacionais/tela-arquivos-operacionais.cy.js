@@ -13,7 +13,7 @@ describe('Testando "Arquivos Operacionais', () => {
             .transporte()
         componente
             .validaURL('https://web.test.tmob.com.br/transport')
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
             .clicaBotao('Arquivos Operacionais')
     })
 
@@ -33,5 +33,6 @@ describe('Testando "Arquivos Operacionais', () => {
             .clicaBotaoModal('Sim')
             .validaMensagem('Estamos processando seu arquívo operacional.')
             .validaMensagem('O arquívo operacional já está atualizado.')
+            
     })
 })

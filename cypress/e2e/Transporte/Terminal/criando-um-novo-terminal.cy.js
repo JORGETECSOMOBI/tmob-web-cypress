@@ -12,7 +12,7 @@ describe('Criando um novo terminal', () => {
         home
             .transporte()
         componente
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Criando um terminal', () => {

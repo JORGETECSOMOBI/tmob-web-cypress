@@ -20,10 +20,10 @@ class ComponentesPadraoPage {
         return this
     }
 
-    selecionaLinguagem(lingua) {
+    selecionaIdioma(idioma) {
         cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
-        cy.contains(lingua).should('have.text', lingua).click({ force: true })
-        cy.contains(lingua).click({ force: true })
+        cy.contains(idioma).should('have.text', idioma).click({ force: true })
+        cy.contains(idioma).click({ force: true })
         return this
     }
 

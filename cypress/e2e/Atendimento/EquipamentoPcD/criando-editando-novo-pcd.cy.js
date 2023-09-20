@@ -17,7 +17,7 @@ describe('Criando e editando novo esquipamento PcD', () => {
             .acessandoTelaEquipamentoPcD()
         componente
             .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
-            .selecionaLinguagem('PT')
+            .selecionaIdioma('PT')
     })
 
     it('Criando um novo equipamento PcD ', () => {
@@ -29,8 +29,7 @@ describe('Criando e editando novo esquipamento PcD', () => {
             .clicaBotao('Sim')
             .validaMensagem('Concluido')
             .clicaBotao('Ver equipamentos PcD')
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
-            .selecionaLinguagem('PT')         
+            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')       
     })
 
     it('Editando equipamento PcD ', () => {
