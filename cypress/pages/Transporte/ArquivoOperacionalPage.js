@@ -15,13 +15,24 @@ class ArquivoOperacionalPage {
         cy.get(':nth-child(3) > .ant-btn > :nth-child(2)').click({ force: true })
         return this
     }
-
     SelecionaTag(tag) {
-        cy.get(':nth-child(2) > .ant-select > .ant-select-selector > .ant-select-selection-search > #rc_select_3').click({ force: true })
-        cy.wait(1000)
-        cy.get('.ant-select-item-option-content').contains(tag).click({force: true})
+        cy.get('.ant-space > :nth-child(2) > .ant-select > .ant-select-selector')
+          .should('be.visible')
+          .click()
+        cy.get('.ant-select-dropdown')
+          .should('be.visible')
+        cy.contains('.ant-select-dropdown .ant-select-item', tag)
+          .should('be.visible')
+          .click()
         return this
+      }
+      
+    validaTagAlt(id) {
+        cy.get(':nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1) > strong').should('have.text',id)
     }
 
+    validaTagPrincipal(id) {
+        cy.get(':nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) > strong').should('have.text',id)
+    }
 }
 export default new ArquivoOperacionalPage

@@ -41,7 +41,7 @@ describe('Testando a tela "Usuário"', () => {
             .validaURL('https://web.test.tmob.com.br/user/usericds')
     })
 
-    it.only('Editando um item "ICD"', () => {
+    it('Editando um item "ICD"', () => {
 
         componente
             .escreveNome('novo ICD')

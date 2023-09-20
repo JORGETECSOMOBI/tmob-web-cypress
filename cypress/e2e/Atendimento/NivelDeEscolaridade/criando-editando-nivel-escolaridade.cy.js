@@ -32,7 +32,7 @@ describe('Criando um novo nível de escolaridade', () => {
             .validaURL('https://web.test.tmob.com.br/user/userStudentLevels')
     })
 
-    it.only(' Criando um novo nível de escolaridade com sucesso', () => {
+    it(' Criando um novo nível de escolaridade com sucesso', () => {
         componente
             .escreveDescricao('Novo nível escolaridade')
             .clicaBotao('Editar')

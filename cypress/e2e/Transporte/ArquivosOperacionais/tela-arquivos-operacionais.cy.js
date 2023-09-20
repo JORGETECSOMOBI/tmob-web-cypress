@@ -51,7 +51,7 @@ describe('Testando "Arquivos Operacionais', () => {
             .validaMensagem('Seu arquívo operácional foi gerado com sucesso.')
     })
 
-    it('Alterando as tags ', () => {
+    it('Alterando a tag para alt ', () => {
         componente
             .pesquisaId('1356')
         arquivoOperacional
@@ -59,5 +59,28 @@ describe('Testando "Arquivos Operacionais', () => {
             .SelecionaTag('Alt')
         componente
             .clicaBotao('Confirmar')
+        arquivoOperacional
+            .validaTagAlt('1356')
+
+    })
+
+    it('Alterando a tag para principal ', () => {
+        componente
+            .pesquisaId('1356')
+        arquivoOperacional
+            .clicaBotaoTag()
+            .SelecionaTag('Principal')
+        componente
+            .clicaBotao('Confirmar')
+        arquivoOperacional
+            .validaTagAlt('1356')
+    })
+
+    it('Clicando no botão "Visualizar', () => {
+        componente
+            .pesquisaId('1356')
+            .clicaBotao('Visualizar')
+            .validaURL('https://web.test.tmob.com.br/transport/operationalFile/1356')
+            .validaMensagem('Selecionar arquivo para comparar')
     })
 })

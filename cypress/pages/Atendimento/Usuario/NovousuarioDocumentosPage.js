@@ -39,7 +39,7 @@ class NovoUsuarioDocumentosPage {
 
   upload() {
     describe('Teste de upload de arquivo', () => {
-      it.only('Deve fazer upload de um arquivo do sistema', () => {
+      it('Deve fazer upload de um arquivo do sistema', () => {
     
         cy.get('#createUser_UsrDocuments_createMany_data_5_filenames_set').click({ force: true})
 
