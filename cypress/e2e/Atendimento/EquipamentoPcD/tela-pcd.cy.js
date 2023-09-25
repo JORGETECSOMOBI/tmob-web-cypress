@@ -1,23 +1,10 @@
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
 import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 describe('Testando a tela de equipamento PcD ', () => {
 
     beforeEach(() => {
-        login
-            .go()
-        login
-            .signin()
-        home
-            .usuario()
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        componente
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
-            .selecionaIdioma('PT')
-
+        usuario.beforePcd()
     })
 
     it('Testando filtro por ID', () => {

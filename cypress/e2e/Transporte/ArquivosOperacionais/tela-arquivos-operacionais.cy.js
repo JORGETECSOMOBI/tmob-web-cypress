@@ -22,6 +22,13 @@ describe('Testando "Arquivos Operacionais', () => {
             .pesquisaId('1339')
     })
 
+    it('testando filtro por nome do arquivo', () => {
+        arquivoOperacional
+            .pesquisaNomeArquivo('1695295649246_op.enc')
+    })
+
+
+
     it('testando filtro por Tag', () => {
         arquivoOperacional
             .pesquisaTag('Principal')
@@ -73,7 +80,20 @@ describe('Testando "Arquivos Operacionais', () => {
         componente
             .clicaBotao('Confirmar')
         arquivoOperacional
-            .validaTagAlt('1356')
+            .validaTagPrincipal('1356')
+    })
+
+    it('Desvinculando a tag do arquivo ', () => {
+        componente
+            .pesquisaId('1356')
+        arquivoOperacional
+            .clicaBotaoTag()
+            .SelecionaTag('Nenhuma')
+        componente
+            .clicaBotao('Confirmar')
+        arquivoOperacional
+            .ValidaTagPrincipalInativa('Nenhum OP utilizando esta tag')
+            .validaTagAltInativa('Nenhum OP utilizando esta tag')
     })
 
     it('Clicando no botão "Visualizar', () => {
@@ -82,5 +102,11 @@ describe('Testando "Arquivos Operacionais', () => {
             .clicaBotao('Visualizar')
             .validaURL('https://web.test.tmob.com.br/transport/operationalFile/1356')
             .validaMensagem('Selecionar arquivo para comparar')
+    })
+
+    it('Fazendo Dowmload do arquivo', () => {
+        componente
+            .pesquisaId('1356')
+            .clicaBotao('Download')
     })
 })

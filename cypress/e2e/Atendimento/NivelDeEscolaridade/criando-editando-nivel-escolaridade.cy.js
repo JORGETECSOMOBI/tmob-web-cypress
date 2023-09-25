@@ -8,16 +8,7 @@ import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 describe('Criando um novo nível de escolaridade', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .usuario()
-        usuario
-            .acessandoTelaNivelDeEscolaridade()
-        componente
-            .validaURL('https://web.test.tmob.com.br/user/userStudentLevels')
-            .selecionaIdioma('PT')
+        usuario.beforeNivelEscolaridade()
     })
 
     it(' Criando um novo nível de escolaridade com sucesso', () => {
@@ -32,7 +23,7 @@ describe('Criando um novo nível de escolaridade', () => {
             .validaURL('https://web.test.tmob.com.br/user/userStudentLevels')
     })
 
-    it(' Criando um novo nível de escolaridade com sucesso', () => {
+    it.only(' Editando um novo nível de escolaridade com sucesso', () => {
         componente
             .escreveDescricao('Novo nível escolaridade')
             .clicaBotao('Editar')

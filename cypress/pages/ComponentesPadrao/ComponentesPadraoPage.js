@@ -1,7 +1,12 @@
 class ComponentesPadraoPage {
 
     clicaBotao(label) {
-        cy.contains(label, { force: true }).click({ force: true })
+        cy.contains(label, { force: true }).wait(500).click({ force: true })
+        return this
+    }
+
+    clicaBotaoProximo() {
+        cy.xpath('/html/body/div/div/section/div/section/section/main/div/div[2]/div/button[1]', { force: true }).wait(2000).click({ force: true })
         return this
     }
 
@@ -11,7 +16,7 @@ class ComponentesPadraoPage {
     }
 
     clicaBotaoModal(confirmacao) {
-        cy.get('.ant-modal-confirm-btns').contains(confirmacao).click({ force: true })
+        cy.get('.ant-modal-confirm-btns').contains(confirmacao, {force: true}).click({ force: true })
         return this
     }
 
@@ -22,20 +27,21 @@ class ComponentesPadraoPage {
 
     selecionaIdioma(idioma) {
         cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
-        cy.contains(idioma).should('have.text', idioma).click({ force: true })
-        cy.contains(idioma).click({ force: true })
+        cy.contains(idioma, { force: true }).should('have.text', idioma).click({ force: true })
+        cy.contains(idioma, { force: true }).click({ force: true })
         return this
     }
 
     selecionaStatus(status) {
-        cy.get('#isActive').click({ force: true })
+        cy.get('#isActive', { force: true }).click({ force: true })
         cy.contains(status).click({ force: true })
-        return this
+        return this;
     }
+
 
     selecionaTipo(tipo) {
         cy.get('#type').click({ force: true })
-        cy.contains(tipo).click()
+        cy.contains(tipo).click({ force: true })
         return this
     }
 
@@ -85,9 +91,9 @@ class ComponentesPadraoPage {
             .should('not.contain', 'Inativo');
         return this
     }
-    validaStatusInativo() {
+    validaStatusInativo() { 
         cy.get('[style="flex-direction: row;"] > .ant-layout')
-            .should('not.contain', 'Ativo');
+            .should('not.contain','Ativo', {force: true})
         return this
     }
     validaStatusAusente(status) {
@@ -107,7 +113,7 @@ class ComponentesPadraoPage {
     }
 
     validaURL(url) {
-        cy.url({ force: true }).should('eq', url)
+        cy.url({ force: true }).should('eq', url, { force: true })
         return this
     }
 

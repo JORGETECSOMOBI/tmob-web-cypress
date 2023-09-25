@@ -1,0 +1,22 @@
+{
+    "nome": "Json automação",
+    "nomeSocial": "Nome Social",
+    "dia": "1",
+    "tipoUsuario": "Operador",
+    "NomeSocial": "Nome social",
+    "GeneroF": "Feminino",
+    "GeneroM": "Masculino",
+    "GeneroO": "Outros",
+    "email": "automacao@gmail.com",
+    "filiacao1": "Mãe",
+    "filiacao2": "Pai",
+    "proximo": "Proximo",
+    "cpf": "948.914.160-76",
+    "documento": "18.287.762-0",
+    "dataHoje": "Hoje",
+    "telefone": "11993345331",
+    "cep": "12903000",
+    "numero": "500",
+    "mensagemNovoCadastroSucesso": "O usuário foi cadastrado com sucesso",
+    "postoDeAtendimento": "Teste Automático"
+}

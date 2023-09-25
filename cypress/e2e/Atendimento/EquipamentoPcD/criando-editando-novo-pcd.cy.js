@@ -1,47 +1,17 @@
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
 import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import pcd from '../../../pages/Atendimento/PCD/EquipamentoPcdPage'
 
 describe('Criando e editando novo esquipamento PcD', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .usuario()
-        componente
-            .validaURL('https://web.test.tmob.com.br/user')
-        usuario
-            .acessandoTelaEquipamentoPcD()
-        componente
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')
-            .selecionaIdioma('PT')
+        usuario.beforePcd()
     })
 
     it('Criando um novo equipamento PcD ', () => {
-        componente
-            .clicaBotao('Novo')
-            .escreveDescricao('novo equipamento')
-            .clicaBotao('Ativo')
-            .clicaBotao('Salvar')
-            .clicaBotao('Sim')
-            .validaMensagem('Concluido')
-            .clicaBotao('Ver equipamentos PcD')
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')       
+        pcd.novoPcd()
     })
 
     it('Editando equipamento PcD ', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .clicaBotao('Editar')
-            .limpaDescricao()
-            .escreveDescricao('Equipamento editado')
-            .clicaBotao('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotao('Sim')
-            .clicaBotao('Ver equipamentos PcD')
-            .validaURL('https://web.test.tmob.com.br/user/userDisabilityEquipments')         
+        pcd.editaPcd()
     })
 })

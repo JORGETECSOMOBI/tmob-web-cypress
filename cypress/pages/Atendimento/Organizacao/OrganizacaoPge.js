@@ -5,7 +5,7 @@ class OrganizacaoPage {
         return this
     }
 
-    escreveNomefantazia(nome) {
+    escreveNomefantasia(nome) {
         cy.get('#shortName').type(nome)
         return this
     }
@@ -16,7 +16,7 @@ class OrganizacaoPage {
     }
 
     escreveCNPJ0(cnpj) {
-        cy.get('#createManyMandatoryDocument_0_value').type(cnpj)
+        cy.get('#createManyMandatoryDocument_2147483645_value').type(cnpj)
         return this
     }
     escreveCNPJ(cnpj) {

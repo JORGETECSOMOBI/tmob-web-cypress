@@ -1,13 +1,70 @@
-class novoUsuario {
+class cadastroPage {
+
+    preencheDocumento0CPF(cpf) {
+        cy.get('#createUser_UsrDocuments_createMany_data_4_value').type(cpf, { force: true })
+        return this
+    }
+
+    preencheDocumento0CNPJ(cnpj) {
+        cy.get('#createUser_UsrDocuments_createMany_data_0_value').type(cnpj, { force: true })
+        return this
+    }
+
+    preencheDocumento1(documento) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_value').type(documento)
+        return this
+    }
+
+    complemento1(numero) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_complement').type(numero)
+        return this
+    }
+
+    dataValidade1() {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_expirationDate').click({ force: true })
+        cy.get('.ant-picker-today-btn').eq(1).click({ force: true })
+
+        return this
+    }
+
+    dataExpedicao1(data) {
+        cy.get('#createUser_UsrDocuments_createMany_data_1_expeditionDate').click({ force: true })
+        cy.contains(data).click({ force: true })
+        return this
+    }
+
+    documentoOpcional2(numero) {
+        cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
+        return this
+    }
+
+    upload() {
+        describe('Teste de upload de arquivo', () => {
+            it('Deve fazer upload de um arquivo do sistema', () => {
+
+                cy.get('#createUser_UsrDocuments_createMany_data_5_filenames_set').click({ force: true })
+
+            });
+        });
+
+    }
 
     clicaBotaoCadastroAvancado() {
         cy.contains('Cadastro avançado').click({ force: true })
         return this
     }
 
-    selecionaDataNascimento(data) {
+    escreveDataNascimento(data, dia) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.get('.ant-picker-cell-inner').contains(data).click({ force: true })
+        cy.get('#createUser_birthdate').type(data)
+        cy.contains(dia).click({ force: true })
+        return this
+    }
+
+    escreveDataRegistro(data, dia) {
+        cy.get('.ant-picker-input').click({ force: true })
+        cy.get('#createUser_UsrElderlies_create_0_registration').type(data)
+        cy.contains(dia).click({ force: true })
         return this
     }
 
@@ -18,10 +75,17 @@ class novoUsuario {
     }
 
     selecionaCanais0(canal) {
-        cy.get('.ant-select-selection-overflow').click({ force: true })
+        cy.get('.ant-select-selection-overflow').eq(1).click({ force: true })
         cy.contains(canal).click({ force: true })
         return this
     }
+
+    selecionaCanais1(canal) {
+        cy.get('.ant-select-selection-overflow').eq(0).click({ force: true })
+        cy.contains(canal).click({ force: true })
+        return this
+    }
+
 
     selecionaTipoUsuario(tipoUsuario) {
         cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({ force: true })
@@ -49,7 +113,7 @@ class novoUsuario {
 
     selecionatipoEndereco(tipo) {
         cy.get('#createUser_UsrAddresses_createMany_data_0_type').click({ force: true })
-        cy.contains(tipo).click()
+        cy.contains(tipo, { force: true }).click({ force: true })
         return this
     }
 
@@ -70,8 +134,8 @@ class novoUsuario {
         return this
     }
 
-    preencheNomeCompleto(nomeCompleto) {
-        cy.get('#createUser_name').type(nomeCompleto, { force: true })
+    preencheNomeCompleto(nome) {
+        cy.get('#createUser_name').type(nome, { force: true })
         return this
     }
 
@@ -101,12 +165,12 @@ class novoUsuario {
     }
 
     preencheDocumento0CPF(cpf) {
-        cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cpf, { force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_2147483646_value').type(cpf, { force: true })
         return this
     }
 
     preencheDocumento1(documento) {
-        cy.get('#createUser_UsrDocuments_createMany_data_1_value',).type(documento, { force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_105_value').type(documento, { force: true })
         return this
     }
 
@@ -161,9 +225,9 @@ class novoUsuario {
         cy.get(':nth-child(2) > .ant-radio > .ant-radio-input').eq(1).click({ force: true })
         return this
     }
-    
+
     dataExpedicao1(data) {
-        cy.get('#createUser_UsrDocuments_createMany_data_1_expeditionDate').click({ force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_2147483647_expeditionDate').click({ force: true })
         cy.contains(data).click({ force: true })
         return this
     }
@@ -175,7 +239,7 @@ class novoUsuario {
 
     dataDeAdmissao(data) {
         cy.get('#createUser_UsrOperators_create_0_admissionDate').click({ force: true })
-        cy.contains(data).click()
+        cy.contains(data, { force: true }).click({ force: true })
         return this
     }
 
@@ -201,5 +265,6 @@ class novoUsuario {
         cy.contains(grupoOperador).click()
         return this
     }
+
 }
-export default new novoUsuario
+export default new cadastroPage

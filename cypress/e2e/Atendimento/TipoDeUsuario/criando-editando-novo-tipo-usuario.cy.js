@@ -1,21 +1,26 @@
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import novoTipoUsuario from "../../../pages/Atendimento/TipoDeUsuario/NovoTipoUsuarioPage"
 import componente from "../../../pages/ComponentesPadrao/ComponentesPadraoPage"
+import faker from 'faker-br'
 
 describe('Testando "tipo de Usuário', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .usuario()
-        usuario
-            .acessandoTelaTiposDeUsuario()
+        usuario.beforeTipoDeUsuario()
+    })
+
+    it('Criando um novo Tipo de usuário', () => {
         componente
-            .selecionaIdioma('PT')
+            .clicaBotao('Novo')
+        novoTipoUsuario
+            .idadeMinima('1')
+            .idadeMaxima('120')
+        componente
+            .escreveDescricao(faker.name.lastName())
+            .selecionaTipo('Funcionário')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validaMensagem('Tipo de usuário foi criado com sucesso!')
     })
 
     it('Tentativa de criar um novo Tipo de usuário com descrição já cadastrado no sistema', () => {

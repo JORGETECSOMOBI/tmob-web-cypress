@@ -1,22 +1,11 @@
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import componente from "../../../pages/ComponentesPadrao/ComponentesPadraoPage"
 import icd from "../../../pages/Atendimento/ICD/IcdPage"
 
-describe('Testando a tela "Usuário"', () => {
+describe('Testando ICD', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .usuario()
-        usuario
-            .acessandoTelaPostosDeAtendimento()
-            .acessandoTelaICD()
-        componente
-            .selecionaIdioma('PT')
+        usuario.beforeIcd()
     })
 
     it('Criando um novo item "ICD"', () => {
