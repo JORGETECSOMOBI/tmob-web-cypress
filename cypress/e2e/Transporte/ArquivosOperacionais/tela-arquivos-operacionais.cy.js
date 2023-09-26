@@ -1,20 +1,10 @@
-import login from '../../../pages/Login/LoginPage'
-import home from '../../../pages/Home/HomePage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import arquivoOperacional from '../../../pages/Transporte/ArquivoOperacionalPage'
 
 describe('Testando "Arquivos Operacionais', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .transporte()
-        componente
-            .validaURL('https://web.test.tmob.com.br/transport')
-            .selecionaIdioma('PT')
-            .clicaBotao('Arquivos Operacionais')
+        arquivoOperacional.beforeOpe()
     })
 
     it('testando filtro por id', () => {

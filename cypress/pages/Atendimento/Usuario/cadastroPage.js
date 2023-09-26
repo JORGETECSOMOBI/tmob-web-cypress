@@ -15,8 +15,18 @@ class cadastroPage {
         return this
     }
 
+    preencheContato(contato){
+        cy.get('#createUser_UsrPhones_createMany_data_0_contact').type(contato,{force: true})
+        return this
+    }
+
     complemento1(numero) {
         cy.get('#createUser_UsrDocuments_createMany_data_1_complement').type(numero)
+        return this
+    }
+
+    complementoEndereco(complemento) {
+        cy.get('#createUser_UsrAddresses_createMany_data_0_complement').type(complemento, {force: true})
         return this
     }
 
@@ -56,8 +66,8 @@ class cadastroPage {
 
     escreveDataNascimento(data, dia) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.get('#createUser_birthdate').type(data)
-        cy.contains(dia).click({ force: true })
+        cy.get('#createUser_birthdate', { force: true}).type(data, {force: true})
+        cy.contains(dia, {force: true}).click({ force: true })
         return this
     }
 

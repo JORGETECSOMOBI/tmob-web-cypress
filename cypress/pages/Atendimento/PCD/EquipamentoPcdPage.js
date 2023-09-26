@@ -12,7 +12,7 @@ class EquipamentoPcdPage{
         .clicaBotao('Sim')
         .validaMensagem('Concluido')
         .clicaBotao('Ver equipamentos PcD')
-        .validaURL(url.urlPcd)    
+        .validaURL(url.pcd)    
     }
 
     editaPcd() {
@@ -25,7 +25,7 @@ class EquipamentoPcdPage{
         .clicaBotao('Salvar')
         .clicaBotao('Sim')
         .clicaBotao('Ver equipamentos PcD')
-        .validaURL(url.urlPcd)    
+        .validaURL(url.pcd)    
     }
 }
 export default new EquipamentoPcdPage

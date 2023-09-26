@@ -1,4 +1,22 @@
+import login from '../../pages/Login/LoginPage'
+import home from '../../pages/Home/HomePage'
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import url from '../../fixtures/url.json'
+
 class ArquivoOperacionalPage {
+
+  beforeOpe() {
+    login
+      .go()
+      .signin()
+    home
+      .transporte()
+    componente
+      .validaURL(url.transporte)
+      .selecionaIdioma('PT')
+      .clicaBotao('Arquivos Operacionais')
+      return this
+  }
 
   pesquisaId(id) {
     cy.get('#id').type(id)

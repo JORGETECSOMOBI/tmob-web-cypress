@@ -1,12 +1,14 @@
 {
-    "urlUsuario": "https://web.test.tmob.com.br/user",
-    "urlOrg": "https://web.test.tmob.com.br/user/organizations",
-    "urlPostoAtendimento": "https://web.test.tmob.com.br/user/servicestations",
-    "urlTipoUsuario": "https://web.test.tmob.com.br/user/userTypes",
-    "urlPcd": "https://web.test.tmob.com.br/user/userDisabilityEquipments",
-    "urlPeriodoEstudantil": "https://web.test.tmob.com.br/user/userStudentPeriods",
-    "urlTipoEstudante": "https://web.test.tmob.com.br/user/userStudentTypes",
-    "urlEscolaridade": "https://web.test.tmob.com.br/user/userStudentLevels",
-    "urlTipoDocumento": "https://web.test.tmob.com.br/user/documentTypes",
-    "urlIcd": "https://web.test.tmob.com.br/user/usericds"
+    "usuario": "https://web.test.tmob.com.br/user",
+    "organizacao": "https://web.test.tmob.com.br/user/organizations",
+    "postoAtendimento": "https://web.test.tmob.com.br/user/servicestations",
+    "tipoUsuario": "https://web.test.tmob.com.br/user/userTypes",
+    "pcd": "https://web.test.tmob.com.br/user/userDisabilityEquipments",
+    "periodoEstudantil": "https://web.test.tmob.com.br/user/userStudentPeriods",
+    "tipoEstudante": "https://web.test.tmob.com.br/user/userStudentTypes",
+    "escolaridade": "https://web.test.tmob.com.br/user/userStudentLevels",
+    "tipoDocumento": "https://web.test.tmob.com.br/user/documentTypes",
+    "icd": "https://web.test.tmob.com.br/user/usericds",
+    "transporte": "https://web.test.tmob.com.br/transport",
+    "visualizaConsorcioId53": "https://web.test.tmob.com.br/transport/companyAssociation/53"
 }

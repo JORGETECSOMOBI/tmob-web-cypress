@@ -9,7 +9,7 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
             .selecionaIdioma('PT')
         return this
     }
@@ -18,9 +18,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaEquipamentoPcD()
-        componente.validaURL(url.urlPcd)
+        componente.validaURL(url.pcd)
             .selecionaIdioma('PT')
         return this
     }
@@ -29,9 +29,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaOrganizaçao()
-        componente.validaURL(url.urlOrg)
+        componente.validaURL(url.organizacao)
             .selecionaIdioma('PT')
         return this
     }
@@ -40,9 +40,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaPostosDeAtendimento()
-        componente.validaURL(url.urlPostoAtendimento)
+        componente.validaURL(url.postoAtendimento)
             .selecionaIdioma('PT')
         return this
     }
@@ -51,9 +51,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaTiposDeUsuario()
-        componente.validaURL(url.urlTipoUsuario)
+        componente.validaURL(url.tipoUsuario)
             .selecionaIdioma('PT')
         return this
     }
@@ -62,9 +62,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaPeriodoEstudantil()
-        componente.validaURL(url.urlPeriodoEstudantil)
+        componente.validaURL(url.periodoEstudantil)
             .selecionaIdioma('PT')
         return this
     }
@@ -73,9 +73,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaTipoDeEstudante()
-        componente.validaURL(url.urlTipoEstudante)
+        componente.validaURL(url.tipoEstudante)
             .selecionaIdioma('PT')
         return this
     }
@@ -84,9 +84,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaNivelDeEscolaridade()
-        componente.validaURL(url.urlEscolaridade)
+        componente.validaURL(url.escolaridade)
             .selecionaIdioma('PT')
         return this
     }
@@ -95,9 +95,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaTipoDeDocumentos()
-        componente.validaURL(url.urlTipoDocumento)
+        componente.validaURL(url.tipoDocumento)
             .selecionaIdioma('PT')
         return this
     }
@@ -106,9 +106,9 @@ class UsuarioHome {
         login.go()
             .signin()
         home.usuario()
-        componente.validaURL(url.urlUsuario)
+        componente.validaURL(url.usuario)
         usuario.acessandoTelaICD()
-        componente.validaURL(url.urlIcd)
+        componente.validaURL(url.icd)
             .selecionaIdioma('PT')
         return this
     }

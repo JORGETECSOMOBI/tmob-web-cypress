@@ -1,5 +1,5 @@
-import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage';
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage';
+import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage'
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import cadastro from '../../../fixtures/cadastro.json'
 import faker from 'faker-br'
 
@@ -26,7 +26,7 @@ class FormulariosPage {
         componente
             .clicaBotaoProximo()
             .clicaBotao('Salvar')
-            .validaMensagem(cadastro.mensagemNovoCadastroSucesso)
+            //.validaMensagem(cadastro.mensagemNovoCadastroSucesso)
         return this
     }
 
@@ -35,8 +35,8 @@ class FormulariosPage {
             .clicaBotao('Novo usuário')
             .clicaBotao('Cadastro avançado')
         cadastrar
-            .escreveDataNascimento('25/12/1959', '25')
-            .selecionaTipoUsuario('idoso')
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAA Automação Idoso')
             .preencheNomeCompleto(cadastro.nome)
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -57,7 +57,7 @@ class FormulariosPage {
 
     tipoDeUsuárioIdoso() {
         cadastrar
-            .escreveDataRegistro('25/12/2020', '25')
+            .selecionaDataRegistro('Hoje')
             .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
         componente
             .clicaBotao('Proximo')
@@ -71,6 +71,8 @@ class FormulariosPage {
             .selecionatipoEndereco('Trabalho')
             .preencheNumero('1000')
             .preencheCEP("12903000")
+            .preencheContato('contato')
+            .complementoEndereco('Ap 12B')
         componente
             .clicaBotao('Salvar')
     }

@@ -1,7 +1,7 @@
 class ComponentesPadraoPage {
 
     clicaBotao(label) {
-        cy.contains(label, { force: true }).wait(500).click({ force: true })
+        cy.contains(label, { force: true }).click({ force: true })
         return this
     }
 
@@ -165,6 +165,11 @@ class ComponentesPadraoPage {
 
     limpaCodigo() {
         cy.get('#code', { force: true }).clear({ force: true })
+        return this
+    }
+
+    escreveCodigo(codigo) {
+        cy.get('#code', { force: true }).type(codigo)
         return this
     }
 }
