@@ -142,6 +142,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    pesquisaNomeId(nome) {
+        cy.get('#name').type(nome, { force: true }).wait(500)
+        return this
+    }
+
     escreveComentario(comentario) {
         cy.get('#comment').type(comentario, { force: true })
         return this
