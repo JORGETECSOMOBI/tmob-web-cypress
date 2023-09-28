@@ -21,8 +21,19 @@ class GrupoLinhaPage {
         return this
     }
 
+    escreveIdExterno(id) {
+        cy.get('#externalId').type(id)
+        return this
+    }
+
     escreveLinhaNomeId01(idNome) {
         cy.get('.ant-transfer-list-body .ant-input').eq(1).type(idNome, { force: true })
+        return this
+    }
+
+    selecionaSistema(sistema) {
+        cy.get('#toSystem', { force: true }).click({ force: true })
+        cy.contains(sistema).click()
         return this
     }
 
@@ -36,13 +47,33 @@ class GrupoLinhaPage {
         return this
     }
 
+    selecionaTodasLinhas2() {
+        cy.get(':nth-child(1) > .ant-transfer-list-header > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input', { force: true }).wait(5000).click({ force: true })
+        return this
+    }
+
     incluiLinhas() {
-        cy.get('.ant-transfer-operation > :nth-child(1)').wait(3000).click({ force: true })
+        cy.get('.ant-transfer-operation > :nth-child(1)').wait(2000).click({ force: true })
         return this
     }
 
     excluiLinhas() {
-        cy.get('.ant-transfer-operation > [disabled=""]').click({ force: true })
+        cy.get('.ant-transfer-operation > :nth-child(2)').wait(2000).click({ force: true })
+        return this
+    }
+
+    validaExclusaoDeLinha(linha) {
+        cy.get(':nth-child(1) > .ant-transfer-list-body').contains(linha).should('have.text', linha)
+        return this
+    }
+
+    validaInclusaoDeLinha(linha) {
+        cy.get(':nth-child(3) > .ant-transfer-list-body').wait(1000).contains(linha).should('have.text', linha)
+        return this
+    }
+
+    clicaBotao(label) {
+        cy.contains(label, { force: true }).should('have.text', label).click({ force: true })
         return this
     }
 }
