@@ -30,7 +30,7 @@ class OrganizacaoPage {
     }
 
     escreveCEP(cep) {
-        cy.get('#UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true })
+        cy.get('#UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true }).wait(1000)
         return this
     }
 

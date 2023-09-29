@@ -10,7 +10,7 @@ describe('Testando Grupo de linha', () => {
 
     })
 
-    it.only('Criar um novo grupo de linha incluindo linhas em lote', () => {
+    it('Criar um novo grupo de linha incluindo linhas em lote', () => {
         componente
             .clicaBotao('Novo')
             .escreveDescricao(faker.name.firstName())
@@ -25,6 +25,9 @@ describe('Testando Grupo de linha', () => {
             .selecionaSistema('TOP-Mercury')
             .escreveIdExterno('33')
             .clicaBotao('Salvar')
+        componente
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.cadastraGrupoDeLinha)
     })
 
     it('Editar um grupo habilitando uma linha', () => {

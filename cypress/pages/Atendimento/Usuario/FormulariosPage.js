@@ -55,10 +55,10 @@ class FormulariosPage {
             .clicaBotao('Proximo')
     }
 
-    tipoDeUsuárioIdoso() {
-        cadastrar
-            .selecionaDataRegistro('Hoje')
-            .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
+    tipoDeUsuarioIdoso() {
+        // cadastrar
+        //     .selecionaDataRegistro('Hoje')
+        //     .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
         componente
             .clicaBotao('Proximo')
     }

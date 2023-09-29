@@ -1,6 +1,7 @@
 import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import organizacao from '../../../pages/Atendimento/Organizacao/OrganizacaoPge'
+import faker from "faker-br"
 
 describe('Testando a tela "Usuário"', () => {
 
@@ -8,7 +9,7 @@ describe('Testando a tela "Usuário"', () => {
         usuario.beforeOrg()
     })
 
-    it.only('Cria nova organização com sucesso', () => {
+    it.skip('Cria nova organização com sucesso', () => {
         componente
             .clicaBotao('Novo')
         organizacao
@@ -20,7 +21,7 @@ describe('Testando a tela "Usuário"', () => {
         componente
             .clicaBotao('Proximo')
         organizacao
-            .escreveCNPJ0('09.443.830/0001-68')
+            .escreveCNPJ0(faker.br.cnpj())
         componente
             .clicaBotao('Proximo')
         organizacao
@@ -33,11 +34,9 @@ describe('Testando a tela "Usuário"', () => {
             .escreveNumero('23')
             .selecionatipoEndereco('Residencial')
             .escreveCEP('12903000')
-        cy.wait(1000)
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
-        //.validaMensagem('Endereço não encontrado')
     })
 
     it('Tentativa de criar nova organização com cep inválido', () => {

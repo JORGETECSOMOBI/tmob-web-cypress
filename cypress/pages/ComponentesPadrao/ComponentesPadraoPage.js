@@ -16,7 +16,7 @@ class ComponentesPadraoPage {
     }
 
     clicaBotaoModal(confirmacao) {
-        cy.get('.ant-modal-confirm-btns').contains(confirmacao, {force: true}).click({ force: true })
+        cy.get('.ant-modal-confirm-btns', { force: true }).contains(confirmacao, { force: true }).click({ force: true })
         return this
     }
 
@@ -91,9 +91,9 @@ class ComponentesPadraoPage {
             .should('not.contain', 'Inativo');
         return this
     }
-    validaStatusInativo() { 
+    validaStatusInativo() {
         cy.get('[style="flex-direction: row;"] > .ant-layout')
-            .should('not.contain','Ativo', {force: true})
+            .should('not.contain', 'Ativo', { force: true })
         return this
     }
     validaStatusAusente(status) {
@@ -122,13 +122,18 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validatexto(texto) {
+        cy.contains(texto).should('have.text', texto)
+        return this
+    }
+
     validaFunçãolimparFiltro() {
         cy.get('#description').should('have.value', '')
         return this
     }
 
     escreveDescricao(descricao) {
-        cy.get('#description').type(descricao, { force: true })
+        cy.get('#description').type(descricao, { force: true }).wait(1000)
         return this
     }
 

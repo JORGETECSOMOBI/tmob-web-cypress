@@ -2,5 +2,7 @@
     "mensagemNovoCadastroSucesso": "O usuário foi cadastrado com sucesso",
     "cadastroConsorcioSucesso": "O consórcio foi cadastrado com sucesso",
     "editaConsorcioSucesso": "O Consórcio foi editado com sucesso",
-    "editaGrupoLinha": "Grupo de linha editado com sucesso"
+    "editaGrupoLinha": "Grupo de linha editado com sucesso",
+    "cadastraGrupoDeLinha": "O grupo de linha foi cadastrado com sucesso"
+
 }

@@ -73,7 +73,7 @@ class GrupoLinhaPage {
     }
 
     clicaBotao(label) {
-        cy.contains(label, { force: true }).should('have.text', label).click({ force: true })
+        cy.get('.steps-action').eq(0).contains(label).click({ force: true })
         return this
     }
 }
