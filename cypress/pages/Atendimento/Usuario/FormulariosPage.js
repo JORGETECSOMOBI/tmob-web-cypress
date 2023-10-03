@@ -26,7 +26,7 @@ class FormulariosPage {
         componente
             .clicaBotaoProximo()
             .clicaBotao('Salvar')
-            //.validaMensagem(cadastro.mensagemNovoCadastroSucesso)
+            .validaMensagem(cadastro.mensagemNovoCadastroSucesso)
         return this
     }
 
@@ -36,7 +36,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('AAAA Automação Idoso')
+            .selecionaTipoUsuario('Operador teste')
             .preencheNomeCompleto(cadastro.nome)
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)

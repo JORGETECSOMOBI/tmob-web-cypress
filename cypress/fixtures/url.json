@@ -10,5 +10,8 @@
     "tipoDocumento": "https://web.test.tmob.com.br/user/documentTypes",
     "icd": "https://web.test.tmob.com.br/user/usericds",
     "transporte": "https://web.test.tmob.com.br/transport",
-    "visualizaConsorcioId53": "https://web.test.tmob.com.br/transport/companyAssociation/53"
+    "visualizaConsorcioId53": "https://web.test.tmob.com.br/transport/companyAssociation/53",
+    "visualizaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12",
+    "editaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12/edit"
+
 }

@@ -67,7 +67,7 @@ class TransportePage {
         componente
             .validaURL(url.transporte)
             .selecionaIdioma('PT')
-            .clicaBotao('Grupo de operador')
+            .clicaBotao("Grupo de operador")
         return this
     }
 

@@ -98,7 +98,7 @@ class cadastroPage {
 
 
     selecionaTipoUsuario(tipoUsuario) {
-        cy.get('#createUser > div > div:nth-child(2) > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div > div > div > div > div').click({ force: true })
+        cy.get('.ant-select-selection-overflow').click({force:true})
         cy.contains(tipoUsuario).click()
         cy.get('.ant-col-lg-9').click()
         return this

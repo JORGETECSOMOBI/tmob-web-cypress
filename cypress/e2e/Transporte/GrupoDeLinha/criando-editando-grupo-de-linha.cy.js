@@ -20,14 +20,14 @@ describe('Testando Grupo de linha', () => {
             .incluiLinhas()
         componente
             .clicaBotao('Proximo')
-            .clicaBotao('Integrar Sistema')
+            .clicaBotao('+ Integrar Sistema')
         grupoLinha
             .selecionaSistema('TOP-Mercury')
             .escreveIdExterno('33')
             .clicaBotao('Salvar')
         componente
             .clicaBotaoModal('Sim')
-            .validaMensagem(mensagem.cadastraGrupoDeLinha)
+            .validaMensagem(mensagem.cadastraGrupoDeLinhaSucesso)
     })
 
     it('Editar um grupo habilitando uma linha', () => {

@@ -1,7 +1,7 @@
 class ComponentesPadraoPage {
 
     clicaBotao(label) {
-        cy.contains(label, { force: true }).click({ force: true })
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
         return this
     }
 
@@ -17,6 +17,11 @@ class ComponentesPadraoPage {
 
     clicaBotaoModal(confirmacao) {
         cy.get('.ant-modal-confirm-btns', { force: true }).contains(confirmacao, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoMenuPosicao(posicao) {
+        cy.get('.ant-menu-title-content').eq(posicao).click()
         return this
     }
 

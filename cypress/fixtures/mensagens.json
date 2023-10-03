@@ -3,6 +3,7 @@
     "cadastroConsorcioSucesso": "O consórcio foi cadastrado com sucesso",
     "editaConsorcioSucesso": "O Consórcio foi editado com sucesso",
     "editaGrupoLinha": "Grupo de linha editado com sucesso",
-    "cadastraGrupoDeLinha": "O grupo de linha foi cadastrado com sucesso"
-
+    "cadastraGrupoDeLinhaSucesso": "O grupo de linha foi cadastrado com sucesso",
+    "cadastraGrupoOperadorSucesso": "O grupo de operador foi cadastrado com sucesso",
+    "editaGrupoOperadorSucesso": "O grupo de operador foi editado com sucesso"
 }
