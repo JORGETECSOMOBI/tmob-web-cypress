@@ -123,7 +123,7 @@ class ComponentesPadraoPage {
     }
 
     validaMensagem(mensagem) {
-        cy.contains(mensagem).should('have.text', mensagem)
+        cy.contains(mensagem, { force: true }).should('have.text', mensagem, { force: true })
         return this
     }
 
@@ -187,5 +187,16 @@ class ComponentesPadraoPage {
         cy.get('#code', { force: true }).type(codigo)
         return this
     }
+
+    selecionaAcao(acao) {
+        cy.get('#action').click({ force: true })
+        cy.contains(acao).click({ force: true })
+        return this
+    }
+
+    validaNome(nome) {
+        cy.get('[data-row-key="24"] > .ant-table-cell-ellipsis').contains(nome).should('have.text', nome)
+        return this
+    } 
 }
 export default new ComponentesPadraoPage

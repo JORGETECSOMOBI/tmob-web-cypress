@@ -5,5 +5,9 @@
     "editaGrupoLinha": "Grupo de linha editado com sucesso",
     "cadastraGrupoDeLinhaSucesso": "O grupo de linha foi cadastrado com sucesso",
     "cadastraGrupoOperadorSucesso": "O grupo de operador foi cadastrado com sucesso",
-    "editaGrupoOperadorSucesso": "O grupo de operador foi editado com sucesso"
+    "editaGrupoOperadorSucesso": "O grupo de operador foi editado com sucesso",
+    "cadastraGrupoOperadoraSucesso": "O grupo de operadora foi cadastrado com sucesso",
+    "editaGrupoOperadoraSucesso": "O grupo de operadora foi editada com sucesso",
+    "cadastraMotivoHotlist": "O motivo de hotlist foi cadastrado com sucesso",
+    "editaMotivoHotlist": "O motivo de hotlist foi editado com sucesso"
 }

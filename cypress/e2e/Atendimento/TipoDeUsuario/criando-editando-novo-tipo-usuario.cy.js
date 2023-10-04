@@ -16,7 +16,7 @@ describe('Testando "tipo de Usuário', () => {
             .idadeMinima('1')
             .idadeMaxima('120')
         componente
-            .escreveDescricao(faker.name.lastName())
+            .escreveDescricao(faker.name.firstName())
             .selecionaTipo('Funcionário')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
@@ -37,12 +37,13 @@ describe('Testando "tipo de Usuário', () => {
             .validaMensagem('A descrição inserida já existe em Tipo de usuário.')
     })
 
-    it.skip('Editando tipo de usuário com descrição já cadastrado no sistema ', () => {
+    it('Editando tipo de usuário com descrição já cadastrado no sistema ', () => {
         componente
             .pesquisa('tipousuárioautomaçãoteste')
             .clicaBotao('Editar')
         novoTipoUsuario
             .idadeMinima('1')
+            .limpaIdadeMaxima()
             .idadeMaxima('120')
         componente
             .limpaDescricao()

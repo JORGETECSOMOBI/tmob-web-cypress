@@ -9,7 +9,7 @@ describe('Testando a tela "Usuário"', () => {
         usuario.beforeOrg()
     })
 
-    it.skip('Cria nova organização com sucesso', () => {
+    it('Cria nova organização com sucesso', () => {
         componente
             .clicaBotao('Novo')
         organizacao

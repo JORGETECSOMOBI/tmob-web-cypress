@@ -1,6 +1,8 @@
 import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import cadastro from '../../../fixtures/cadastro.json'
+import mensagem from '../../../fixtures/mensagens.json'
+import texto from  '../../../fixtures/textos.json'
 import faker from 'faker-br'
 
 class FormulariosPage {
@@ -26,7 +28,8 @@ class FormulariosPage {
         componente
             .clicaBotaoProximo()
             .clicaBotao('Salvar')
-            .validaMensagem(cadastro.mensagemNovoCadastroSucesso)
+            .validaMensagem(mensagem.mensagemNovoCadastroSucesso)
+            .validatexto(texto.textoCadastroCartão)
         return this
     }
 
@@ -36,7 +39,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('Operador teste')
+            .selecionaTipoUsuario('Rosângela')
             .preencheNomeCompleto(cadastro.nome)
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -75,6 +78,7 @@ class FormulariosPage {
             .complementoEndereco('Ap 12B')
         componente
             .clicaBotao('Salvar')
+            .validatexto(texto.textoCadastroCartão)
     }
 }
 export default new FormulariosPage()

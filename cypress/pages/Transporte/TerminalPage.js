@@ -1,7 +1,7 @@
-class TeminalPage{
+class TeminalPage {
 
-   clicarEmCriarTerminal() {
-        cy.contains('Criar terminal').click({force: true})
+    clicarEmCriarTerminal() {
+        cy.contains('Criar terminal').click({ force: true })
         return this
     }
 
@@ -10,38 +10,38 @@ class TeminalPage{
         return this
     }
 
-   clicarEmVerMais() {
-        cy.contains('Ver mais').click({force: true})
+    clicarEmVerMais() {
+        cy.contains('Ver mais').click({ force: true })
         return this
     }
 
-   clicarEmFecharTudo() {
-        cy.contains('Fechar tudo').click({force: true})
+    clicarEmFecharTudo() {
+        cy.contains('Fechar tudo').click({ force: true })
         return this
     }
 
-   clicarEmMostrarTerminaisAssociados() {
-        cy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input').click({force: true})
+    clicarEmMostrarTerminaisAssociados() {
+        cy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input').click({ force: true })
         return this
     }
 
-   clicarEmMostrarDeletados() {
-        cy.get(':nth-child(1) > .ant-checkbox > .ant-checkbox-input').click({force: true})
+    clicarEmMostrarDeletados() {
+        cy.get(':nth-child(1) > .ant-checkbox > .ant-checkbox-input').click({ force: true })
         return this
     }
 
-   clicarEmLimparfiltros() {
-        cy.contains('Limpar filtro').click({force: true})
+    clicarEmLimparfiltros() {
+        cy.contains('Limpar filtro').click({ force: true })
         return this
     }
 
-   clicarEmAcoes() {
-        cy.get(':nth-child(2) > .ant-row > :nth-child(1) > .ant-btn').click({force: true})
+    clicarEmAcoes() {
+        cy.get(':nth-child(2) > .ant-row > :nth-child(1) > .ant-btn').click({ force: true })
         return this
     }
 
-   clicarEmRecarregar() {
-        cy.get('span.anticon > .anticon').click({force: true})
+    clicarEmRecarregar() {
+        cy.get('span.anticon > .anticon').click({ force: true })
         return this
     }
 
@@ -51,19 +51,20 @@ class TeminalPage{
     }
 
     selecionaGrupoterminal(grupo) {
-        cy.get('#toTerminalGroup').click()
-        cy.get(':nth-child(1) > .ant-select-tree-node-content-wrapper > .ant-select-tree-title').click()
+        cy.get('#toTerminalGroup', { force: true }).click({ force: true }).wait(2000)
+        cy.contains(grupo, { force: true }).wait(2000).click({ force: true })
+
         return this
     }
 
     selecionaCalendarioOperacional(cadastro) {
-        cy.get('#toOperationScheduleId').click({force: true})
+        cy.get('#toOperationScheduleId').click({ force: true })
         cy.contains(cadastro).click()
         return this
     }
 
     escreveNumeroTerminal(numero) {
-        cy.get('#code').type(numero, {force: true})
+        cy.get('#code').type(numero, { force: true })
         return this
     }
 }

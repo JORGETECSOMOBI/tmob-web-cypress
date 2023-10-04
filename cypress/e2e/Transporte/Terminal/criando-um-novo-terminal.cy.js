@@ -21,13 +21,14 @@ describe('Criando um novo terminal', () => {
         terminal
             .clicarEmCriarTerminal()
         componente
-        //     .selecionaOperadora('Operadora Autopass')
-        // terminal
-        //     .escreveNumeroTerminal('1500')
-        //     .selecionaGrupoterminal('ANCHIETA')
-        //     .selecionaCalendarioOperacional('Teste Augusto calendario')
-        // componente
-        //     .escreveDescricao('Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, ')
-        //     .selecionaStatus('Inativo')
+            .selecionaOperadora('Operadora Autopass')
+        terminal
+            .escreveNumeroTerminal('1500')
+            .selecionaGrupoterminal('teste criação')
+            .selecionaCalendarioOperacional('Teste Augusto calendario')
+        componente
+            .escreveDescricao('Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, ')
+            .selecionaStatus('Inativo')
+            .clicaBotao('OK')
     })
 })

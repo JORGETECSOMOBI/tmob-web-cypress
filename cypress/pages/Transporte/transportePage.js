@@ -71,17 +71,7 @@ class TransportePage {
         return this
     }
 
-    beforeGrupoOperadora() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Grupo de operadora')
-        return this
-    }
-
+    
     beforeGrupoTerminais() {
         login.go()
             .signin()

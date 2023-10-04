@@ -20,6 +20,11 @@ class NovoTipoUsuarioPage {
         return this
     }
 
+    limpaIdadeMaxima() {
+        cy.get('#maximumAge', { force: true }).clear({ force: true })
+        return this
+    }
+
     abreSelectTipo() {
         cy.get('#type').click({ force: true })
         return this
