@@ -30,6 +30,21 @@ class ComponentesPadraoPage {
         return this
     }
 
+    clicaBotaoHomeEditar() {
+        cy.get('span.ant-btn-icon svg', { force: true }).eq(3).click({ force: true })
+        return this
+    }
+
+    clicaBotaoHomeVisualizar() {
+        cy.get('span.ant-btn-icon svg', { force: true }).eq(2).click({ force: true })
+        return this
+    }
+
+    clicaBotaoHomepesquisar() {
+        cy.get(':nth-child(3) > .ant-btn').click({ force: true })
+        return this
+    }
+
     selecionaIdioma(idioma) {
         cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
         cy.contains(idioma, { force: true }).should('have.text', idioma).click({ force: true })
@@ -137,6 +152,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validaFunçãolimparFiltroNome() {
+        cy.get('#name').should('have.value', '')
+        return this
+    }
+
     escreveDescricao(descricao) {
         cy.get('#description').type(descricao, { force: true }).wait(1000)
         return this
@@ -197,6 +217,6 @@ class ComponentesPadraoPage {
     validaNome(nome) {
         cy.get('[data-row-key="24"] > .ant-table-cell-ellipsis').contains(nome).should('have.text', nome)
         return this
-    } 
+    }
 }
 export default new ComponentesPadraoPage
