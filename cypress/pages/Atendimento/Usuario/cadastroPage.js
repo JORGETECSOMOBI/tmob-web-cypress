@@ -15,8 +15,8 @@ class cadastroPage {
         return this
     }
 
-    preencheContato(contato){
-        cy.get('#createUser_UsrPhones_createMany_data_0_contact').type(contato,{force: true})
+    preencheContato(contato) {
+        cy.get('#createUser_UsrPhones_createMany_data_0_contact').type(contato, { force: true })
         return this
     }
 
@@ -26,7 +26,7 @@ class cadastroPage {
     }
 
     complementoEndereco(complemento) {
-        cy.get('#createUser_UsrAddresses_createMany_data_0_complement').type(complemento, {force: true})
+        cy.get('#createUser_UsrAddresses_createMany_data_0_complement').type(complemento, { force: true })
         return this
     }
 
@@ -66,8 +66,8 @@ class cadastroPage {
 
     escreveDataNascimento(data, dia) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.get('#createUser_birthdate', { force: true}).type(data, {force: true})
-        cy.contains(dia, {force: true}).click({ force: true })
+        cy.get('#createUser_birthdate', { force: true }).type(data, { force: true })
+        cy.contains(dia, { force: true }).click({ force: true })
         return this
     }
 
@@ -98,7 +98,7 @@ class cadastroPage {
 
 
     selecionaTipoUsuario(tipoUsuario) {
-        cy.get('.ant-select-selection-overflow').click({force:true})
+        cy.get('.ant-select-selection-overflow').click({ force: true })
         cy.contains(tipoUsuario).click()
         cy.get('.ant-col-lg-9').click()
         return this
@@ -146,6 +146,22 @@ class cadastroPage {
 
     preencheNomeCompleto(nome) {
         cy.get('#createUser_name').type(nome, { force: true })
+        return this
+    }
+
+    limpaNomeCompleto(nome) {
+        cy.get('#editUser_name').clear(nome, { force: true })
+        return this
+    }
+
+    editaNomeCompleto(nome) {
+        cy.get('#editUser_name').type(nome, { force: true })
+        return this
+    }
+
+    selecionaTipoEditar(tipo) {
+        cy.get('.ant-select-selection-overflow').click({ force: true })
+        cy.contains(tipo, { force: true }).click({ force: true })
         return this
     }
 

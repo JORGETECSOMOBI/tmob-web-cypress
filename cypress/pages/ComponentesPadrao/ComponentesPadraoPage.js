@@ -163,11 +163,11 @@ class ComponentesPadraoPage {
     }
 
     escreveID(descricao) {
-        cy.get('#description').type(descricao, { force: true })
+        cy.get('#description').type(descricao, { force: true }).wait(2000)
         return this
     }
 
-    escreveNome(nome) {
+    escreveNomeId(nome) {
         cy.get('#name').type(nome, { force: true })
         return this
     }
