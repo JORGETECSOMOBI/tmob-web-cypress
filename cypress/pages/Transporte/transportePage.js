@@ -71,18 +71,6 @@ class TransportePage {
         return this
     }
 
-    
-    beforeGrupoTerminais() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Grupo de terminais')
-        return this
-    }
-
     beforeOperadora() {
         login.go()
             .signin()

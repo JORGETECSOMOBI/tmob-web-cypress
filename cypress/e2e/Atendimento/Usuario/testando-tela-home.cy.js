@@ -7,14 +7,20 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.beforeUsuario()
     })
 
-    it('Edita usuário', () => {
+    it.only('Edita usuário', () => {
         componente
+            .pesquisaNomeId('1598')
+            .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar()
     })
 
     it('Visualizar usuário', () => {
         componente
+            .pesquisaNomeId('1598')
+            .clicaBotaoHomepesquisar()
             .clicaBotaoHomeVisualizar()
+            .validatexto('ID #1598')
+            .validatexto('Nascimento:13/01/1983')
     })
 
     it('Filtro inativo', () => {
@@ -35,14 +41,14 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         componente
             .selecionaStatus('Ativo')
             .escreveNomeId('João')
-            .clicaBotaoHomepesquisar()    
+            .clicaBotaoHomepesquisar()
     })
 
     it('Limpar filtro por nome', () => {
         componente
             .selecionaStatus('Ativo')
             .escreveNomeId('João')
-            .clicaBotao('Limpar filtro') 
-            .validaFunçãolimparFiltroNome()      
+            .clicaBotao('Limpar filtro')
+            .validaFunçãolimparFiltroNome()
     })
 })

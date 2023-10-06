@@ -67,5 +67,6 @@ class TeminalPage {
         cy.get('#code').type(numero, { force: true })
         return this
     }
+
 }
 export default new TeminalPage

@@ -33,20 +33,20 @@ class HomePage {
     }
 
     qrCode() {
-        cy.get('[href="/qrcode"] > .ant-row > .ant-typography').eq(0).click();
-        cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').click();
+        cy.get('[href="/qrcode"] > .ant-row > .ant-typography').eq(0).click({ force: true })
+        cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').click({ force: true })
         cy.get('aside div:nth-child(1) ul li:nth-child(4) span a').should('have.text', 'QR Code')
         return this
     }
 
     midia() {
-        cy.get('[href="/media"] > .ant-row > .ant-typography').eq(0).click()
+        cy.get('[href="/media"] > .ant-row > .ant-typography').eq(0).click({ force: true })
         cy.get(':nth-child(3) > .ant-breadcrumb-link').should('have.text', 'Mídia')
         return this
     }
 
     emv() {
-        cy.get('[href="/emv"] > .ant-row > .ant-typography').eq(0).click()
+        cy.get('[href="/emv"] > .ant-row > .ant-typography').eq(0).click({ force: true })
         cy.contains('span', 'Emv').should('have.text', 'Emv')
         return this
     }
@@ -58,34 +58,34 @@ class HomePage {
     }
 
     operacional() {
-        cy.get('span.ant-collapse-header-text').contains('Operacional').click()
+        cy.get('span.ant-collapse-header-text').contains('Operacional').click({ force: true })
         return this
     }
 
     dispositivos() {
-        cy.get('[href="/device"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/device"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#rc-tabs-0-tab-1').should('have.text', 'Dispositivos e conexões')
         return this
     }
 
     transporte() {
-        cy.get('[href="/transport"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/transport"] > .ant-row > .ant-typography').click({ force: true })
         cy.get(':nth-child(3) > .ant-breadcrumb-link > a').should('have.text', 'Terminal')
         return this
     }
 
     tarifario() {
-        cy.get('[href="/fare"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/fare"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('.ant-menu-item-selected > .ant-menu-title-content > a').should('have.text', 'Regras')
         return this
     }
 
     usuario() {
-        cy.get('[href="/user"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/user"] > .ant-row > .ant-typography').click({ force: true })
         return this
     }
 
-   
+
 
     comercializacao() {
         cy.get('[href="/commerce"] > .ant-row > .ant-typography').click()

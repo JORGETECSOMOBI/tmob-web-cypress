@@ -39,7 +39,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('Rosângela')
+            .selecionaTipoUsuario('AAA Automação')
             .preencheNomeCompleto(cadastro.nome)
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -59,9 +59,9 @@ class FormulariosPage {
     }
 
     tipoDeUsuarioIdoso() {
-        // cadastrar
-        //     .selecionaDataRegistro('Hoje')
-        //     .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
+        cadastrar
+            .selecionaDataRegistro('Hoje')
+            .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
         componente
             .clicaBotao('Proximo')
     }

@@ -12,7 +12,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
 
     it('Edita usuário', () => {
         componente
-            .escreveNomeIdId('4054')
+            .escreveNomeId('4054')
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar('Editar')
 
