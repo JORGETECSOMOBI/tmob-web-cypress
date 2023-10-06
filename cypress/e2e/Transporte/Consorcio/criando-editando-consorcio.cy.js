@@ -14,7 +14,7 @@ describe('Testando "Consócio"', () => {
         componente
             .clicaBotao('Consórcio')
             .clicaBotao('Novo')
-            .escreveNome(faker.name.lastName())
+            .escreveNomeId(faker.name.lastName())
             .selecionaStatus('Inativo')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
@@ -27,7 +27,7 @@ describe('Testando "Consócio"', () => {
             .pesquisaId('53')
             .clicaBotao('Editar')
             .limpaNome()
-            .escreveNome(faker.name.lastName())
+            .escreveNomeId(faker.name.lastName())
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
             .validaMensagem(mensagem.editaConsorcioSucesso)

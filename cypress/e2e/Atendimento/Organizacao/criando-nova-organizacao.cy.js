@@ -14,7 +14,7 @@ describe('Testando a tela "Usuário"', () => {
             .clicaBotao('Novo')
         organizacao
             .escreveRazaosocial('nova organizaçao')
-            .escreveNomefantasia('nova organizaçao')
+            .escreveNomeIdfantasia('nova organizaçao')
             .escreveEmail('nova@gmail.com')
             .selecionaTipoOperadora('Empresa')
             .selecionaOperadora('METRO')
@@ -44,7 +44,7 @@ describe('Testando a tela "Usuário"', () => {
             .clicaBotao('Novo')
         organizacao
             .escreveRazaosocial('nova organizaçao')
-            .escreveNomefantasia('nova organizaçao')
+            .escreveNomeIdfantasia('nova organizaçao')
             .escreveEmail('nova@gmail.com')
             .selecionaTipoOperadora('Empresa')
             .selecionaOperadora('METRO')

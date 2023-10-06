@@ -11,7 +11,7 @@ describe('Testando ICD', () => {
     it('Criando um novo item "ICD"', () => {
         componente
             .clicaBotao('Novo')
-            .escreveNome('novo ICD')
+            .escreveNomeId('novo ICD')
             .escreveDescricao('Novo ICD')
         icd
             .escreveCodigo('1000')
@@ -33,7 +33,7 @@ describe('Testando ICD', () => {
     it('Editando um item "ICD"', () => {
 
         componente
-            .escreveNome('novo ICD')
+            .escreveNomeId('novo ICD')
             .clicaBotao('Editar')
         icd
             .clicaEmNome()
@@ -49,7 +49,7 @@ describe('Testando ICD', () => {
         icd
             .escreveCodigo('01')
         componente
-            .escreveNome('ICD editado')
+            .escreveNomeId('ICD editado')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
             .validaMensagem('ICD editado com sucesso')

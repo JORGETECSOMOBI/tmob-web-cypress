@@ -5,7 +5,7 @@ class OrganizacaoPage {
         return this
     }
 
-    escreveNomefantasia(nome) {
+    escreveNomeIdfantasia(nome) {
         cy.get('#shortName').type(nome)
         return this
     }

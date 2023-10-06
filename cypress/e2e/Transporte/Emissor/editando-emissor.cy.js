@@ -13,7 +13,7 @@ describe('Testando "Consócio"', () => {
             .pesquisaNomeId('99')
             .clicaBotao('Editar')
             .limpaNome()
-            .escreveNome(faker.name.lastName())
+            .escreveNomeId(faker.name.lastName())
             .selecionaStatus('Inativo')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')

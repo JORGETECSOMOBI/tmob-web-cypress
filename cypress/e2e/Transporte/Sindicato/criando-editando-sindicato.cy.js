@@ -11,7 +11,7 @@ describe('Testando "Sindicato"', () => {
     it('Criar um Sindicato', () => {
         componente
             .clicaBotao('Novo')
-            .escreveNome(faker.name.lastName())
+            .escreveNomeId(faker.name.lastName())
             .selecionaStatus('Inativo')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
@@ -22,7 +22,7 @@ describe('Testando "Sindicato"', () => {
             .pesquisaNomeId('19')
             .clicaBotao('Editar')
             .limpaNome()
-            .escreveNome(faker.name.lastName())
+            .escreveNomeId(faker.name.lastName())
             .selecionaStatus('Inativo')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')

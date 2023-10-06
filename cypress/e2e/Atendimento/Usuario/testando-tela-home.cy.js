@@ -34,14 +34,14 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
     it('Filtro por nome', () => {
         componente
             .selecionaStatus('Ativo')
-            .escreveNome('João')
+            .escreveNomeId('João')
             .clicaBotaoHomepesquisar()    
     })
 
     it('Limpar filtro por nome', () => {
         componente
             .selecionaStatus('Ativo')
-            .escreveNome('João')
+            .escreveNomeId('João')
             .clicaBotao('Limpar filtro') 
             .validaFunçãolimparFiltroNome()      
     })
