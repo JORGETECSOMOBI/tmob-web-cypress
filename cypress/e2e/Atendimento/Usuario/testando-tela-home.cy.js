@@ -7,7 +7,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.beforeUsuario()
     })
 
-    it.only('Edita usuário', () => {
+    it('Edita usuário', () => {
         componente
             .pesquisaNomeId('1598')
             .clicaBotaoHomepesquisar()

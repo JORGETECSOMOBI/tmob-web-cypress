@@ -38,7 +38,7 @@ class GrupoLinhaPage {
     }
 
     selecionaTodasLinhas0() {
-        cy.get('.ant-transfer-list-header .ant-checkbox-input', { force: true }).eq(0).wait(5000).click({ force: true })
+        cy.get('.ant-transfer-list-header .ant-checkbox-input', { force: true }).eq(0).wait(15000).click({ force: true })
         return this
     }
 

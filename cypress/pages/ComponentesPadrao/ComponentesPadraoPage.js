@@ -41,7 +41,7 @@ class ComponentesPadraoPage {
     }
 
     clicaBotaoHomepesquisar() {
-        cy.get(':nth-child(3) > .ant-btn').click({ force: true })
+        cy.get(':nth-child(4) > .ant-btn', { force: true }).click({ force: true })
         return this
     }
 

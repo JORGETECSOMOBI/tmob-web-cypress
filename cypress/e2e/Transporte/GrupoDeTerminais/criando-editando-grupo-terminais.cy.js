@@ -32,7 +32,7 @@ describe('Testando Grupo de terminais', () => {
             .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
     })
 
-    it.only('Editando grupo de terminais "Regras de serviço"', () => {
+    it('Editando grupo de terminais "Regras de serviço"', () => {
         grupoTerminais
             .botaoEditaGrupo()
             .stepRegrassDeProduto()
@@ -43,6 +43,17 @@ describe('Testando Grupo de terminais', () => {
         grupoTerminais
             .tipoRestricao('QrCode')
             .subTipoRestricao('QRCODE ATM')
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
+    })
+
+    it('Editando grupo de terminais "Restrição de função"', () => {
+        grupoTerminais
+            .botaoEditaGrupo()
+            .restricaoFuncao()
+            .adicionaRestricao()
+            .selecionaFuncao('Selecao de linha')
         componente
             .clicaBotao('OK')
             .validaMensagem(mensagem.editaGrupoTerminaisSucesso)

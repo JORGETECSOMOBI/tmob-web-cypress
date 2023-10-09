@@ -17,13 +17,23 @@ class GrupoTerminaisPage {
     }
 
     botaoEditaGrupo() {
-        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(1).click()
+        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(1).click({ force: true })
+        return this
+    }
+
+    botaoAdicionaItem() {
+        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(0).click({ force: true })
+        return this
+    }
+
+    botaoExcluiGrupo() {
+        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(5).click({ force: true })
         return this
     }
 
     selecionaTipoInstalação(instalacao) {
         cy.get('#facilityType').click({ force: true })
-        cy.contains(instalacao).click({ force: true })
+        cy.contains(instalacao, { force: true }).click({ force: true })
         return this
     }
 
@@ -39,7 +49,7 @@ class GrupoTerminaisPage {
         return this
     }
 
-    stepRegrassDeProduto(){
+    stepRegrassDeProduto() {
         cy.get('#rc-tabs-1-tab-product').click()
         return this
     }
@@ -54,20 +64,46 @@ class GrupoTerminaisPage {
         return this
     }
 
-    tipoRestricao(tipo){
-        cy.get('#createProductRestriction_0_type').click({force:true})
-        cy.contains(tipo).click({force:true})
+    tipoRestricao(tipo) {
+        cy.get('#createProductRestriction_0_type').click({ force: true })
+        cy.contains(tipo).click({ force: true })
         return this
     }
 
-    subTipoRestricao(subtipo){
-        cy.get('#createProductRestriction_0_subType').click({force:true})
-        cy.contains(subtipo).click({force:true})
+    subTipoRestricao(subtipo) {
+        cy.get('#createProductRestriction_0_subType').click({ force: true })
+        cy.contains(subtipo).click({ force: true })
         return this
     }
 
-    excluirestrição(){
-        cy.get(':nth-child(2) > .ant-row-middle > :nth-child(5)').click({force:true})
+    excluirestrição() {
+        cy.get(':nth-child(2) > .ant-row-middle > :nth-child(5)').click({ force: true })
+        return this
+    }
+
+    restricaoFuncao() {
+        cy.get('#rc-tabs-1-tab-functionRestriction').click({ force: true })
+        return this
+    }
+
+    adicionaRestricao() {
+        cy.get(':nth-child(3) > .ant-btn > :nth-child(2)').click({ force: true })
+        return this
+    }
+
+    selecionaFuncao(funcao) {
+        cy.get('#createFunctionRestriction_0_type').click()
+        cy.contains(funcao, { force: true }).click({ force: true })
+        return this
+    }
+
+    remotamenteOperavel() {
+        cy.get('.ant-switch-handle').click({ force: true })
+        return this
+    }
+
+    propagarAlteracao() {
+        cy.get('.ant-modal-content').click({ force: true })
         return this
     }
 }
