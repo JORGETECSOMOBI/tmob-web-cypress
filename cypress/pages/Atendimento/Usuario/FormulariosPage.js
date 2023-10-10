@@ -2,7 +2,7 @@ import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import cadastro from '../../../fixtures/cadastro.json'
 import mensagem from '../../../fixtures/mensagens.json'
-import texto from  '../../../fixtures/textos.json'
+import texto from '../../../fixtures/textos.json'
 import faker from 'faker-br'
 
 class FormulariosPage {
@@ -33,7 +33,7 @@ class FormulariosPage {
         return this
     }
 
-    geral() {
+    geralIdoso() {
         componente
             .clicaBotao('Novo usuário')
             .clicaBotao('Cadastro avançado')
@@ -50,6 +50,58 @@ class FormulariosPage {
             .clicaBotao('Proximo')
     }
 
+    geralEstudante() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        cadastrar
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('Automação estudante')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    geralOperador() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        cadastrar
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAA Operador')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    geralEspecial() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        cadastrar
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('Automação Especial')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .clicaBotao('Proximo')
+    }
+
+
     documentacao() {
         cadastrar
             .preencheDocumento0CPF(faker.br.cpf())
@@ -64,6 +116,49 @@ class FormulariosPage {
             .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
         componente
             .clicaBotao('Proximo')
+    }
+
+    tipoDeUsuarioEstudante() {
+        componente
+            .clicaBotao('Adicionar')
+        cadastrar
+            .selecionaEscolaridade()
+            .selecionaNomeInstituicao()
+            .escreveClasse()
+            .escreveQuota()
+            .escreveRa()
+            .escreveSerie()
+            .selecionaPeriodo('Gabriel teste')
+            .selecionaTipoEstudante('Estudante')
+            .selecionaDataInicial('Hoje')
+            .selecionaDataFinal('Hoje')
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    tipoDeUsuarioOperador() {
+        cadastrar
+            .escreveMatriculaOperador()
+            .dataDeAdmissao('3')
+            .dataDeDemissao('26')
+            .selecionaOperadora('Moraes')
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    tipoDeUsuarioEspecial() {
+        cadastrar
+            .selecionaDescricaoCID('A000')
+            .selecionaTipoAprovacao('Aprovado')
+            .selecionaPostoAtendimentoEspecial('Automação Especial') 
+            .escreveCRM() 
+            .escreveNomeDoMedico()
+            .validadedoLaudo('Hoje')
+            .escreveNomeAcompanhante()
+            .documentoAcompanhante()
+        componente
+        .clicaBotao('Salvar acompanhante')
+        .clicaBotao('Proximo')
     }
 
     contato() {

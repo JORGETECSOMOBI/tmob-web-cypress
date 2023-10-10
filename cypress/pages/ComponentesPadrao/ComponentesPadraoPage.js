@@ -105,7 +105,6 @@ class ComponentesPadraoPage {
         return this
     }
 
-
     validaStatusAtivo() {
         cy.get('[style="flex-direction: row;"] > .ant-layout')
             .should('not.contain', 'Inativo');

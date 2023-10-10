@@ -35,7 +35,6 @@ class cadastroPage {
     dataValidade1() {
         cy.get('#createUser_UsrDocuments_createMany_data_1_expirationDate').click({ force: true })
         cy.get('.ant-picker-today-btn').eq(1).click({ force: true })
-
         return this
     }
 
@@ -48,17 +47,6 @@ class cadastroPage {
     documentoOpcional2(numero) {
         cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
         return this
-    }
-
-    upload() {
-        describe('Teste de upload de arquivo', () => {
-            it('Deve fazer upload de um arquivo do sistema', () => {
-
-                cy.get('#createUser_UsrDocuments_createMany_data_5_filenames_set').click({ force: true })
-
-            });
-        });
-
     }
 
     clicaBotaoCadastroAvancado() {
@@ -114,7 +102,14 @@ class cadastroPage {
 
     selecionaPostoAtendimento(posto) {
         cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click()
-        cy.contains(posto).click()
+        cy.contains(posto, ({ force: true })).click({ force: true })
+        return this
+    }
+
+    selecionaPostoAtendimentoEspecial(posto) {
+        cy.get('#createUser_UsrDisabilities_create_0_UsrServiceStation', { force: true }).click({ force: true })
+        cy.contains(posto, ({ force: true })).click({ force: true })
+        return this
     }
 
     selecionaGenero(genero) {
@@ -126,6 +121,66 @@ class cadastroPage {
     selecionatipoEndereco(tipo) {
         cy.get('#createUser_UsrAddresses_createMany_data_0_type').click({ force: true })
         cy.contains(tipo, { force: true }).click({ force: true })
+        return this
+    }
+
+    selecionaEscolaridade() {
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentLevelId').click({ force: true })
+        cy.contains('Primário').click({ force: true })
+        return this
+    }
+
+    selecionaNomeInstituicao() {
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrOrganizationId').click({ force: true })
+        cy.contains('jota teste').click()
+        return this
+    }
+
+    escreveClasse() {
+        const classe = faker.name.lastName()
+        cy.get('#createUser_UsrStudents_createMany_data_0_classroom').type(classe)
+        return this
+    }
+
+    escreveSerie() {
+        const serie = ('Primeira')
+        cy.get('#createUser_UsrStudents_createMany_data_0_grade').type(serie)
+        return this
+    }
+
+    escreveRa() {
+        const ra = faker.br.cpf()
+        cy.get('#createUser_UsrStudents_createMany_data_0_registryDocument').type(ra)
+        return this
+    }
+
+    escreveQuota() {
+        const quota = faker.name.lastName()
+        cy.get('#createUser_UsrStudents_createMany_data_0_medQuotaId').type(quota)
+        return this
+    }
+
+    selecionaPeriodo(periodo) {
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentPeriodId').click()
+        cy.contains(periodo).click()
+        return this
+    }
+
+    selecionaTipoEstudante(tipo) {
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentTypeId').click()
+        cy.contains(tipo).click()
+        return this
+    }
+
+    selecionaDataInicial(data) {
+        cy.get('#createUser_UsrStudents_createMany_data_0_admissionDate').click({ force: true })
+        cy.contains(data).click()
+        return this
+    }
+
+    selecionaDataFinal(data) {
+        cy.get('#createUser_UsrStudents_createMany_data_0_resignDate').click({ force: true })
+        cy.contains(data, { force: true }).click({ force: true })
         return this
     }
 
@@ -147,13 +202,13 @@ class cadastroPage {
     }
 
     preencheNomeCompleto() {
-        const nome = 'Automação';
-        const sobrenome = faker.name.lastName();
-        const nomeCompleto = `${nome} ${sobrenome}`;
-        cy.get('#createUser_name').type(nomeCompleto, { force: true });
-        return this;
+        const nome = 'Automação'
+        const sobrenome = faker.name.lastName()
+        const nomeCompleto = `${nome} ${sobrenome}`
+        cy.get('#createUser_name').type(nomeCompleto, { force: true })
+        return this
     }
-    
+
     limpaNomeCompleto(nome) {
         cy.get('#editUser_name').clear(nome, { force: true })
         return this
@@ -170,6 +225,61 @@ class cadastroPage {
         return this
     }
 
+    selecionaOperadora(operadora) {
+        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click({ force: true })
+        cy.contains(operadora).click({ force: true })
+        return this
+    }
+
+    selecionaDescricaoCID(descricao) {
+        cy.get('#createUser_UsrDisabilities_create_0_UsrIcd_connect').click({ force: true })
+        cy.contains(descricao).click({ force: true })
+        return this
+    }
+
+    selecionaTipoAprovacao(tipo) {
+        cy.get('#createUser_UsrDisabilities_create_0_approvalType').click({ force: true })
+        cy.contains(tipo).click({ force: true })
+        return this
+    }
+
+
+    selecionaPostoAtendimento(posto) {
+        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click({ force: true })
+        cy.contains(posto, { force: true }).click({ force: true })
+        return this
+    }
+
+    escreveNomeDoMedico() {
+        const nome = faker.name.findName()
+        cy.get('#createUser_UsrDisabilities_create_0_doctorName', { force: true }).type(nome, { force: true })
+        return this
+    }
+
+    escreveCRM() {
+        const crm = faker.br.cpf()
+        cy.get('#createUser_UsrDisabilities_create_0_doctorRegistration').type(crm)
+        return this
+    }
+
+    escreveNomeAcompanhante() {
+        const nome = faker.name.findName()
+        cy.get('#createUser_createAttendants_name', { force: true }).type(nome, { force: true })
+        return this
+    }
+
+    documentoAcompanhante() {
+        const documento = faker.br.cpf()
+        cy.get('#createUser_createAttendants_document').type(documento)
+        return this
+    }
+
+    validadedoLaudo(data) {
+        cy.get('#createUser_UsrDisabilities_create_0_validity', { force: true }).click({ force: true })
+        cy.contains(data).click({ force: true })
+        return this
+    }
+
     preencheNomeSocial(nomeSocial) {
         cy.get('#createUser_socialName').type(nomeSocial, { force: true })
         return this
@@ -177,6 +287,12 @@ class cadastroPage {
 
     escreveNumeroTelefone0(numero) {
         cy.get('#createUser_UsrPhones_createMany_data_0_number').type(numero, { force: true })
+        return this
+    }
+
+    escreveMatriculaOperador() {
+        const matricula = faker.br.rg()
+        cy.get('#createUser_UsrOperators_create_0_hrid').type(matricula)
         return this
     }
 
@@ -275,7 +391,8 @@ class cadastroPage {
     }
 
     dataDeDemissao(data) {
-        cy.get('#createUser_UsrOperators_create_0_resignDate').contains(data).click()
+        cy.get('#createUser_UsrOperators_create_0_resignDate', { force: true }).click({ force: true })
+        cy.contains(data, { force: true }).click({ force: true })
         return this
     }
 
@@ -296,6 +413,5 @@ class cadastroPage {
         cy.contains(grupoOperador).click()
         return this
     }
-
 }
 export default new cadastroPage
