@@ -1,3 +1,5 @@
+import faker from 'faker-br'
+
 class cadastroPage {
 
     preencheDocumento0CPF(cpf) {
@@ -144,11 +146,14 @@ class cadastroPage {
         return this
     }
 
-    preencheNomeCompleto(nome) {
-        cy.get('#createUser_name').type(nome, { force: true })
-        return this
+    preencheNomeCompleto() {
+        const nome = 'Automação';
+        const sobrenome = faker.name.lastName();
+        const nomeCompleto = `${nome} ${sobrenome}`;
+        cy.get('#createUser_name').type(nomeCompleto, { force: true });
+        return this;
     }
-
+    
     limpaNomeCompleto(nome) {
         cy.get('#editUser_name').clear(nome, { force: true })
         return this

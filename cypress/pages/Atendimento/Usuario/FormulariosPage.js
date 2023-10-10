@@ -13,7 +13,7 @@ class FormulariosPage {
         cadastrar
             .preencheDocumento0CPF(faker.br.cpf())
             .escreveDataNascimento('22/01/1959', '22')
-            .preencheNomeCompleto(cadastro.nome)
+            .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.NomeSocial)
             .selecionaGenero(cadastro.GeneroF)
             .emailnovoUsuario(faker.internet.email())
@@ -40,7 +40,7 @@ class FormulariosPage {
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAA Automação')
-            .preencheNomeCompleto(cadastro.nome)
+            .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)

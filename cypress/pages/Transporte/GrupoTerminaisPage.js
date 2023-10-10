@@ -27,7 +27,7 @@ class GrupoTerminaisPage {
     }
 
     botaoExcluiGrupo() {
-        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(5).click({ force: true })
+        cy.get(':nth-child(6) > .ant-tree-node-content-wrapper > .ant-tree-title > [style="filter: none;"] > .ant-row-space-between > :nth-child(5) > .ant-btn > .ant-btn-icon > span > svg').click({ force: true })
         return this
     }
 

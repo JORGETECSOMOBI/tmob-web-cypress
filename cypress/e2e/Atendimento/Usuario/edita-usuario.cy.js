@@ -17,7 +17,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
             .clicaBotaoHomeEditar('Editar')
 
         edita
-            .selecionaTipoEditar('Marla')
+            .selecionaTipoEditar('Abt')
             .limpaNomeCompleto()
             .editaNomeCompleto(faker.name.findName())
         componente
