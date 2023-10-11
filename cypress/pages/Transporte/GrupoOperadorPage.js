@@ -12,12 +12,12 @@ class GrupoOperadorPage {
         componente
             .validaURL(url.transporte)
             .selecionaIdioma('PT')
-            .clicaBotaoMenuPosicao(8)
+            .clicaBotaoMenuPosicao(7)
         return this
     }
 
     operadorAdmin() {
-        cy.get('#isAdmin > :nth-child(1) > .ant-radio > .ant-radio-input').click({ force: true })
+        cy.get('#isAdmin > :nth-child(1) > .ant-radio > .ant-radio-input', { force: true }).click({ force: true })
         return this
     }
 

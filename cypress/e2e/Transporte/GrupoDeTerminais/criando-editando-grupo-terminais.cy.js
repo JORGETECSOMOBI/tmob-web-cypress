@@ -13,17 +13,18 @@ describe('Testando Grupo de terminais', () => {
     it('Criando um novo grupo de terminais', () => {
         componente
             .clicaBotao('+ Novo grupo')
-            .escreveDescricao(faker.name.findName())
+            .escreveDescricao('Criando Terminal')
             .clicaBotao('OK')
             .validaMensagem(mensagem.criaGrupoTerminaisSucesso)
     })
 
     it('Editando grupo de terminais "Geral"', () => {
         grupoTerminais
+            .pesquisarNoGrupo('Criando Terminal')
             .botaoEditaGrupo()
         componente
             .limpaDescricao()
-            .escreveDescricao('juca Blablabla')
+            .escreveDescricao('Automação Teste')
         grupoTerminais
             .selecionaTipoInstalação('Garagem')
             .selecionaCalendarioOperacional('Teste Augusto calendario')
@@ -34,6 +35,7 @@ describe('Testando Grupo de terminais', () => {
 
     it('Editando grupo de terminais "Regras de serviço"', () => {
         grupoTerminais
+            .pesquisarNoGrupo('Automação Teste')
             .botaoEditaGrupo()
             .stepRegrassDeProduto()
             .restringir()
@@ -50,6 +52,7 @@ describe('Testando Grupo de terminais', () => {
 
     it('Editando grupo de terminais "Restrição de função"', () => {
         grupoTerminais
+            .pesquisarNoGrupo('Automação Teste')
             .botaoEditaGrupo()
             .restricaoFuncao()
             .adicionaRestricao()
@@ -57,5 +60,29 @@ describe('Testando Grupo de terminais', () => {
         componente
             .clicaBotao('OK')
             .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
+    })
+
+    it('Adicionando um item no agrupador', () => {
+        grupoTerminais
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoAdicionaItem()
+        componente
+            .escreveDescricao(faker.name.findName())
+        grupoTerminais
+            .selecionaTipoInstalação('Garagem')
+            .remotamenteOperavel()
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.criaGrupoTerminaisSucesso)
+    })
+
+    it('Excluindo um grupo de terminais', () => {
+        grupoTerminais
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoMais()
+            .botaoExcluiGrupo()
+            .botaoExcluiAgupador()
+        componente
+            .validaMensagem(mensagem.removeGrupoTerminaisSucesso)
     })
 })

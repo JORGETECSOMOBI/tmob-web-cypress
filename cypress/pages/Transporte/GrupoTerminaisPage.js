@@ -27,7 +27,23 @@ class GrupoTerminaisPage {
     }
 
     botaoExcluiGrupo() {
-        cy.get(':nth-child(6) > .ant-tree-node-content-wrapper > .ant-tree-title > [style="filter: none;"] > .ant-row-space-between > :nth-child(5) > .ant-btn > .ant-btn-icon > span > svg').click({ force: true })
+        cy.get('.ant-tree-treenode-switcher-close > .ant-tree-node-content-wrapper > .ant-tree-title > [style="filter: none;"] > .ant-row-space-between > :nth-child(4) > .ant-btn > .ant-btn-icon > span > svg').click({ force: true })
+        cy.wait(3000)
+        return this
+    }
+    
+    botaoExcluiAgupador() {
+        cy.get(':nth-child(5) > .ant-btn').click({ force: true })
+        return this
+    }
+
+    botaoMais() {
+        cy.get('.ant-tree-switcher').click({ force: true })
+        return this
+    }
+
+    pesquisarNoGrupo(item) {
+        cy.get('.ant-input-affix-wrapper > .ant-input', { force: true }).type(item, { force: true })
         return this
     }
 
