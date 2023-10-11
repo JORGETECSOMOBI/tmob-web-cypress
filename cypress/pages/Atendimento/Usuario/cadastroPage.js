@@ -86,12 +86,31 @@ class cadastroPage {
         return this
     }
 
-
     selecionaTipoUsuario(tipoUsuario) {
         cy.get('.ant-select-selection-overflow').click({ force: true })
-
         cy.contains(tipoUsuario).click()
         cy.get('.ant-col-lg-9').click()
+        return this
+    }
+
+    selecionaDataAdmissao() {
+        const data = 'Hoje'
+        cy.get('#createUser_UsrEmployees_createMany_data_0_admissionDate').click({ force: true })
+        cy.contains(data).click({ force: true })
+        return this
+    }
+
+    selecionaDataDemissao() {
+        const data = 'Hoje'
+        cy.get('#createUser_UsrEmployees_createMany_data_0_resignDate').click({ force: true })
+        cy.contains(data).click({ force: true })
+        return this
+    }
+
+
+    selecionaInstituicao(instituicao) {
+        cy.get('#createUser_UsrEmployees_createMany_data_0_usrOrganizationId').click({ force: true })
+        cy.contains(instituicao, { force: true }).click({ force: true })
         return this
     }
 
@@ -134,6 +153,12 @@ class cadastroPage {
     selecionaNomeInstituicao() {
         cy.get('#createUser_UsrStudents_createMany_data_0_usrOrganizationId').click({ force: true })
         cy.contains('jota teste').click()
+        return this
+    }
+
+    escreveCargo() {
+        const cargo = 'Motorista'
+        cy.get('#createUser_UsrEmployees_createMany_data_0_position').type(cargo)
         return this
     }
 
@@ -259,7 +284,7 @@ class cadastroPage {
 
     escreveCRM() {
         const crm = faker.br.cpf()
-        cy.get('#createUser_UsrDisabilities_create_0_doctorRegistration').type(crm)
+        cy.get('#createUser_UsrDisabilities_create_0_doctorRegistration').type(crm, { force: true })
         return this
     }
 

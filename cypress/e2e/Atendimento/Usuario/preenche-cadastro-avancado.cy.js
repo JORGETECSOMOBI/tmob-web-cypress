@@ -34,5 +34,12 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         cadastrar.tipoDeUsuarioEspecial()
         cadastrar.contato()
     })
+
+    it('Cadastra com sucesso um novo usuário "Funcionário" usando o cadastro avançado', () => {
+        cadastrar.geralFuncionario()
+        cadastrar.documentacao()
+        cadastrar.tipoDeUsuarioFuncionario()
+        cadastrar.contato()
+    })
 })
 

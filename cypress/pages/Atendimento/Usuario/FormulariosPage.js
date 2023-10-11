@@ -56,7 +56,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('Automação estudante')
+            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -90,7 +90,24 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('Automação Especial')
+            .selecionaTipoUsuario('AAAAA ATOMAÇÃO ESPECIAL')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    geralFuncionario() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        cadastrar
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO FUNCIONÁRIO')
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -114,6 +131,16 @@ class FormulariosPage {
         cadastrar
             .selecionaDataRegistro('Hoje')
             .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
+        componente
+            .clicaBotao('Proximo')
+    }
+
+    tipoDeUsuarioFuncionario() {
+        cadastrar
+            .selecionaInstituicao('TESTE WEB')
+            .selecionaDataAdmissao()
+            .selecionaDataDemissao()
+            .escreveCargo()
         componente
             .clicaBotao('Proximo')
     }
@@ -150,15 +177,15 @@ class FormulariosPage {
         cadastrar
             .selecionaDescricaoCID('A000')
             .selecionaTipoAprovacao('Aprovado')
-            .selecionaPostoAtendimentoEspecial('Automação Especial') 
-            .escreveCRM() 
+            .selecionaPostoAtendimentoEspecial('Automação Especial')
+            .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('Hoje')
             .escreveNomeAcompanhante()
             .documentoAcompanhante()
         componente
-        .clicaBotao('Salvar acompanhante')
-        .clicaBotao('Proximo')
+            .clicaBotao('Salvar acompanhante')
+            .clicaBotao('Proximo')
     }
 
     contato() {
