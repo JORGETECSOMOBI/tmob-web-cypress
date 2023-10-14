@@ -14,7 +14,7 @@ describe('Testando home de hotlist', () => {
             .validaId('19')
     })
 
-    it.only('filtro por nome', () => {
+    it('filtro por nome', () => {
         componente
             .escreveDescricao('Elizangela do Sul')
             .validaNome('Elizangela do Sul')

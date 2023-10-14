@@ -130,7 +130,7 @@ class FormulariosPage {
     tipoDeUsuarioIdoso() {
         cadastrar
             .selecionaDataRegistro('Hoje')
-            .selecionaPostoAtendimento(cadastro.postoDeAtendimento)
+            .selecionaPostoAtendimento()
         componente
             .clicaBotao('Proximo')
     }
@@ -177,7 +177,7 @@ class FormulariosPage {
         cadastrar
             .selecionaDescricaoCID('A000')
             .selecionaTipoAprovacao('Aprovado')
-            .selecionaPostoAtendimentoEspecial('Automação Especial')
+            .selecionaPostoAtendimentoEspecial()
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('Hoje')

@@ -3,19 +3,21 @@ import novoPostoAtendimento from "../../../pages/Atendimento/PostoDeAtendimento/
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import faker from 'faker-br'
 describe('Testando a tela "Usuário"', () => {
-    
+
 
     beforeEach(() => {
         usuario.beforePostosAtendimento()
     })
 
     it(' Criando e salvando com sucesso a criação de um novo"Posto de atendimento"', () => {
-
+        const descricao = faker.name.firstName()
+        const nome = 'AAAAAA AUTOMAÇÂO'
+        const posto = `${nome} ${descricao}`
         componente
             .clicaBotao('Novo')
         novoPostoAtendimento
-            .descricao(faker.name.firstName())
-            .nome('Teste Automático')
+            .descricao(posto)
+            .nome('AAAAAA AUTOMAÇÂO')
             .cep(12903000)
             .numero(2000)
             .complemento('nãotem')

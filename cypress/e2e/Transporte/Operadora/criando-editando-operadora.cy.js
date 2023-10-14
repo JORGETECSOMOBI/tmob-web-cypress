@@ -26,7 +26,7 @@ describe('Testando Grupo de Operadora', () => {
             .validaMensagem(mensagem.cadastroOperadoraSucesso)
     })
 
-    it.only('Editando uma operadora', () => {
+    it('Editando uma operadora', () => {
         componente
             .escreveNomeId('146')
             .clicaBotao('Editar')

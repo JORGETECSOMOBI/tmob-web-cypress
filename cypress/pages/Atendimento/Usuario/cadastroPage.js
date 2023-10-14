@@ -120,15 +120,15 @@ class cadastroPage {
         return this
     }
 
-    selecionaPostoAtendimento(posto) {
-        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click()
-        cy.contains(posto, ({ force: true })).click({ force: true })
+    selecionaPostoAtendimento() {
+        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(0).click({ force: true })
         return this
     }
 
-    selecionaPostoAtendimentoEspecial(posto) {
+    selecionaPostoAtendimentoEspecial() {
         cy.get('#createUser_UsrDisabilities_create_0_UsrServiceStation', { force: true }).click({ force: true })
-        cy.contains(posto, ({ force: true })).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(3).wait(1000).click({ force: true })
         return this
     }
 
@@ -266,13 +266,6 @@ class cadastroPage {
     selecionaTipoAprovacao(tipo) {
         cy.get('#createUser_UsrDisabilities_create_0_approvalType').click({ force: true })
         cy.contains(tipo).click({ force: true })
-        return this
-    }
-
-
-    selecionaPostoAtendimento(posto) {
-        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click({ force: true })
-        cy.contains(posto, { force: true }).click({ force: true })
         return this
     }
 
