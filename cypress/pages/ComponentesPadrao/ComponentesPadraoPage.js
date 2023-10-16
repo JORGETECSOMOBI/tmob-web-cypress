@@ -61,7 +61,7 @@ class ComponentesPadraoPage {
 
     selecionaTipo(tipo) {
         cy.get('#type').click({ force: true })
-        cy.contains(tipo).click({ force: true })
+        cy.contains(tipo).wait(1000).click({ force: true })
         return this
     }
 
@@ -110,11 +110,13 @@ class ComponentesPadraoPage {
             .should('not.contain', 'Inativo');
         return this
     }
+
     validaStatusInativo() {
         cy.get('[style="flex-direction: row;"] > .ant-layout')
             .should('not.contain', 'Ativo', { force: true })
         return this
     }
+    
     validaStatusAusente(status) {
         cy.get('[style="flex-direction: row;"] > .ant-layout')
             .should('not.contain', status);

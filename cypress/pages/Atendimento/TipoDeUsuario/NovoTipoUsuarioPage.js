@@ -1,7 +1,17 @@
+import faker from 'faker-br'
+
 class NovoTipoUsuarioPage {
 
     descricao(descricao) {
         cy.get('#description').type(descricao)
+        return this
+    }
+
+    escreveDescricaoTipoUsuario() {
+        const nome = 'Automação'
+        const complemento = faker.name.lastName()
+        const descricao = `${nome} ${complemento}`
+        cy.get('#description').type(descricao, { force: true }).wait(1000)
         return this
     }
 

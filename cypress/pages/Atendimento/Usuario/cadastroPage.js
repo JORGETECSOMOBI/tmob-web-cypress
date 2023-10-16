@@ -251,9 +251,9 @@ class cadastroPage {
         return this
     }
 
-    selecionaOperadora(operadora) {
+    selecionaOperadora() {
         cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click({ force: true })
-        cy.contains(operadora).click({ force: true })
+        cy.get('.ant-select-item-option-content').eq(3).click({ force: true })
         return this
     }
 

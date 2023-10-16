@@ -13,10 +13,10 @@ describe('Testando "tipo de Usuário', () => {
         componente
             .clicaBotao('Novo')
         novoTipoUsuario
+            .escreveDescricaoTipoUsuario()
             .idadeMinima('1')
             .idadeMaxima('120')
         componente
-            .escreveDescricao('tipousuárioautomaçãoteste')
             .selecionaTipo('Funcionário')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
@@ -71,4 +71,3 @@ describe('Testando "tipo de Usuário', () => {
             .validaMensagem('Tipo de usuário editado com sucesso')
     })
 })
-
