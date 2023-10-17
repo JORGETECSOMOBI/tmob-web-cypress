@@ -14,5 +14,7 @@
     "editaUsuarioSucesso": "Editar usuário",
     "editaGrupoTerminaisSucesso": "Grupo de terminal editado",
     "removeGrupoTerminaisSucesso": "Grupo de terminal removido",
-    "cadastroOperadoraSucesso": "A operadora foi cadastrado com sucesso"
+    "cadastroOperadoraSucesso": "A operadora foi cadastrado com sucesso",
+    "criaCartaoMidiaSucesso" : "O cartão foi criado com sucesso",
+    "concluido" : "Concluido"
 }

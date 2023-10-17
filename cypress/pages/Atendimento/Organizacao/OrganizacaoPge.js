@@ -1,12 +1,19 @@
+import faker from 'faker-br'
 class OrganizacaoPage {
 
     escreveRazaosocial(organizacao) {
+        const nome = 'AUTOMATICO'
+        const nome2 = faker.name.lastName()
+        organizacao = `${nome} ${nome2}`
         cy.get('#name').type(organizacao)
         return this
     }
 
-    escreveNomeIdfantasia(nome) {
-        cy.get('#shortName').type(nome)
+    escreveNomeIdfantasia(fantasia) {
+        const nome = 'AUTOMAÇÃO'
+        const nome2 = faker.name.lastName()
+        fantasia = `${nome} ${nome2}`
+        cy.get('#shortName').type(fantasia)
         return this
     }
 
@@ -20,7 +27,7 @@ class OrganizacaoPage {
         return this
     }
     escreveCNPJ(cnpj) {
-        cy.get('#createManyMandatoryDocument_0_value').type(cnpj, {force: true})
+        cy.get('#createManyMandatoryDocument_0_value').type(cnpj, { force: true })
         return this
     }
 
@@ -30,7 +37,7 @@ class OrganizacaoPage {
     }
 
     escreveCEP(cep) {
-        cy.get('#UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true }).wait(1000)
+        cy.get('#UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true }).wait(3000)
         return this
     }
 
@@ -62,8 +69,8 @@ class OrganizacaoPage {
     }
 
     selecionaOperadora(operadora) {
-        cy.get('#toTransportOperator').click()
-        cy.contains(operadora).click()
+        cy.get('#toTransportOperator', { force: true }).click({ force: true })
+        cy.contains(operadora).wait(1000).click()
         return this
     }
 

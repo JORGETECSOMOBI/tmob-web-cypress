@@ -1,3 +1,4 @@
+import faker from 'faker-br'
 class ComponentesPadraoPage {
 
     clicaBotao(label) {
@@ -5,7 +6,43 @@ class ComponentesPadraoPage {
         return this
     }
 
+    clicaBotaoNovo() {
+        const label = "Novo"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
     clicaBotaoProximo() {
+        const label = "Proximo"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoSalvar() {
+        const label = "Salvar"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoSim() {
+        const label = "Sim"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoVisualizar() {
+        const label = "Visualizar"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoEditar() {
+        const label = "Editar"
+        cy.contains(label, { force: true }).should('have.text', label, { force: true }).click({ force: true })
+        return this
+    }
+
+    clicaBotaoProximoCadastroSimplificado() {
         cy.xpath('/html/body/div/div/section/div/section/section/main/div/div[2]/div/button[1]', { force: true }).wait(2000).click({ force: true })
         return this
     }
@@ -168,8 +205,11 @@ class ComponentesPadraoPage {
         return this
     }
 
-    escreveNomeId(nome) {
-        cy.get('#name').type(nome, { force: true })
+    escreveNomeId(operadora) {
+        const nome = 'AUTOMAÇÃO'
+        const nome2 = faker.name.lastName()
+        operadora = `${nome} ${nome2}`
+        cy.get('#name').type(operadora, { force: true })
         return this
     }
 

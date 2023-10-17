@@ -26,7 +26,7 @@ class FormulariosPage {
             .preencheNumero(cadastro.numero)
             .preencheCEP(cadastro.cep)
         componente
-            .clicaBotaoProximo()
+            .clicaBotaoProximoCadastroSimplificado()
             .clicaBotao('Salvar')
             .validaMensagem(mensagem.mensagemNovoCadastroSucesso)
             .validatexto(texto.textoCadastroCartão)

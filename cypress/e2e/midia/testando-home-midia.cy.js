@@ -1,6 +1,8 @@
 import midia from '../../pages/midia/MidiaHome'
+import componentes from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import texto from '../../fixtures/textos.json'
 
-describe('Testando "Midia', () => {
+describe('Testando home "Midia', () => {
 
     beforeEach(() => {
         midia.beforeMidiaHome()
@@ -36,5 +38,18 @@ describe('Testando "Midia', () => {
 
     it('testando filtro por tipo de cartão', () => {
         midia.pesquisaPorTipoDeCartao('VTComum')
+    })
+
+    it('testando funcionalidade "novo"', () => {
+        componentes.clicaBotaoNovo()
+        componentes.validaMensagem(texto.textoCadastroCartão)
+    })
+    
+    it('testando funcionalidade "Visualizar"', () => {
+        componentes.clicaBotaoVisualizar()
+    })
+
+    it('testando funcionalidade "Editar"', () => {
+        componentes.clicaBotaoEditar()
     })
 })
