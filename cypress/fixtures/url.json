@@ -13,6 +13,6 @@
     "visualizaConsorcioId53": "https://web.test.tmob.com.br/transport/companyAssociation/53",
     "visualizaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12",
     "editaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12/edit",
-    "midia" : "https://web.test.tmob.com.br/media"
-
+    "midia": "https://web.test.tmob.com.br/media",
+    "dispositivo": "https://web.test.tmob.com.br/device/?companyDesc&deviceType=validator&tabs=1"
 }
