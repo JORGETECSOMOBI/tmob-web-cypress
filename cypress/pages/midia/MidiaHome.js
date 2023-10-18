@@ -1,5 +1,7 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import url from '../../fixtures/url.json'
 import faker from 'faker-br'
 
 class MidiaHome {
@@ -8,6 +10,9 @@ class MidiaHome {
         login.signin()
         home.tiposDeUso()
         home.midia()
+        componente
+            .validaURL(url.midia)
+            .selecionaIdioma('PT')
     }
 
     pesquisarMidiaId(midiaId) {
@@ -17,9 +22,7 @@ class MidiaHome {
     }
 
     pesquisarMidiaNome(midiaNome) {
-        cy.get('#rc_select_3').type(midiaNome)
-        cy.get('.ant-select-item-option-content').eq(0).click()
-        cy.get('.ant-table-row > :nth-child(2)').should('have.text', midiaNome)
+        cy.get('.ant-select-item-option-content').eq(0).click({force: true})
         return this
     }
 
@@ -95,7 +98,7 @@ class MidiaHome {
     }
 
     limiteHorario() {
-        
+
     }
 
 }

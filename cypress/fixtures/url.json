@@ -12,6 +12,7 @@
     "transporte": "https://web.test.tmob.com.br/transport",
     "visualizaConsorcioId53": "https://web.test.tmob.com.br/transport/companyAssociation/53",
     "visualizaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12",
-    "editaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12/edit"
+    "editaGrupoOperador": "https://web.test.tmob.com.br/transport/operatorGroup/12/edit",
+    "midia" : "https://web.test.tmob.com.br/media"
 
 }
