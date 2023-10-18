@@ -41,7 +41,7 @@ describe('Testando Grupo de terminais', () => {
             .restringir()
             .permitir()
         componente
-            .clicaBotao('Adicionar restrição')
+            .clicaBotao('Adicionar permissão')
         grupoTerminais
             .tipoRestricao('QrCode')
             .subTipoRestricao('QRCODE ATM')

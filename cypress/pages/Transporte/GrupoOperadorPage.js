@@ -12,7 +12,7 @@ class GrupoOperadorPage {
         componente
             .validaURL(url.transporte)
             .selecionaIdioma('PT')
-            .clicaBotaoMenuPosicao(7)
+            .clicaBotaoMenuPosicao(8)
         return this
     }
 

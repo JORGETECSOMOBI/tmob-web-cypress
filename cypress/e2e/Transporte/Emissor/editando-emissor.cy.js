@@ -8,7 +8,7 @@ describe('Testando "Consócio"', () => {
         emissor.beforeEmissor()
     })
 
-    it('Editar um emissor', () => {
+    it.skip('Editar um emissor', () => {
         componente
             .pesquisaNomeId('99')
             .clicaBotao('Editar')

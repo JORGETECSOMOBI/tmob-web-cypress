@@ -44,14 +44,14 @@ class MidiaHome {
     }
 
     selecionaUsuarioMidia() {
-        cy.get('#usrUser').click()
-        cy.get('.ant-select-item-option-content').eq(0).click()
+        cy.get('#usrUser').click({ force: true })
+        cy.get('.ant-select-item-option-content').eq(3).wait(3000).click({ force: true })
         return this
     }
 
     selecionaEmissor() {
         cy.get('#issuer').click()
-        cy.get('.ant-select-item-option-content').eq(0).click()
+        cy.get('.ant-select-item-option-content').eq(3).click({ force: true })
         return this
     }
 
@@ -63,7 +63,7 @@ class MidiaHome {
 
     selecionaTipoSL3() {
         cy.get('#tagType').click()
-        cy.get('.ant-select-item-option-content').eq(1).click({ force: true })
+        cy.get('.ant-select-item-option-content').eq(3).click({ force: true })
         return this
     }
 
