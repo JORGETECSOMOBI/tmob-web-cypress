@@ -37,7 +37,7 @@ describe('Testando "tipo de Usuário', () => {
             .validaMensagem('A descrição inserida já existe em Tipo de usuário.')
     })
 
-    it.skip('Editando tipo de usuário com descrição já cadastrado no sistema ', () => {
+    it('Editando tipo de usuário com descrição já cadastrado no sistema ', () => {
         componente
             .pesquisa('tipousuárioautomaçãoteste')
             .clicaBotao('Editar')
@@ -54,7 +54,7 @@ describe('Testando "tipo de Usuário', () => {
             .validaMensagem('A descrição inserida já existe em Tipo de usuário.')
     })
 
-    it.skip('Editando tipo de usuário com sucesso ', () => {
+    it('Editando tipo de usuário com sucesso ', () => {
         componente
             .pesquisa('tipousuárioautomaçãoteste')
             .clicaBotao('Editar')

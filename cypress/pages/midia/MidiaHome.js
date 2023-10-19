@@ -50,7 +50,7 @@ class MidiaHome {
     }
 
     selecionaEmissor() {
-        cy.get('#issuer').click()
+        cy.get('#issuer').click({ force: true })
         cy.get('.ant-select-item-option-content').eq(3).click({ force: true })
         return this
     }

@@ -42,7 +42,7 @@ describe('Testando Grupo de Operador', () => {
 
     it('Editando um Grupo de Operador', () => {
         componente
-            .escreveDescricao('30')
+            .escreveDescricao('12')
             .clicaBotao('Editar')
             .limpaDescricao()
             .escreveDescricao(faker.name.lastName())
@@ -55,7 +55,7 @@ describe('Testando Grupo de Operador', () => {
 
     it('Editando um Grupo de Operador incluindo funções por lote', () => {
         componente
-            .escreveDescricao('30')
+            .escreveDescricao('12')
             .clicaBotao('Editar')
             .limpaDescricao()
             .escreveDescricao(faker.name.lastName())
@@ -72,7 +72,7 @@ describe('Testando Grupo de Operador', () => {
 
     it('Editando um Grupo de Operador excluindo funções por lote', () => {
         componente
-            .escreveDescricao('30')
+            .escreveDescricao('12')
             .clicaBotao('Editar')
             .limpaDescricao()
             .escreveDescricao(faker.name.lastName())

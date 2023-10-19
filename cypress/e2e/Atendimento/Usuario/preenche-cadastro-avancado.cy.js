@@ -28,7 +28,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         cadastrar.contato()
     })
 
-    it('Cadastra com sucesso um novo usuário "Especial" usando o cadastro avançado', () => {
+    it.only('Cadastra com sucesso um novo usuário "Especial" usando o cadastro avançado', () => {
         cadastrar.geralEspecial()
         cadastrar.documentacao()
         cadastrar.tipoDeUsuarioEspecial()

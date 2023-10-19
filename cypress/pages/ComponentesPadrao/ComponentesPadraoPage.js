@@ -83,7 +83,7 @@ class ComponentesPadraoPage {
     }
 
     selecionaIdioma(idioma) {
-        cy.get('.ant-select-selection-item > .ant-row').click({ force: true })
+        cy.get('.ant-select-selection-item > .ant-row', { force: true }).click({ force: true })
         cy.contains(idioma, { force: true }).should('have.text', idioma).click({ force: true })
         cy.contains(idioma, { force: true }).click({ force: true })
         return this
@@ -153,7 +153,7 @@ class ComponentesPadraoPage {
             .should('not.contain', 'Ativo', { force: true })
         return this
     }
-    
+
     validaStatusAusente(status) {
         cy.get('[style="flex-direction: row;"] > .ant-layout')
             .should('not.contain', status);
@@ -196,7 +196,7 @@ class ComponentesPadraoPage {
     }
 
     escreveDescricao(descricao) {
-        cy.get('#description').type(descricao, { force: true }).wait(1000)
+        cy.get('#description').type(descricao, { force: true }).wait(2000)
         return this
     }
 
@@ -236,6 +236,17 @@ class ComponentesPadraoPage {
 
     limpaNome() {
         cy.get('#name', { force: true }).clear({ force: true })
+        return this
+    }
+
+    limpaEditaNome() {
+        cy.get('#editUser_name').clear({ force: true })
+        return this
+    }
+
+    editaNome() {
+        const nome= (faker.name.findName())
+        cy.get('#editUser_name').type(nome)
         return this
     }
 
