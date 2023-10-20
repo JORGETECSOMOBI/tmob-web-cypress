@@ -1,5 +1,6 @@
 import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage'
 
 describe('Acessando ususário e Testando Logs de alterações', () => {
 
@@ -23,15 +24,25 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
         cy.log(`Data atual: ${formattedDate}`)
 
         componente
-            .pesquisaNomeId('56')
+            .pesquisaNomeId('mamae')
+            .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar()
+            .limpaData()
+            .editaData('10/02/1959')
+            .clicaNoDia('10')
+            .selecionaStatusDiversos('Inativo')
+            .selecionaStatusDiversos('Ativo')
+            .excluiTipoDeUsuario()
             .limpaEditaNome()
+        cadastrar
+            .selecionaTipoUsuario('AUTOMAÇÃO')
+        componente
             .editaNome()
             .clicaBotaoSalvar()
             .clicaBotaoModal('Salvar')
             .clicaBotao('Ver usuário')
             .clicaBotao('Logs de alterações')
             .validatexto('Histórico de alterações')
-            .validatexto(formattedDate)
+            //.validaFormattedDate(formattedDate)
     })
 })

@@ -95,6 +95,11 @@ class ComponentesPadraoPage {
         return this;
     }
 
+    selecionaStatusDiversos(status) {
+        cy.contains(status).click({ force: true })
+        return this
+    }
+
 
     selecionaTipo(tipo) {
         cy.get('#type').click({ force: true })
@@ -114,8 +119,23 @@ class ComponentesPadraoPage {
     }
 
     selecionadata(data, dia) {
-        cy.get('#createUser_birthdate').type(data, { force: true })
+        cy.get('#editUser_birthdate').type(data, { force: true })
         cy.get('.ant-picker-cell-inner').contains(dia).click()
+        return this
+    }
+
+    editaData(data) {
+        cy.get('#editUser_birthdate').type(data, { force: true })
+        return this
+    }
+
+    clicaNoDia(dia) {
+        cy.get('.ant-picker-cell-inner').contains(dia).click()
+        return this
+    }
+
+    limpaData() {
+        cy.get('#editUser_birthdate').clear({ force: true })
         return this
     }
 
@@ -185,6 +205,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validaFormattedDate(formattedDate) {
+        cy.get('.ant-descriptions-item-content').contains(formattedDate)
+        return this
+    }
+
     validaFunçãolimparFiltro() {
         cy.get('#description').should('have.value', '')
         return this
@@ -245,7 +270,7 @@ class ComponentesPadraoPage {
     }
 
     editaNome() {
-        const nome= (faker.name.findName())
+        const nome = (faker.name.findName())
         cy.get('#editUser_name').type(nome)
         return this
     }
@@ -268,6 +293,11 @@ class ComponentesPadraoPage {
 
     validaNome(nome) {
         cy.get('[data-row-key="24"] > .ant-table-cell-ellipsis').contains(nome).should('have.text', nome)
+        return this
+    }
+
+    excluiTipoDeUsuario() {
+        cy.get('.ant-select-selection-item-remove>.anticon>svg').click({ force: true })
         return this
     }
 }

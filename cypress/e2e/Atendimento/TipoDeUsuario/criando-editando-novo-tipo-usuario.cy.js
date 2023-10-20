@@ -56,9 +56,10 @@ describe('Testando "tipo de Usuário', () => {
 
     it('Editando tipo de usuário com sucesso ', () => {
         componente
-            .pesquisa('tipousuárioautomaçãoteste')
+            .pesquisa('AUTOMAÇÃO')
             .clicaBotao('Editar')
         novoTipoUsuario
+            .limpaIdadeMinima()
             .idadeMinima('1')
             .limpaIdadeMaxima()
             .idadeMaxima('120')
@@ -68,6 +69,6 @@ describe('Testando "tipo de Usuário', () => {
             .selecionaStatus('Inativo')
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validaMensagem('Tipo de usuário editado com sucesso')
+            .validaMensagem('Tipo de usuário foi editado com sucesso!')
     })
 })

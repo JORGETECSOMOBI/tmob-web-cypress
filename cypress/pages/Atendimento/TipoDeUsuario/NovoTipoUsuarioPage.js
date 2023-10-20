@@ -25,6 +25,11 @@ class NovoTipoUsuarioPage {
         return this
     }
 
+    limpaIdadeMinima(idadeMin) {
+        cy.get('#minimalAge', { force: true }).clear({ force: true })
+        return this
+    }
+
     idadeMaxima(idadeMax) {
         cy.get('#maximumAge', { force: true }).type(idadeMax, { force: true })
         return this
