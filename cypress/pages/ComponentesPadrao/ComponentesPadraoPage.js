@@ -84,8 +84,7 @@ class ComponentesPadraoPage {
 
     selecionaIdioma(idioma) {
         cy.get('.ant-select-selection-item > .ant-row', { force: true }).click({ force: true })
-        cy.contains(idioma, { force: true }).should('have.text', idioma).click({ force: true })
-        cy.contains(idioma, { force: true }).click({ force: true })
+        cy.contains(idioma, { force: true }).should('have.text', idioma, ({ force: true })).click({ force: true })
         return this
     }
 

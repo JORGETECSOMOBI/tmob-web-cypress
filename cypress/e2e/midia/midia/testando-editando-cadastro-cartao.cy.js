@@ -1,6 +1,6 @@
-import midia from '../../pages/midia/MidiaHome'
-import componentes from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import mensagem from '../../fixtures/mensagens.json'
+import midia from '../../../pages/midia/MidiaHome'
+import componentes from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import mensagem from '../../../fixtures/textos.json'
 
 describe('Testando Cadastro de cartão', () => {
 

@@ -16,7 +16,7 @@ class MidiaHome {
     }
 
     pesquisarMidiaId(midiaId) {
-        cy.get('#search').type(midiaId)
+        cy.get('#search', {force:true}).type(midiaId, {force: true})
         cy.get('.ant-table-row > :nth-child(1)').should('have.text', midiaId)
         return this
     }
@@ -96,10 +96,5 @@ class MidiaHome {
         cy.get('#description').type(descricao, { force: true }).wait(1000)
         return this
     }
-
-    limiteHorario() {
-
-    }
-
 }
 export default new MidiaHome
