@@ -41,7 +41,7 @@ class HomePage {
 
     midia() {
         cy.get('[href="/media"] > .ant-row > .ant-typography').eq(0).click({ force: true })
-        cy.get(':nth-child(3) > .ant-breadcrumb-link').should('have.text', 'Mídia')
+        cy.get(':nth-child(3) > .ant-breadcrumb-link').should('have.text', 'Medias')
         return this
     }
 
@@ -64,7 +64,7 @@ class HomePage {
 
     dispositivos() {
         cy.get('[href="/device"] > .ant-row > .ant-typography').click({ force: true })
-        cy.get('#rc-tabs-0-tab-1').should('have.text', 'Dispositivos e conexões')
+        cy.get('#rc-tabs-0-tab-1').should('have.text', 'Devices and connections')
         return this
     }
 
