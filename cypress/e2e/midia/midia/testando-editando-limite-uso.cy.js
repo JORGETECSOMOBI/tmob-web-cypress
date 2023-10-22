@@ -1,6 +1,6 @@
 import midia from '../../../pages/midia/MidiaHome'
 import componentes from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import mensagem from '../../../fixtures/textos.json'
+import mensagem from '../../../fixtures/mensagens.json'
 
 describe('Testando limite de uso', () => {
 
@@ -33,12 +33,12 @@ describe('Testando limite de uso', () => {
         midia
             .escreveDescricao()
             .selecionaTipoSL3()
-        //     .selecionaTipoTempo()
-        //     .selecionaLimiteTempo()
-        // componentes
-        //     .selecionaStatus('Inativo')
-        //     .clicaBotaoSalvar()
-        //     .clicaBotaoSim()
-        //     .validaMensagem(mensagem.concluido)
+            .limeiteHorario()
+            .limiteDia()
+        componentes
+            .selecionaStatus('Inativo')
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+            .validaMensagem(mensagem.concluido)
     })
 })

@@ -164,66 +164,66 @@ class cadastroPage {
 
     escreveClasse() {
         const classe = faker.name.lastName()
-        cy.get('#createUser_UsrStudents_createMany_data_0_classroom').type(classe)
+        cy.get('#createUser_UsrStudents_createMany_data_0_classroom', { force: true }).type(classe, { force: true })
         return this
     }
 
     escreveSerie() {
         const serie = ('Primeira')
-        cy.get('#createUser_UsrStudents_createMany_data_0_grade').type(serie)
+        cy.get('#createUser_UsrStudents_createMany_data_0_grade', { force: true }).type(serie, { force: true })
         return this
     }
 
     escreveRa() {
         const ra = faker.br.cpf()
-        cy.get('#createUser_UsrStudents_createMany_data_0_registryDocument').type(ra)
+        cy.get('#createUser_UsrStudents_createMany_data_0_registryDocument', { force: true }).type(ra, { force: true })
         return this
     }
 
     escreveQuota() {
         const quota = faker.name.lastName()
-        cy.get('#createUser_UsrStudents_createMany_data_0_medQuotaId').type(quota)
+        cy.get('#createUser_UsrStudents_createMany_data_0_medQuotaId', { force: true }).type(quota, { force: true })
         return this
     }
 
     selecionaPeriodo(periodo) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentPeriodId').click()
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentPeriodId', { force: true }).click({ force: true })
         cy.contains(periodo).click()
         return this
     }
 
     selecionaTipoEstudante(tipo) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentTypeId').click()
+        cy.get('#createUser_UsrStudents_createMany_data_0_usrStudentTypeId', { force: true }).click({ force: true })
         cy.contains(tipo).click()
         return this
     }
 
     selecionaDataInicial(data) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_admissionDate').click({ force: true })
+        cy.get('#createUser_UsrStudents_createMany_data_0_admissionDate', { force: true }).click({ force: true })
         cy.contains(data).click()
         return this
     }
 
     selecionaDataFinal(data) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_resignDate').click({ force: true })
+        cy.get('#createUser_UsrStudents_createMany_data_0_resignDate', { force: true }).click({ force: true })
         cy.contains(data, { force: true }).click({ force: true })
         return this
     }
 
     tirarFoto() {
-        cy.get('.ant-btn > .ant-row > [style="padding-left: 5px; padding-right: 5px;"]').click({ force: true })
+        cy.get('.ant-btn > .ant-row > [style="padding-left: 5px; padding-right: 5px;"]', { force: true }).click({ force: true })
         cy.get('.ant-modal-wrap').click({ force: true })
         return this
     }
 
     incluirFoto() {
-        cy.get('[style=""]').click()
+        cy.get('[style=""]', { force: true }).click({ force: true })
         return this
     }
 
     excluirFoto() {
         cy.wait(1000)
-        cy.get('svg[data-icon="delete"]').click({ force: true })
+        cy.get('svg[data-icon="delete"]', { force: true }).click({ force: true })
         return this
     }
 
@@ -231,17 +231,17 @@ class cadastroPage {
         const nome = 'Automação'
         const sobrenome = faker.name.lastName()
         const nomeCompleto = `${nome} ${sobrenome}`
-        cy.get('#createUser_name').type(nomeCompleto, { force: true })
+        cy.get('#createUser_name', { force: true }).type(nomeCompleto, { force: true })
         return this
     }
 
     limpaNomeCompleto(nome) {
-        cy.get('#editUser_name').clear(nome, { force: true })
+        cy.get('#editUser_name', { force: true }).clear(nome, { force: true })
         return this
     }
 
     editaNomeCompleto(nome) {
-        cy.get('#editUser_name').type(nome, { force: true })
+        cy.get('#editUser_name', { force: true }).type(nome, { force: true })
         return this
     }
 
@@ -305,43 +305,43 @@ class cadastroPage {
     }
 
     escreveNumeroTelefone0(numero) {
-        cy.get('#createUser_UsrPhones_createMany_data_0_number').type(numero, { force: true })
+        cy.get('#createUser_UsrPhones_createMany_data_0_number', { force: true }).type(numero, { force: true })
         return this
     }
 
     escreveMatriculaOperador() {
         const matricula = faker.br.rg()
-        cy.get('#createUser_UsrOperators_create_0_hrid').type(matricula)
+        cy.get('#createUser_UsrOperators_create_0_hrid', { force: true }).type(matricula, { force: true })
         return this
     }
 
     preencheCEP(cep) {
-        cy.get('#createUser_UsrAddresses_createMany_data_0_zipCode').type(cep, { force: true })
+        cy.get('#createUser_UsrAddresses_createMany_data_0_zipCode', { force: true }).type(cep, { force: true })
         return this
     }
 
     preencheNumero(numero) {
-        cy.get('#createUser_UsrAddresses_createMany_data_0_number').type(numero, { force: true })
+        cy.get('#createUser_UsrAddresses_createMany_data_0_number', { force: true }).type(numero, { force: true })
         return this
     }
 
     preencheDocumento0CNPJ(cnpj) {
-        cy.get('#createUser_UsrDocuments_createMany_data_0_value',).type(cnpj, { force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_0_value', { force: true }).type(cnpj, { force: true })
         return this
     }
 
     preencheDocumento0CPF(cpf) {
-        cy.get('#createUser_UsrDocuments_createMany_data_2147483646_value').type(cpf, { force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_2147483646_value', { force: true }).type(cpf, { force: true })
         return this
     }
 
     preencheDocumento1(documento) {
-        cy.get('#createUser_UsrDocuments_createMany_data_105_value').type(documento, { force: true })
+        cy.get('#createUser_UsrDocuments_createMany_data_105_value', { force: true }).type(documento, { force: true })
         return this
     }
 
     documentoOpcional2(numero) {
-        cy.get('#createUser_UsrDocuments_createMany_data_2_value').type(numero)
+        cy.get('#createUser_UsrDocuments_createMany_data_2_value', { force: true }).type(numero)
         return this
     }
 

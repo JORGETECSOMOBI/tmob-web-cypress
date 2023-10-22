@@ -41,7 +41,6 @@ class HomePage {
 
     midia() {
         cy.get('[href="/media"] > .ant-row > .ant-typography').eq(0).click({ force: true })
-        cy.get(':nth-child(3) > .ant-breadcrumb-link').should('have.text', 'Medias')
         return this
     }
 

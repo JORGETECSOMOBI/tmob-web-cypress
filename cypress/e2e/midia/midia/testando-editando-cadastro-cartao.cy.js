@@ -1,6 +1,7 @@
 import midia from '../../../pages/midia/MidiaHome'
 import componentes from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import mensagem from '../../../fixtures/textos.json'
+import mensagem from '../../../fixtures/mensagens.json'
 
 describe('Testando Cadastro de cartão', () => {
 
@@ -21,7 +22,7 @@ describe('Testando Cadastro de cartão', () => {
             .validaMensagem(mensagem.criaCartaoMidiaSucesso)
     })
 
-    it.skip('Editar um cartão ', () => {
+    it('Editar um cartão ', () => {
         componentes
             .clicaBotaoEditar()
         midia

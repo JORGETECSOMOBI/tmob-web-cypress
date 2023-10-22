@@ -39,7 +39,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('AAA Automação')
+            .selecionaTipoUsuario('AAAAA Automação Idoso')
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -73,7 +73,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('AAAA Operador')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO OPERADOR')
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -90,7 +90,7 @@ class FormulariosPage {
             .clicaBotao('Cadastro avançado')
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
-            .selecionaTipoUsuario('AAAAA ATOMAÇÃO ESPECIAL')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
