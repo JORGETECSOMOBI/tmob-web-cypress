@@ -88,8 +88,8 @@ class cadastroPage {
 
     selecionaTipoUsuario(tipoUsuario) {
         cy.get('.ant-select-selection-overflow').click({ force: true })
-        cy.contains(tipoUsuario).click()
-        cy.get('.ant-col-lg-9').click()
+        cy.contains(tipoUsuario).click({ force: true })
+        cy.get('.ant-col-lg-9').eq(0).click({ force: true })
         return this
     }
 
@@ -240,8 +240,11 @@ class cadastroPage {
         return this
     }
 
-    editaNomeCompleto(nome) {
-        cy.get('#editUser_name', { force: true }).type(nome, { force: true })
+    editaNomeCompleto() {
+        const nome = 'Geraldo'
+        const sobrenome = faker.name.lastName()
+        const nomeCompleto = `${nome} ${sobrenome}`
+        cy.get('#editUser_name', { force: true }).type(nomeCompleto, { force: true })
         return this
     }
 

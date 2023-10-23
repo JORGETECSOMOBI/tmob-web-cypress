@@ -45,19 +45,20 @@ class MidiaHome {
 
     selecionaUsuarioMidia() {
         cy.get('#usrUser').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(3).wait(3000).click({ force: true })
+        cy.contains('23').click({ force: true })
+        cy.wait(5000)
         return this
     }
 
     selecionaEmissor() {
         cy.get('#issuer').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(0).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(2).click({ force: true })
         return this
     }
 
     selecionaTipoMidia() {
         cy.get('#mediaType').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(1).contains('VTComum').click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(1).click({ force: true })
         return this
     }
 

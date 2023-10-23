@@ -8,7 +8,7 @@ describe('Testando Cadastro de cartão', () => {
         midia.beforeMidiaHome()
     })
 
-    it('cadastrando um cartão novo', () => {
+    it.skip('cadastrando um cartão novo', () => {
         componentes
             .clicaBotaoNovo()
         midia

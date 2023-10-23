@@ -1,34 +1,34 @@
 class HomePage {
 
     recentAcessTitle() {
-        cy.get('[title="Acessos recentes"]').eq(1).click()
+        cy.get('[title="Acessos recentes"]').eq(1).click({ force: true })
         return this
     }
 
     hometitle() {
-        cy.get('a.ant-anchor-link-title[title="Home"]').eq(1).should("be.visible").click()
+        cy.get('a.ant-anchor-link-title[title="Home"]').eq(1).should("be.visible").click({ force: true })
         return this
     }
 
     todosOsServiçosTitle() {
-        cy.get('[title="Todos os serviços"]').click()
+        cy.get('[title="Todos os serviços"]').click({ force: true })
         return this
     }
 
     idiomaIngles() {
-        cy.get('.ant-select-selection-item').click()
-        cy.get('div.ant-row').contains('EN').click()
+        cy.get('.ant-select-selection-item').click({ force: true })
+        cy.get('div.ant-row').contains('EN').click({ force: true })
         return this
     }
 
     idiomaPortugues() {
-        cy.get('.ant-select-selection-item').click()
-        cy.get('p.mastermastertext-0-2-18').contains('PT').click()
+        cy.get('.ant-select-selection-item').click({ force: true })
+        cy.get('p.mastermastertext-0-2-18').contains('PT').click({ force: true })
         return this
     }
 
     tiposDeUso() {
-        cy.get('#allServices div div:nth-child(1) div span').click()
+        cy.get('#allServices div div:nth-child(1) div span').click({ force: true })
         return this
     }
 
@@ -51,7 +51,7 @@ class HomePage {
     }
 
     abt() {
-        cy.get('[href="/abt"] > .ant-row > .ant-typography').eq(0).click()
+        cy.get('[href="/abt"] > .ant-row > .ant-typography').eq(0).click({ force: true })
         cy.get('#root li:nth-child(4) a').should('have.text', 'Arquivos de ABT')
         return this
     }
@@ -63,7 +63,7 @@ class HomePage {
 
     dispositivos() {
         cy.get('[href="/device"] > .ant-row > .ant-typography').click({ force: true })
-        cy.get('#rc-tabs-0-tab-1').should('have.text', 'Devices and connections')
+        cy.get('#rc-tabs-0-tab-1').should('have.text', 'Dispositivos e conexões')
         return this
     }
 
@@ -87,42 +87,42 @@ class HomePage {
 
 
     comercializacao() {
-        cy.get('[href="/commerce"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/commerce"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Rede de vendas')
         return this
     }
 
     arrecadacao() {
-        cy.get('[href="/ticketing"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/ticketing"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Serviço')
         return this
     }
 
     garagem() {
-        cy.get('[href="/depot"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/depot"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Garagem')
         return this
     }
 
     avl() {
-        cy.get('[href="/avl"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/avl"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Target')
         return this
     }
 
     sistema() {
-        cy.get('[href="/system"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/system"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Grupo de usuário')
         return this
     }
 
     sam() {
-        cy.get('[href="/sam"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/sam"] > .ant-row > .ant-typography').click({ force: true })
         return this
     }
 
     facial() {
-        cy.get('[href="/facial"] > .ant-row > .ant-typography').click()
+        cy.get('[href="/facial"] > .ant-row > .ant-typography').click({ force: true })
         cy.get('#root li:nth-child(2) a').should('have.text', 'Perfis')
         return this
     }

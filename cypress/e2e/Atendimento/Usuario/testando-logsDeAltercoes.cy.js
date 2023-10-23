@@ -15,7 +15,7 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
             .validatexto('Histórico de alterações')
     })
 
-    it.skip('Obtenha a data atual e armazene em uma constante', () => {
+    it.only('Obtenha a data atual e armazene em uma constante', () => {
         const currentDate = new Date()
         const currentDay = currentDate.getDate()
         const currentMonth = currentDate.getMonth() + 1
@@ -43,6 +43,6 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
             .clicaBotao('Ver usuário')
             .clicaBotao('Logs de alterações')
             .validatexto('Histórico de alterações')
-            //.validaFormattedDate(formattedDate)
+            .validaFormattedDate(formattedDate)
     })
 })

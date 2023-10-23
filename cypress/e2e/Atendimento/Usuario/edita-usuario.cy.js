@@ -12,14 +12,14 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
 
     it('Edita usuário', () => {
         componente
-            .escreveNomeId('Automação')
+            .escreveNomeId()
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar('Editar')
 
         edita
             .selecionaTipoEditar('Abt')
             .limpaNomeCompleto()
-            .editaNomeCompleto(faker.name.findName())
+            .editaNomeCompleto()
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')

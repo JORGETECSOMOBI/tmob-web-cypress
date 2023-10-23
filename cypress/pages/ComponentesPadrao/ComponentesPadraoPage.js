@@ -230,9 +230,8 @@ class ComponentesPadraoPage {
     }
 
     escreveNomeId(operadora) {
-        const nome = 'AUTOMAÇÃO'
-        const nome2 = faker.name.lastName()
-        operadora = `${nome} ${nome2}`
+        const nome = 'Geraldo'
+        operadora = nome
         cy.get('#name').type(operadora, { force: true })
         return this
     }
@@ -296,7 +295,7 @@ class ComponentesPadraoPage {
     }
 
     excluiTipoDeUsuario() {
-        cy.get('.ant-select-selection-item-remove>.anticon>svg').click({ force: true })
+        cy.get('.ant-select-selection-item-remove>.anticon>svg').eq(0).click({ force: true })
         return this
     }
 }
