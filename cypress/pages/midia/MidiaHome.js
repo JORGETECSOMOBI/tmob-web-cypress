@@ -27,8 +27,8 @@ class MidiaHome {
     }
 
     pesquisaMidiaPorStatus(status) {
-        cy.get('#rc_select_4').click()
-        cy.get('.ant-select-item-option-content', { force: true }).contains(status).click({ force: true })
+        cy.get('#rc_select_4').click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).contains(status, { force: true }).click({ force: true })
         return this
     }
 
@@ -51,13 +51,13 @@ class MidiaHome {
 
     selecionaEmissor() {
         cy.get('#issuer').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(3).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(0).click({ force: true })
         return this
     }
 
     selecionaTipoMidia() {
-        cy.get('#mediaType').click()
-        cy.get('.ant-select-item-option-content', { force: true }).contains('VTComum').click({ force: true })
+        cy.get('#mediaType').click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(1).contains('VTComum').click({ force: true })
         return this
     }
 

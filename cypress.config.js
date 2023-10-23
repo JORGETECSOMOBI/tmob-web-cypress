@@ -4,7 +4,7 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
   e2e: {
     baseUrl: "https://web.test.tmob.com.br",
-    retries: 2,
+    retries: 3,
 
     setupNodeEvents(on, config) {
       allureWriter(on, config);
