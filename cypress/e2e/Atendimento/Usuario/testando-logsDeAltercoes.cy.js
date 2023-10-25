@@ -15,7 +15,7 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
             .validatexto('Histórico de alterações')
     })
 
-    it.only('Obtenha a data atual e armazene em uma constante', () => {
+    it('Obtenha a data atual e armazene em uma constante', () => {
         const currentDate = new Date()
         const currentDay = currentDate.getDate()
         const currentMonth = currentDate.getMonth() + 1

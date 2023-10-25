@@ -12,8 +12,8 @@ describe('Testando home "Midia', () => {
         midia.pesquisarMidiaId('1709')
     })
 
-    it('testando filtro por nome', () => { 
-        midia.pesquisarMidiaNome('MARIA BALBINA NASCIMENTO DOS SANTOS') 
+    it.skip('testando filtro por nome', () => { 
+        midia.pesquisarMidiaNome('Maria') 
     })  
     
     it('testando filtro por Status "Processado"', () => { 

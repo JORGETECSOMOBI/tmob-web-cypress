@@ -2,7 +2,6 @@ import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import edita from '../../../pages/Atendimento/Usuario/cadastroPage'
 import mensagem from '../../../fixtures/mensagens.json'
-import faker from 'faker-br'
 
 describe('Acessando a página de criação de novo ususário e Testando todas as funcionalidades', () => {
 
@@ -15,7 +14,6 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
             .escreveNomeId()
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar('Editar')
-
         edita
             .selecionaTipoEditar('Abt')
             .limpaNomeCompleto()
