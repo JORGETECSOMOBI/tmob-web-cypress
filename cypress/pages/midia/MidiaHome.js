@@ -28,7 +28,9 @@ class MidiaHome {
 
     pesquisaMidiaPorStatus(status) {
         cy.get('#rc_select_4').click({ force: true })
+        cy.wait(2000)
         cy.get('.rc-virtual-list-holder-inner', { force: true }).contains(status, { force: true }).click({ force: true })
+        
         return this
     }
 
