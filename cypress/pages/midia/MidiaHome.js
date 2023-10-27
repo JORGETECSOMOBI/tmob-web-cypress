@@ -22,13 +22,15 @@ class MidiaHome {
     }
 
     pesquisarMidiaNome(midiaNome) {
-        cy.get('.ant-select-item-option-content', { force: true }).eq(0).click({ force: true })
+        cy.get('#search').type(midiaNome)
         return this
     }
 
     pesquisaMidiaPorStatus(status) {
         cy.get('#rc_select_4').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).contains(status, { force: true }).click({ force: true })
+        cy.wait(2000)
+        cy.get('.rc-virtual-list-holder-inner', { force: true }).contains(status, { force: true }).click({ force: true })
+        
         return this
     }
 
