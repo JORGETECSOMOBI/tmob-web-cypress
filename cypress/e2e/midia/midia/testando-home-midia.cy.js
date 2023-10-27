@@ -2,7 +2,7 @@ import midia from '../../../pages/midia/MidiaHome'
 import componentes from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import texto from '../../../fixtures/textos.json'
 
-describe('Testando home "Midia', () => {
+describe('Testando home "Midia"', () => {
 
     beforeEach(() => {
         midia.beforeMidiaHome()
