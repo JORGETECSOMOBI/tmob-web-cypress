@@ -7,7 +7,7 @@ describe('Testando Cadastro de cartão', () => {
         limite.beforeLimiteUso()
     })
 
-    it.skip('cadastrando um cartão novo', () => {
+    it('cadastrando um cartão novo', () => {
         componentes
             .clicaBotaoNovo()
     })

@@ -8,7 +8,7 @@ class NovoTipoUsuarioPage {
     }
 
     escreveDescricaoTipoUsuario() {
-        const nome = 'Automação'
+        const nome = 'Geraldo'
         const complemento = faker.name.lastName()
         const descricao = `${nome} ${complemento}`
         cy.get('#description').type(descricao, { force: true }).wait(1000)

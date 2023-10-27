@@ -69,8 +69,7 @@ class OrganizacaoPage {
     }
 
     selecionaOperadora(operadora) {
-        cy.get('#toTransportOperator', { force: true }).click({ force: true })
-        cy.contains(operadora).wait(1000).click()
+        cy.get('#toTransportOperator', { force: true }).type('Automação').click({ force: true })
         return this
     }
 

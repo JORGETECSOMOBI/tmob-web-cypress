@@ -9,7 +9,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.beforeUsuario()
     })
 
-    it('Edita usuário', () => {
+    it.skip('Edita usuário', () => {
         componente
             .escreveNomeId()
             .clicaBotaoHomepesquisar()

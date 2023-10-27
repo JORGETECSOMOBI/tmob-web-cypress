@@ -56,7 +56,7 @@ describe('Testando "tipo de Usuário', () => {
 
     it('Editando tipo de usuário com sucesso ', () => {
         componente
-            .pesquisa('AUTOMAÇÃO')
+            .pesquisa('Geraldo')
             .clicaBotao('Editar')
         novoTipoUsuario
             .limpaIdadeMinima()

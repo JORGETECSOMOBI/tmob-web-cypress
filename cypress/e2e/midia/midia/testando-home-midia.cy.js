@@ -12,13 +12,13 @@ describe('Testando home "Midia"', () => {
         midia.pesquisarMidiaId('1709')
     })
 
-    it.skip('testando filtro por nome', () => { 
+    it('testando filtro por nome', () => { 
         midia.pesquisarMidiaNome('Maria') 
     })  
     
     it('testando filtro por Status "Processado"', () => { 
         midia.pesquisaMidiaPorStatus('Processado')
-        midia.validaStatusMidiaAusente('Inativo, Hotlist, Pendente') 
+        midia.validaStatusMidiaAusente('Inativo, Hotlist, Pendente')
     })
 
     it('testando filtro por Status "Inativo"', () => { 
@@ -37,7 +37,7 @@ describe('Testando home "Midia"', () => {
     })
 
     it('testando filtro por tipo de cartão', () => {
-        midia.pesquisaPorTipoDeCartao('VTComum')
+        midia.pesquisaPorTipoDeCartao('VTComum') 
     })
 
     it('testando funcionalidade "novo"', () => {

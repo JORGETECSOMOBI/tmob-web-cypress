@@ -230,7 +230,7 @@ class ComponentesPadraoPage {
     }
 
     escreveNomeId(operadora) {
-        const nome = 'mamae eu quero aa'
+        const nome = 'Geraldo'
         operadora = nome
         cy.get('#name').type(operadora, { force: true })
         return this

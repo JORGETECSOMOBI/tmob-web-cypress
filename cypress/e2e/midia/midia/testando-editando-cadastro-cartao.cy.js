@@ -28,6 +28,7 @@ describe('Testando Cadastro de cartão', () => {
             .selecionaEmissor()
             .selecionaTipoMidia()
         componentes
+            .selecionaIdioma('PT')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
             .validaMensagem(mensagem.criaCartaoMidiaSucesso)
