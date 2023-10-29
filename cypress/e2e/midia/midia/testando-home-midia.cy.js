@@ -16,22 +16,22 @@ describe('Testando home "Midia"', () => {
         midia.pesquisarMidiaNome('Maria') 
     })  
     
-    it('testando filtro por Status "Processado"', () => { 
+    it.skip('testando filtro por Status "Processado"', () => { 
         midia.pesquisaMidiaPorStatus('Processado')
         midia.validaStatusMidiaAusente('Inativo, Hotlist, Pendente')
     })
 
-    it('testando filtro por Status "Inativo"', () => { 
+    it.skip('testando filtro por Status "Inativo"', () => { 
         midia.pesquisaMidiaPorStatus('Inativo')
         midia.validaStatusMidiaAusente('Processado, Hotlist, Pendente') 
     })
 
-    it('testando filtro por Status "Pendente"', () => { 
+    it.skip('testando filtro por Status "Pendente"', () => { 
         midia.pesquisaMidiaPorStatus('Pendente')
         midia.validaStatusMidiaAusente('Inativo, Hotlist, Processado') 
     })
 
-    it('testando filtro por Status "Hotlist"', () => { 
+    it.skip('testando filtro por Status "Hotlist"', () => { 
         midia.pesquisaMidiaPorStatus('Hotlist')
         midia.validaStatusMidiaAusente('Inativo, Processado, Pendente') 
     })

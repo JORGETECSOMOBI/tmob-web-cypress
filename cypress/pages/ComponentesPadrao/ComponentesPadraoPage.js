@@ -94,6 +94,12 @@ class ComponentesPadraoPage {
         return this;
     }
 
+    selecionaStatusInativo(status) {
+        cy.get('#createUser_isActive > :nth-child(2) > :nth-child(2)', { force: true }).click({ force: true })
+        cy.contains(status).click({ force: true })
+        return this;
+    }
+
     selecionaStatusDiversos(status) {
         cy.contains(status).click({ force: true })
         return this

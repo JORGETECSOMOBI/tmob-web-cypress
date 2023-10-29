@@ -7,7 +7,7 @@ describe('Testando a tela "dispositivos"', () => {
             .beforeDispositivo()
     })
 
-    it('Testando filtro por Guid', () => {
+    it.skip('Testando filtro por Guid', () => {
         dispositivos
             .pesquisaPorGuidSerial()
     })

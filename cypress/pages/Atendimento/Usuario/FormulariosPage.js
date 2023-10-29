@@ -47,6 +47,7 @@ class FormulariosPage {
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
         componente
+            .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
     }
 
@@ -64,6 +65,7 @@ class FormulariosPage {
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
         componente
+            .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
     }
 
@@ -81,6 +83,7 @@ class FormulariosPage {
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
         componente
+            .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
     }
 
@@ -98,6 +101,7 @@ class FormulariosPage {
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
         componente
+            .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
     }
 
@@ -115,6 +119,7 @@ class FormulariosPage {
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
         componente
+            .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
     }
 

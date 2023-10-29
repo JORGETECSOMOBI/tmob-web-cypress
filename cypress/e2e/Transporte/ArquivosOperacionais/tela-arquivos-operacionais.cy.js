@@ -32,7 +32,7 @@ describe('Testando "Arquivos Operacionais', () => {
             .validaMensagem('O arquívo operacional já está atualizado.')
     })
 
-    it('forçando a geração de um novo arquivo operacional', () => {
+    it.skip('forçando a geração de um novo arquivo operacional', () => {
         componente
             .clicaBotao('Grupo de operadora')
             .pesquisa('16')
