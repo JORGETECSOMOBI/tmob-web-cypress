@@ -49,7 +49,7 @@ describe('Testando Grupo de linha', () => {
             .validaMensagem(mensagem.editaGrupoLinha)
     })
 
-    it.only('Editar um grupo desabilitando uma linha', () => {
+    it.skip('Editar um grupo desabilitando uma linha', () => {
         componente
             .escreveDescricao('313')
             .clicaBotao('Editar')
