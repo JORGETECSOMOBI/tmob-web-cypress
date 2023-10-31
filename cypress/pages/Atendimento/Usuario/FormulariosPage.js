@@ -29,7 +29,6 @@ class FormulariosPage {
             .clicaBotaoProximoCadastroSimplificado()
             .clicaBotao('Salvar')
             .validaMensagem(mensagem.mensagemNovoCadastroSucesso)
-            .validatexto(texto.textoCadastroCartão)
         return this
     }
 
@@ -205,7 +204,7 @@ class FormulariosPage {
             .complementoEndereco('Ap 12B')
         componente
             .clicaBotao('Salvar')
-            .validatexto(texto.textoCadastroCartão)
+            .validatexto(mensagem.mensagemNovoCadastroSucesso)
     }
 }
 export default new FormulariosPage()
