@@ -8,12 +8,12 @@ describe('Testando Cadastro de cartão', () => {
         midia.beforeMidiaHome()
     })
 
-    it.skip('cadastrando um cartão novo', () => {
+    it('cadastrando um cartão novo', () => {
         componentes
             .clicaBotaoNovo()
         midia
-            .selecionaUsuarioMidia()
             .selecionaEmissor()
+            .selecionaUsuarioMidia()
             .selecionaTipoMidia()
         componentes
             .clicaBotaoSalvar()
@@ -21,7 +21,7 @@ describe('Testando Cadastro de cartão', () => {
             .validaMensagem(mensagem.criaCartaoMidiaSucesso)
     })
 
-    it.skip('Editar um cartão ', () => {
+    it.only('Editar um cartão ', () => {
         componentes
             .clicaBotaoEditar()
         midia

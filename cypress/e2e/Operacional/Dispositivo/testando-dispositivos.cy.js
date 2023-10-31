@@ -11,5 +11,4 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos
             .pesquisaPorGuidSerial()
     })
-
 })

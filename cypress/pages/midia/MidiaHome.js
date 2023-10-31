@@ -47,19 +47,19 @@ class MidiaHome {
     selecionaUsuarioMidia() {
         cy.get('#usrUser').click({ force: true })
         cy.wait(1000)
-        cy.get('.ant-form > :nth-child(1)').contains('23').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('Bruno').click()
         return this
     }
 
     selecionaEmissor() {
         cy.get('#issuer').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(1).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(2).click({ force: true })
         return this
     }
 
     selecionaTipoMidia() {
         cy.get('#mediaType').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(1).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(3).click({ force: true })
         return this
     }
 
