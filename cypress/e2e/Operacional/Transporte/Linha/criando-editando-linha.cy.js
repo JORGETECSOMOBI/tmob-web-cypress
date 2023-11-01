@@ -11,9 +11,8 @@ describe('Criando uma nova linha', () => {
     })
 
     it('Criar uma nova linha', () => {
-        componente
-            .clicaBotao('Novo')
-        linha
-            .descricaoCurta()
+        linha.geral()
+        linha.stepTarifa()
+        linha.sistemasExternos()
     })
 })

@@ -10,8 +10,7 @@ describe('Testando todos os elementos da página Linha', () => {
             .beforeLinha()
     })
 
-    it('Criar uma nova linha', () => {
-        componente
-            .clicaBotao('Novo')
+    it("clica no botão novo", () => {
+        componente.clicaBotao('Novo')
     })
 })
