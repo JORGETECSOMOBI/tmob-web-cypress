@@ -71,17 +71,6 @@ class TransportePage {
         return this
     }
 
-    beforeLinha() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Linha')
-        return this
-    }
-
     beforeMotivosHotlist() {
         login.go()
             .signin()
