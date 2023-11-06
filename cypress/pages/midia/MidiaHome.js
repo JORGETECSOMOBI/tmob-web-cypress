@@ -28,10 +28,10 @@ class MidiaHome {
 
     pesquisaMidiaPorStatus(status) {
         cy.get('#rc_select_4').click({ force: true })
-        cy.get('.rc-virtual-list-holder-inner', { force: true }).contains(status, { force: true }).click({ force: true })
-        
+        cy.contains(status, { force: true }).click({ force: true })
         return this
     }
+
 
     validaStatusMidiaAusente(status, status1, status2) {
         cy.get('[style="flex-direction: row;"] > .ant-layout', { force: true })
@@ -58,8 +58,13 @@ class MidiaHome {
     }
 
     selecionaTipoMidia() {
-        cy.get('#mediaType').click({ force: true })
+        cy.get('#mediaType', { force: true }).click({ force: true })
         cy.get('.ant-select-item-option-content', { force: true }).eq(3).click({ force: true })
+        return this
+    }
+
+    selecionaTipoMidiaEnter(tipo) {
+        cy.get('#mediaType', { force: true }).type(tipo).type(`{enter}`)
         return this
     }
 

@@ -2,7 +2,6 @@ import cadastrar from '../../../pages/Atendimento/Usuario/cadastroPage'
 import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import cadastro from '../../../fixtures/cadastro.json'
 import mensagem from '../../../fixtures/mensagens.json'
-import texto from '../../../fixtures/textos.json'
 import faker from 'faker-br'
 
 class FormulariosPage {
@@ -39,6 +38,7 @@ class FormulariosPage {
         cadastrar
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAAA Automação Idoso')
+            .tirarFoto()
             .preencheNomeCompleto()
             .preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
@@ -81,6 +81,7 @@ class FormulariosPage {
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
             .filiacao2(cadastro.filiacao2)
+            .tirarFoto()
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
@@ -126,7 +127,6 @@ class FormulariosPage {
     documentacao() {
         cadastrar
             .preencheDocumento0CPF(faker.br.cpf())
-            .preencheDocumento1(faker.br.rg())
         componente
             .clicaBotao('Proximo')
     }

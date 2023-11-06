@@ -28,5 +28,5 @@ jobs:
         run: echo 'export LANG=pt_BR.UTF-8' >> $GITHUB_ENV
 
       - name: Run Cypress tests
-        run: npx cypress run --browser chrome
+        run: npx cypress run 
 

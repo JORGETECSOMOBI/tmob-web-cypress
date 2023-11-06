@@ -122,7 +122,7 @@ class cadastroPage {
 
     selecionaPostoAtendimento() {
         cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(0).click({ force: true })
+        cy.get('.ant-select-item-option-content', { force: true }).eq(2).click({ force: true })
         return this
     }
 
@@ -212,6 +212,7 @@ class cadastroPage {
 
     tirarFoto() {
         cy.get('.ant-btn > .ant-row > [style="padding-left: 5px; padding-right: 5px;"]', { force: true }).click({ force: true })
+        cy.wait(5000)
         cy.get('.ant-modal-wrap').click({ force: true })
         return this
     }

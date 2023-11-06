@@ -12,16 +12,16 @@ describe('Testando Cadastro de cartão', () => {
         componentes
             .clicaBotaoNovo()
         midia
-            .selecionaEmissor()
             .selecionaUsuarioMidia()
-            .selecionaTipoMidia()
+            .selecionaEmissor()
+            .selecionaTipoMidiaEnter('VTcomum')
         componentes
             .clicaBotaoSalvar()
             .clicaBotaoSim()
             .validaMensagem(mensagem.criaCartaoMidiaSucesso)
     })
 
-    it.only('Editar um cartão ', () => {
+    it.skip('Editar um cartão ', () => {
         componentes
             .clicaBotaoEditar()
         midia

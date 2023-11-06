@@ -9,7 +9,7 @@ class NovoTipoUsuarioPage {
 
     escreveDescricaoTipoUsuario() {
         const nome = 'Geraldo'
-        const complemento = faker.name.lastName()
+        const complemento = faker.name.findName()
         const descricao = `${nome} ${complemento}`
         cy.get('#description').type(descricao, { force: true }).wait(1000)
         return this
@@ -25,7 +25,7 @@ class NovoTipoUsuarioPage {
         return this
     }
 
-    limpaIdadeMinima(idadeMin) {
+    limpaIdadeMinima() {
         cy.get('#minimalAge', { force: true }).clear({ force: true })
         return this
     }

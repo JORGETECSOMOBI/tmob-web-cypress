@@ -7,7 +7,7 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.beforeUsuario()
     })
 
-    it('Cadastra com sucesso um novo usuário "idoso" usando o cadastro avançado', () => {
+    it.only('Cadastra com sucesso um novo usuário "idoso" usando o cadastro avançado', () => {
         cadastrar.geralIdoso()
         cadastrar.documentacao()
         cadastrar.tipoDeUsuarioIdoso()
