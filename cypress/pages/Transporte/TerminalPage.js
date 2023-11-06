@@ -1,4 +1,20 @@
+import login from "../../pages/Login/LoginPage"
+import home from "../../pages/Home/HomePage"
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import faker from 'faker-br'
+
 class TeminalPage {
+
+    beforeTerminal() {
+        login
+            .go()
+            .signin()
+        home
+            .transporte()
+        componente
+            .selecionaIdioma('PT')
+        return this
+    }
 
     clicarEmCriarTerminal() {
         cy.contains('Criar terminal').click({ force: true })
@@ -63,7 +79,8 @@ class TeminalPage {
         return this
     }
 
-    escreveNumeroTerminal(numero) {
+    escreveNumeroTerminal() {
+        const numero = faker.random.number({ min: 1, max: 10000 })
         cy.get('#code').type(numero, { force: true })
         return this
     }

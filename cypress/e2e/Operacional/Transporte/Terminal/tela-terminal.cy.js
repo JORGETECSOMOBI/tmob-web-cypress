@@ -1,19 +1,11 @@
-import login from "../../../../pages/Login/LoginPage"
-import home from "../../../../pages/Home/HomePage"
+
 import terminal from "../../../../pages/Transporte/TerminalPage"
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+
 
 describe('Testando as funcionalidades da tela "Terminal"', () => {
 
     beforeEach(() => {
-
-        login
-            .go()
-            .signin()
-        home
-            .transporte()
-        componente
-            .selecionaIdioma('PT')
+terminal.beforeTerminal()
     })
 
     it('Pesquisa pelo terminal', () => {

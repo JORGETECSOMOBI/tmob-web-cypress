@@ -1,34 +1,26 @@
-import login from "../../../../pages/Login/LoginPage"
-import home from "../../../../pages/Home/HomePage"
 import terminal from "../../../../pages/Transporte/TerminalPage"
 import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import faker from 'faker-br'
 
 describe('Criando um novo terminal', () => {
 
     beforeEach(() => {
-        login
-            .go()
-            .signin()
-        home
-            .transporte()
-        componente
-            .selecionaIdioma('PT')
+        terminal.beforeTerminal()
     })
 
     it('Criando um terminal', () => {
-        componente
-            .clicaBotao('Criar terminal')
         terminal
             .clicarEmCriarTerminal()
         componente
             .selecionaOperadora('Operadora Autopass')
         terminal
-            .escreveNumeroTerminal('1500')
-            .selecionaGrupoterminal('teste criação')
+            .escreveNumeroTerminal()
+            .selecionaGrupoterminal('Automação Teste')
             .selecionaCalendarioOperacional('Teste Augusto calendario')
         componente
-            .escreveDescricao('Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, Blá, ')
+            .escreveDescricao(faker.name.findName())
             .selecionaStatus('Inativo')
             .clicaBotao('OK')
+            .validaMensagem('Terminal criado com sucesso')
     })
 })

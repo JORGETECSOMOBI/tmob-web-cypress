@@ -70,7 +70,7 @@ class LinhaPage {
         return this
     }
 
-    segundaTarifa(segundaTarifa) {
+    segundaTarifa() {
         cy.get('#farSecondaryRuleId', { force: true }).wait(1000).type(`{enter}`)
         return this
     }
@@ -80,8 +80,8 @@ class LinhaPage {
         return this
     }
 
-    descontaTarifa(descontaTarifa) {
-        cy.get('#farDiscountId', { force: true }).type(descontaTarifa).wait(1000).type(`{enter}`)
+    descontoTarifa(descontoTarifa) {
+        cy.get('#farDiscountId', { force: true }).type(descontoTarifa).wait(1000).type(`{enter}`)
         return this
     }
 
@@ -102,7 +102,80 @@ class LinhaPage {
     }
 
     acoes() {
-        cy.get('.ant-row > :nth-child(1) > .ant-btn').eq(0).click()
+        cy.get('.ant-row > :nth-child(1) > .ant-btn').eq(0).click({ force: true })
+        return this
+    }
+
+    filtroTarifa(tarifa) {
+        cy.get('#farRule').click({ force: true })
+        cy.contains(tarifa).click({ force: true })
+        return this
+    }
+
+    filtroSegundaTarifa(tarifa) {
+        cy.get('#farSecondaryRule').click({ force: true })
+        cy.contains(tarifa).click({ force: true })
+        return this
+    }
+
+    filtroTarifaRemuneracao(tarifa) {
+        cy.get('#farRemunerationRule').click({ force: true })
+        cy.contains(tarifa).click({ force: true })
+        return this
+    }
+
+    filtroDescontoTarifa(tarifa) {
+        cy.get('#farDiscount').click({ force: true })
+        cy.contains(tarifa).click({ force: true })
+        return this
+    }
+
+    filtroTipoDeLinha(tipoLinha) {
+        cy.get('#toLineType').click({ force: true })
+        cy.contains(tipoLinha).click({ force: true })
+        return this
+    }
+
+    filtroDetalheTipoDeLinha(detalheDoTipoDalinha) {
+        cy.get('#toLineDetailType').click({ force: true })
+        cy.contains(detalheDoTipoDalinha).click({ force: true })
+        return this
+    }
+
+    filtroAlcanceLinha(alcanceDaLinha) {
+        cy.get('#toLineRange').click({ force: true })
+        cy.contains(alcanceDaLinha).click({ force: true })
+        return this
+    }
+
+    filtroGrupoIntegracaoLinha(GrupoIntegracaoLinha) {
+        cy.get('#farIntegrationLineGroup').click({ force: true })
+        cy.contains(GrupoIntegracaoLinha).click({ force: true })
+        return this
+    }
+
+    validaPesquisa(pesquisa) {
+        cy.get('[title]',{ force: true }).contains(pesquisa).should('be.visible')
+        return this
+    }
+
+    validaPesquisaDescontotarifa(desconto) {
+        cy.get('[data-row-key]').contains(desconto).should('be.visible')
+        return this
+    }
+
+    validaPesquisaSegundaTarifa(segundaTarifa) {
+        cy.get('[data-row-key]').contains(segundaTarifa).should('be.visible')
+        return this
+    }
+
+    validaPesquisaTarifaremuneração(tarifaRemuneracao) {
+        cy.get('[data-row-key]').contains(tarifaRemuneracao).should('be.visible')
+        return this
+    }
+
+    validaStatus(status) {
+        cy.get('.ant-tag').contains(status).should('be.visible')
         return this
     }
 

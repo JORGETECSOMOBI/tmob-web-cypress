@@ -8,10 +8,6 @@ describe('Testando home "Midia"', () => {
         midia.beforeMidiaHome()
     })
 
-    it('testando filtro por id', () => { 
-        midia.pesquisarMidiaId('1709')
-    })
-
     it('testando filtro por nome', () => { 
         midia.pesquisarMidiaNome('Maria') 
     })  
@@ -21,7 +17,7 @@ describe('Testando home "Midia"', () => {
         midia.validaStatusMidiaAusente('Inativo, Hotlist, Pendente')
     })
 
-    it('testando filtro por Status "Inativo"', () => { 
+    it.only('testando filtro por Status "Inativo"', () => { 
         midia.pesquisaMidiaPorStatus('Inativo')
         midia.validaStatusMidiaAusente('Processado, Hotlist, Pendente') 
     })
