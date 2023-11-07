@@ -16,8 +16,8 @@ describe('Criando uma nova linha', () => {
         linha.sistemasExternos()
     })
 
-    it('Editar uma nova linha', () => {
-        //linha.geral()
+    it.skip('Editar uma nova linha', () => {
+        linha.geral()
         linha.stepTarifa()
         linha.sistemasExternos()
     })

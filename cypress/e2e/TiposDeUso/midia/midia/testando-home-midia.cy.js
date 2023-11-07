@@ -17,7 +17,7 @@ describe('Testando home "Midia"', () => {
         midia.validaStatusMidiaAusente('Inativo, Hotlist, Pendente')
     })
 
-    it.only('testando filtro por Status "Inativo"', () => { 
+    it('testando filtro por Status "Inativo"', () => { 
         midia.pesquisaMidiaPorStatus('Inativo')
         midia.validaStatusMidiaAusente('Processado, Hotlist, Pendente') 
     })

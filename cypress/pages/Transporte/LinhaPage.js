@@ -201,7 +201,7 @@ class LinhaPage {
     stepTarifa() {
         this
             .segundaTarifa('END2END OPERACIONAL TESTE')
-            .descontaTarifa('Desconto 02')
+            .descontoTarifa('Desconto 02')
             .grupoIntegracao('teste grupo de linha')
             .tarifaRemuneracao('Tarifa Sato 1')
             .tarifa('Tarifa Sato')
