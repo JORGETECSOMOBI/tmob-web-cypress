@@ -16,5 +16,6 @@
     "removeGrupoTerminaisSucesso": "Grupo de terminal removido",
     "cadastroOperadoraSucesso": "A operadora foi cadastrado com sucesso",
     "criaCartaoMidiaSucesso" : "O cartão foi criado com sucesso",
-    "concluido" : "Concluido"
+    "concluido" : "Concluido",
+    "tipoDocumentoCradoSucesso": "Tipo de documento foi criado com sucesso!"
 }

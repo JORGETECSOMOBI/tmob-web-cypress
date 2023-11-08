@@ -91,16 +91,6 @@ class UsuarioHome {
         return this
     }
 
-    beforeTiposDocumentos() {
-        login.go()
-            .signin()
-        home.usuario()
-        componente.validaURL(url.usuario)
-        usuario.acessandoTelaTipoDeDocumentos()
-        componente.validaURL(url.tipoDocumento)
-            .selecionaIdioma('PT')
-        return this
-    }
 
     beforeIcd() {
         login.go()
