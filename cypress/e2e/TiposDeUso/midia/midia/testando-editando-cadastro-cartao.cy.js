@@ -1,6 +1,4 @@
 import midia from '../../../../pages/midia/MidiaHome'
-import componentes from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import mensagem from '../../../../fixtures/mensagens.json'
 
 describe('Testando Cadastro de cartão', () => {
 
@@ -9,28 +7,10 @@ describe('Testando Cadastro de cartão', () => {
     })
 
     it('cadastrando um cartão novo', () => {
-        componentes
-            .clicaBotaoNovo()
-        midia
-            .selecionaUsuarioMidia()
-            .selecionaEmissor()
-            .selecionaTipoMidiaEnter('VTcomum')
-        componentes
-            .clicaBotaoSalvar()
-            .clicaBotaoSim()
-            .validaMensagem(mensagem.criaCartaoMidiaSucesso)
+        midia.cadastraNovoCartão()
     })
 
     it.skip('Editar um cartão ', () => {
-        componentes
-            .clicaBotaoEditar()
-        midia
-            .selecionaEmissor()
-            .selecionaTipoMidia()
-        componentes
-            .selecionaIdioma('PT')
-            .clicaBotaoSalvar()
-            .clicaBotaoSim()
-            .validaMensagem(mensagem.criaCartaoMidiaSucesso)
+       midia.editaCartao()
     })
 })

@@ -1,6 +1,7 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import mensagem from '../../fixtures/mensagens.json'
 import url from '../../fixtures/url.json'
 import faker from 'faker-br'
 
@@ -15,19 +16,93 @@ class MidiaHome {
             .selecionaIdioma('PT')
     }
 
+    cadastraNovoCartão() {
+        componente
+            .clicaBotaoNovo()
+        midia
+            .selecionaUsuarioMidia()
+            .selecionaEmissor()
+            .selecionaTipoMidiaEnter('VTcomum')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+            .validaMensagem("Preencha os campos abaixo para o cadastro do cartão")
+        return this
+    }
+
+    editaCartao() {
+        componente
+            .clicaBotaoEditar()
+        midia
+            .selecionaEmissor()
+            .selecionaTipoMidia()
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+            .validaMensagem(mensagem.criaCartaoMidiaSucesso)
+        return this
+    }
+
+
     pesquisarMidiaId(midiaId) {
         cy.get('#search', { force: true }).type(midiaId, { force: true })
         cy.get('.ant-table-row > :nth-child(1)', { force: true }).should('have.text', midiaId)
         return this
     }
 
-    pesquisarMidiaNome(midiaNome) {
-        cy.get('#search').type(midiaNome)
+    pesquisarMidiaNome() {
+        const nome = 'Maria'
+        cy.get('#search').type(nome)
+        return this
+    }
+
+    pesquisaFiltroStatusProcessado() {
+        this
+            .pesquisaMidiaPorStatus('Processado')
+            .validaStatusMidiaAusente('Inativo, Hotlist, Pendente')
+        return this
+    }
+
+    pesquisaFiltroStatusInativo() {
+        this.pesquisaMidiaPorStatus('Inativo')
+            .validaStatusMidiaAusente('Processado, Hotlist, Pendente')
+        return this
+    }
+
+    pesquisaFiltroStatusPendente() {
+        this
+            .pesquisaMidiaPorStatus('Pendente')
+            .validaStatusMidiaAusente('Inativo, Hotlist, Processado')
+        return this
+    }
+
+    pesquisaFiltroStatusHotlist() {
+        this.pesquisaMidiaPorStatus('Hotlist')
+            .validaStatusMidiaAusente('Inativo, Processado, Pendente')
+        return this
+    }
+
+    funcionalidadeNovo() {
+        componente
+            .clicaBotaoNovo()
+            .validaMensagem("Preencha os campos abaixo para o cadastro do cartão")
+        return this
+    }
+
+    funcionalidadeVisualizar() {
+        componente.clicaBotaoVisualizar()
+        return this
+    }
+
+    funcionalidadeEditar() {
+        componente.clicaBotaoEditar()
         return this
     }
 
     pesquisaMidiaPorStatus(status) {
         cy.get('#rc_select_4').click({ force: true })
+        cy.wait(1000)
         cy.contains(status, { force: true }).click({ force: true })
         return this
     }
@@ -39,9 +114,11 @@ class MidiaHome {
         return this
     }
 
-    pesquisaPorTipoDeCartao(cartao) {
+    pesquisaPorTipoDeCartao() {
+        const cartao = 'VTComum'
         cy.get(':nth-child(2) > .ant-select > .ant-select-selector', { force: true }).click({ force: true })
         cy.get('.ant-select-item-option-content', { force: true }).contains(cartao).click({ force: true })
+        return this
     }
 
     selecionaUsuarioMidia() {

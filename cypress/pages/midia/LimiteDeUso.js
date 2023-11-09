@@ -38,54 +38,62 @@ class LimiteDeUsoPage {
             .clicaBotaoEditar()
             .limpaDescricao()
             .escreveDescricao('Caetano')
-        this.selecionaTipocartao('SL3')
-            .selecionaTipoTempo('Semana')
-            .determinaLimiteDeUso('25')
+        this.selecionaTipocartao()
+            .selecionaTipoTempo()
+            .determinaLimiteDeUso()
         componente.clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
             .validaMensagem('Limite de uso foi editado com sucesso!')
         return this
     }
 
-    selecionaTipocartao(tipo) {
+    selecionaTipocartao() {
+        const tipo = 'SL3'
         cy.get('.ant-select-selection-search-input').eq(1).click({ force: true })
         cy.contains(tipo).click({ force: true })
         return this
     }
 
-    selecionaTipoTempo(tempo) {
+    selecionaTipoTempo() {
+        const tempo = 'Semana'
         cy.get('.ant-select-selection-search-input').eq(2).click({ force: true })
         cy.contains(tempo).click({ force: true })
         return this
     }
 
-    determinaLimiteDeUso(limite) {
+    determinaLimiteDeUso() {
+        const limite = '25'
         cy.get('#limitUsage').type(limite)
         return this
     }
 
-    pesquisaPorId(id) {
+    pesquisaPorId() {
+        const id = '126'
         componente.escreveDescricao(id)
         this.validaId(id)
         return this
     }
 
 
-    pesquisaPorDescricao(nome) {
+    pesquisaPorDescricao() {
+        const nome = 'Geraldo'
         componente
             .escreveDescricao(nome)
         this.validaDescricao(nome)
         return this
     }
 
-    pesquisaPorStatus(status) {
+    pesquisaPorStatus() {
+        const status = 'Ativo'
         componente
             .selecionaStatus(status)
             .validaStatusAtivo()
         return this
     }
 
-    visualizar(id, texto) {
+    visualizar() {
+        const id = '126'
+        const texto = 'ID #126'
         componente
             .escreveDescricao(id)
             .clicaBotao('Visualizar')
@@ -93,7 +101,8 @@ class LimiteDeUsoPage {
         return this
     }
 
-    editar(mensagem) {
+    editar() {
+        const mensagem = 'Mensagem Importante!Você não pode editar esse limite de uso completamente'
         componente
             .clicaBotaoEditar()
             .validaMensagem(mensagem)

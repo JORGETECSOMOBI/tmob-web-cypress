@@ -7,23 +7,23 @@ describe('Testando todos os elementos em Home limites de uso', () => {
     })
 
     it('pesquisando por Id', () => {
-        limite.pesquisaPorId('126')
+        limite.pesquisaPorId()
     })
 
     it('Pesquisando pela descrição do limite de uso', () => {
-        limite.pesquisaPorDescricao('Geraldo')
+        limite.pesquisaPorDescricao()
     })
 
     it('Testando filtro por status Ativo', () => {
-        limite.pesquisaPorStatus('Ativo')
+        limite.pesquisaPorStatus()
     })
 
     it('Testando botão visualizar', () => {
-        limite.visualizar('126', 'ID #126')
+        limite.visualizar()
     })
 
     it('Testando filtro botão editar', () => {
-        limite.editar('Mensagem Importante!Você não pode editar esse limite de uso completamente')
+        limite.editar()
     })
 
     it('Testando filtro botão novo', () => {
