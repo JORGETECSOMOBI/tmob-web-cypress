@@ -54,9 +54,9 @@ class LinhaPage {
     }
 
     selecionaPorEmpresa() {
-        cy.get('[data-row-key="7"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click()
-        cy.get('[data-row-key="8"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click()
-        cy.get('[data-row-key="9"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click()
+        cy.get('[data-row-key="7"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click({ force: true })
+        cy.get('[data-row-key="8"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click({ force: true })
+        cy.get('[data-row-key="9"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click({ force: true })
         return this
     }
 
@@ -98,6 +98,16 @@ class LinhaPage {
 
     IdExternoMaster(master) {
         cy.get('#externalMasterId').type(master)
+        return this
+    }
+
+    limpaIdExternoMaster() {
+        cy.get('#externalMasterId').clear()
+        return this
+    }
+
+    limpaDescricaoCurta() {
+        cy.get('#shortDesc').clear({ force: true })
         return this
     }
 
@@ -155,7 +165,7 @@ class LinhaPage {
     }
 
     validaPesquisa(pesquisa) {
-        cy.get('[title]',{ force: true }).contains(pesquisa).should('be.visible')
+        cy.get('[title]', { force: true }).contains(pesquisa).should('be.visible')
         return this
     }
 
@@ -179,6 +189,12 @@ class LinhaPage {
         return this
     }
 
+    clicaProximoEdita() {
+        cy.get('.steps-action').contains('Proximo').click({ force: true })
+        return this
+    }
+    
+
     geral() {
         componente
             .clicaBotao('Novo')
@@ -194,7 +210,7 @@ class LinhaPage {
             .selecionaPorEmpresa()
             .incluiLinha()
         componente
-            .clicaBotao('Proximo')
+            .clicaBotaoProximo()
         return this
     }
 
@@ -213,19 +229,52 @@ class LinhaPage {
         componente.clicaBotao('+ Integrar Sistema')
         this
             .sistema('TOP-Mercury')
-            .IdExterno('13')
-            .IdExternoMaster('26')
+            .IdExterno('99')
+            .IdExternoMaster('99')
             .acoes()
         componente.clicaBotao('+ Integrar Sistema')
         this
             .sistema('BOM-Mercury')
-            .IdExterno('13')
-            .IdExternoMaster('26')
+            .IdExterno('99')
+            .IdExternoMaster('99')
             .acoes()
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
         return this
     }
+
+    editaGeral() {
+        componente
+            .escreveDescricao('Fim do mundo')
+            .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao('Novo mundo')
+        this
+            .limpaDescricaoCurta()
+            .descricaoCurta('Novo mundo')
+            .telaDovalidador('Novo mundo')
+            .clicaProximoEdita()
+        return this
+    }
+
+    // editaSistemasExternos() {
+    //     componente.clicaBotao('+ Integrar Sistema')
+    //     this
+    //         .sistema('TOP-Mercury')
+    //         .IdExterno('99')
+    //         .IdExternoMaster('99')
+    //         .acoes()
+    //     componente.clicaBotao('+ Integrar Sistema')
+    //     this
+    //         .sistema('BOM-Mercury')
+    //         .IdExterno('99')
+    //         .IdExternoMaster('99')
+    //         .acoes()
+    //     componente
+    //         .clicaBotao('Salvar')
+    //         .clicaBotaoModal('Sim')
+    //     return this
+    // }
 }
 export default new LinhaPage

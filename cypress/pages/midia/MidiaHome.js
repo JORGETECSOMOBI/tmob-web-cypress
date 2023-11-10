@@ -14,12 +14,13 @@ class MidiaHome {
         componente
             .validaURL(url.midia)
             .selecionaIdioma('PT')
+        return this
     }
 
     cadastraNovoCartão() {
         componente
             .clicaBotaoNovo()
-        midia
+        this
             .selecionaUsuarioMidia()
             .selecionaEmissor()
             .selecionaTipoMidiaEnter('VTcomum')

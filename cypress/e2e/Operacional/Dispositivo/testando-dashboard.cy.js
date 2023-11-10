@@ -6,11 +6,11 @@ describe('Testando todos os itens da tela dashboard', () => {
         dispositivo.beforeDispositivo()
     })
 
-    it.skip('testando filtro "Selecionar empresa', () => {
+    it('testando filtro "Selecionar empresa', () => {
         dispositivo.selecionaEmpresa()
     })
 
-    it.skip('Acessar mensagens', () => {
+    it('Acessar mensagens', () => {
         dispositivo.selecionaMensagem()
     })
 

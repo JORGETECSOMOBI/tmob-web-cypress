@@ -32,7 +32,7 @@ describe('Testando "Arquivos Operacionais', () => {
             .validaMensagem('O arquívo operacional já está atualizado.')
     })
 
-    it.skip('forçando a geração de um novo arquivo operacional', () => {
+    it('forçando a geração de um novo arquivo operacional', () => {
         componente
             .clicaBotao('Grupo de operadora')
             .pesquisa('16')
@@ -43,7 +43,8 @@ describe('Testando "Arquivos Operacionais', () => {
             .clicaBotaoModal('Sim')
             .clicaBotao('Arquivos Operacionais')
             .clicaBotao('Forçar geração')
-            .clicaBotaoModal('Sim')
+            .clicaBotao('Sim')
+            .clicaBotao('Sim')
             .validaMensagem('Estamos processando seu arquívo operacional.')
             .validaMensagem('Seu arquívo operácional foi gerado com sucesso.')
     })

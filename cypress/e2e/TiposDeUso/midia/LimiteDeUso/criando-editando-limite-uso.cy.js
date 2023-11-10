@@ -7,10 +7,10 @@ describe('cadastrando e edita limite de uso', () => {
     })
 
     it('cadastrando um novo limite de uso', () => {
-       limite.cadastraLimiteDeUso()
+        limite.cadastraLimiteDeUso()
     })
 
     it('Edita limite de uso', () => {
         limite.editaLimiteDeUso()
-     })
+    })
 })

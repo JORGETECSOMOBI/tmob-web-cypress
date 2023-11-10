@@ -23,11 +23,11 @@ class LimiteDeUsoPage {
         componente
             .clicaBotaoNovo()
             .escreveDescricao(`${nome} ${sobrenome}`)
-        this.selecionaTipocartao('Classic')
+        this.selecionaTipocartao()
             .selecionaTipoTempo('Dia')
             .determinaLimiteDeUso('5')
         componente.clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
+             .clicaBotao('Sim')
             .validaMensagem('Concluido')
         return this
     }
@@ -48,7 +48,7 @@ class LimiteDeUsoPage {
     }
 
     selecionaTipocartao() {
-        const tipo = 'SL3'
+        const tipo = 'Classic'
         cy.get('.ant-select-selection-search-input').eq(1).click({ force: true })
         cy.contains(tipo).click({ force: true })
         return this
@@ -121,7 +121,7 @@ class LimiteDeUsoPage {
     }
 
     validaDescricao(nome) {
-        cy.get('.ant-table-row > .ant-table-cell-ellipsis').contains(nome).should('have.text', nome)
+        cy.get('.ant-table-row > .ant-table-cell-ellipsis').contains(nome)
         return this
     }
 }

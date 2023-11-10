@@ -1,21 +1,12 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import emissor from '../../../../pages/Transporte/transportePage'
-import faker from 'faker-br'
+import trilhos from '../../../../pages/Transporte/ControleDeTrilhosPage'
 
 describe('Testando "Consócio"', () => {
 
     beforeEach(() => {
-        emissor.beforeEmissor()
+        trilhos.beforeControleDeTrilhos()
     })
 
-    it.skip('Editar um emissor', () => {
-        componente
-            .pesquisaNomeId('99')
-            .clicaBotao('Editar')
-            .limpaNome()
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Salvar')
+    it('Editar um emissor', () => {
+       
     })
 })

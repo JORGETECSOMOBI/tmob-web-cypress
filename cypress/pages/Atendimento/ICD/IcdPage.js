@@ -35,6 +35,5 @@ class IcdPage {
         return this
     }
     
-
 }
 export default new IcdPage
