@@ -125,7 +125,19 @@ class ComponentesPadraoPage {
 
     selecionadata(data, dia) {
         cy.get('#editUser_birthdate').type(data, { force: true })
-        cy.get('.ant-picker-cell-inner').contains(dia).click()
+        cy.get('.ant-picker-cell-inner').contains(dia).click({ force: true })
+        return this
+    }
+
+    selecionaEmissor() {
+        cy.get('#createUser_issuer').click({ force: true })
+        cy.contains('Autopass').click({ force: true })
+        return this
+    }
+
+    selecionaTipoMidia() {
+        cy.get('#createUser_mediaType').click({ force: true })
+        cy.contains('VTComum').click({ force: true })
         return this
     }
 

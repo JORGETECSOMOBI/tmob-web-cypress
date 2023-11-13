@@ -1,5 +1,5 @@
 import usuario from '../../../../pages/Atendimento/Usuario/UsuarioHomePage'
-import cadastrar from '../../../../pages/Atendimento/Usuario/FormulariosPage'
+import cadastrar from '../../../../pages/Atendimento/Usuario/cadastroPage'
 
 describe('Acessando a página de criação de novo ususário e Testando todas as funcionalidades', () => {
     

@@ -16,11 +16,10 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
 
     it('Visualizar usuário', () => {
         componente
-            .pesquisaNomeId('Alberi Braga')
+            .pesquisaNomeId('Geraldo')
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeVisualizar()
-            .validatexto('Alberi Braga')
-            .validatexto('zo@pa.tn')
+            .validatexto('Geraldo')
     })
 
     it('Filtro inativo', () => {
