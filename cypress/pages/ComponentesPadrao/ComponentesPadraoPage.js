@@ -316,5 +316,10 @@ class ComponentesPadraoPage {
         cy.get('.ant-select-selection-item-remove>.anticon>svg').eq(0).click({ force: true })
         return this
     }
+
+    validaDescriçãoTitle(descricao) {
+        cy.get('[title]').contains(descricao).should('have.text', descricao)
+        return this
+    }
 }
 export default new ComponentesPadraoPage
