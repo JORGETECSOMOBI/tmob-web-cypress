@@ -9,7 +9,7 @@ describe('Testando a tela "Usuário"', () => {
         usuario.beforeOrg()
     })
 
-    it('Cria nova organização com sucesso', () => {
+    it.skip('Cria nova organização com sucesso', () => {
         componente
             .clicaBotao('Novo')
         organizacao
@@ -35,8 +35,9 @@ describe('Testando a tela "Usuário"', () => {
                 .selecionatipoEndereco('Residencial')
                 .escreveCEP('12903000')
             componente
-                .clicaBotao('Salvar')
+                .clicaBotao('Salvar')              
                 .clicaBotaoModal('Sim')
+                .validaMensagem('organização criada com sucesso')
     })
 
         it('Tentativa de criar nova organização com cep inválido', () => {

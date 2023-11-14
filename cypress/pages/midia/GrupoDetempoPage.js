@@ -1,7 +1,6 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import faker from 'faker-br'
 import url from '../../fixtures/url.json'
 
 

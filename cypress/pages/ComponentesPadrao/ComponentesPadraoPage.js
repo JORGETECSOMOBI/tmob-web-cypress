@@ -197,6 +197,12 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validaTextoAusente(texto) {
+        cy.get('[style="flex-direction: row;"] > .ant-layout')
+            .should('not.contain', texto);
+        return this
+    }
+
     validaId(id) {
         cy.contains(id).should('have.text', id, { force: true })
         return this

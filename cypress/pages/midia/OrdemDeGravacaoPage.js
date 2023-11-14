@@ -15,8 +15,158 @@ class OrdemDeGravacaoPage {
         return this
     }
 
+    criandoUmaNovaOrdemSingleImediatamente() {
+        this
+            .novoCadastroOrdemDeGravacao()
+            .selecionaTipoDeOrdem('Single')
+            .selecionaTipoDeMidiaSingle('52.01.00000004-1')
+        componente
+            .clicaBotao('Salvar')
+        this
+            .iniciarOrdemImediatamente()
+        componente
+            .clicaBotao('Sim')
+            .validatexto('Selecione um dispositivo')
+        return this
+    }
+
+    criandoUmaNovaOrdemSingleMaistarde() {
+        this
+            .novoCadastroOrdemDeGravacao()
+            .selecionaTipoDeOrdem('Single')
+            .selecionaTipoDeMidiaSingle('52.01.00000004-1')
+        componente
+            .clicaBotao('Salvar')
+        cy.wait(1000)
+        componente
+            .clicaBotao('Sim')
+            .validaMensagem('A ordem de gravação foi cadastrada com sucesso')
+            .clicaBotao('Visualizar ordens')
+            .validatexto('Novo')
+        return this
+    }
+
+    criandoUmaNovaOrdemBureauImediatamente() {
+        this
+            .novoCadastroOrdemDeGravacao()
+            .selecionaTipoDeOrdem('Bureau')
+            .selecionaTipoDeMidiaBureau('VTComum')
+            .selecionaEmissor('Autopass')
+            .selecionaStatus('Pendente')
+            .quantidadeDeMidias('5')
+        componente
+            .clicaBotao('Salvar')
+        this
+            .iniciarOrdemImediatamente()
+        componente
+            .clicaBotao('Sim')
+            .validatexto('Selecione um dispositivo')
+        return this
+    }
+
+    criandoUmaNovaOrdemBureauMaisTarde() {
+        this
+            .novoCadastroOrdemDeGravacao()
+            .selecionaTipoDeOrdem('Bureau')
+            .selecionaTipoDeMidiaBureau('VTComum')
+            .selecionaEmissor('Autopass')
+            .selecionaStatus('Pendente')
+            .quantidadeDeMidias('5')
+        componente
+            .clicaBotao('Salvar')
+        cy.wait(1000)
+        componente
+            .clicaBotao('Sim')
+            .validaMensagem('A ordem de gravação foi cadastrada com sucesso')
+            .clicaBotao('Visualizar ordens')
+            .validatexto('Novo')
+        return this
+    }
+
+    cancelandoOrdemGravacao() {
+        componente.selecionaStatus('Pendente')
+        this
+            .visualizar()
+            .cancelarOrdem()
+        componente
+            .validaTextoAusente('Cancelar')
+        return this
+    }
+
+    gravandoOrdemGravacao() {
+        componente.selecionaStatus('Pendente')
+        this
+            .visualizar()
+            .gravarOrdem()
+        return this
+    }
+
+    imprimindoOrdemDeGravacao() {
+        this
+            .visualizar()
+        componente
+            .clicaBotao('Imprimir')
+            .clicaBotaoModal('Download')
+        return this
+    }
+
+    voltarParahome() {
+        this
+            .visualizar()
+        componente
+            .clicaBotao('Voltar')
+            .validatexto('Novo')
+        return this
+    }
+
+    quantidadeDeMidias(quantidade) {
+        cy.get('#selectMedias').type(quantidade, { force: true })
+        return this
+    }
+
+    selecionaStatus(status) {
+        cy.get('#hasPersoOrderDetailError').click({ force: true })
+        cy.contains(status).click({ force: true })
+        return this
+    }
+
+    selecionaEmissor(emissor) {
+        cy.get('#issuerCode').click({ force: true })
+        cy.contains(emissor).click({ force: true })
+        return this
+    }
+
+    iniciarOrdemImediatamente() {
+        cy.get(':nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-inner').click({ force: true })
+        return this
+    }
+
+    iniciarOrdemMaisTarde() {
+        cy.get('[style=""] > .ant-radio-wrapper > .ant-radio > .ant-radio-inner').click({ force: true })
+        return this
+    }
+
+
     acessaPaginaOrdemgravação() {
         componente.clicaBotao('Ordem de gravação')
+        return this
+    }
+
+    selecionaTipoDeOrdem(tipo) {
+        cy.get('#type').click()
+        cy.contains(tipo).click({ force: true })
+        return this
+    }
+
+    selecionaTipoDeMidiaSingle(midia) {
+        cy.get('#mediaCount').click()
+        cy.contains(midia).click({ force: true })
+        return this
+    }
+
+    selecionaTipoDeMidiaBureau(midia) {
+        cy.get('#MedMediaType').click()
+        cy.contains(midia).click({ force: true })
         return this
     }
 
@@ -118,6 +268,7 @@ class OrdemDeGravacaoPage {
         componente
             .clicaBotao('Gravar')
             .clicaBotao('Sim')
+            .validatexto('Selecione um dispositivo')
         return this
     }
 

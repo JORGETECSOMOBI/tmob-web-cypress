@@ -54,11 +54,11 @@ describe('Testando todas as funcionalidades da home de Ordem de gravação', () 
         gravacao.novoCadastroOrdemDeGravacao()
     })
 
-    it.skip('testando gravar ordem', () => {
+    it('testando gravar ordem', () => {
         gravacao.gravarOrdem()
     })
 
-    it.skip('testando cancelar ordem', () => {
+    it('testando cancelar ordem', () => {
         gravacao.cancelarOrdem()
     })
 

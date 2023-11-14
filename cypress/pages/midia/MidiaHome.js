@@ -31,10 +31,53 @@ class MidiaHome {
         return this
     }
 
-    editaCartao() {
+    editaCartaoProcessado() {
+        this.pesquisaFiltroStatusProcessado()
         componente
             .clicaBotaoEditar()
-        midia
+        this
+            .selecionaEmissor()
+            .selecionaTipoMidia()
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+        return this
+    }
+
+    editaCartaoHotlist() {
+        this.pesquisaFiltroStatusHotlist()
+        componente
+            .clicaBotaoEditar()
+        this
+            .diasParaExpiracao('14')
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Hotlist foi editado com sucesso!')
+        return this
+    }
+
+    editaCartaoInativo() {
+        this.pesquisaFiltroStatusInativo()
+        componente
+            .clicaBotaoEditar()
+            this
+            .diasParaExpiracao('14')
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
+        .validaMensagem('Hotlist foi editado com sucesso!')
+        return this
+    }
+
+    editaCartaoPendente() {
+        this.pesquisaFiltroStatusPendente()
+        componente
+            .clicaBotaoEditar()
+        this
             .selecionaEmissor()
             .selecionaTipoMidia()
         componente
@@ -45,6 +88,10 @@ class MidiaHome {
         return this
     }
 
+    diasParaExpiracao(dias) {
+        cy.get('#expirationDays').type(dias)
+        return this
+    }
 
     pesquisarMidiaId(midiaId) {
         cy.get('#search', { force: true }).type(midiaId, { force: true })
