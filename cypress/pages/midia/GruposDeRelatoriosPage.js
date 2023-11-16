@@ -19,7 +19,7 @@ class GruposDeRelatoriosPage {
     pesquisaPorDescricao() {
         componente
             .escreveDescricao('GRUPO RELATORIO')
-            .validaDescriçãoTitle('GRUPO RELATORIO')
+            .validaDescriçãoTitle('GRUPO RELATORIO ')
     }
 }
 export default new GruposDeRelatoriosPage

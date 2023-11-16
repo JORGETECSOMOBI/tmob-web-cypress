@@ -327,5 +327,10 @@ class ComponentesPadraoPage {
         cy.get('[title]').contains(descricao).should('have.text', descricao)
         return this
     }
+
+    selecionaTitle(dia,dia1) {
+        cy.get('[title]').contains(dia, dia1).click({ force: true })
+        return this
+    }
 }
 export default new ComponentesPadraoPage

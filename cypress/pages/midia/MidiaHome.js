@@ -50,6 +50,7 @@ class MidiaHome {
         componente
             .clicaBotaoEditar()
         this
+        .limpadiasParaExpiracao()
             .diasParaExpiracao('14')
         componente
             .selecionaIdioma('PT')
@@ -64,6 +65,7 @@ class MidiaHome {
         componente
             .clicaBotaoEditar()
             this
+            .limpadiasParaExpiracao()
             .diasParaExpiracao('14')
         componente
             .selecionaIdioma('PT')
@@ -90,6 +92,11 @@ class MidiaHome {
 
     diasParaExpiracao(dias) {
         cy.get('#expirationDays').type(dias)
+        return this
+    }
+
+    limpadiasParaExpiracao() {
+        cy.get('#expirationDays').clear()
         return this
     }
 
