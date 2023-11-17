@@ -1,6 +1,6 @@
 import visualizar from '../../../../pages/midia/OrdemDeGravacaoPage'
 
-describe('Testando todas as funcionalidades da home de Ordem de gravação', () => {
+describe('Testando página visualizar Ordem de gravação', () => {
 
     beforeEach(() => {
         visualizar.beforeOrdemDegravacao()

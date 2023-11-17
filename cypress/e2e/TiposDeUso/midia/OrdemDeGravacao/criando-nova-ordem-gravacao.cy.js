@@ -22,5 +22,4 @@ describe('Testando todas as funcionalidades da home de Ordem de gravação', () 
         gravacao.criandoUmaNovaOrdemBureauMaisTarde()
     })
 
-   
 })

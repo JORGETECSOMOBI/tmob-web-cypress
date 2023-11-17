@@ -18,7 +18,7 @@ class DispositivosPage {
     }
 
     pesquisaPorGuidSerial() {
-        const guid = '1badfe6d-4f1c-421d-af84-0ba40408d32e'
+        const guid = '283b323d-21e3-4279-b0cb-13ace0626671'
         cy.get('#thingName').type(guid)
         componente.validatexto('133 Tmob Delmon')
         return this
