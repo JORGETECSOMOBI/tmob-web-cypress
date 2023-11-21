@@ -21,4 +21,8 @@ describe('Criando e editando Produto de transporte', () => {
     it.skip('Criando um Produto de transporte "Valorado"', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteEspecialAcompanhante()
     })
+
+    it.only('Editando um produto de transporte', () => {
+        produtoDetransporte.editandoUmGrupoDeTransporte()
+    })
 })

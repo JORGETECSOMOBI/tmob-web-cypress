@@ -77,6 +77,31 @@ class ProdutoDetransportePge {
         return this
     }
 
+    editandoUmGrupoDeTransporte() {
+        componente
+            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDITADO')
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
+        this
+            .clicaBotaoVerProdutos()
+        componente
+            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDITADO')
+            .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Produto editado com sucesso')
+        this
+            .clicaBotaoVerProdutos()
+        componente
+            .validaDescriçãoTitle('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+    }
+
     selecionaTipoDeProduto(produto) {
         cy.contains(produto).click({ force: true })
         return this
@@ -104,8 +129,67 @@ class ProdutoDetransportePge {
         return this
     }
 
+    validaTextoTipoTextoId(texto) {
+        cy.get('[data-row-key]').contains(texto).should('have.text', texto)
+        return this
+    }
+
     displayValidador(nome) {
         cy.get('#displayName').type(nome)
+        return this
+    }
+
+    clicaBotaoVerProdutos() {
+        cy.get('.ant-btn-primary > a').click({ force: true })
+        return this
+    }
+
+    testandoFiltroId() {
+        componente
+            .escreveDescricao('205')
+            .validaId('205')
+        return this
+    }
+
+    testandoFiltroDescricao() {
+        componente
+            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .validaDescriçãoTitle('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+        return this
+    }
+
+    testandoFiltroTipo() {
+        this
+            .selecionaTipoDeProduto('Serviço de operador')
+            .validaTextoTipoTextoId('Serviço de operador')
+        return this
+    }
+
+    testandoFiltroStatus() {
+        componente
+            .selecionaStatus('Ativo')
+            .validaStatusAtivo()
+        return this
+    }
+
+    testandoBotãoNovo() {
+        componente
+            .clicaBotaoNovo()
+            .validatexto('Novo')
+        return this
+    }
+
+    testandoBotãoEditar() {
+        componente
+            .clicaBotaoEditar()
+            .validatexto('Editar')
+        return this
+    }
+
+    testandoBotãoVisualizar() {
+        componente
+            .clicaBotaoHomeVisualizar()
+            .validatexto('Detalhes')
         return this
     }
 }
