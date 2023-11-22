@@ -328,7 +328,17 @@ class ComponentesPadraoPage {
         return this
     }
 
-    selecionaTitle(dia,dia1) {
+    validaDescricaoDataRowKey(descricao) {
+        cy.get('[data-row-key]').contains(descricao).should('have.text', descricao)
+        return this
+    }
+
+    validaDescricaoAntTableRow(descricao) {
+        cy.get('.ant-table-row').contains(descricao).should('have.text', descricao)
+        return this
+    }
+
+    selecionaTitle(dia, dia1) {
         cy.get('[title]').contains(dia, dia1).click({ force: true })
         return this
     }
