@@ -19,11 +19,9 @@ class TipoDeMidiaPage {
     }
 
     criandoNovotipoDeMidia() {
-        const nome = 'AAAA TIPO DE MIDIA AUTOMAÇÃO '
-        const sobrenome = faker.name.lastName()
         componente
             .clicaBotaoNovo()
-            .escreveDescricao(`${nome} ${sobrenome}`)
+            .escreveDescricao('AAAA MIDIA AUTOMAÇÃO')
         usuario
             .selecionaTipoUsuario('Estudante')
         this
@@ -38,11 +36,23 @@ class TipoDeMidiaPage {
     }
 
     editandoTipoDeMidia() {
-        const nome = 'AAAA TIPO DE MIDIA AUTOMAÇÃO '
+        const nome = 'AAAA MIDIA AUTOMAÇÃO '
         const sobrenome = faker.name.lastName()
         componente
-            .escreveDescricao(`${nome} ${sobrenome}`)
+            .escreveDescricao(nome)
             .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao(`${nome} ${sobrenome}`)
+            .clicaBotaoSalvar()
+        this
+            .clicaBotaoModalSim()
+        componente
+            .validaMensagem('Concluído')
+        return this
+    }
+
+    clicaBotaoModalSim() {
+        cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click({ force: true })
         return this
     }
 
@@ -59,9 +69,8 @@ class TipoDeMidiaPage {
 
     filtroDescricao() {
         componente
-            .escreveDescricao('AAAA TIPO DE MIDIA AUTOMAÇÃO')
-            .validaDescricaoDataRowKey('AAAA TIPO DE MIDIA AUTOMAÇÃO')
-            .selecionaTipo('Estudante')
+            .escreveDescricao('operator')
+            .validaDescricaoDataRowKey('operator')
         return this
     }
 
@@ -74,7 +83,7 @@ class TipoDeMidiaPage {
 
     filtroPorTamanho() {
         this
-            .filtrandoPorTamnho('4 KB')
+            .filtrandoPorTamanho('4 KB')
         componente
             .validaDescricaoAntTableRow('4')
         return this

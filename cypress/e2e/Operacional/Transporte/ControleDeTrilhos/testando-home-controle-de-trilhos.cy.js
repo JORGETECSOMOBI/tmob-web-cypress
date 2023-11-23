@@ -1,6 +1,6 @@
 import trilhos from '../../../../pages/Transporte/ControleDeTrilhosPage'
 
-describe('Testando "Consócio"', () => {
+describe('Testando "Consórcio"', () => {
 
     beforeEach(() => {
         trilhos.beforeControleDeTrilhos()
