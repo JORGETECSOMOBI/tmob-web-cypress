@@ -78,17 +78,21 @@ class ProdutoExternoPage {
     }
 
     botaoNovo() {
-        componente.clicaBotaoNovo()
+        componente
+        .clicaBotaoNovo()
+        .validatexto('Preencha os campos abaixo para criar um produto de transporte externo')
         return this
     }
 
     botãoEditar() {
         componente.clicaBotaoEditar()
+        .validatexto('Editar')
         return this
     }
 
     botaoVisualizar() {
         componente.clicaBotaoHomeVisualizar()
+        .validatexto('Detalhes')
         return this
     }
 

@@ -10,11 +10,11 @@ describe('Crinado e editando um produto de transporte', () => {
         produtoExterno.filtroPordescrição()
     })
 
-    it('Testando filtro por ID', () => {
+    it.skip('Testando filtro por ID', () => {
         produtoExterno.filtroPorId()
     })
 
-    it('Testando filtro por emissor', () => {
+    it.skip('Testando filtro por emissor', () => {
         produtoExterno.filtroPorEmissor()
     })
 

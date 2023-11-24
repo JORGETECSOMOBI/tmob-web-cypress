@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  watchForFileChanges: false,
+  watchForFileChanges: true,
   "chromeWebSecurity": false,
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
