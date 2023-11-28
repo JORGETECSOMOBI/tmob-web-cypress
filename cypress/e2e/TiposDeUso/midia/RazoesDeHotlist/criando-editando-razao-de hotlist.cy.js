@@ -8,4 +8,8 @@ describe('Criando e editando razões de hotlist', () => {
     it('Criando Razões de hotlist', () => {
        razoesHotilst.criandoRazaoDeHotlist()
     })
+
+    it('Editando Razões de hotlist', () => {
+        razoesHotilst.editandoRazaoDeHotlist()
+     })
 })

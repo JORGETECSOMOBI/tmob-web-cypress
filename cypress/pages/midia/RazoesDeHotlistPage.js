@@ -21,7 +21,7 @@ class RazoesDeHotlistPage {
             .clicaBotaoNovo()
             .escreveDescricao('AAA AUTOMAÇÃO HOTLIST')
         this
-            .filtroAcao('Desbloquear')
+            .filtroAcao('Bloquear')
             .diasParaExpiracao('50')
             .permiteTranferencia('Não')
             .permiteSegundaVia('Não')
@@ -31,6 +31,26 @@ class RazoesDeHotlistPage {
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
             .validatexto('Concluido')
+        return this
+    }
+
+    editandoRazaoDeHotlist() {
+        componente
+            .escreveDescricao('AAA AUTOMAÇÃO HOTLIST')
+            .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao('AAA AUTOMAÇÃO HOTLIST editado')
+        this
+            .limpaDiasParaExpiracao()
+            .diasParaExpiracao('25')
+            .permiteTranferencia('Sim')
+            .permiteSegundaVia('Sim')
+            .publico('Sim')
+        componente
+            .selecionaStatus('Inativo')
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
+            .validatexto('Hotlist foi editado com sucesso!')
         return this
     }
 
@@ -51,6 +71,11 @@ class RazoesDeHotlistPage {
 
     diasParaExpiracao(dias) {
         cy.get('#expirationDays').type(dias)
+        return this
+    }
+
+    limpaDiasParaExpiracao() {
+        cy.get('#expirationDays').clear()
         return this
     }
 

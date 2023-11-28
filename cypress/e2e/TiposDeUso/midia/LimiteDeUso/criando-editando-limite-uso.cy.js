@@ -1,6 +1,6 @@
 import limite from '../../../../pages/midia/LimiteDeUso'
 
-describe('cadastrando e edita limite de uso', () => {
+describe('cadastrando e editando limite de uso', () => {
 
     beforeEach(() => {
         limite.beforeLimiteUso()

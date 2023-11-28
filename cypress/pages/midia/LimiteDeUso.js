@@ -76,7 +76,7 @@ class LimiteDeUsoPage {
 
 
     pesquisaPorDescricao() {
-        const nome = 'Geraldo'
+        const nome = 'Gerusa'
         componente
             .escreveDescricao(nome)
         this.validaDescricao(nome)

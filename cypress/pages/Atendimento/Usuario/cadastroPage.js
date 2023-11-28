@@ -197,6 +197,7 @@ class cadastroPage {
             .escreveNomeDoMedico()
             .validadedoLaudo('Hoje')
             .escreveNomeAcompanhante()
+            .tipoDocumentoAcompanhante('RNE')
             .documentoAcompanhante()
         componente
             .clicaBotao('Salvar acompanhante')
@@ -226,6 +227,13 @@ class cadastroPage {
             .clicaBotao('Salvar')
             .validaMensagem(mensagem.mensagemNovoCadastroSucesso)
             return this
+    }
+
+    tipoDocumentoAcompanhante(tipo) {
+        cy.get('#createUser_createAttendants_usrDocumentTypeId').click({ force: true })
+        cy.get('[title]').contains(tipo,{ force: true }).click({ force: true })
+        return this
+        
     }
 
     preencheDocumento0CPF(cpf) {
@@ -525,7 +533,7 @@ class cadastroPage {
 
     documentoAcompanhante() {
         const documento = faker.br.cpf()
-        cy.get('#createUser_createAttendants_document').type(documento)
+        cy.get('#createUser_createAttendants_document', { force: true }).type(documento, { force: true })
         return this
     }
 
