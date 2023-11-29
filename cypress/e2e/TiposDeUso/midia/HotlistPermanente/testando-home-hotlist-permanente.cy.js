@@ -25,7 +25,15 @@ describe('Testando a Home de Hotlist Permanente', () => {
         hotlistPermanente.filtrandoPorNumeroInternoCartao()
     })
 
-    it('Adicinando manualmente ',() => {
-        hotlistPermanente.adicionandoManualmente()
+    it('Adicinando manualmente BOM',() => {
+        hotlistPermanente.adicionarManualmenteBom()
+    })
+
+    it('Adicinando manualmente TOP',() => {
+        hotlistPermanente.adicionarManualmenteTop()
+    })
+
+    it('Adicinando manualmente SPTrans',() => {
+        hotlistPermanente.adicionarManualmenteSptrans()
     })
 })

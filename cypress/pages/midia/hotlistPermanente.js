@@ -40,29 +40,61 @@ class HotListPermanentePage {
         return this
     }
 
-    adicionandoManualmente() {
-        this.adicionarManualmente()
-        return this
-    }
-
     filtroProjeto(produto) {
-        cy.get('#toSysCode').click({force:true})
-        cy.contains(produto).click({force:true})
+        cy.get('#toSysCode').click({ force: true })
+        cy.contains(produto).click({ force: true })
+        cy.get('[title]').contains(produto).should('have.text', produto)
         return this
     }
 
     filtroNumeroCartao(numero) {
         cy.get(':nth-child(2) > .ant-input-affix-wrapper').type(numero)
+        cy.get('[title]').contains(numero).should('have.text', numero)
         return this
     }
 
     filtroNumeroInternoCartao(numero) {
         cy.get(':nth-child(3) > .ant-input-affix-wrapper').type(numero)
+        cy.get('[title]').contains(numero).should('have.text', numero)
         return this
     }
 
-    adicionarManualmente() {
+    adicionarManualmenteBom() {
         componente.clicaBotao('Adicionar Manualmente')
+        this.tipoDeOrdem('BOM')
+            .numeroExternoCartao('22.11.11111111-1')
+        componente.clicaBotao('Confirmar')
+        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        return this
+    }
+
+    adicionarManualmenteTop() {
+        componente.clicaBotao('Adicionar Manualmente')
+        this.tipoDeOrdem('TOP')
+            .numeroExternoCartao('22.11.11111111-1')
+        componente.clicaBotao('Confirmar')
+        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        return this
+    }
+
+
+    adicionarManualmenteSptrans() {
+        componente.clicaBotao('Adicionar Manualmente')
+        this.tipoDeOrdem('SPTrans')
+            .numeroExternoCartao('22.11.11111111-1')
+        componente.clicaBotao('Confirmar')
+        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        return this
+    }
+
+    tipoDeOrdem(ordem) {
+        cy.get('#wrap_toSysCode').click({ force: true })
+        cy.contains(ordem).click({ force: true })
+        return this
+    }
+
+    numeroExternoCartao(numero) {
+        cy.get('#wrap_externalCardNumber').type(numero)
         return this
     }
 }
