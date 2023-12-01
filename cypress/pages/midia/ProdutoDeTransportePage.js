@@ -27,7 +27,9 @@ class ProdutoDetransportePge {
             .grupoDerelatorio('TOP - Funcional')
             .displayValidador('Automação')
         componente
+            .limpaDescricao()
             .escreveDescricao('AAAA Automação Valorado')
+            .clicaBotaoProximo()
         return this
     }
 

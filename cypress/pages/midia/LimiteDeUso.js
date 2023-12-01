@@ -29,6 +29,7 @@ class LimiteDeUsoPage {
         componente.clicaBotao('Salvar')
              .clicaBotao('Sim')
             .validaMensagem('Concluido')
+            .clicaBotao('Ver limite de usos')
         return this
     }
 

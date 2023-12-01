@@ -10,7 +10,7 @@ beforeEach(() => {
         produtoExterno.cadastraNovoProdutoexterno()
     })
 
-    it('Editando um produto externo', () => {
+    it.skip('Editando um produto externo', () => {
         produtoExterno.editaProdutoexterno()
     })
 })

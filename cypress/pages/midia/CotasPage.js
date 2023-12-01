@@ -29,6 +29,7 @@ class CotasPage {
             .clicaBotaoSalvar()
             .clicaBotaoSim()
             .validatexto('Concluido')
+            .clicaBotao('Ver cotas')
         return this
     }
 
