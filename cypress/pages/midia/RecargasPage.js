@@ -18,41 +18,48 @@ class RecargasPage {
 
     filtrandoPorId() {
         this.filtroProcurandoHoje('8704723')
+        componente.validaDescricaoAntTableRow('8704723')
         return this
     }
 
     filtrandoPorNumeroCartao() {
         this.filtroProcurandoHoje('52.29.00000111-1')
+        componente.validaDescricaoAntTableRow('52.29.00000111-1')
         return this
     }
 
     filtrandoPorCSN() {
         this.filtroProcurandoHoje('1107236589')
+        componente.validaDescricaoAntTableRow('1107236589')
         return this
     }
 
     filtrandoPorIdExterno() {
         this.filtroProcurandoHoje('186')
+        componente.validaDescricaoAntTableRow('186')
         return this
     }
 
     filtrandoPorProduto() {
-        this.filtroProduto('PRODUTO 480')
+        this.filtroProduto('Operator Summary')
+        componente.validaDescricaoAntTableRow('Operator Summary')
         return this
     }
 
     filtrandoPorValor() {
-        this.filtroValor('17,00')
+        this.filtroValor('1700')
         return this
     }
 
     filtrandoStatusRecarregadoSim() {
         this.filtroRecarregado('Sim')
+        componente.validaDescricaoAntTableRow('Sim')
         return this
     }
 
     filtrandoStatusRecarregadoNao() {
         this.filtroRecarregado('Não')
+        componente.validaDescricaoAntTableRow('Não')
         return this
     }
 

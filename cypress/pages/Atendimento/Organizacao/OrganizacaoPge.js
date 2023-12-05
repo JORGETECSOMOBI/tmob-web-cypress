@@ -1,5 +1,91 @@
-import faker from 'faker-br'
+import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
+import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import home from '../../../pages/Home/HomePage'
+import login from '../../../pages/Login/LoginPage'
+import faker from "faker-br"
 class OrganizacaoPage {
+
+    beforeOrg() {
+        login.go()
+            .signin()
+        home.usuario()
+        usuario.acessandoTelaOrganizaçao()
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotao('Organização')
+        return this
+    }
+
+    criaOrganização() {
+        componente
+            .clicaBotao('Novo')
+        this
+            .escreveRazaosocial()
+            .escreveNomeIdfantasia()
+            .escreveEmail('nova@gmail.com')
+            .selecionaTipoOperadora('Empresa')
+            .selecionaOperadora('AUTOMAÇÃO')
+        componente
+            .clicaBotao('Proximo')
+        this
+            .escreveCNPJ0(faker.br.cnpj())
+        componente
+            .clicaBotao('Proximo')
+        this
+            .selecionaTipoDeTelefone0('Celular')
+            .selecionaCanais0('SMS')
+            .escreveNumeroTelefone0('11999999009')
+        componente
+            .clicaBotao('Proximo')
+        this
+            .escreveNumero('23')
+            .selecionatipoEndereco('Residencial')
+            .escreveCEP('12903000')
+            .complemento('loja 4')
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Organização foi criada com sucesso!')
+        return this
+    }
+
+    TentativaDeCriarOrganizacaoCepInválido() {
+        componente
+                .clicaBotao('Novo')
+            this
+                .escreveRazaosocial('nova organizaçao')
+                .escreveNomeIdfantasia('nova organizaçao')
+                .escreveEmail('nova@gmail.com')
+                .selecionaTipoOperadora('Empresa')
+                .selecionaOperadora('AUTOMAÇÃO')
+            componente
+                .clicaBotao('Proximo')
+            this
+                .escreveCNPJ0('09.443.830/0001-68')
+            componente
+                .clicaBotao('Proximo')
+            this
+                .selecionaTipoDeTelefone0('Celular')
+                .selecionaCanais0('SMS')
+                .escreveNumeroTelefone0('11999999009')
+            componente
+                .clicaBotao('Proximo')
+            this
+                .escreveNumero('23')
+                .selecionatipoEndereco('Residencial')
+                .escreveCEP('000')
+            componente
+                .clicaBotao('Salvar')
+                .clicaBotaoModal('Sim')
+                .validaMensagem('Campo obrigatório')
+                .escreveNumero('23')
+                .selecionatipoEndereco('Residencial')
+                .escreveCEP('12903')
+                .clicaBotao('Salvar')
+                .clicaBotaoModal('Sim')
+                .validaMensagem('Endereço não encontrado')
+        return this
+    }
 
     escreveRazaosocial(organizacao) {
         const nome = 'AUTOMATICO'
@@ -100,6 +186,11 @@ class OrganizacaoPage {
     selecionatipoEndereco(tipo) {
         cy.get('#UsrAddresses_createMany_data_0_type').click({ force: true })
         cy.contains(tipo).click()
+        return this
+    }
+
+    complemento(complemento) {
+        cy.get('#UsrAddresses_createMany_data_0_complement').type(complemento)
         return this
     }
 }

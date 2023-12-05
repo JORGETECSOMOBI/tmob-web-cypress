@@ -1,9 +1,21 @@
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import cadastro from '../../../fixtures/cadastro.json'
+import componente from '../../ComponentesPadrao/ComponentesPadraoPage'
+import home from '../../../pages/Home/HomePage'
+import login from '../../../pages/Login/LoginPage'
+import cadastro from'../../../fixtures/cadastro.json'
 import mensagem from '../../../fixtures/mensagens.json'
 import faker from 'faker-br'
 
-class cadastroPage {
+class UsuarioPage {
+
+    beforeUsuario() {
+        login.go()
+            .signin()
+        home.usuario()
+        componente
+            .selecionaIdioma('PT')
+        return this
+    }
+
 
     simplificado() {
         componente
@@ -49,7 +61,7 @@ class cadastroPage {
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
-            return this
+        return this
     }
 
     geralEstudante() {
@@ -68,7 +80,7 @@ class cadastroPage {
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
-            return this
+        return this
     }
 
     geralOperador() {
@@ -87,7 +99,7 @@ class cadastroPage {
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
-            return this
+        return this
     }
 
     geralEspecial() {
@@ -106,7 +118,7 @@ class cadastroPage {
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
-            return this
+        return this
     }
 
     geralFuncionario() {
@@ -125,7 +137,70 @@ class cadastroPage {
         componente
             .selecionaStatusInativo('Inativo')
             .clicaBotao('Proximo')
-            return this
+        return this
+    }
+
+    geralFuncionarioEspecialIdoso() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        this
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO FUNCIONÁRIO')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
+            .selecionaTipoUsuario('AAAAA Automação Idoso')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .selecionaStatusInativo('Inativo')
+            .clicaBotao('Proximo')
+        return this
+    }
+
+    geralIdosoEstudanteEspecial() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        this
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAAA Automação Idoso')
+            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .selecionaStatusInativo('Inativo')
+            .clicaBotao('Proximo')
+        return this
+    }
+
+    geralFuncionarioOperadorEstudante() {
+        componente
+            .clicaBotao('Novo usuário')
+            .clicaBotao('Cadastro avançado')
+        this
+            .escreveDataNascimento('15/12/1959', '15')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO FUNCIONÁRIO')
+            .selecionaTipoUsuario('AAAAA AUTOMAÇÃO OPERADOR')
+            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
+            .preencheNomeCompleto()
+            .preencheNomeSocial(cadastro.nomeSocial)
+            .selecionaGenero(cadastro.GeneroM)
+            .emailnovoUsuario(cadastro.email)
+            .filiacao1(cadastro.filiacao1)
+            .filiacao2(cadastro.filiacao2)
+        componente
+            .selecionaStatusInativo('Inativo')
+            .clicaBotao('Proximo')
+        return this
     }
 
 
@@ -134,7 +209,7 @@ class cadastroPage {
             .preencheDocumento0CPF(faker.br.cpf())
         componente
             .clicaBotao('Proximo')
-            return this
+        return this
     }
 
     tipoDeUsuarioIdoso() {
@@ -143,8 +218,16 @@ class cadastroPage {
             .selecionaPostoAtendimento()
         componente
             .clicaBotao('Proximo')
-            return this
+        return this
     }
+
+    tipoDeUsuarioIdosoMultipreenchimento() {
+        this
+            .selecionaDataRegistro('Hoje')
+            .selecionaPostoAtendimento()
+        return this
+    }
+
 
     tipoDeUsuarioFuncionario() {
         this
@@ -154,7 +237,16 @@ class cadastroPage {
             .escreveCargo()
         componente
             .clicaBotao('Proximo')
-            return this
+        return this
+    }
+
+    tipoDeUsuarioFuncionarioMultipreenchimento() {
+        this
+            .selecionaInstituicao('TESTE WEB')
+            .selecionaDataAdmissao()
+            .selecionaDataDemissao()
+            .escreveCargo()
+        return this
     }
 
     tipoDeUsuarioEstudante() {
@@ -173,7 +265,24 @@ class cadastroPage {
             .selecionaDataFinal('Hoje')
         componente
             .clicaBotao('Proximo')
-            return this
+        return this
+    }
+
+    tipoDeUsuarioEstudanteMultipreenchimento() {
+        componente
+            .clicaBotao('Adicionar')
+        this
+            .selecionaEscolaridade()
+            .selecionaNomeInstituicao()
+            .escreveClasse()
+            .escreveQuota()
+            .escreveRa()
+            .escreveSerie()
+            .selecionaPeriodo('Gabriel teste')
+            .selecionaTipoEstudante('Estudante')
+            .selecionaDataInicial('Hoje')
+            .selecionaDataFinal('Hoje')
+        return this
     }
 
     tipoDeUsuarioOperador() {
@@ -184,8 +293,18 @@ class cadastroPage {
             .selecionaOperadora('Moraes')
         componente
             .clicaBotao('Proximo')
-            return this
+        return this
     }
+
+    tipoDeUsuarioOperadorMultipreenchimento() {
+        this
+            .escreveMatriculaOperador()
+            .dataDeAdmissao('20/10/2018', '20')
+            .dataDeDemissao('26/08/2023', '26')
+            .selecionaOperadora('Moraes')
+        return this
+    }
+
 
     tipoDeUsuarioEspecial() {
         this
@@ -202,7 +321,23 @@ class cadastroPage {
         componente
             .clicaBotao('Salvar acompanhante')
             .clicaBotao('Proximo')
-            return this
+        return this
+    }
+    tipoDeUsuarioEspecialMultipreenchimento() {
+        this
+            .selecionaDescricaoCID('A000')
+            .selecionaTipoAprovacao('Aprovado')
+            .selecionaPostoAtendimentoEspecial('AAAAA')
+            .selecionaEquipamentoPcd('Equipamento editado')
+            .escreveCRM()
+            .escreveNomeDoMedico()
+            .validadedoLaudo('Hoje')
+            .escreveNomeAcompanhante()
+            .tipoDocumentoAcompanhante('RNE')
+            .documentoAcompanhante()
+        componente
+            .clicaBotao('Salvar acompanhante')
+        return this
     }
 
     contato() {
@@ -215,7 +350,7 @@ class cadastroPage {
             .preencheCEP("12903000")
             .preencheContato('contato')
             .complementoEndereco('Ap 12B')
-            return this
+        return this
     }
 
     criaçãoDeCartao() {
@@ -226,14 +361,70 @@ class cadastroPage {
             .clicaBotaoProximoCadastroSimplificado()
             .clicaBotao('Salvar')
             .validaMensagem(mensagem.mensagemNovoCadastroSucesso)
-            return this
+        return this
+    }
+
+    editandoUsuario() {
+        componente
+            .escreveNomeId()
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+        this
+            .selecionaTipoEditar('Abt')
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validaMensagem(mensagem.editaUsuarioSucesso)
+        return this
+    }
+
+    visualizandoLogsAlteracoes() {
+        componente
+            .clicaBotaoHomeVisualizar()
+            .clicaBotao('Logs de alterações')
+            .validatexto('Histórico de alterações')
+        return this
+    }
+
+    validandoDataLogAlteracoes() {
+        const currentDate = new Date()
+        const currentDay = currentDate.getDate()
+        const currentMonth = currentDate.getMonth() + 1
+        const currentYear = currentDate.getFullYear()
+        const formattedDate = `${currentDay.toString().padStart(2, '0')}/${currentMonth.toString().padStart(2, '0')}/${currentYear}`;
+        cy.log(`Data atual: ${formattedDate}`)
+
+        componente
+            .pesquisaNomeId('mamae')
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar()
+            .limpaData()
+            .editaData('10/02/1959')
+            .clicaNoDia('10')
+            .selecionaStatusDiversos('Inativo')
+            .selecionaStatusDiversos('Ativo')
+            .excluiTipoDeUsuario()
+            .limpaEditaNome()
+        cadastrar
+            .selecionaTipoUsuario('AUTOMAÇÃO')
+        componente
+            .editaNome()
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Salvar')
+            .clicaBotao('Ver usuário')
+            .clicaBotao('Logs de alterações')
+            .validatexto('Histórico de alterações')
+            .validaFormattedDate(formattedDate)
+        return this
     }
 
     tipoDocumentoAcompanhante(tipo) {
         cy.get('#createUser_createAttendants_usrDocumentTypeId').click({ force: true })
-        cy.get('[title]').contains(tipo,{ force: true }).click({ force: true })
+        cy.get('[title]').contains(tipo, { force: true }).click({ force: true })
         return this
-        
+
     }
 
     preencheDocumento0CPF(cpf) {
@@ -398,7 +589,7 @@ class cadastroPage {
 
     escreveCargo() {
         const cargo = 'Motorista'
-        cy.get('#createUser_UsrEmployees_createMany_data_0_position').type(cargo)
+        cy.get('#createUser_UsrEmployees_createMany_data_0_position', { force: true }).type(cargo, { force: true })
         return this
     }
 
@@ -717,14 +908,97 @@ class cadastroPage {
         return this
     }
 
-    cadastroOperador() {
+    cadastroIdosoEstudanteEspecial() {
         this
-            .geralOperador()
+            .geralIdosoEstudanteEspecial()
             .documentacao()
-            .tipoDeUsuarioOperador()
-            .contato()
+            .tipoDeUsuarioIdosoMultipreenchimento()
+            .tipoDeUsuarioEstudanteMultipreenchimento()
+            .tipoDeUsuarioEspecialMultipreenchimento()
+        componente.clicaBotaoProximo()
+        this.contato()
             .criaçãoDeCartao()
         return this
     }
+
+    cadastroFuncionarioEspecialIdoso() {
+        this
+            .geralFuncionarioEspecialIdoso()
+            .documentacao()
+            .tipoDeUsuarioFuncionarioMultipreenchimento()
+            .tipoDeUsuarioEspecialMultipreenchimento()
+            .tipoDeUsuarioIdosoMultipreenchimento()
+        componente.clicaBotaoProximo()
+        this.contato()
+            .criaçãoDeCartao()
+        return this
+    }
+
+    cadastroFuncionarioOperadorEstudante() {
+        this
+            .geralFuncionarioOperadorEstudante()
+            .documentacao()
+            .tipoDeUsuarioFuncionarioMultipreenchimento()
+            .tipoDeUsuarioOperadorMultipreenchimento()
+            .tipoDeUsuarioEstudanteMultipreenchimento()
+        componente.clicaBotaoProximo()
+        this.contato()
+            .criaçãoDeCartao()
+        return this
+    }
+
+    ValidandoAcessoTelaUsuario() {
+        cy.get('.mastermasteruserheader-0-2-58 > .ant-typography').should('have.text', 'Pesquisa de usuário')
+        return this
+    }
+
+    acessandoTelaOrganizaçao() {
+        cy.get('a[href="/user/organizations"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaPostosDeAtendimento() {
+        cy.get('a[href="/user/servicestations"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaTiposDeUsuario() {
+        cy.get('a[href="/user/userTypes"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaEquipamentoPcD() {
+        cy.get('a[href="/user/userDisabilityEquipments"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaPeriodoEstudantil() {
+        cy.get('a[href="/user/userStudentPeriods"]').click({ force: true })
+    }
+
+    ValidandoTelaPeriodoEstudantil(mensagem) {
+        cy.get('.ant-row-start > .ant-typography').should('have.text', mensagem)
+        return this
+    }
+
+    acessandoTelaTipoDeEstudante() {
+        cy.get('a[href="/user/userStudentTypes"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaNivelDeEscolaridade() {
+        cy.get('a[href="/user/userStudentLevels"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaTipoDeDocumentos() {
+        cy.get('a[href="/user/documentTypes"]').click({ force: true })
+        return this
+    }
+
+    acessandoTelaICD() {
+        cy.get('a[href="/user/usericds"]').click({ force: true })
+        return this
+    }
 }
-export default new cadastroPage
+export default new UsuarioPage

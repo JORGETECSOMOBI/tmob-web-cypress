@@ -26,5 +26,17 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
     it('Cadastra com sucesso um novo usuário "Funcionário" usando o cadastro avançado', () => {
         cadastrar.cadastroFuncionario()
     })
+
+    it.skip('Cadastra com sucesso um novo usuário "Funcionário, Especial e Idoso" usando o cadastro avançado', () => {
+        cadastrar.cadastroFuncionarioEspecialIdoso()
+    })
+
+    it.skip('Cadastra com sucesso um novo usuário "Idoso, Estudante, Especial" usando o cadastro avançado', () => {
+        cadastrar.cadastroIdosoEstudanteEspecial()
+    })
+
+    it.skip('Cadastra com sucesso um novo usuário "Funcionário, Operador, Estudante" usando o cadastro avançado', () => {
+        cadastrar.cadastroFuncionarioOperadorEstudante()
+    })
 })
 

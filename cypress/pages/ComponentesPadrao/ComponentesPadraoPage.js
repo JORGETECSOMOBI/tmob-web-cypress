@@ -338,6 +338,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validaDescricaoAntTableCell(descricao) {
+        cy.get('.ant-table-cell').contains(descricao, {force:true}).should('have.text', descricao, {force:true})
+        return this
+    }
+
     selecionaTitle(dia, dia1) {
         cy.get('[title]').contains(dia, dia1).click({ force: true })
         return this

@@ -1,5 +1,4 @@
-import usuario from '../../../../pages/Atendimento/Usuario/UsuarioHomePage'
-import cadastrar from '../../../../pages/Atendimento/Usuario/cadastroPage'
+import usuario from '../../../../pages/Atendimento/Usuario/UsuarioPage'
 
 describe('Acessando a página de criação de novo ususário e Testando todas as funcionalidades', () => {
     
@@ -8,6 +7,6 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
     })
 
     it('Cadastra com sucesso um novo usuário usando o cadastro simplificado', () => {
-        cadastrar.simplificado()
+        usuario.simplificado()
     })
 })

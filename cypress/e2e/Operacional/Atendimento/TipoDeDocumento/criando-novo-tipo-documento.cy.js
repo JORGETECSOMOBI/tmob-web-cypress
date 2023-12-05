@@ -3,12 +3,10 @@ import documento from '../../../../pages/Atendimento/TiposDeDocumentos/TiposDeDo
 describe('Testando "tipo de Usuário', () => {
 
     beforeEach(() => {
-        documento
-        .beforeTiposDocumentos()
+        documento.beforeTiposDocumentos()
     })
 
     it('Criando um novo tipo de documento', () => {
-       documento
-       .criaNovoTipoDocumento()  
+       documento.criaNovoTipoDocumento()  
     })
 })

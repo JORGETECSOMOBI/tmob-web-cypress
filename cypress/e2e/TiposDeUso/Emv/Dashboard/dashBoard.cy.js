@@ -1,23 +1,11 @@
-import login from "../../../../pages/Login/LoginPage"
-import home from "../../../../pages/Home/HomePage"
-import dash from "../../../../pages/Emv/DashboardPage"
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import dash from '../../../../pages/Emv/DashboardPage'
 
 describe('acessando o emv e Testando a página Dashboard', () => {
     beforeEach(() => {
-
-        login
-            .go()
-            .signin()
-        home
-            .tiposDeUso()
-            .emv()
-        componente
-            .selecionaIdioma('PT')
+        dash.beforeDashboard()
     })
 
     it('Selecionando um período para pesquisa', () => {
-        dash
-            .periodoPesquisa('60 dias')
+        dash.periodoPesquisa('60 dias')
     })
 })
