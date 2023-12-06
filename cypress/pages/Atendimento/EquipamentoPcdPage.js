@@ -1,7 +1,7 @@
-import login from '../../../pages/Login/LoginPage'
-import home from '../../../pages/Home/HomePage'
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
+import login from '../Login/LoginPage'
+import home from '../Home/HomePage'
+import componente from '../ComponentesPadrao/ComponentesPadraoPage'
+import usuario from './UsuarioPage'
 
 
 class EquipamentoPcdPage {

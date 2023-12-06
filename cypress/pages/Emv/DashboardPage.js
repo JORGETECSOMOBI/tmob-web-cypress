@@ -1,6 +1,6 @@
-import login from "../../../../pages/Login/LoginPage"
-import home from "../../../../pages/Home/HomePage"
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import login from "../../pages/Login/LoginPage"
+import home from "../../pages/Home/HomePage"
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
 
 class DashboardPage {
     beforeDashboard() {

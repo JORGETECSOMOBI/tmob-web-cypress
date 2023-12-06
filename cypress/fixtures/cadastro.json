@@ -1,6 +1,10 @@
 {
     "nome": "Json automação",
-    "nomeSocial": "Nome Social",
+    "nomeSocialIdoso": "Tibúrcio Idoso",
+    "nomeSocialEstudante": "Tibúrcio Estudante",
+    "nomeSocialOperador": "Tibúrcio Operador",
+    "nomeSocialEspecial": "Tibúrcio Especial",
+    "nomeSocialFuncionário": "Tibúrcio Funcionário",
     "dia": "1",
     "tipoUsuario": "Operador",
     "NomeSocial": "Geraldo",

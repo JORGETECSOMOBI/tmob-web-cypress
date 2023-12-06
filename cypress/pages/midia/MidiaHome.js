@@ -35,9 +35,7 @@ class MidiaHome {
         this.pesquisaFiltroStatusProcessado()
         componente
             .clicaBotaoEditar()
-        this
-            .selecionaEmissor()
-            .selecionaTipoMidia()
+        .limpaTipoUsuario()
         componente
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
@@ -49,9 +47,8 @@ class MidiaHome {
         this.pesquisaFiltroStatusHotlist()
         componente
             .clicaBotaoEditar()
-        this
-        .limpadiasParaExpiracao()
-            .diasParaExpiracao('14')
+            .limpaDescricao()
+            .escreveDescricao('Cartão Editado')
         componente
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
@@ -64,14 +61,14 @@ class MidiaHome {
         this.pesquisaFiltroStatusInativo()
         componente
             .clicaBotaoEditar()
-            this
-            .limpadiasParaExpiracao()
-            .diasParaExpiracao('14')
+        this
+            .limpaCampoQuota()
+            .selecionaQuota('Quota 10')
         componente
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
-        .validaMensagem('Hotlist foi editado com sucesso!')
+            .validaMensagem('Hotlist foi editado com sucesso!')
         return this
     }
 
@@ -80,8 +77,8 @@ class MidiaHome {
         componente
             .clicaBotaoEditar()
         this
-            .selecionaEmissor()
-            .selecionaTipoMidia()
+            .limpaCampoQuota()
+            .selecionaQuota('Quota 10')
         componente
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
@@ -222,6 +219,16 @@ class MidiaHome {
     selecionaLimiteTempo() {
         const tempo = '5'
         cy.get('#limitUsage', { force: true }).type(tempo, { force: true })
+        return this
+    }
+
+    selecionaQuota(Quota) {
+        cy.get('#rc_select_17').type(Quota).type(`{enter}`)
+        return this
+    }
+
+    limpaCampoQuota() {
+        cy.get('#rc_select_17').clear({ force: true })
         return this
     }
 

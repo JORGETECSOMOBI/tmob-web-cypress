@@ -1,4 +1,4 @@
-import organizacao from '../../../../pages/Atendimento/Organizacao/OrganizacaoPge'
+import organizacao from '../../../../pages/Atendimento/OrganizacaoPge'
 
 describe('Testando a tela "Usuário"', () => {
 

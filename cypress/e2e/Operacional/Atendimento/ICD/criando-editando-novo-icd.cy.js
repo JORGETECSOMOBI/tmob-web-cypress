@@ -1,4 +1,4 @@
-import icd from "../../../../pages/Atendimento/ICD/IcdPage"
+import icd from "../../../../pages/Atendimento/IcdPage"
 
 describe('Testando ICD', () => {
 

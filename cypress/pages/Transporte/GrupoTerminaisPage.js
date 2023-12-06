@@ -17,17 +17,17 @@ class GrupoTerminaisPage {
     }
 
     botaoEditaGrupo() {
-        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(1).click({ force: true })
+        cy.get('[title="Editar um grupo de terminal"]').eq(1).click({ force: true })
         return this
     }
 
     botaoAdicionaItem() {
-        cy.get('svg[stroke="currentColor"][fill="currentColor"][height="12"][width="12"]').eq(0).click({ force: true })
+        cy.get('[title="Adicionar um grupo de terminal"]').eq(1).click({ force: true })
         return this
     }
 
     botaoExcluiGrupo() {
-        cy.get('.ant-tree-treenode-switcher-close > .ant-tree-node-content-wrapper > .ant-tree-title > [style="filter: none;"] > .ant-row-space-between > :nth-child(4) > .ant-btn > .ant-btn-icon > span > svg').eq(1).click({ force: true })
+        cy.get('[title="Remover um grupo de terminal"]').eq(1).click({ force: true })
         cy.wait(3000)
         return this
     }
@@ -38,7 +38,7 @@ class GrupoTerminaisPage {
     }
 
     botaoMais() {
-        cy.get('.ant-tree-switcher').eq(1).click({ force: true })
+        cy.get(':nth-child(1) > ant-tree-switcher>.anticon . svg').eq(1).click({ force: true })
         return this
     }
 

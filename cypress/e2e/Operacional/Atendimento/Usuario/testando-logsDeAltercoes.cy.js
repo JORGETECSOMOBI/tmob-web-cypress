@@ -1,4 +1,4 @@
-import usuario from '../../../../pages/Atendimento/Usuario/UsuarioPage'
+import usuario from '../../../../pages/Atendimento/UsuarioPage'
 
 describe('Acessando ususário e Testando Logs de alterações', () => {
 
@@ -10,7 +10,7 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
         usuario.visualizandoLogsAlteracoes()
     })
 
-    it.skip('validando a data da alteração', () => {
+    it.only('validando a data da alteração', () => {
        usuario.validandoDataLogAlteracoes()
     })
 })

@@ -1,4 +1,4 @@
-import postotoAtendimento from "../../../../pages/Atendimento/PostoDeAtendimento/PostoAtendimentoPage"
+import postotoAtendimento from "../../../../pages/Atendimento/PostoAtendimentoPage"
 
 describe('Criando e editando Postos de Atendimento', () => {
 

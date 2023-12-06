@@ -156,6 +156,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    limpaTipoUsuario() {
+        cy.get('.ant-select-selection-overflow').clear({ force: true })
+        return this
+    }
+
     pesquisa(pesquisa) {
         cy.get('#description').type(pesquisa, { force: true })
         cy.wait(1000)
@@ -260,6 +265,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    escreveTipoUsuario(usuario) {
+        cy.get('#name').type(usuario, { force: true })
+        return this
+    }
+
     pesquisaNomeId(nome) {
         cy.get('#name').type(nome, { force: true }).wait(2000)
         return this
@@ -299,6 +309,16 @@ class ComponentesPadraoPage {
 
     limpaCodigo() {
         cy.get('#code', { force: true }).clear({ force: true })
+        return this
+    }
+
+    limpaFiliacao1() {
+        cy.get('#editUser_filiation1').clear({ force: true })
+        return this
+    }
+
+    limpaFiliacao2() {
+        cy.get('#editUser_filiation2').clear({ force: true })
         return this
     }
 

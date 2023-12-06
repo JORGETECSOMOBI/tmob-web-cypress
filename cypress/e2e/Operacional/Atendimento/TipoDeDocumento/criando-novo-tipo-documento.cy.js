@@ -1,4 +1,4 @@
-import documento from '../../../../pages/Atendimento/TiposDeDocumentos/TiposDeDocumentos'
+import documento from '../../../../pages/Atendimento/TiposDeDocumentosPage'
 
 describe('Testando "tipo de Usuário', () => {
 
