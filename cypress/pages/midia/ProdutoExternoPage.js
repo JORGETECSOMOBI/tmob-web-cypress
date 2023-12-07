@@ -1,8 +1,6 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
-import faker from 'faker-br'
 
 class ProdutoExternoPage {
     beforeProdutoExterno() {
@@ -11,7 +9,6 @@ class ProdutoExternoPage {
         home.tiposDeUso()
         home.midia()
         componente
-            .validaURL(url.midia)
             .selecionaIdioma('PT')
             .clicaBotao('Produto externo')
         return this
@@ -36,20 +33,23 @@ class ProdutoExternoPage {
 
     editaProdutoexterno() {
         componente
+            .escreveDescricao('88')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao(faker.name.findName())
+            .escreveDescricao('Automação de testes produto EDITADO')
         this
-            .limpaTextoExibição()
-            .textoExibição('Automação de testes produto externo')
-            .limpaTextoExibiçãoCurto()
-            .textoExibiçãoCurto('Automação de testes')
-            .limpaTipoExterno()
-            .tipoExterno('Automação')
-            .selecionaEmissor('Autopass')
             .sistema('TMOB')
-            .limpaCodigo()
-            .codigo('123')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+            .clicaBotao('Ver Produtos de Trânsito Externo')
+        componente
+            .escreveDescricao('88')
+            .clicaBotaoEditar()
+            .limpaDescricao()
+            .escreveDescricao('Automação de testes produto externo')
+        this
+            .sistema('TMOB')
         componente
             .clicaBotaoSalvar()
             .clicaBotaoSim()
@@ -79,20 +79,20 @@ class ProdutoExternoPage {
 
     botaoNovo() {
         componente
-        .clicaBotaoNovo()
-        .validatexto('Preencha os campos abaixo para criar um produto de transporte externo')
+            .clicaBotaoNovo()
+            .validatexto('Preencha os campos abaixo para criar um produto de transporte externo')
         return this
     }
 
     botãoEditar() {
         componente.clicaBotaoEditar()
-        .validatexto('Editar')
+            .validatexto('Editar')
         return this
     }
 
     botaoVisualizar() {
         componente.clicaBotaoHomeVisualizar()
-        .validatexto('Detalhes')
+            .validatexto('Detalhes')
         return this
     }
 

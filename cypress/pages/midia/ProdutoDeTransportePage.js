@@ -1,7 +1,9 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import usuario from '../../pages/Atendimento/UsuarioPage'
 import url from '../../fixtures/url.json'
+import faker from 'faker-br'
 
 class ProdutoDetransportePge {
     beforeProdutoDeTrasnporte() {
@@ -18,6 +20,7 @@ class ProdutoDetransportePge {
 
     criandoUmProdutoDeTransporteValorado() {
         componente
+            .clicaBotao('Produto de transporte')
             .clicaBotaoNovo()
         this
             .selecionaTipoDeProduto('Valorado')
@@ -26,10 +29,24 @@ class ProdutoDetransportePge {
             .maximoDeIntegracoes('8')
             .grupoDerelatorio('TOP - Funcional')
             .displayValidador('Automação')
+        usuario
+            .selecionaTipoUsuario('Estudante')
         componente
-            .limpaDescricao()
+            .clicaBotaoProximo()
             .escreveDescricao('AAAA Automação Valorado')
             .clicaBotaoProximo()
+        this
+            .selecionaPrioridade(faker.random.number())
+        componente
+            .clicaBotaoProximo()
+        this
+            .selecionaLimiteUso('Especial')
+            .selecionaGrupoTempo('Augusto')
+        componente
+            .clicaBotaoProximo()
+            .clicaBotaoProximo()
+            .clicaBotaoSalvar()
+            .clicaBotaoModal('Sim')
         return this
     }
 
@@ -47,7 +64,6 @@ class ProdutoDetransportePge {
             .escreveDescricao('AAAA Automação Gratuidade')
         return this
     }
-
 
     criandoUmProdutoDeTransporteGratuidadeFuncional() {
         componente
@@ -102,6 +118,7 @@ class ProdutoDetransportePge {
             .clicaBotaoVerProdutos()
         componente
             .validaDescriçãoTitle('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            return this
     }
 
     selecionaTipoDeProduto(produto) {
@@ -112,6 +129,21 @@ class ProdutoDetransportePge {
     selecionaEmissor(emissor) {
         cy.get('#toIssuerCode').click({ force: true })
         cy.contains(emissor).click({ force: true })
+        return this
+    }
+
+    selecionaPrioridade(prioridade) {
+        cy.get('#priority').type(prioridade).type(`{enter}`)
+        return this
+    }
+
+    selecionaGrupoTempo(tempo) {
+        cy.get('#specialConditions_0_MedTimeGroupRole').type(tempo, { force: true })
+        return this
+    }
+
+    selecionaLimiteUso(uso) {
+        cy.get('#specialConditions_0_MedUseLimitRole').type(uso, { force: true })
         return this
     }
 

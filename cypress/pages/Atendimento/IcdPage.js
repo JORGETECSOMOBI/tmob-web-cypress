@@ -1,4 +1,4 @@
-import usuario from "../../pages/Atendimento/Usuario/UsuarioPage"
+import usuario from "../../pages/Atendimento/UsuarioPage"
 import componente from "../ComponentesPadrao/ComponentesPadraoPage"
 import login from "../Login/LoginPage"
 import home from "../Home/HomePage"

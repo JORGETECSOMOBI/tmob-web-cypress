@@ -37,8 +37,8 @@ class GruposDeRelatoriosPage {
             .selecionaStatus('Inativo')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
-            .validaMensagem('Grupo de Recebedoria foi editado com sucesso!')
-            .clicaBotao('Ver Grupos de Recebedoria')
+            .validaMensagem('Grupo de Relatório foi editado com sucesso!')
+            .clicaBotao('Ver Grupos de Relatório')
             .validaDescriçãoTitle('AAAA Grupo de relatórios editado')
         return this
     }

@@ -47,35 +47,30 @@ class ArquivosOperacionaisPage {
     gerandoUmArquivoNovaAtualizacaoGrupoDeTempo() {
         this
             .editaUmArquivoAtualizadoGrupoDeTempo()
-            .botaoForcarGeração()
         return this
     }
 
     gerandoUmArquivoNovaAtualizacaoLimiteDeUso() {
         this
             .editaUmArquivoAtualizadoLimiteDeUso()
-            .botaoForcarGeração()
         return this
     }
 
     gerandoUmArquivoNovaAtualizacaoProdutoDeTransporte() {
         this
             .editaUmArquivoAtualizadoProdutoDeTransporte()
-            .botaoForcarGeração()
         return this
     }
 
     gerandoUmArquivoNovaAtualizacaoProdutoExterno() {
         this
             .editaUmArquivoAtualizadoProdutoExterno()
-            .botaoForcarGeração()
         return this
     }
 
     gerandoUmArquivoNovaAtualizacaoCotas() {
         this
             .editaUmArquivoAtualizadoCotas()
-            .botaoForcarGeração()
         return this
     }
 
@@ -140,8 +135,8 @@ class ArquivosOperacionaisPage {
         componente
             .clicaBotao('Produto de transporte')
         produtoDeTransporte
-            .criandoUmProdutoDeTransporteValorado()
-            .editandoUmGrupoDeTransporte()
+            .editandoUmGrupoDeTransporteEdicao()
+            //.editandoUmGrupoDeTransporteEditado()
         componente
             .clicaBotao('Arquivos Operacionais')
         this
@@ -150,14 +145,12 @@ class ArquivosOperacionaisPage {
             .validatexto('Estamos processando seu arquívo operacional.')
             .validatexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
-
     }
 
     editaUmArquivoAtualizadoProdutoExterno() {
         componente
             .clicaBotao('Produto externo')
         produtoExterno
-            .cadastraNovoProdutoexterno()
             .editaProdutoexterno()
         componente
             .clicaBotao('Arquivos Operacionais')

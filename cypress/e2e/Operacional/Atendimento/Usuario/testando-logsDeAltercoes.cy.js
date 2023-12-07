@@ -10,7 +10,7 @@ describe('Acessando ususário e Testando Logs de alterações', () => {
         usuario.visualizandoLogsAlteracoes()
     })
 
-    it.only('validando a data da alteração', () => {
+    it('validando a data da alteração', () => {
        usuario.validandoDataLogAlteracoes()
     })
 })

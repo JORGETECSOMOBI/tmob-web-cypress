@@ -2,7 +2,7 @@ import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import url from '../../fixtures/url.json'
-import usuario from '../../pages/Atendimento/Usuario/cadastroPage'
+import usuario from '../../pages/Atendimento/UsuarioPage'
 import faker from 'faker-br'
 
 class TipoDeMidiaPage {
@@ -36,7 +36,7 @@ class TipoDeMidiaPage {
     }
 
     editandoTipoDeMidia() {
-        const nome = 'AAAA MIDIA AUTOMAÇÃO '
+        const nome = 'AAAA MIDIA AUTOMAÇÃO'
         const sobrenome = faker.name.lastName()
         componente
             .escreveDescricao(nome)
