@@ -1,5 +1,5 @@
-import usuario from '../../../../pages/Atendimento/Usuario/UsuarioHomePage'
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import usuario from '../../../../pages/Atendimento/Usuario/UsuarioPage'
+
 
 describe('Acessando a página de criação de novo ususário e Testando todas as funcionalidades', () => {
 
@@ -8,46 +8,26 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
     })
 
     it('Edita usuário', () => {
-        componente
-            .pesquisaNomeId('1598')
-            .clicaBotaoHomepesquisar()
-            .clicaBotaoHomeEditar()
+      usuario.editaUsuario()
     })
 
     it('Visualizar usuário', () => {
-        componente
-            .pesquisaNomeId('Geraldo')
-            .clicaBotaoHomepesquisar()
-            .clicaBotaoHomeVisualizar()
-            .validatexto('Geraldo')
+    usuario.visualizaUsuario()
     })
 
     it('Filtro inativo', () => {
-        componente
-            .selecionaStatus('Inativo')
-            .clicaBotaoHomepesquisar()
-            .validaStatusInativo()
+        usuario.filtroInativo()
     })
 
     it('Filtro ativo', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .clicaBotaoHomepesquisar()
-            .validaStatusAtivo()
+       usuario.filtroAtivo()
     })
 
     it('Filtro por nome', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .escreveNomeId('João')
-            .clicaBotaoHomepesquisar()
+       usuario.filtroNome
     })
 
     it('Limpar filtro por nome', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .escreveNomeId('João')
-            .clicaBotao('Limpar filtro')
-            .validaFunçãolimparFiltroNome()
+        usuario.limpaFiltroNome()
     })
 })

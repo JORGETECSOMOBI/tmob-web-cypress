@@ -9,7 +9,7 @@ describe('Testando home Hotlist de midia', () => {
         hotlistMidia.filtrandoPorId()
     })
 
-    it.skip('Testando filtro por Id externo', () => {
+    it('Testando filtro por Id externo', () => {
         hotlistMidia.filtrandoPorIdExterno()
     })
 

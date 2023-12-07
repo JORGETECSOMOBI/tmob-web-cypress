@@ -1,4 +1,4 @@
-import niveEscolaridade from '../../../../pages/Atendimento/NivelEscolaridade/NivelEscolaridadePage'
+import niveEscolaridade from '../../../../pages/Atendimento/NivelEscolaridadePage'
 
 describe('Criando um novo nível de escolaridade', () => {
 

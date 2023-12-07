@@ -1,7 +1,7 @@
-import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import home from '../../../pages/Home/HomePage'
-import login from '../../../pages/Login/LoginPage'
+import usuario from './UsuarioPage'
+import componente from '../ComponentesPadrao/ComponentesPadraoPage'
+import home from '../Home/HomePage'
+import login from '../Login/LoginPage'
 import faker from "faker-br"
 class OrganizacaoPage {
 

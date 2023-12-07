@@ -1,8 +1,8 @@
-import componente from '../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
-import url from '../../../fixtures/url.json'
-import usuario from '../../../pages/Atendimento/Usuario/UsuarioHomePage'
+import componente from '../ComponentesPadrao/ComponentesPadraoPage'
+import login from "../Login/LoginPage"
+import home from "../Home/HomePage"
+import url from '../../fixtures/url.json'
+import usuario from './UsuarioPage'
 import faker from 'faker-br'
 
 class TiposDeDocumentos {

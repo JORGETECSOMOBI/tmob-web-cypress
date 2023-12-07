@@ -18,7 +18,7 @@ class HotListMidiaPage {
 
     filtrandoPorId() {
         componente
-            .escreveDescricao('428')
+            .pesquisaId('428')
             .validaDescricaoDataRowKey('428')
 
         return this
@@ -26,15 +26,15 @@ class HotListMidiaPage {
 
     filtrandoPorIdExterno() {
         componente
-            .pesquisaId('129 - TOP-Mercury')
-            .validaDescricaoDataRowKey('129 - TOP-Mercury')
+            .pesquisaId('5229000001197')
+            .validaDescricaoDataRowKey('5229000001197')
 
         return this
     }
 
     filtrandoPorNumeroCartao() {
         componente
-            .escreveDescricao('52.29.00000100-6')
+            .pesquisaId('52.29.00000100-6')
             .validaDescriçãoTitle('52.29.00000100-6')
         return this
     }

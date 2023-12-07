@@ -1,4 +1,4 @@
-import tipoUsuario from '../../../../pages/Atendimento/TipoDeUsuario/TipoUsuarioPage'
+import tipoUsuario from '../../../../pages/Atendimento/TipoUsuarioPage'
 
 describe('Testando "tipo de Usuário', () => {
 

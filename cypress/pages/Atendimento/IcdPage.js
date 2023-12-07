@@ -1,7 +1,7 @@
-import usuario from "../../../pages/Atendimento/Usuario/UsuarioHomePage"
-import componente from "../../../pages/ComponentesPadrao/ComponentesPadraoPage"
-import login from "../../../pages/Login/LoginPage"
-import home from "../../../pages/Home/HomePage"
+import usuario from "../../pages/Atendimento/Usuario/UsuarioPage"
+import componente from "../ComponentesPadrao/ComponentesPadraoPage"
+import login from "../Login/LoginPage"
+import home from "../Home/HomePage"
 
 class IcdPage {
 

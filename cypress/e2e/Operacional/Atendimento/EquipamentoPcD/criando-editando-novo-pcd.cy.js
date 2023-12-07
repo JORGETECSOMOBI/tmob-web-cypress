@@ -1,4 +1,4 @@
-import pcd from '../../../../pages/Atendimento/PCD/EquipamentoPcdPage'
+import pcd from '../../../../pages/Atendimento/EquipamentoPcdPage'
 
 describe('Criando e editando novo esquipamento PcD', () => {
 

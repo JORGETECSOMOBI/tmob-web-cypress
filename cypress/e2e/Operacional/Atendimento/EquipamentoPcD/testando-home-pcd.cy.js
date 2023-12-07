@@ -1,4 +1,4 @@
-import pcd from '../../../../pages/Atendimento/PCD/EquipamentoPcdPage'
+import pcd from '../../../../pages/Atendimento/EquipamentoPcdPage'
 
 describe('Testando a tela de equipamento PcD ', () => {
 

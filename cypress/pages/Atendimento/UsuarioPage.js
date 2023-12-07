@@ -1,8 +1,8 @@
-import componente from '../../ComponentesPadrao/ComponentesPadraoPage'
-import home from '../../../pages/Home/HomePage'
-import login from '../../../pages/Login/LoginPage'
-import cadastro from'../../../fixtures/cadastro.json'
-import mensagem from '../../../fixtures/mensagens.json'
+import componente from '../ComponentesPadrao/ComponentesPadraoPage'
+import home from '../Home/HomePage'
+import login from '../Login/LoginPage'
+import cadastro from '../../fixtures/cadastro.json'
+import mensagem from '../../fixtures/mensagens.json'
 import faker from 'faker-br'
 
 class UsuarioPage {
@@ -15,7 +15,6 @@ class UsuarioPage {
             .selecionaIdioma('PT')
         return this
     }
-
 
     simplificado() {
         componente
@@ -53,7 +52,7 @@ class UsuarioPage {
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAAA Automação Idoso')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(cadastro.nomeSocialIdoso)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -72,7 +71,7 @@ class UsuarioPage {
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(cadastro.nomeSocialEstudante)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -91,7 +90,7 @@ class UsuarioPage {
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO OPERADOR')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(cadastro.nomeSocialOperador)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -110,7 +109,7 @@ class UsuarioPage {
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(cadastro.nomeSocialEspecial)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -129,7 +128,7 @@ class UsuarioPage {
             .escreveDataNascimento('15/12/1959', '15')
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO FUNCIONÁRIO')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(cadastro.nomeSocialFuncionário)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -150,7 +149,7 @@ class UsuarioPage {
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
             .selecionaTipoUsuario('AAAAA Automação Idoso')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            //.preencheNomeSocial(cadastro.nomeSocial)
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -306,20 +305,16 @@ class UsuarioPage {
     }
 
 
-    tipoDeUsuarioEspecial() {
+    tipoDeUsuarioEspecialSemAcompanhante() {
         this
-            .selecionaDescricaoCID('A000')
+            .selecionaDescricaoCID('A01')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAA')
             .selecionaEquipamentoPcd('Equipamento editado')
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('Hoje')
-            .escreveNomeAcompanhante()
-            .tipoDocumentoAcompanhante('RNE')
-            .documentoAcompanhante()
         componente
-            .clicaBotao('Salvar acompanhante')
             .clicaBotao('Proximo')
         return this
     }
@@ -364,9 +359,31 @@ class UsuarioPage {
         return this
     }
 
-    editandoUsuario() {
+    editandoUsuarioIdoso() {
         componente
-            .escreveNomeId()
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialIdoso)
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+            .limpaFiliacao1()
+            .limpaFiliacao2()
+        this
+            .selecionaTipoEditar('Abt')
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+            .editaFiliacao1('Mamãe')
+            .editaFiliacao2('papai')
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validatexto('Ver usuário')
+        return this
+    }
+
+    editandoUsuarioEstudante() {
+        componente
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialEstudante)
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar('Editar')
         this
@@ -376,7 +393,58 @@ class UsuarioPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validaMensagem(mensagem.editaUsuarioSucesso)
+            .validatexto('Ver usuário')
+        return this
+    }
+
+    editandoUsuarioFuncionario() {
+        componente
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialFuncionário)
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+        this
+            .selecionaTipoEditar('Abt')
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validatexto('Ver usuário')
+        return this
+    }
+
+    editandoUsuarioEspecial() {
+        componente
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialEspecial)
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+        this
+            .selecionaTipoEditar('Abt')
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validatexto('Ver usuário')
+        return this
+    }
+
+    editandoUsuarioOperador() {
+        componente
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialOperador)
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+        this
+            .selecionaTipoEditar('Abt')
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validatexto('Ver usuário')
         return this
     }
 
@@ -397,7 +465,8 @@ class UsuarioPage {
         cy.log(`Data atual: ${formattedDate}`)
 
         componente
-            .pesquisaNomeId('mamae')
+            .selecionaStatus('Inativo')
+            .pesquisaNomeId(cadastro.nomeSocialIdoso)
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeEditar()
             .limpaData()
@@ -407,8 +476,8 @@ class UsuarioPage {
             .selecionaStatusDiversos('Ativo')
             .excluiTipoDeUsuario()
             .limpaEditaNome()
-        cadastrar
-            .selecionaTipoUsuario('AUTOMAÇÃO')
+        this
+            .selecionaTipoUsuario('AAAAA Automação Idoso')
         componente
             .editaNome()
             .clicaBotaoSalvar()
@@ -417,6 +486,7 @@ class UsuarioPage {
             .clicaBotao('Logs de alterações')
             .validatexto('Histórico de alterações')
             .validaFormattedDate(formattedDate)
+            .clicaBotao('OK')
         return this
     }
 
@@ -495,7 +565,7 @@ class UsuarioPage {
 
     selecionaDataRegistro(data) {
         cy.get('.ant-picker-input').click({ force: true })
-        cy.contains(data).click({ force: true })
+        cy.contains(data, { force: true }).click({ force: true })
         return this
     }
 
@@ -790,8 +860,18 @@ class UsuarioPage {
         return this
     }
 
+    editaFiliacao1(filiacao1) {
+        cy.get('#editUser_filiation1').type(filiacao1, { force: true })
+        return this
+    }
+
     filiacao2(filiacao2) {
         cy.get('#createUser_filiation2').type(filiacao2, { force: true })
+        return this
+    }
+
+    editaFiliacao2(filiacao2) {
+        cy.get('#editUser_filiation2').type(filiacao2, { force: true })
         return this
     }
 
@@ -898,15 +978,27 @@ class UsuarioPage {
         return this
     }
 
-    cadastroEspecial() {
+    cadastroEspecialSemAcompanhante() {
         this
             .geralEspecial()
             .documentacao()
-            .tipoDeUsuarioEspecial()
+            .tipoDeUsuarioEspecialSemAcompanhante()
             .contato()
             .criaçãoDeCartao()
         return this
     }
+
+    cadastroOperador() {
+        this
+            .geralOperador()
+            .documentacao()
+            .tipoDeUsuarioOperador()
+        componente.clicaBotaoProximo()
+        this.contato()
+            .criaçãoDeCartao()
+        return this
+    }
+
 
     cadastroIdosoEstudanteEspecial() {
         this
@@ -998,6 +1090,56 @@ class UsuarioPage {
 
     acessandoTelaICD() {
         cy.get('a[href="/user/usericds"]').click({ force: true })
+        return this
+    }
+
+    editaUsuario() {
+        componente
+            .pesquisaNomeId('1598')
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar()
+        return this
+    }
+
+    visualizaUsuario() {
+        componente
+            .pesquisaNomeId('Geraldo')
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeVisualizar()
+            .validatexto('Geraldo')
+        return this
+    }
+
+    filtroInativo() {
+        componente
+            .selecionaStatus('Inativo')
+            .clicaBotaoHomepesquisar()
+            .validaStatusInativo()
+        return this
+    }
+
+    filtroAtivo() {
+        componente
+            .selecionaStatus('Ativo')
+            .clicaBotaoHomepesquisar()
+            .validaStatusAtivo()
+        return this
+    }
+
+    filtroNome() {
+        componente
+            .selecionaStatus('Ativo')
+            .escreveNomeId('João')
+            .clicaBotaoHomepesquisar()
+        return this
+    }
+
+    limpaFiltroNome() {
+        componente
+            .selecionaStatus('Ativo')
+            .escreveNomeId('João')
+            .clicaBotao('Limpar filtro')
+            .validaFunçãolimparFiltroNome()
         return this
     }
 }
