@@ -27,7 +27,7 @@ class GrupoTerminaisPage {
     }
 
     botaoExcluiGrupo() {
-        cy.get('[title="Remover um grupo de terminal"]').eq(1).click({ force: true })
+        cy.get('[title="Remover um grupo de terminal"]', { force: true }).eq(1).click({ force: true })
         cy.wait(3000)
         return this
     }

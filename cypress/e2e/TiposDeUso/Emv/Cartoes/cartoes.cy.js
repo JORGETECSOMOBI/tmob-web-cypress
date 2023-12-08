@@ -6,6 +6,6 @@ describe('acessando emv e Testando a página de Cartões', () => {
     })
 
     it(' pesquisando usando o filtro "Pan Token', () => {   
-        cartoes
+        
     })
 })

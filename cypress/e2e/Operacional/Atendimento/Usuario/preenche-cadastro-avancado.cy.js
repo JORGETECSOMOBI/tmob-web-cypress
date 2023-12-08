@@ -18,7 +18,11 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.cadastroOperador()
     })
 
-    it.skip('Cadastra com sucesso um novo usuário "Especial" sem acompanhante usando o cadastro avançado', () => {
+    it.skip('Cadastra com sucesso um novo usuário "Especial" com acompanhante usando o cadastro avançado', () => {
+        usuario.cadastroEspecialComAcompanhante()
+    })
+
+    it('Cadastra com sucesso um novo usuário "Especial" sem acompanhante usando o cadastro avançado', () => {
         usuario.cadastroEspecialSemAcompanhante()
     })
 

@@ -10,15 +10,15 @@ describe('Criando uma nova linha', () => {
             .beforeLinha()
     })
 
-    it.skip('Criar uma nova linha', () => {
+    it('Criar uma nova linha', () => {
         linha.geral()
         linha.stepTarifa()
         linha.sistemasExternos()
     })
 
-    it.skip('Editar uma nova linha', () => {
+    it('Editar uma nova linha', () => {
         linha.editaGeral()
-        // linha.editaStepTarifa()
-        // linha.editaSistemasExternos()
+        linha.editaStepTarifa()
+        linha.editaSistemasExternos()
     })
 })

@@ -10,7 +10,7 @@ describe('Testando Cadastro de cartão', () => {
       midia.cadastraNovoCartão()
    })
 
-   it.skip('Editar um cartão "Processado"', () => {
+   it('Editar um cartão "Processado"', () => {
       midia.editaCartaoProcessado()
    })
 
@@ -18,11 +18,11 @@ describe('Testando Cadastro de cartão', () => {
       midia.editaCartaoHotlist()
    })
 
-   it.skip('Editar um cartão "Inativo"', () => {
+   it('Editar um cartão "Inativo"', () => {
       midia.editaCartaoInativo()
    })
 
-   it.skip('Editar um cartão "Pendente"', () => {
+   it('Editar um cartão "Pendente"', () => {
       midia.editaCartaoPendente()
    })
 })

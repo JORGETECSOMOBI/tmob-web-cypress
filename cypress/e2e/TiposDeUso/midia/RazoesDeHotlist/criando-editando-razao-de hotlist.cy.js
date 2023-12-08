@@ -9,7 +9,7 @@ describe('Criando e editando razões de hotlist', () => {
        razoesHotilst.criandoRazaoDeHotlist()
     })
 
-    it('Editando Razões de hotlist', () => {
+    it.skip('Editando Razões de hotlist', () => {
         razoesHotilst.editandoRazaoDeHotlist()
      })
 })

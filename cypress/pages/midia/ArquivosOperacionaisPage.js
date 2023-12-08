@@ -135,7 +135,7 @@ class ArquivosOperacionaisPage {
         componente
             .clicaBotao('Produto de transporte')
         produtoDeTransporte
-            .editandoUmGrupoDeTransporteEdicao()
+            .editandoUmGrupoDeTransporte()
             //.editandoUmGrupoDeTransporteEditado()
         componente
             .clicaBotao('Arquivos Operacionais')

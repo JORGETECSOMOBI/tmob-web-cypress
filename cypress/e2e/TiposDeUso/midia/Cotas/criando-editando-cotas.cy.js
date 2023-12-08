@@ -9,7 +9,7 @@ describe('Criando e editando cotas', () => {
         cotas.criandoNovaCota()
     })
 
-    it.only('Editando cota', () => {
+    it('Editando cota', () => {
         cotas.editandoCota()
     })
 })

@@ -35,11 +35,12 @@ class MidiaHome {
         this.pesquisaFiltroStatusProcessado()
         componente
             .clicaBotaoEditar()
-        .limpaTipoUsuario()
-        componente
             .selecionaIdioma('PT')
+            .limpaTipoUsuario()
+        componente
             .clicaBotaoSalvar()
             .clicaBotaoSim()
+            .validaMensagem('O cartão foi editado com sucesso')
         return this
     }
 
@@ -61,14 +62,11 @@ class MidiaHome {
         this.pesquisaFiltroStatusInativo()
         componente
             .clicaBotaoEditar()
-        this
-            .limpaCampoQuota()
-            .selecionaQuota('Quota 10')
-        componente
+            .limpaTipoUsuario()
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
-            .validaMensagem('Hotlist foi editado com sucesso!')
+            .validaMensagem('O cartão foi editado com sucesso')
         return this
     }
 
@@ -76,14 +74,11 @@ class MidiaHome {
         this.pesquisaFiltroStatusPendente()
         componente
             .clicaBotaoEditar()
-        this
-            .limpaCampoQuota()
-            .selecionaQuota('Quota 10')
-        componente
+            .limpaTipoUsuario()
             .selecionaIdioma('PT')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
-            .validaMensagem(mensagem.criaCartaoMidiaSucesso)
+            .validaMensagem('O cartão foi editado com sucesso')
         return this
     }
 
@@ -252,6 +247,12 @@ class MidiaHome {
     escreveDescricao() {
         const descricao = faker.name.firstName()
         cy.get('#description', { force: true }).type(descricao, { force: true }).wait(1000)
+        return this
+    }
+
+    fimDaValidade(data) {
+        cy.get('[data-row-key="13080"] > :nth-child(3) > .ant-picker > .ant-picker-input > input').click({ force: true })
+        cy.contains(data).click({ force: true })
         return this
     }
 }

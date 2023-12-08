@@ -23,7 +23,7 @@ class ProdutoExternoPage {
             .textoExibiçãoCurto('Automação de testes')
             .tipoExterno('Automação')
             .selecionaEmissor('Autopass')
-            .sistema('TMOB')
+            .sistema('SPTrans')
             .codigo('123')
         componente
             .clicaBotaoSalvar()
@@ -38,7 +38,7 @@ class ProdutoExternoPage {
             .limpaDescricao()
             .escreveDescricao('Automação de testes produto EDITADO')
         this
-            .sistema('TMOB')
+            .sistema('SPTrans')
         componente
             .clicaBotaoSalvar()
             .clicaBotaoSim()
@@ -49,7 +49,7 @@ class ProdutoExternoPage {
             .limpaDescricao()
             .escreveDescricao('Automação de testes produto externo')
         this
-            .sistema('TMOB')
+            .sistema('SPTrans')
         componente
             .clicaBotaoSalvar()
             .clicaBotaoSim()

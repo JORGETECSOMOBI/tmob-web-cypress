@@ -230,7 +230,7 @@ class UsuarioPage {
 
     tipoDeUsuarioFuncionario() {
         this
-            .selecionaInstituicao('TESTE WEB')
+            .selecionaInstituicao('AUTOMATICO')
             .selecionaDataAdmissao()
             .selecionaDataDemissao()
             .escreveCargo()
@@ -307,7 +307,7 @@ class UsuarioPage {
 
     tipoDeUsuarioEspecialSemAcompanhante() {
         this
-            .selecionaDescricaoCID('A01')
+            .selecionaDescricaoCID('01')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAA')
             .selecionaEquipamentoPcd('Equipamento editado')
@@ -318,6 +318,21 @@ class UsuarioPage {
             .clicaBotao('Proximo')
         return this
     }
+
+    tipoDeUsuarioEspecialComAcompanhante() {
+        this
+            .selecionaDescricaoCID('A000')
+            .selecionaTipoAprovacao('Aprovado')
+            .selecionaPostoAtendimentoEspecial('AAAAA')
+            .selecionaEquipamentoPcd('Equipamento editado')
+            .escreveCRM()
+            .escreveNomeDoMedico()
+            .validadedoLaudo('Hoje')
+        componente
+            .clicaBotao('Proximo')
+        return this
+    }
+
     tipoDeUsuarioEspecialMultipreenchimento() {
         this
             .selecionaDescricaoCID('A000')
@@ -979,6 +994,16 @@ class UsuarioPage {
     }
 
     cadastroEspecialSemAcompanhante() {
+        this
+            .geralEspecial()
+            .documentacao()
+            .tipoDeUsuarioEspecialSemAcompanhante()
+            .contato()
+            .criaçãoDeCartao()
+        return this
+    }
+
+    cadastroEspecialComAcompanhante() {
         this
             .geralEspecial()
             .documentacao()

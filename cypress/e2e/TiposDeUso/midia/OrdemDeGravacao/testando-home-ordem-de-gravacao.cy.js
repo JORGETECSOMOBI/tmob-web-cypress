@@ -34,7 +34,7 @@ describe('Testando todas as funcionalidades da home de Ordem de gravação', () 
         gravacao.filtroStatusProcessando()
     })
 
-    it.skip('testando filtro por Pausado', () => {
+    it('testando filtro por Pausado', () => {
         gravacao.filtroStatusPausado()
     })
 
@@ -42,7 +42,7 @@ describe('Testando todas as funcionalidades da home de Ordem de gravação', () 
         gravacao.filtroStatusErro()
     })
 
-    it.skip('testando filtro por Processado', () => {
+    it('testando filtro por Processado', () => {
         gravacao.filtroStatusProcessado()
     })
 

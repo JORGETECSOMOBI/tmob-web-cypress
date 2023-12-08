@@ -33,7 +33,7 @@ describe('Testando Home de Arquivos de mídia', () => {
         arquivosMidia.botaoForcarGeracao()
     })
 
-    it.only('Botão Download', () => {
+    it('Botão Download', () => {
         arquivosMidia.botaoDownload()
     })
 

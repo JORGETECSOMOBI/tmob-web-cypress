@@ -157,7 +157,7 @@ class ComponentesPadraoPage {
     }
 
     limpaTipoUsuario() {
-        cy.get('.ant-select-selection-overflow').clear({ force: true })
+        cy.get('svg[data-icon="close"]').eq(0).click({ force: true })
         return this
     }
 
@@ -359,12 +359,18 @@ class ComponentesPadraoPage {
     }
 
     validaDescricaoAntTableCell(descricao) {
-        cy.get('.ant-table-cell').contains(descricao, {force:true}).should('have.text', descricao, {force:true})
+        cy.get('.ant-table-cell').contains(descricao, { force: true }).should('have.text', descricao, { force: true })
         return this
     }
 
     selecionaTitle(dia, dia1) {
         cy.get('[title]').contains(dia, dia1).click({ force: true })
+        return this
+    }
+
+    selecionaPeriodoDeTempo(periodo) {
+        cy.get('.ant-picker').click({ force: true })
+        cy.contains(periodo).click({ force: true })
         return this
     }
 }

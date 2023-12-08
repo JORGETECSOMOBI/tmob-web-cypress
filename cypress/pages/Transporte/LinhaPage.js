@@ -2,6 +2,7 @@ import componente from '../ComponentesPadrao/ComponentesPadraoPage'
 import url from '../../fixtures/url.json'
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
+import faker from 'faker-br'
 
 class LinhaPage {
 
@@ -66,33 +67,34 @@ class LinhaPage {
     }
 
     tarifa(tarifa) {
-        cy.get('#farRuleId', { force: true }).type(tarifa).wait(1000).type(`{enter}`)
+        cy.get('#farRuleId', { force: true }).type(tarifa, { force: true }).wait(1000).type(`{enter}`, { force: true })
         return this
     }
 
     segundaTarifa() {
-        cy.get('#farSecondaryRuleId', { force: true }).wait(1000).type(`{enter}`)
+        cy.get('#farSecondaryRuleId', { force: true }).wait(1000).type(`{enter}`, { force: true })
         return this
     }
 
     tarifaRemuneracao(tarifaRemuneracao) {
-        cy.get('#farRemunerationRuleId', { force: true }).type(tarifaRemuneracao).wait(1000).type(`{enter}`)
+        cy.get('#farRemunerationRuleId', { force: true }).type(tarifaRemuneracao, { force: true }).wait(1000).type(`{enter}`, { force: true })
         return this
     }
 
     descontoTarifa(descontoTarifa) {
-        cy.get('#farDiscountId', { force: true }).type(descontoTarifa).wait(1000).type(`{enter}`)
+        cy.get('#farDiscountId', { force: true }).type(descontoTarifa, { force: true }).wait(1000).type(`{enter}`, { force: true })
         return this
     }
 
     grupoIntegracao(grupoIntegracao) {
-        cy.get('#farIntegrationLineGroupId', { force: true }).type(grupoIntegracao).wait(1000).type(`{enter}`)
+        cy.get('#farIntegrationLineGroupId', { force: true }).type(grupoIntegracao, { force: true }).wait(1000).type(`{enter}`, { force: true })
         return this
     }
 
     sistema(sistema) {
-        cy.get('#toSystem').click()
-        cy.contains(sistema).click()
+        cy.get('#toSystem').click({ force: true })
+        cy.wait(1000)
+        cy.contains(sistema, { force: true }).click({ force: true })
         return this
     }
 
@@ -193,7 +195,7 @@ class LinhaPage {
         cy.get('.steps-action').contains('Proximo').click({ force: true })
         return this
     }
-    
+
 
     geral() {
         componente
@@ -202,7 +204,7 @@ class LinhaPage {
         this
             .descricaoCurta('Fim do mundo')
             .telaDovalidador('Fim do mundo')
-            .IdExterno('200')
+            .IdExterno(faker.random.number())
             .OrgaoGestor('ABASP')
             .tipoDaLinha('ALIMENTADORA')
             .detalheDoTipoDalinha('NORMAL')
@@ -241,6 +243,7 @@ class LinhaPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Sim')
+            .validaMensagem('A linha foi cadastrada com sucesso')
         return this
     }
 
@@ -258,23 +261,34 @@ class LinhaPage {
         return this
     }
 
-    // editaSistemasExternos() {
-    //     componente.clicaBotao('+ Integrar Sistema')
-    //     this
-    //         .sistema('TOP-Mercury')
-    //         .IdExterno('99')
-    //         .IdExternoMaster('99')
-    //         .acoes()
-    //     componente.clicaBotao('+ Integrar Sistema')
-    //     this
-    //         .sistema('BOM-Mercury')
-    //         .IdExterno('99')
-    //         .IdExternoMaster('99')
-    //         .acoes()
-    //     componente
-    //         .clicaBotao('Salvar')
-    //         .clicaBotaoModal('Sim')
-    //     return this
-    // }
+    editaSistemasExternos() {
+        componente.clicaBotao('+ Integrar Sistema')
+        this
+            .sistema('TOP-Mercury')
+            .IdExterno('99')
+            .IdExternoMaster('99')
+            .acoes()
+        componente.clicaBotao('+ Integrar Sistema')
+        this
+            .sistema('POA-Mercury')
+            .IdExterno('99')
+            .IdExternoMaster('99')
+            .acoes()
+        componente
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+        return this
+    }
+
+    editaStepTarifa() {
+        this
+            .segundaTarifa('END2END OPERACIONAL TESTE')
+            .descontoTarifa('Desconto 02')
+            .grupoIntegracao('teste grupo de linha')
+            .tarifaRemuneracao('Tarifa Sato 1')
+            .tarifa('Tarifa Sato')
+        componente.clicaBotao('Proximo')
+        return this
+    }
 }
 export default new LinhaPage

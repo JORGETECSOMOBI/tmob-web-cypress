@@ -265,6 +265,7 @@ class OrdemDeGravacaoPage {
     }
 
     gravarOrdem() {
+        this.filtroStatusPendente()
         componente
             .clicaBotao('Gravar')
             .clicaBotao('Sim')
@@ -273,6 +274,7 @@ class OrdemDeGravacaoPage {
     }
 
     cancelarOrdem() {
+        this.filtroStatusPendente()
         componente
             .clicaBotao('Cancelar')
             .clicaBotaoModal('Sim')
