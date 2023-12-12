@@ -94,7 +94,8 @@ class OrdemDeGravacaoPage {
     }
 
     gravandoOrdemGravacao() {
-        componente.selecionaStatus('Pendente')
+        componente
+            .selecionaStatus('Pendente')
         this
             .visualizar()
             .gravarOrdem()
@@ -265,7 +266,6 @@ class OrdemDeGravacaoPage {
     }
 
     gravarOrdem() {
-        this.filtroStatusPendente()
         componente
             .clicaBotao('Gravar')
             .clicaBotao('Sim')
@@ -274,7 +274,6 @@ class OrdemDeGravacaoPage {
     }
 
     cancelarOrdem() {
-        this.filtroStatusPendente()
         componente
             .clicaBotao('Cancelar')
             .clicaBotaoModal('Sim')
@@ -285,6 +284,11 @@ class OrdemDeGravacaoPage {
         componente
             .clicaBotao('Visualizar')
             .validatexto('Detalhes')
+        return this
+    }
+
+    clicaBotaoGravar() {
+        cy.get('.mastermastermediawriteBtn-0-2-125').click()
         return this
     }
 }

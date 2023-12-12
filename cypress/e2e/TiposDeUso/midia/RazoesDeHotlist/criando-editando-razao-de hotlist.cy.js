@@ -5,11 +5,11 @@ describe('Criando e editando razões de hotlist', () => {
         razoesHotilst.beforeRazoesHotlist()
     })
 
-    it('Criando Razões de hotlist', () => {
+    it.only('Criando Razões de hotlist', () => {
        razoesHotilst.criandoRazaoDeHotlist()
     })
 
-    it.skip('Editando Razões de hotlist', () => {
+    it('Editando Razões de hotlist', () => {
         razoesHotilst.editandoRazaoDeHotlist()
      })
 })

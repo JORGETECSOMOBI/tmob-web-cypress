@@ -1,8 +1,8 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
-
+import mensagem from '../../fixtures/mensagens.json'
+import faker from 'faker-br'
 class GrupoTerminaisPage {
 
     beforeGrupoTerminais() {
@@ -10,9 +10,89 @@ class GrupoTerminaisPage {
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotao('Grupo de terminais')
+        return this
+    }
+
+    criandoGrupoTerminais() {
+        componente
+            .clicaBotao('+ Novo grupo')
+            .escreveDescricao('Criando Terminal')
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.criaGrupoTerminaisSucesso)
+        return this
+    }
+
+    editandoGrupoTerminaisGeral() {
+        this
+            .pesquisarNoGrupo('Criando Terminal')
+            .botaoEditaGrupo()
+        componente
+            .limpaDescricao()
+            .escreveDescricao('Automação Teste')
+        this
+            .selecionaTipoInstalação('Garagem')
+            .selecionaCalendarioOperacional('Teste Augusto calendario')
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
+        return this
+    }
+
+    editandoGrupoTerminaisRegrasDeServico() {
+        this
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoEditaGrupo()
+            .stepRegrassDeProduto()
+            .restringir()
+            .permitir()
+        componente
+            .clicaBotao('Adicionar permissão')
+        this
+            .tipoRestricao('QrCode')
+            .subTipoRestricao('QRCODE ATM')
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
+        return this
+    }
+
+    editandoGrupoTerminaisRestricaoDeFuncao() {
+        this
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoEditaGrupo()
+            .restricaoFuncao()
+            .adicionaRestricao()
+            .selecionaFuncao('Selecao de linha')
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.editaGrupoTerminaisSucesso)
+        return this
+    }
+
+    adicionandoItemNoAgrupador() {
+        this
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoAdicionaItem()
+        componente
+            .escreveDescricao(faker.name.findName())
+        this
+            .selecionaTipoInstalação('Garagem')
+            .remotamenteOperavel()
+        componente
+            .clicaBotao('OK')
+            .validaMensagem(mensagem.criaGrupoTerminaisSucesso)
+        return this
+    }
+
+    excluindoGrupoTerminais() {
+        this
+            .pesquisarNoGrupo('Automação Teste')
+            .botaoExcluiGrupo()
+            .botaoExcluiAgupador()
+        componente
+            .validaMensagem(mensagem.removeGrupoTerminaisSucesso)
         return this
     }
 
@@ -31,7 +111,7 @@ class GrupoTerminaisPage {
         cy.wait(3000)
         return this
     }
-    
+
     botaoExcluiAgupador() {
         cy.get(':nth-child(5) > .ant-btn').eq(1).click({ force: true })
         return this

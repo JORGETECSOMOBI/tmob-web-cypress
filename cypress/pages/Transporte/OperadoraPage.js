@@ -1,7 +1,9 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
+import linha from '../../pages/Transporte/GrupoLinhaPage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
+import mensagem from '../../fixtures/mensagens.json'
+import faker from 'faker-br'
 
 class OperadoraPage {
 
@@ -10,9 +12,51 @@ class OperadoraPage {
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotao('Operadora')
+        return this
+    }
+
+    criandoOperadora() {
+        componente
+            .clicaBotao('Novo')
+            .escreveNomeId(faker.name.lastName())
+        this
+            .selecionaConsorcio('teste')
+            .selecionaGrupoOperadora('Grupo de Operadora')
+            .selecionaSindicato('Autopass Sindicato')
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.cadastroOperadoraSucesso)
+        return this
+    }
+
+    editandoOperadora() {
+        componente
+            .escreveNomeId('146')
+            .clicaBotao('Editar')
+            .limpaNome()
+            .escreveNomeId(faker.name.firstName())
+        this
+            .selecionaConsorcio('teste 123reasde')
+            .selecionaGrupoOperadora('Grupo de Operadora')
+            .selecionaSindicato('Autopass Sindicato')
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('+ Integrar Sistema')
+        linha
+            .selecionaSistema('TOP-Mercury')
+        this.
+            escreveIdExterno()
+        componente
+            .clicaBotao('Salvar')
+        return this
+    }
+
+    escreveIdExterno() {
+        cy.get('#externalId').type(faker.random.number())
         return this
     }
 

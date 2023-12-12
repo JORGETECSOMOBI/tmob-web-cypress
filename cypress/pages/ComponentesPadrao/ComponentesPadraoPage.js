@@ -157,7 +157,7 @@ class ComponentesPadraoPage {
     }
 
     limpaTipoUsuario() {
-        cy.get('svg[data-icon="close"]').eq(0).click({ force: true })
+        cy.get('.ant-select-selection-overflow').click({ force: true })
         return this
     }
 
@@ -172,7 +172,6 @@ class ComponentesPadraoPage {
         cy.wait(1000)
         return this
     }
-
 
     validaItemPesquisaPorId() {
         cy.get('.ant-table-row > .ant-table-cell-ellipsis').should('have.text', 'cadeira de rodas')

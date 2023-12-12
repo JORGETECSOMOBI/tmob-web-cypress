@@ -5,28 +5,6 @@ import url from '../../fixtures/url.json'
 
 class TransportePage {
 
-    beforeConsorcio() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Consórcio')
-        return this
-    }
-
-    beforeEmissor() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Emissor')
-        return this
-    }
-
     beforeOpe() {
         login.go()
             .signin()
@@ -71,16 +49,6 @@ class TransportePage {
         return this
     }
 
-    beforeMotivosHotlist() {
-        login.go()
-            .signin()
-        home.transporte()
-        componente
-            .validaURL(url.transporte)
-            .selecionaIdioma('PT')
-            .clicaBotao('Motivos de hotlist')
-        return this
-    }
 
     beforeCalendarioOperacional() {
         login.go()

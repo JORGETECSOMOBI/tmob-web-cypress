@@ -1,4 +1,4 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+
 import arquivoOperacional from '../../../../pages/Transporte/ArquivoOperacionalPage'
 
 describe('Testando "Arquivos Operacionais', () => {
@@ -8,96 +8,42 @@ describe('Testando "Arquivos Operacionais', () => {
     })
 
     it('testando filtro por id', () => {
-        arquivoOperacional
-            .pesquisaId('1339')
+        arquivoOperacional.pesquisaId()
     })
 
     it('testando filtro por nome do arquivo', () => {
-        arquivoOperacional
-            .pesquisaNomeArquivo('1695295649246_op.enc')
+        arquivoOperacional.pesquisaNomeArquivo()
     })
 
-
-
     it('testando filtro por Tag', () => {
-        arquivoOperacional
-            .pesquisaTag('Principal')
+        arquivoOperacional.pesquisaTag()
     })
 
     it('Forçando geração de arquivo já anteriormente atualizado', () => {
-        componente
-            .clicaBotao('Forçar geração')
-            .clicaBotaoModal('Sim')
-            .validaMensagem('Estamos processando seu arquívo operacional.')
-            .validaMensagem('O arquívo operacional já está atualizado.')
+       arquivoOperacional.forcandoGeraçãoArquivoAtualizado()
     })
 
-    it('forçando a geração de um novo arquivo operacional', () => {
-        componente
-            .clicaBotao('Grupo de operadora')
-            .pesquisa('16')
-            .clicaBotao('Editar')
-            .limpaDescricao()
-            .escreveDescricao('trilhos')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
-            .clicaBotao('Arquivos Operacionais')
-            .clicaBotao('Forçar geração')
-            .clicaBotao('Sim')
-            .clicaBotao('Sim')
-            .validaMensagem('Estamos processando seu arquívo operacional.')
-            .validaMensagem('Seu arquívo operácional foi gerado com sucesso.')
+    it('forçando a geração de um arquivo operacional com nova atualização', () => {
+        arquivoOperacional.forcandoGeraçãoNovaAtualização()
     })
 
     it('Alterando a tag para alt ', () => {
-        componente
-            .pesquisaId('1356')
-        arquivoOperacional
-            .clicaBotaoTag()
-            .SelecionaTag('Alt')
-        componente
-            .clicaBotao('Confirmar')
-        arquivoOperacional
-            .validaTagAlt('1356')
-
+       arquivoOperacional.alterandoTagParaAlt()
     })
 
     it('Alterando a tag para principal ', () => {
-        componente
-            .pesquisaId('1356')
-        arquivoOperacional
-            .clicaBotaoTag()
-            .SelecionaTag('Principal')
-        componente
-            .clicaBotao('Confirmar')
-        arquivoOperacional
-            .validaTagPrincipal('1356')
+      arquivoOperacional.alterandoTagParaPrincipal()
     })
 
     it('Desvinculando a tag do arquivo ', () => {
-        componente
-            .pesquisaId('1356')
-        arquivoOperacional
-            .clicaBotaoTag()
-            .SelecionaTag('Nenhuma')
-        componente
-            .clicaBotao('Confirmar')
-        arquivoOperacional
-            .ValidaTagPrincipalInativa('Nenhum OP utilizando esta tag')
-            .validaTagAltInativa('Nenhum OP utilizando esta tag')
+       arquivoOperacional.desvinculandoTag()
     })
 
     it('Clicando no botão "Visualizar', () => {
-        componente
-            .pesquisaId('1356')
-            .clicaBotao('Visualizar')
-            .validaURL('https://web.test.tmob.com.br/transport/operationalFile/1356')
-            .validaMensagem('Selecionar arquivo para comparar')
+       arquivoOperacional.testandoBotaovisualizar()
     })
 
     it('Fazendo Dowmload do arquivo', () => {
-        componente
-            .pesquisaId('1356')
-            .clicaBotao('Download')
+        arquivoOperacional.fazendoDownloadArquivo()
     })
 })

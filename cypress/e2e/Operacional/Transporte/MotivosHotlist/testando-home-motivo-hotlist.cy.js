@@ -1,50 +1,32 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import hotlist from '../../../../pages/Transporte/transportePage'
+import hotlist from '../../../../pages/Transporte/MotivosDeHotlistPage'
 
 describe('Testando home de hotlist', () => {
 
     beforeEach(() => {
-        hotlist
-            .beforeMotivosHotlist()
+        hotlist.beforeMotivosHotlist()
     })
 
     it('filtro por id', () => {
-        componente
-            .escreveDescricao('19')
-            .validaId('19')
+        hotlist.filtroPorId()
     })
 
     it('filtro por nome', () => {
-        componente
-            .escreveDescricao('Elizangela do Sul')
-            .validaNome('Elizangela do Sul')
+        hotlist.filtroPorNome()
     })
 
     it('filtro Ativo', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .validaStatusAtivo()
+        hotlist.filtroPorStatusAtivo()
     })
 
     it('filtro Inativo', () => {
-        componente
-            .selecionaStatus('Inativo')
-            .validaStatusInativo()
+        hotlist.filtroPorStatusInativo()
     })
 
     it('Função visualizar Ação "Bloqueado"', () => {
-        componente
-            .escreveDescricao('22')
-            .clicaBotao('Visualizar')
-            .validatexto('ID #22')
-            .validatexto('Bloqueado')
+        hotlist.visualizarAcaoBloqueado()
     })
 
     it('Função visualizar Ação "Desbloqueado"', () => {
-        componente
-            .escreveDescricao('02')
-            .clicaBotao('Visualizar')
-            .validatexto('ID #2')
-            .validatexto('Desbloqueado')
+        hotlist.VisualizarAcaoDesbloqueado()
     })
 })

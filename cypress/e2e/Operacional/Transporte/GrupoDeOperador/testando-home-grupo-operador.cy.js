@@ -1,44 +1,28 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import grupoOperador from '../../../../pages/Transporte/GrupoOperadorPage'
-import url from '../../../../fixtures/url.json'
 
 describe('Testando todas as funcionalidades da home Grupo de operador', () => {
 
     beforeEach(() => {
-        grupoOperador
-            .beforeGrupoOperador()
+        grupoOperador.beforeGrupoOperador()
     })
 
     it('Testando pesquisa por id', () => {
-        componente
-            .escreveDescricao('12')
-        grupoOperador
-            .ValidaIdgrupoOperador('12')
+        grupoOperador.pesquisaPorId()
     })
 
     it('Testando status ativo', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .validaStatusAtivo()
+        grupoOperador.pesquisaPorStatusAtivo()
     })
 
     it('Testando status Inativo', () => {
-        componente
-            .selecionaStatus('Inativo')
-            .validaStatusInativo()
+        grupoOperador.pesquisaPorStatusInativo()
     })
 
     it('Testando função Visualizar', () => {
-        componente
-            .escreveDescricao('12')
-            .clicaBotao('Visualizar')
-            .validaURL(url.visualizaGrupoOperador)
+        grupoOperador.testandoVisualizar()
     })
 
-    it('Testando status Inativo', () => {
-        componente
-            .escreveDescricao('12')
-            .clicaBotao('Editar')
-            .validaURL(url.editaGrupoOperador)
+    it('Testando botão editar', () => {
+        grupoOperador.testandoEditar()
     })
 })

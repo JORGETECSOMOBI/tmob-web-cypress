@@ -1,7 +1,9 @@
 import login from '../Login/LoginPage'
 import home from '../Home/HomePage'
 import componente from '../ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
+import mensagem from '../../fixtures/mensagens.json'
+import faker from 'faker-br'
+
 
 class GrupoOperadorPage {
 
@@ -10,9 +12,127 @@ class GrupoOperadorPage {
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotaoMenuPosicao(8)
+        return this
+    }
+
+    criandoGrupoOperadorAdmin() {
+        componente
+            .clicaBotao('Novo')
+            .escreveDescricao(faker.name.lastName())
+            .selecionaStatus('Inativo')
+        this
+            .operadorAdmin()
+            .selecionaFuncaoOperadorPorId('30')
+            .selecionaTodasFuncoesIncluir()
+            .incluiFuncao()
+        componente
+            .clicaBotao('Proximo')
+            .selecionaOperadora('Operadora Autopass')
+        this
+            .selecionaFuncaoOperadorPorId('20')
+            .selecionaTodasFuncoesIncluir()
+            .incluiFuncao()
+        componente
+            .clicaBotao('Gravar')
+            .clicaBotao('Proximo')
+            .clicaBotao('+ Integrar Sistema')
+        this
+            .selecionaSistema('TOP-Mercury')
+            .escreveIdExterno('12')
+            .clicaBotao('Salvar')
+        componente
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.cadastraGrupoOperadorSucesso)
+        return this
+    }
+
+    editandogrupoOperador() {
+        componente
+            .escreveDescricao('56')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao(faker.name.lastName())
+            .clicaBotao('Proximo')
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.editaGrupoOperadorSucesso)
+        return this
+    }
+
+    editandogrupoOperadorIncluindoFuncoesPorLote() {
+        componente
+            .escreveDescricao('56')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao(faker.name.lastName())
+        this
+            .selecionaTodasFuncoesIncluir()
+            .incluiFuncao()
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.editaGrupoOperadorSucesso)
+        return this
+    }
+
+    editandogrupoOperadorExcluindoFuncoesPorLote() {
+        componente
+            .escreveDescricao('56')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao(faker.name.lastName())
+        this
+            .selecionaTodasFuncoesExcluir()
+            .excluiFuncao()
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.editaGrupoOperadorSucesso)
+        return this
+    }
+
+    pesquisaPorId() {
+        componente
+            .escreveDescricao('12')
+        this
+            .ValidaIdgrupoOperador('12')
+        return this
+    }
+
+    pesquisaPorStatusAtivo() {
+        componente
+            .selecionaStatus('Ativo')
+            .validaStatusAtivo()
+        return this
+    }
+
+    pesquisaPorStatusInativo() {
+        componente
+            .selecionaStatus('Inativo')
+            .validaStatusInativo()
+        return this
+    }
+
+    testandoVisualizar() {
+        componente
+            .escreveDescricao('12')
+            .clicaBotao('Visualizar')
+            .validatexto('Detalhes')
+        return this
+    }
+
+    testandoEditar() {
+        componente
+            .escreveDescricao('12')
+            .clicaBotao('Editar')
+            .validatexto('Editar')
         return this
     }
 

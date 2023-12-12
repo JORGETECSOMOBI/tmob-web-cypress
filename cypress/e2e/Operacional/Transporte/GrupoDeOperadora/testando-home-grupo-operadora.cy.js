@@ -1,50 +1,33 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import grupoOperadora from '../../../../pages/Transporte/GrupoOperadoraPage'
 
 describe('Testando Grupo de Operadora', () => {
 
     beforeEach(() => {
-        grupoOperadora
-            .beforeGrupoOperadora()
+        grupoOperadora.beforeGrupoOperadora()
     })
 
     it('pesquisa por id', () => {
-        componente
-            .escreveDescricao('22')
-            .validaId('22')
+        grupoOperadora.pesquisaPorId()
     })
 
     it('pesquisa por nome', () => {
-        componente
-            .escreveDescricao('Nogueira')
-            .validaDescricao('Nogueira')
+       grupoOperadora.pesquisaPorNome()
     })
 
     it('Filtro Ativo', () => {
-        componente
-            .selecionaStatus('Ativo')
-            .validaStatusAtivo()
-
+        grupoOperadora.pesquisaPorStatusAtivo()
     })
 
     it('Filtro Inativo', () => {
-        componente
-            .selecionaStatus('Inativo')
-            .validaStatusInativo()
+       grupoOperadora.pesquisaPorStatusInativo
     })
 
     it('função visualizar', () => {
-        componente
-            .escreveDescricao('22')
-            .clicaBotao('Visualizar')
-            .validatexto('ID #22')
+        grupoOperadora.testandoVisualizar()
     })
 
     it('função editar', () => {
-        componente
-            .escreveDescricao('22')
-            .clicaBotao('Editar')
-            .validatexto('ID #22')
+       grupoOperadora.testandoEditar()
     })
 })
 

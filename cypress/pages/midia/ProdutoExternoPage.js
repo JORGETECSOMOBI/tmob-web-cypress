@@ -36,9 +36,9 @@ class ProdutoExternoPage {
             .escreveDescricao('88')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao('Automação de testes produto EDITADO')
+            .escreveDescricao('Automação de testes produto')
         this
-            .sistema('SPTrans')
+            .sistema('TMOB')
         componente
             .clicaBotaoSalvar()
             .clicaBotaoSim()

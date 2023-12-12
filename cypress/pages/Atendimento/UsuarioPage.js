@@ -328,7 +328,11 @@ class UsuarioPage {
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('Hoje')
+            .escreveNomeAcompanhante()
+            .documentoAcompanhante(faker.br.cpf())
+            .tipoDocumentoAcompanhante('CPF')
         componente
+            .clicaBotao('Salvar acompanhante')
             .clicaBotao('Proximo')
         return this
     }
@@ -429,7 +433,7 @@ class UsuarioPage {
         return this
     }
 
-    editandoUsuarioEspecial() {
+    editandoUsuarioEspecialSemAcompanhante() {
         componente
             .selecionaStatus('Inativo')
             .escreveTipoUsuario(cadastro.nomeSocialEspecial)
@@ -439,8 +443,24 @@ class UsuarioPage {
             .selecionaTipoEditar('Abt')
             .limpaNomeCompleto()
             .editaNomeCompleto()
+            .botaoSalvarStepAction()
         componente
-            .clicaBotao('Salvar')
+            .clicaBotaoModal('Salvar')
+            .validatexto('Ver usuário')
+        return this
+    }
+
+    editandoUsuarioEspecialComAcompanhante() {
+        componente
+            .selecionaStatus('Inativo')
+            .escreveTipoUsuario(cadastro.nomeSocialEspecial)
+            .clicaBotaoHomepesquisar()
+            .clicaBotaoHomeEditar('Editar')
+        this
+            .limpaNomeCompleto()
+            .editaNomeCompleto()
+            .botaoSalvarStepAction()
+        componente
             .clicaBotaoModal('Salvar')
             .validatexto('Ver usuário')
         return this
@@ -561,6 +581,12 @@ class UsuarioPage {
 
     clicaBotaoCadastroAvancado() {
         cy.contains('Cadastro avançado').click({ force: true })
+        return this
+    }
+
+    botaoSalvarStepAction() {
+        cy.get('.steps-action > .ant-btn-primary').contains('Salvar').click({ force: true })
+        return this
         return this
     }
 
@@ -1007,7 +1033,7 @@ class UsuarioPage {
         this
             .geralEspecial()
             .documentacao()
-            .tipoDeUsuarioEspecialSemAcompanhante()
+            .tipoDeUsuarioEspecialComAcompanhante()
             .contato()
             .criaçãoDeCartao()
         return this
@@ -1167,5 +1193,6 @@ class UsuarioPage {
             .validaFunçãolimparFiltroNome()
         return this
     }
+
 }
 export default new UsuarioPage

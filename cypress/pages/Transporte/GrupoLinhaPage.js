@@ -1,7 +1,8 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
+import mensagem from '../../fixtures/mensagens.json'
+import faker from 'faker-br'
 
 class GrupoLinhaPage {
 
@@ -10,9 +11,115 @@ class GrupoLinhaPage {
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotao('Grupo de linha')
+        return this
+    }
+
+    criaGrupoDeLinhaEmLote() {
+        componente
+            .clicaBotao('Novo')
+            .escreveDescricao(faker.name.firstName())
+            .selecionaStatus('Inativo')
+        this
+            .selecionaTodasLinhas2()
+            .incluiLinhas()
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('+ Integrar Sistema')
+        this
+            .selecionaSistema('TOP-Mercury')
+            .escreveIdExterno('33')
+            .clicaBotao('Salvar')
+        componente
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.cadastraGrupoDeLinhaSucesso)
+        return this
+    }
+
+    desabilitaLinha() {
+        componente
+            .escreveDescricao('313')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao(faker.name.lastName())
+            .selecionaStatus('Inativo')
+        this
+            .escreveLinhaNomeId0('54170')
+            .selecionaTodasLinhas1()
+            .excluiLinhas()
+            .validaExclusaoDeLinha('L09 - RINCÃO')
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.editaGrupoLinha)
+        return this
+    }
+
+    habilitaLinha() {
+        componente
+            .escreveDescricao('313')
+            .clicaBotao('Editar')
+            .limpaDescricao()
+            .escreveDescricao(faker.name.lastName())
+            .selecionaStatus('Inativo')
+        this
+            .escreveLinhaNomeId0('54170')
+            .selecionaTodasLinhas0()
+            .incluiLinhas()
+            .validaInclusaoDeLinha('L09 - RINCÃO')
+        componente
+            .clicaBotao('Proximo')
+            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem(mensagem.editaGrupoLinha)
+        return this
+    }
+
+    testandoFiltroId() {
+        componente
+        .escreveDescricao('313')
+        .validaId('313')
+        return this
+    }
+
+    testandoStatusAtivo() {
+        componente
+        .selecionaStatus('Ativo')
+        .validaStatusAtivo()
+        return this
+    }
+
+    testandostatusInativo() {
+        componente
+            .selecionaStatus('Inativo')
+            .validaStatusInativo()
+        return this
+    }
+
+    testandoVisualizar() {
+        componente
+        .escreveDescricao('313')
+        .clicaBotao('Visualizar')
+        .validatexto('ID #313')
+        return this
+    }
+
+    testandoEditar() {
+        componente
+        .escreveDescricao('313')
+        .clicaBotao('Editar')
+        .validatexto('ID #313')
+        return this
+    }
+
+    testandoLimparfiltros() {
+        componente
+            .escreveDescricao('313')
+            .selecionaStatus('Inativo')
+            .clicaBotao('Limpar filtro')
+            .validaFunçãolimparFiltro()
         return this
     }
 

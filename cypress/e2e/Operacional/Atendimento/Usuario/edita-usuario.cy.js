@@ -18,8 +18,12 @@ describe('Acessando a página de criação de novo ususário e Testando todas as
         usuario.editandoUsuarioFuncionario()
     })
 
-    it('Edita usuário Especial', () => {
-        usuario.editandoUsuarioEspecial()
+    it('Edita usuário Especial com acompanhante', () => {
+        usuario.editandoUsuarioEspecialComAcompanhante()
+    })
+
+    it('Edita usuário Especial sem acompanhante', () => {
+        usuario.editandoUsuarioEspecialSemAcompanhante()
     })
 
     it('Edita usuário Operador', () => {

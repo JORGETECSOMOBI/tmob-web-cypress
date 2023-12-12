@@ -1,24 +1,16 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import linha from '../../../../pages/Transporte/LinhaPage'
-import mensagem from '../../../../fixtures/mensagens.json'
-import faker from 'faker-br'
 
 describe('Criando uma nova linha', () => {
 
     beforeEach(() => {
-        linha
-            .beforeLinha()
+        linha.beforeLinha()
     })
 
     it('Criar uma nova linha', () => {
-        linha.geral()
-        linha.stepTarifa()
-        linha.sistemasExternos()
+       linha.criaLinha()
     })
 
     it('Editar uma nova linha', () => {
-        linha.editaGeral()
-        linha.editaStepTarifa()
-        linha.editaSistemasExternos()
+       linha.editaLinha()
     })
 })

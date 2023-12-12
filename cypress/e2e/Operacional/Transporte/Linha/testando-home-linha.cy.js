@@ -5,88 +5,62 @@ import texto from '../../../../fixtures/textos.json'
 describe('Testando todos os elementos da página Linha', () => {
 
     beforeEach(() => {
-        linha
-            .beforeLinha()
+        linha.beforeLinha()
     })
 
     it("clica no botão novo", () => {
-        componente
-            .clicaBotao('Novo')
-            .validaMensagem(texto.textoCadastroLinha)
+       linha.botaoNovo()
     })
 
     it("Pesquisa por nome", () => {
-        componente
-            .escreveDescricao('Fim do mundo')
-        linha
-            .validaPesquisa('Fim do mundo')
+        linha.pesquisaPorNome()
     })
 
-    it("Pesquisa por status", () => {
-        componente
-            .selecionaStatus('Inativo')
-            .validaStatusAusente('Ativo')
-        linha
-            .validaStatus('Inativo')
+    it("Pesquisa por status Ativo", () => {
+        linha.pesquisaPorStatusAtivo()
+    })
+
+    it("Pesquisa por status Inativo", () => {
+        linha.pesquisaPorStatusInativo()
     })
 
     it("Pesquisa por tarifa", () => {
-        linha
-            .filtroTarifa('Tarifa Sato')
-            .validaPesquisa('Tarifa Sato')
+        linha.pesquisaPorTarifa()
     })
 
     it("Pesquisa por segunda tarifa", () => {
-        linha
-            .filtroSegundaTarifa('Tarifa Sato')
-            .validaPesquisa('Tarifa Sato')
+        linha.pesquisaPorSegundaTarifa()
     })
 
     it("Pesquisa por tarifa remuneração", () => {
-        linha
-            .filtroTarifaRemuneracao('E2E OPERATIONAL TEST')
-            .validaPesquisaTarifaremuneração('E2E OPERATIONAL TEST')
+        linha.pesquisaPorTarifaremuneracao()
     })
 
     it.skip("Pesquisa por desconto da tarifa", () => {
-        linha
-            .filtroDescontoTarifa('rasb')
-            .validaPesquisaDescontotarifa('rasb')
+        linha.pesquisaPorDescontoNaTarifa()
     })
 
     it("Pesquisa por tipo da linha", () => {
-        linha
-            .filtroTipoDeLinha('CIRCULAR')
-            .validaPesquisa('CIRCULAR')
+        linha.pesquisaPorTipoDaLinha()
     })
 
     it("Pesquisa por detalhe do tipo da linha", () => {
-        linha
-            .filtroDetalheTipoDeLinha('NORMAL')
-            .validaPesquisa('NORMAL')
+        linha.PesquisaPordetalheTipoDeLinha()
     })
 
     it("Pesquisa por alcance da linha", () => {
-        linha
-            .filtroAlcanceLinha('MUNICIPAL')
-            .validaPesquisa('MUNICIPAL')
+        linha.pesquisaPorAlcanceDaLinha()
     })
 
     it("Pesquisa por grupo de linha integração", () => {
-        linha
-            .filtroGrupoIntegracaoLinha('Integração teste 1')
-            .validaPesquisa('Integração teste 1')
+        linha.pesquisaPorGrupoDeLinhaIntegracao()
     })
 
     it("Acessa a página visualizar", () => {
-        componente
-            .clicaBotao('Visualizar')
-            .validatexto('Detalhes')
+        linha.testandoVisualizar()
     })
 
     it("Acessa a função de editar", () => {
-        componente
-            .clicaBotao('Editar')
-            .validatexto('Editar')
+        linha.testandoEditar()
     })
 })

@@ -1,6 +1,4 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import emissor from '../../../../pages/Transporte/transportePage'
-import faker from 'faker-br'
+import emissor from '../../../../pages/Transporte/EmissorPage'
 
 describe('Testando "Consócio"', () => {
 
@@ -9,13 +7,6 @@ describe('Testando "Consócio"', () => {
     })
 
     it.skip('Editar um emissor', () => {
-        componente
-            .pesquisaNomeId('99')
-            .clicaBotao('Editar')
-            .limpaNome()
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Salvar')
+        emissor.editarEmissor()
     })
 })

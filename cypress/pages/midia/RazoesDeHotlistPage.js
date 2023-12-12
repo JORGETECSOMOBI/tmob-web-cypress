@@ -21,7 +21,7 @@ class RazoesDeHotlistPage {
             .clicaBotaoNovo()
             .escreveDescricao('AAA AUTOMAÇÃO HOTLIST')
         this
-            .filtroAcao('Bloquear')
+            .filtroAcao('Bloqueado')
             .diasParaExpiracao('50')
             .permiteTranferencia('Não')
             .permiteSegundaVia('Não')

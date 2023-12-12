@@ -1,7 +1,7 @@
 import componente from '../ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
+import texto from'../../fixtures/textos.json'
 import faker from 'faker-br'
 
 class LinhaPage {
@@ -11,9 +11,120 @@ class LinhaPage {
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotao('Linha')
+        return this
+    }
+
+    criaLinha() {
+        this.geral()
+            .stepTarifa()
+            .sistemasExternos()
+        return this
+    }
+
+    editaLinha() {
+        this.editaGeral()
+            .editaSistemasExternos()
+        return this
+    }
+
+    pesquisaPorNome() {
+        componente
+            .escreveDescricao('Fim do mundo')
+        this
+            .validaPesquisa('Fim do mundo')
+        return this
+    }
+
+    pesquisaPorStatusAtivo() {
+        componente
+            .selecionaStatus('Ativo')
+            .validaStatusAtivo()
+        return this
+    }
+
+    pesquisaPorStatusInativo() {
+        componente
+            .selecionaStatus('Inativo')
+            .validaStatusInativo()
+        return this
+    }
+
+    testandoVisualizar() {
+        componente
+            .clicaBotao('Visualizar')
+            .validatexto('Detalhes')
+        return this
+    }
+
+    testandoEditar() {
+        componente
+            .clicaBotao('Editar')
+            .validatexto('Editar')
+        return this
+    }
+
+    botaoNovo() {
+        componente
+            .clicaBotao('Novo')
+            .validaMensagem(texto.textoCadastroLinha)
+        return this
+    }
+
+    pesquisaPorTarifa() {
+        this
+            .filtroTarifa('Tarifa Sato')
+            .validaPesquisa('Tarifa Sato')
+        return this
+    }
+
+    pesquisaPorSegundaTarifa() {
+        this
+            .filtroSegundaTarifa('Tarifa Sato')
+            .validaPesquisa('Tarifa Sato')
+        return this
+    }
+
+    pesquisaPorTarifaremuneracao() {
+        this
+            .filtroTarifaRemuneracao('E2E OPERATIONAL TEST')
+            .validaPesquisaTarifaremuneração('E2E OPERATIONAL TEST')
+        return this
+    }
+
+    pesquisaPorDescontoNaTarifa() {
+        this
+            .filtroDescontoTarifa('rasb')
+            .validaPesquisaDescontotarifa('rasb')
+        return this
+    }
+
+    pesquisaPorTipoDaLinha() {
+        this
+            .filtroTipoDeLinha('CIRCULAR')
+            .validaPesquisa('CIRCULAR')
+        return this
+    }
+
+    PesquisaPordetalheTipoDeLinha() {
+        this
+            .filtroDetalheTipoDeLinha('NORMAL')
+            .validaPesquisa('NORMAL')
+        return this
+    }
+
+    pesquisaPorAlcanceDaLinha() {
+        this
+            .filtroAlcanceLinha('MUNICIPAL')
+            .validaPesquisa('MUNICIPAL')
+        return this
+    }
+
+    pesquisaPorGrupoDeLinhaIntegracao() {
+        this
+            .filtroGrupoIntegracaoLinha('Integração teste 1')
+            .validaPesquisa('Integração teste 1')
         return this
     }
 
@@ -192,10 +303,9 @@ class LinhaPage {
     }
 
     clicaProximoEdita() {
-        cy.get('.steps-action').contains('Proximo').click({ force: true })
-        return this
+        cy.get('.steps-action', { force: true }).contains('Proximo', { force: true }).click({ force: true })
+        return this;
     }
-
 
     geral() {
         componente
@@ -254,6 +364,7 @@ class LinhaPage {
             .limpaDescricao()
             .escreveDescricao('Novo mundo')
         this
+            .selecionaPorEmpresa()
             .limpaDescricaoCurta()
             .descricaoCurta('Novo mundo')
             .telaDovalidador('Novo mundo')
