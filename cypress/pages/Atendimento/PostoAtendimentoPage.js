@@ -26,7 +26,7 @@ class PostoAtendimentoPage {
             .nome('AAAAAA AUTOMAÇÂO')
             .cep(12903000)
             .numero(2000)
-            .complemento('nãotem')
+            .complemento('não tem')
             .salvar()
             .cadastrarSim()
             .validaMensagemDesucesso('Posto de atendimento cadastrado com sucesso')

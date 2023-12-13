@@ -1,6 +1,4 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import gestor from '../../../../pages/Transporte/transportePage'
-import faker from 'faker-br'
+import gestor from '../../../../pages/Transporte/OrgaoGestorPage'
 
 describe('Testando "Orgão gestor"', () => {
 
@@ -9,22 +7,10 @@ describe('Testando "Orgão gestor"', () => {
     })
 
     it('Criar um Orgão gestor', () => {
-        componente
-            .clicaBotao('Novo')
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
+        gestor.criaOrgaoGestor()
     })
 
     it('Editar um Orgão gestor', () => {
-        componente
-            .pesquisaNomeId('19')
-            .clicaBotao('Editar')
-            .limpaNome()
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
+        gestor.ediataOrgaoGestor()
     })
 })

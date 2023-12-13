@@ -97,7 +97,7 @@ class ProdutoDetransportePge {
 
     editandoUmGrupoDeTransporte() {
         componente
-            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .escreveDescricao('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
             .clicaBotaoEditar()
             .limpaDescricao()
             .escreveDescricao('AAAA PRODUTO TRANSPORTE EDITADO')
@@ -109,7 +109,7 @@ class ProdutoDetransportePge {
             .escreveDescricao('AAAA PRODUTO TRANSPORTE EDITADO')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .escreveDescricao('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
         componente
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
@@ -117,7 +117,7 @@ class ProdutoDetransportePge {
         this
             .clicaBotaoVerProdutos()
         componente
-            .validaDescriçãoTitle('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .validaDescriçãoTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
             return this
     }
 

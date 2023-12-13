@@ -1,46 +1,36 @@
-
 import terminal from "../../../../pages/Transporte/TerminalPage"
-
 
 describe('Testando as funcionalidades da tela "Terminal"', () => {
 
     beforeEach(() => {
-terminal.beforeTerminal()
+        terminal.beforeTerminal()
     })
 
     it('Pesquisa pelo terminal', () => {
-        terminal
-            .pesquisarTerminal('ANCHIETA')
-            .validaResultadoDaPesquisaTerminal('228 - MCC ANCHIETA')
+        terminal.pesquisarTerminal()
     })
 
     it('Clicar em fechar tudo', () => {
-        terminal
-            .clicarEmFecharTudo()
+        terminal.clicarEmFecharTudo()
     })
 
     it('Clicar em mostrar deletados', () => {
-        terminal
-            .clicarEmMostrarDeletados()
+        terminal.clicarEmMostrarDeletados()
     })
 
     it('Clicar em mostrar apenas os teminais associados', () => {
-        terminal
-            .clicarEmMostrarTerminaisAssociados()
+        terminal.clicarEmMostrarTerminaisAssociados()
     })
 
     it('Clicar em limpar filtros', () => {
-        terminal
-            .clicarEmLimparfiltros()
+        terminal.clicarEmLimparfiltros()
     })
 
     it('Clicar em recarregar', () => {
-        terminal
-            .clicarEmRecarregar()
+        terminal.clicarEmRecarregar()
     })
 
     it('Clicar em ações', () => {
-        terminal
-            .clicarEmAcoes()
+        terminal.clicarEmAcoes()
     })
 })

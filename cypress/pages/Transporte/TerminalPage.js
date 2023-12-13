@@ -16,13 +16,31 @@ class TeminalPage {
         return this
     }
 
+    criandoUmTerminal() {
+        this
+            .clicarEmCriarTerminal()
+        componente
+            .selecionaOperadora('Operadora Autopass')
+        this
+            .escreveNumeroTerminal()
+            .selecionaGrupoterminal('Automação Teste')
+            .selecionaCalendarioOperacional('Teste Augusto calendario')
+        componente
+            .escreveDescricao(faker.name.findName())
+            .selecionaStatus('Inativo')
+            .clicaBotao('OK')
+            .validaMensagem('Terminal criado com sucesso')
+        return this
+    }
+
     clicarEmCriarTerminal() {
         cy.contains('Criar terminal').click({ force: true })
         return this
     }
 
-    pesquisarTerminal(codigoOuDescricao) {
-        cy.get('.ant-input').type(codigoOuDescricao)
+    pesquisarTerminal() {
+        cy.get('.ant-input').type('ANCHIETA')
+        this.validaResultadoDaPesquisaTerminal('228 - MCC ANCHIETA')
         return this
     }
 

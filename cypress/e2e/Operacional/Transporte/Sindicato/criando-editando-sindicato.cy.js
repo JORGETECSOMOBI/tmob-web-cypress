@@ -1,6 +1,4 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import sindicato from '../../../../pages/Transporte/transportePage'
-import faker from 'faker-br'
+import sindicato from '../../../../pages/Transporte/SindicatoPage'
 
 describe('Testando "Sindicato"', () => {
 
@@ -9,22 +7,10 @@ describe('Testando "Sindicato"', () => {
     })
 
     it('Criar um Sindicato', () => {
-        componente
-            .clicaBotao('Novo')
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
+       sindicato.criaSindicato()
     })
 
     it('Editar um Sindicato', () => {
-        componente
-            .pesquisaNomeId('19')
-            .clicaBotao('Editar')
-            .limpaNome()
-            .escreveNomeId(faker.name.lastName())
-            .selecionaStatus('Inativo')
-            .clicaBotao('Salvar')
-            .clicaBotaoModal('Sim')
+        sindicato.editaSindicato()
     })
 })

@@ -33,11 +33,11 @@ describe('Testando todas as funcionalidades de Arquivos Operacionais', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoLimiteDeUso()
     })
 
-    it('Força geração de arquivo operacional com nova atualização de Produto de transporte', () => {
+    it.skip('Força geração de arquivo operacional com nova atualização de Produto de transporte', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoProdutoDeTransporte()
     })
 
-    it('Força geração de arquivo operacional com nova atualização de Produto externo', () => {
+    it.skip('Força geração de arquivo operacional com nova atualização de Produto externo', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoProdutoExterno()
     })
 

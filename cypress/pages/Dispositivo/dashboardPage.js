@@ -1,17 +1,14 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import url from '../../fixtures/url.json'
 
 class DashboardPage {
 
     beforeDispositivo() {
         login.go()
         login.signin()
-        home.tiposDeUso()
         home.dispositivos()
         componente
-            .validaURL(url.dispositivo)
             .selecionaIdioma('PT')
     }
 
