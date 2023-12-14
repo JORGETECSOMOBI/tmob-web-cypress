@@ -97,7 +97,7 @@ class ProdutoDetransportePge {
 
     editandoUmGrupoDeTransporte() {
         componente
-            .escreveDescricao('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .escreveDescricao('AAAA')
             .clicaBotaoEditar()
             .limpaDescricao()
             .escreveDescricao('AAAA PRODUTO TRANSPORTE EDITADO')
@@ -187,8 +187,8 @@ class ProdutoDetransportePge {
 
     testandoFiltroDescricao() {
         componente
-            .escreveDescricao('AAAA PRODUTO TRANSPORTE EDIÇÃO')
-            .validaDescriçãoTitle('AAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .escreveDescricao('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .validaDescriçãoTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
         return this
     }
 

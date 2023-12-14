@@ -1,6 +1,6 @@
 import tipoDeMidia from '../../../../pages/midia/TipodeMidiaPage'
 
-describe('Testando home de Tipo de mídia', () => {
+describe('Criando e editando Tipo de mídia', () => {
     beforeEach(() => {
         tipoDeMidia.beforeTipoDeMidia()
     })

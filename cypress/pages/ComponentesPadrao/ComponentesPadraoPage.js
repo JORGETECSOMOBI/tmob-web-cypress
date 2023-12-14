@@ -147,7 +147,12 @@ class ComponentesPadraoPage {
     }
 
     clicaNoDia(dia) {
-        cy.get('.ant-picker-cell-inner').contains(dia).click()
+        cy.get('.ant-picker-cell-inner').contains(dia).click({ force: true })
+        return this
+    }
+
+    limpaFiltro() {
+        cy.contains('span', 'Limpar filtro').click( { force: true })
         return this
     }
 
@@ -237,7 +242,7 @@ class ComponentesPadraoPage {
         return this
     }
 
-    validaFunçãolimparFiltro() {
+    validaFuncaolimparFiltro() {
         cy.get('#description').should('have.value', '')
         return this
     }

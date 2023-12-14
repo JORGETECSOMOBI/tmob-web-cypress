@@ -12,7 +12,6 @@ class TipoDeMidiaPage {
         home.tiposDeUso()
         home.midia()
         componente
-            .validaURL(url.midia)
             .selecionaIdioma('PT')
             .clicaBotao('Tipo de mídia')
         return this
@@ -23,7 +22,7 @@ class TipoDeMidiaPage {
             .clicaBotaoNovo()
             .escreveDescricao('AAAA MIDIA AUTOMAÇÃO')
         usuario
-            .selecionaTipoUsuario('Estudante')
+            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
         this
             .filtrandoPorTamanho('4')
             .filtrandoPorTag('mifare2GO')

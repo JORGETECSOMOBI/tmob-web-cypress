@@ -81,4 +81,56 @@ describe('Testando a tela "dispositivos"', () => {
     it('Testando filtro Status "Fechado ou Suspenso"', () => {
         dispositivos.pesquisaPorStatusFechadoOuSuspenso()
     })
+
+    it('Testando filtro "Tipo de hardware ATM x86_64"', () => {
+        dispositivos.pesquisaPorTipoHardwareATMx86_64()
+    })
+
+    it('Testando filtro "Tipo de hardware stationHub x86"', () => {
+        dispositivos.pesquisaPorTipoHardwareStationHubx86_64()
+    })
+
+    it('Testando filtro "Tipo de hardware POS TSG800"', () => {
+        dispositivos.pesquisaPorTipoHardwarePosTsg800()
+    })
+
+    it('Testando filtro "Tipo de hardware Validator v500-1"', () => {
+        dispositivos.pesquisaPorTipoHardwareValidatorv5001()
+    })
+
+    it('Testando filtro "Tipo de hardware Validator v3695"', () => {
+        dispositivos.pesquisaPorTipoHardwareValidatorv3695()
+    })
+
+    it('Testando filtro "Tipo de hardware Validator tinkerS"', () => {
+        dispositivos.pesquisaPorTipoHardwareValidatorTinkerS()
+    })
+
+    it('Testando filtro "Tipo de hardware Validator digiconMG"', () => {
+        dispositivos.pesquisaPorTipoHardwareValidatorDigiconMG()
+    })
+
+    it('Testando filtro "Tipo de hardware Validator tinkerY"', () => {
+        dispositivos.pesquisaPorTipoHardwareValidatorTinkerY()
+    })
+
+    it('Testando filtro "Por conectividade Online"', () => {
+        dispositivos.pesquisaPorConectividadeOnline()
+    })
+
+    it('Testando filtro "Por conectividade Offline"', () => {
+        dispositivos.pesquisaPorConectividadeOffline()
+    })
+
+    it('Testando filtro "Limpar filtro"', () => {
+        dispositivos.limparFiltro()
+    })
+
+    it('Testando filtro "Visualizar"', () => {
+        dispositivos.visualizar()
+    })
+
+    it('Testando filtro "Editar"', () => {
+        dispositivos.editar()
+    })
 })

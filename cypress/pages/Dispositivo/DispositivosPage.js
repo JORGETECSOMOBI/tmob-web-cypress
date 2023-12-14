@@ -37,7 +37,7 @@ class DispositivosPage {
     }
 
     pesquisaPorOperadorDeTransporte() {
-        cy.get('#rc_select_2', { force: true }).type('Operadora TMOB', { force: true })
+        cy.get('#rc_select_2', { force: true }).type('TMOB', { force: true })
         cy.contains('Operadora TMOB', { force: true }).click({ force: true })
     }
 
@@ -90,31 +90,55 @@ class DispositivosPage {
     pesquisaPorStatusFechado() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Fechado').click()
-        //cy.xpath('//tbody/tr[2]/td[9]/span').should('have.text', 'Fechado');
+        componente
+            .validaStatusAusente('Aberto')
+            .validaStatusAusente('Ocioso')
+            .validaStatusAusente('Suspenso')
+            .validaStatusAusente('Manutenção')
         return this
     }
 
     pesquisaPorStatusOcioso() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Ocioso').click()
+        componente
+            .validaStatusAusente('Aberto')
+            .validaStatusAusente('Fechado')
+            .validaStatusAusente('Suspenso')
+            .validaStatusAusente('Manutenção')
         return this
     }
 
     pesquisaPorStatusAberto() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Aberto').click()
+        componente
+            .validaStatusAusente('Fechado')
+            .validaStatusAusente('Ocioso')
+            .validaStatusAusente('Suspenso')
+            .validaStatusAusente('Manutenção')
         return this
     }
 
     pesquisaPorStatusSuspenso() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Suspenso').click()
+        componente
+            .validaStatusAusente('Fechado')
+            .validaStatusAusente('Ocioso')
+            .validaStatusAusente('Aberto')
+            .validaStatusAusente('Manutenção')
         return this
     }
 
     pesquisaPorStatusManutencao() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Manutenção').click()
+        componente
+            .validaStatusAusente('Fechado')
+            .validaStatusAusente('Ocioso')
+            .validaStatusAusente('Suspenso')
+            .validaStatusAusente('Aberto')
         return this
     }
 
@@ -133,6 +157,113 @@ class DispositivosPage {
     pesquisaPorStatusFechadoOuSuspenso() {
         cy.get('#serviceStatus').click({ force: true })
         cy.contains('Fechado ou suspenso').click()
+        return this
+    }
+
+    pesquisaPorTipoHardwareATMx86_64() {
+        componente.pesquisaNomeId('x86_64')
+        cy.get('.ant-select-item-option-content').contains('x86_64').click()
+        cy.get('.ant-spin-container').should('contain', 'atm')
+        cy.get('.ant-spin-container').should('contain', 'x86_64')
+        return this
+    }
+
+    pesquisaPorTipoHardwareStationHubx86_64() {
+        componente.pesquisaNomeId('x86_64')
+        cy.get('.ant-select-item-option-content').contains('x86').click()
+        cy.get('.ant-spin-container').should('contain', 'stationHub')
+        cy.get('.ant-spin-container').should('contain', 'x86')
+        return this
+    }
+
+    pesquisaPorTipoHardwarePosTsg800() {
+        componente.pesquisaNomeId('TSG800')
+        cy.get('.ant-select-item-option-content').contains('TSG800').click()
+        cy.get('.ant-spin-container').should('contain', 'pos')
+        cy.get('.ant-spin-container').should('contain', 'TSG800')
+        return this
+    }
+
+    pesquisaPorTipoHardwareValidatorv5001() {
+        componente.pesquisaNomeId('v500-1')
+        cy.get('.ant-select-item-option-content').contains('v500-1').click()
+        cy.get('.ant-spin-container').should('contain', 'validator')
+        cy.get('.ant-spin-container').should('contain', 'v500-1')
+        return this
+    }
+
+    pesquisaPorTipoHardwareValidatorv3695() {
+        componente.pesquisaNomeId('v3695')
+        cy.get('.ant-select-item-option-content').contains('v3695').click()
+        cy.get('.ant-spin-container').should('contain', 'validator')
+        cy.get('.ant-spin-container').should('contain', 'v3695')
+        return this
+    }
+
+    pesquisaPorTipoHardwareValidatorTinkerS() {
+        componente.pesquisaNomeId('tinkerS')
+        cy.get('.ant-select-item-option-content').contains('tinkerS').click()
+        cy.get('.ant-spin-container').should('contain', 'validator')
+        cy.get('.ant-spin-container').should('contain', 'tinkerS')
+        return this
+    }
+
+    pesquisaPorTipoHardwareValidatorDigiconMG() {
+        componente.pesquisaNomeId('digiconMG')
+        cy.get('.ant-select-item-option-content').contains('digiconMG').click()
+        cy.get('.ant-spin-container').should('contain', 'validator')
+        cy.get('.ant-spin-container').should('contain', 'digiconMG')
+        return this
+    }
+
+    pesquisaPorTipoHardwareValidatorTinkerY() {
+        componente.pesquisaNomeId('tinkerY')
+        cy.get('.ant-select-item-option-content').contains('tinkerY').click()
+        cy.get('.ant-spin-container').should('contain', 'validator')
+        cy.get('.ant-spin-container').should('contain', 'tinkerY')
+        return this
+    }
+
+    pesquisaPorConectividadeOnline() {
+        cy.get('#isConnected').click()
+        cy.get('.ant-select-item-option-content').contains('Online').click()
+        cy.get('.ant-spin-container').should('contain', 'Online')
+        return this
+    }
+
+    pesquisaPorConectividadeOffline() {
+        cy.get('#isConnected').click()
+        cy.get('.ant-select-item-option-content').contains('Offline').click()
+        cy.get('.ant-spin-container').should('contain', 'Offline')
+        return this
+    }
+
+    limparFiltro() {
+        this
+            .pesquisaPorDeviceAtm()
+        componente
+            .limpaFiltro()
+        this.validaLimpaFitroGuid()
+        return this
+    }
+
+    visualizar() {
+        componente
+            .clicaBotaoHomeVisualizar()
+            .validatexto('Detalhes')
+
+        return this
+    }
+
+    editar() {
+        componente
+            .clicaBotaoHomeEditar()
+            .validatexto('Editar')
+        return this
+    }
+
+    validaLimpaFitroGuid() {
+        cy.get('#thingName').should('have.value', '')
         return this
     }
 }

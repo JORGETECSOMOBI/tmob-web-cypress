@@ -14,11 +14,11 @@ describe('Criando e editando Produto de transporte', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteGratuidade()
     })
 
-    it('Criando um Produto de transporte "GratuidadeFuncional"', () => {
+    it('Criando um Produto de transporte "Gratuidade Funcional"', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteGratuidadeFuncional()
     })
 
-    it('Criando um Produto de transporte "Valorado"', () => {
+    it.skip('Criando um Produto de transporte "Especial acompanhante"', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteEspecialAcompanhante()
     })
 

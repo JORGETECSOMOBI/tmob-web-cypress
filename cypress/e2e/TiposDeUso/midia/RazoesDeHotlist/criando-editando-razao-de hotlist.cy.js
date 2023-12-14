@@ -5,7 +5,7 @@ describe('Criando e editando razões de hotlist', () => {
         razoesHotilst.beforeRazoesHotlist()
     })
 
-    it.only('Criando Razões de hotlist', () => {
+    it('Criando Razões de hotlist', () => {
        razoesHotilst.criandoRazaoDeHotlist()
     })
 
