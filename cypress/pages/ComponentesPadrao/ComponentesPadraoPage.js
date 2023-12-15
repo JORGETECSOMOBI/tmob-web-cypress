@@ -129,6 +129,16 @@ class ComponentesPadraoPage {
         return this
     }
 
+    selecionaDataInicial(data) {
+        cy.get('#startAt').click().type(data).type(`{enter}`)
+        return this
+    }
+
+    selecionaDataFinal(data) {
+        cy.get('#endAt').click().type(data).type(`{enter}`)
+        return this
+    }
+
     selecionaEmissor() {
         cy.get('#createUser_issuer').click({ force: true })
         cy.contains('Autopass').click({ force: true })
@@ -271,6 +281,16 @@ class ComponentesPadraoPage {
 
     escreveTipoUsuario(usuario) {
         cy.get('#name').type(usuario, { force: true })
+        return this
+    }
+
+    escreveNome(usuario) {
+        cy.get('#name').type(usuario, { force: true })
+        return this
+    }
+
+    limpaCampoNome() {
+        cy.get('#name').clear()
         return this
     }
 

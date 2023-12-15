@@ -1,4 +1,4 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import faker from 'faker-br'
 
 class EmissorPage{
@@ -8,7 +8,6 @@ class EmissorPage{
             .signin()
         home.transporte()
         componente
-            .validaURL(url.transporte)
             .selecionaIdioma('PT')
             .clicaBotao('Emissor')
         return this

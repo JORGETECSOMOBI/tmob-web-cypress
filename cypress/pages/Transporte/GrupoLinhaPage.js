@@ -119,7 +119,7 @@ class GrupoLinhaPage {
             .escreveDescricao('313')
             .selecionaStatus('Inativo')
             .clicaBotao('Limpar filtro')
-            .validaFunçãolimparFiltro()
+            .validaFuncaolimparFiltro()
         return this
     }
 

@@ -1,4 +1,4 @@
-import dispositivos from '../../../pages/Dispositivo/DispositivosPage'
+import dispositivos from '../../../../pages/Dispositivo/DispositivosPage'
 
 describe('Testando a tela "dispositivos"', () => {
 
@@ -120,6 +120,18 @@ describe('Testando a tela "dispositivos"', () => {
 
     it('Testando filtro "Por conectividade Offline"', () => {
         dispositivos.pesquisaPorConectividadeOffline()
+    })
+
+    it('Testando filtro "Versionamento Alfa"', () => {
+        dispositivos.pesquisaPorVersaoAlfa()
+    })
+
+    it('Testando filtro "Versionamento Beta"', () => {
+        dispositivos.pesquisaPorVersaoBeta()
+    })
+
+    it('Testando filtro "Versionamento Estável"', () => {
+        dispositivos.pesquisaPorVersaoEstavel()
     })
 
     it('Testando filtro "Limpar filtro"', () => {

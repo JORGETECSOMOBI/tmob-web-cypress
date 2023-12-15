@@ -30,7 +30,7 @@ class ProdutoDetransportePge {
             .grupoDerelatorio('TOP - Funcional')
             .displayValidador('Automação')
         usuario
-            .selecionaTipoUsuario('Estudante')
+            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
         componente
             .clicaBotaoProximo()
             .escreveDescricao('AAAA Automação Valorado')
@@ -95,7 +95,7 @@ class ProdutoDetransportePge {
         return this
     }
 
-    editandoUmGrupoDeTransporte() {
+     editandoUmGrupoDeTransporte() {
         componente
             .escreveDescricao('AAAA')
             .clicaBotaoEditar()

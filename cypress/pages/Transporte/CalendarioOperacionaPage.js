@@ -51,7 +51,7 @@ class CalendarioOperacionalPage {
         .pesquisa('Automação')
         .selecionaStatus('Inativo')
         .clicaBotao('Limpar filtro')
-        .validaFunçãolimparFiltro()
+        .validaFuncaolimparFiltro()
         return this
     }
 }

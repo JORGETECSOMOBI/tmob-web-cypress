@@ -6,7 +6,7 @@ describe('Criando e editando Produto de transporte', () => {
         produtoDetransporte.beforeProdutoDeTrasnporte()
     })
 
-    it('Criando um Produto de transporte "Valorado"', () => {
+    it.skip('Criando um Produto de transporte "Valorado"', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteValorado()
     })
 

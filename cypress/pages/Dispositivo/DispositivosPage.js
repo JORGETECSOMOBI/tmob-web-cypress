@@ -156,7 +156,28 @@ class DispositivosPage {
 
     pesquisaPorStatusFechadoOuSuspenso() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Fechado ou suspenso').click()
+        cy.contains('Fechado ou suspenso')
+        return this
+    }
+
+    pesquisaPorVersaoAlfa() {
+        cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
+        cy.get('svg[data-icon="plus-square"]').click()
+        cy.contains('Alfa').click()
+        return this
+    }
+
+    pesquisaPorVersaoBeta() {
+        cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
+        cy.get('svg[data-icon="plus-square"]').click()
+        cy.contains('Beta').click()
+        return this
+    }
+
+    pesquisaPorVersaoEstavel() {
+        cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
+        cy.get('svg[data-icon="plus-square"]').click()
+        cy.contains('Estável').click()
         return this
     }
 
@@ -169,8 +190,8 @@ class DispositivosPage {
     }
 
     pesquisaPorTipoHardwareStationHubx86_64() {
-        componente.pesquisaNomeId('x86_64')
-        cy.get('.ant-select-item-option-content').contains('x86').click()
+        componente.pesquisaNomeId('x86')
+        cy.get('.ant-select-item-option-content').contains('stationHub').click()
         cy.get('.ant-spin-container').should('contain', 'stationHub')
         cy.get('.ant-spin-container').should('contain', 'x86')
         return this

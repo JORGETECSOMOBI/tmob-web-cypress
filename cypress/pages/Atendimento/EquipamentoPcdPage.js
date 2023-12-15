@@ -95,7 +95,7 @@ class EquipamentoPcdPage {
             .escreveDescricao('Teste limpar filtro')
             .selecionaStatus('Ativo')
             .clicaBotao('Limpar filtro')
-            .validaFunçãolimparFiltro()
+            .validaFuncaolimparFiltro()
         return this
     }
 }

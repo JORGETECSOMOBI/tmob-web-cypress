@@ -1,4 +1,4 @@
-import dispositivo from '../../../pages/Dispositivo/dashboardPage'
+import dispositivo from '../../../../pages/Dispositivo/dashboardPage'
 
 describe('Testando todos os itens da tela dashboard', () => {
 
