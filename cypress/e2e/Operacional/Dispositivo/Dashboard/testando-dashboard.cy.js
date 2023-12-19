@@ -1,17 +1,16 @@
-import dispositivo from '../../../../pages/Dispositivo/dashboardPage'
+import dashboard from '../../../../pages/Dispositivo/DashboardPage'
 
 describe('Testando todos os itens da tela dashboard', () => {
 
     beforeEach(() => {
-        dispositivo.beforeDispositivo()
+        dashboard.beforeDispositivo()
     })
 
     it('testando filtro "Selecionar empresa', () => {
-        dispositivo.selecionaEmpresa()
+        dashboard.selecionaEmpresa()
     })
 
     it('Acessar mensagens', () => {
-        dispositivo.selecionaMensagem()
+        dashboard.selecionaMensagem()
     })
-
 })

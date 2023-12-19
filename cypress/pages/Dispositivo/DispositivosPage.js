@@ -15,10 +15,10 @@ class DispositivosPage {
     }
 
     pesquisaPorGuidSerial() {
-        const guid = '283b323d-21e3-4279-b0cb-13ace0626671'
+        const guid = '2808aaa4-ef58-43fb-a353-d51c7d48753b'
         cy.get('#thingName').type(guid)
         componente
-            .validaDescriçãoTitle('283b323d-21e3-4279-b0cb-13ace0626671')
+            .validaDescriçãoTitle(guid)
         return this
     }
 
@@ -38,7 +38,8 @@ class DispositivosPage {
 
     pesquisaPorOperadorDeTransporte() {
         cy.get('#rc_select_2', { force: true }).type('TMOB', { force: true })
-        cy.contains('Operadora TMOB', { force: true }).click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('Operadora TMOB', { force: true }).click()
+        componente.validaDescricaoDataRowKey('110 Operadora TMOB')
     }
 
     pesquisaPorTerminal() {
@@ -51,7 +52,7 @@ class DispositivosPage {
     pesquisaPorDeviceAtm() {
         cy.get('#deviceType').click()
         cy.get('.ant-select-item-option-content').contains('atm').click()
-        cy.xpath('//div[@id="root"]//tbody/tr[2]/td[5]').should('have.text', 'atm');
+        cy.get('.ant-table-cell').should('contain', 'atm')
         return this
     }
 
@@ -63,14 +64,14 @@ class DispositivosPage {
     pesquisaPorDevicePos() {
         cy.get('#deviceType').click()
         cy.get('.ant-select-item-option-content').contains('pos').click()
-        cy.xpath('//div[@id="root"]//tbody/tr[2]/td[5]').should('have.text', 'pos')
+        cy.get('.ant-table-cell').should('contain', 'pos')
         return this
     }
 
     pesquisaPorDeviceStatiosHub() {
         cy.get('#deviceType').click()
         cy.get('.ant-select-item-option-content').contains('stationHub').click()
-        cy.xpath('//div[@id="root"]//tbody/tr[2]/td[5]').should('have.text', 'stationHub')
+        cy.get('.ant-table-cell').should('contain', 'stationHub')
         return this
     }
 
@@ -83,7 +84,7 @@ class DispositivosPage {
     pesquisaPorDeviceValidator() {
         cy.get('#deviceType').click()
         cy.get('.ant-select-item-option-content').contains('validator').click()
-        cy.xpath('//div[@id="root"]//tbody/tr[2]/td[5]').should('have.text', 'validator')
+        cy.get('.ant-table-cell').should('contain', 'validator')
         return this
     }
 

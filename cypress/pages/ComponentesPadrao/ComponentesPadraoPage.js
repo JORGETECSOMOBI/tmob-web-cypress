@@ -162,7 +162,7 @@ class ComponentesPadraoPage {
     }
 
     limpaFiltro() {
-        cy.contains('span', 'Limpar filtro').click( { force: true })
+        cy.contains('span', 'Limpar filtro').click({ force: true })
         return this
     }
 
@@ -373,7 +373,7 @@ class ComponentesPadraoPage {
     }
 
     validaDescricaoDataRowKey(descricao) {
-        cy.get('[data-row-key]').contains(descricao).should('have.text', descricao)
+        cy.get('[data-row-key]', { force: true }).contains(descricao, { force: true }).should('have.text', descricao)
         return this
     }
 
