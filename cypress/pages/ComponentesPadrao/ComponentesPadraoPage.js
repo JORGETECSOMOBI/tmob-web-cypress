@@ -372,6 +372,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    validaDescriçãoTitleTextoParcial(descricao) {
+        cy.get('[title]').contains(descricao).should('contain', descricao)
+        return this
+    }
+
     validaDescricaoDataRowKey(descricao) {
         cy.get('[data-row-key]', { force: true }).contains(descricao, { force: true }).should('have.text', descricao)
         return this

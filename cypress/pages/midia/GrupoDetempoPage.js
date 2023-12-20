@@ -2,6 +2,7 @@ import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import url from '../../fixtures/url.json'
+import faker from 'faker-br'
 
 class GrupoDetempoPage {
     beforeGrupoDeTempo() {
@@ -98,11 +99,11 @@ class GrupoDetempoPage {
 
     editaUmGrupoDeTempo() {
         componente
-            .escreveDescricao('AAAA grupo de tempo Automação')
+            .escreveDescricao('AAAA grupo de tempo')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao('AAAA grupo de tempo Editado')
         this
+            .escreveDescriçaogrupoDetempo()
             .limpaDiaDaSemana()
             .editaDiaDaSemana('Segunda', 'Quinta')
         componente
@@ -111,7 +112,7 @@ class GrupoDetempoPage {
             .clicaBotaoSim()
             .validaMensagem('Grupo de tempo foi editado com sucesso!')
             .clicaBotao('Ver grupos de tempo')
-            .validaDescriçãoTitle('AAAA grupo de tempo Editado')
+            .validaDescriçãoTitleTextoParcial('AAAA grupo de tempo')
         return this
     }
 
@@ -123,6 +124,14 @@ class GrupoDetempoPage {
     intervalo(dataInicial, dataFinal) {
         cy.get('#createManyRestriction_0_date').type(dataInicial, { force: true }).type(`{enter}`)
         cy.get('.ant-picker-input-active > input').type(dataFinal, { force: true }).type(`{enter}`)
+        return this
+    }
+
+    escreveDescriçaogrupoDetempo() {
+        const nome = 'AAAA grupo de tempo editado'
+        const complemento = (faker.name.firstName())
+        const descricao = `${nome} ${complemento}`
+        componente.escreveDescricao(descricao)
         return this
     }
 

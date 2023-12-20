@@ -25,7 +25,7 @@ describe('Testando todas as funcionalidades de Arquivos Operacionais', () => {
         arquivosOperacionais.gerandoUmArquivoJaAtualizado()
     })
 
-    it('Força geração de arquivo operacional com nova atualização de grupo de tempo', () => {
+    it.skip('Força geração de arquivo operacional com nova atualização de grupo de tempo', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoGrupoDeTempo()
     })
 

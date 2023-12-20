@@ -21,4 +21,8 @@ describe('Testando tela FirmWare', () => {
     it('Criando um firmware "VALIDATOR"', () => {
         firmware.cadastroFirmWareValidator()
     })
+
+    it('Editando um firmware para multiplos Hardwares', () => {
+        firmware.EditaFirmwareMultiplosHardware()
+    })
 })

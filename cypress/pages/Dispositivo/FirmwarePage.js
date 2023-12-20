@@ -100,6 +100,21 @@ class FirmwarePage {
         return this
     }
 
+    EditaFirmwareMultiplosHardware() {
+        
+        componente
+            .escreveNome('AAAA')
+            .clicaBotao('Editar')
+        this
+            .selecionaMultiplosHardwares()
+        componente
+            .selecionaStatus('Inativo')
+            .clicaBotaoSalvar()
+            .clicaBotaoSim()
+            .validaMensagem('Seu firmware foi editado com sucesso')
+        return this
+    }
+
     filtroPorNome() {
         componente
             .escreveNome('AAAA FIRMWARE AUTOMAÇÃO')
@@ -205,6 +220,15 @@ class FirmwarePage {
     selecionaHardwareATMat1985_1() {
         cy.get('.ant-select-selection-overflow').click()
         cy.get('.ant-select-item-option-content').contains('at1985-1').click()
+        return this
+    }
+
+    selecionaMultiplosHardwares() {
+        cy.get('.ant-select-selection-overflow').click()
+        cy.get('.ant-select-item-option-content').eq(2).click()
+        cy.get('.ant-select-item-option-content').eq(3).click()
+        cy.get('.ant-select-item-option-content').eq(4).click()
+        cy.get('.ant-select-item-option-content').eq(5).click()
         return this
     }
 
