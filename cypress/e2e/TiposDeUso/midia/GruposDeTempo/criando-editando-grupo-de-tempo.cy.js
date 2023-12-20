@@ -5,7 +5,7 @@ describe('Testando todos os elementos da home de Grupo de tempo', () => {
         grupoDeTempo.beforeGrupoDeTempo()
     })
 
-    it.skip('Cria novo grupo de tempo', () => {
+    it('Tentativa de criar novo grupo de tempo com limite esgotado', () => {
         grupoDeTempo.criaNovoGrupoDetempo()
     })
 

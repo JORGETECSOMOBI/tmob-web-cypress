@@ -267,8 +267,8 @@ class ComponentesPadraoPage {
         return this
     }
 
-    escreveID(descricao) {
-        cy.get('#description').type(descricao, { force: true }).wait(2000)
+    escreveId(id) {
+        cy.get('#id').type(id, { force: true }).wait(2000)
         return this
     }
 

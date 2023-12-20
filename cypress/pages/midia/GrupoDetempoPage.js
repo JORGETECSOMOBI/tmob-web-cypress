@@ -66,8 +66,7 @@ class GrupoDetempoPage {
         componente
             .clicaBotaoSalvar()
             .clicaBotao('Sim')
-            .clicaBotao('Ver grupos de tempo')
-            .validaDescriçãoTitle('AAAA grupo de tempo Automação')
+            .validatexto('O limite de cadastros de grupos temporais foi atingido.')
         return this
     }
 

@@ -44,7 +44,7 @@ class EquipamentoPcdPage {
 
     filtroId() {
         componente
-            .escreveID('100')
+            .escreveDescricao('100')
             .validaId('100')
         return this
     }
