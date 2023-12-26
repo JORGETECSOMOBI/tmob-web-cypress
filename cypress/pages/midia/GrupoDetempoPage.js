@@ -20,7 +20,7 @@ class GrupoDetempoPage {
     pesquisaDescricao() {
         componente
             .escreveDescricao('JorgeTodosOsDias')
-            .validaDescriçãoTitle('JorgeTodosOsDias')
+            .validaPesquisaTitle('JorgeTodosOsDias')
         return this
     }
 
@@ -34,21 +34,21 @@ class GrupoDetempoPage {
     botaoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Preencha os campos abaixo para o cadastro do grupo de tempo')
+            .validaTexto('Preencha os campos abaixo para o cadastro do grupo de tempo')
         return this
     }
 
     botaoVisualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     botaoeditar() {
         componente
             .clicaBotaoHomeEditar()
-            .validatexto('Você não pode editar esse grupo de tempo completamente')
+            .validaTexto('Você não pode editar esse grupo de tempo completamente')
         return this
     }
 
@@ -66,7 +66,7 @@ class GrupoDetempoPage {
         componente
             .clicaBotaoSalvar()
             .clicaBotao('Sim')
-            .validatexto('O limite de cadastros de grupos temporais foi atingido.')
+            .validaTexto('O limite de cadastros de grupos temporais foi atingido.')
         return this
     }
 
@@ -111,7 +111,7 @@ class GrupoDetempoPage {
             .clicaBotaoSim()
             .validaMensagem('Grupo de tempo foi editado com sucesso!')
             .clicaBotao('Ver grupos de tempo')
-            .validaDescriçãoTitleTextoParcial('AAAA grupo de tempo')
+            .validaPesquisaTitleTextoParcial('AAAA grupo de tempo')
         return this
     }
 

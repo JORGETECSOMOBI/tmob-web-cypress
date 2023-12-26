@@ -48,14 +48,14 @@ class BinPage {
     pesquisaPorNumeroBin() {
         componente
             .escreveDescricao('90173')
-            .validaDescricaoDataRowKey('90173')
+            .validaPesquisaDataRowKey('90173')
         return this
     }
 
     pesquisaPorNomeBin() {
         componente
             .escreveDescricao('beline26')
-            .validaDescricaoDataRowKey('beline26')
+            .validaPesquisaDataRowKey('beline26')
         return this
     }
 
@@ -76,14 +76,14 @@ class BinPage {
     botaoEditar() {
         componente
             .clicaBotaoEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 
     botaoVisualizar() {
         componente
             .clicaBotaoVisualizar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

@@ -46,7 +46,7 @@ class ConsorcioPage {
         .clicaBotao('Consórcio')
         .pesquisaId('53')
         .clicaBotao('Visualizar')
-        .validatexto('Detalhes')
+        .validaTexto('Detalhes')
         return this
     }
 }

@@ -51,14 +51,14 @@ class FeriadoPage {
     pesquisaPorId() {
         componente
             .pesquisaNomeId('51')
-            .validaDescricaoDataRowKey('51')
+            .validaPesquisaDataRowKey('51')
         return this
     }
 
     pesquisaPorNome() {
         componente
             .pesquisaNomeId('AAAA TESTE AUTOMAÇÃO ESTADUAL')
-            .validaDescriçãoTitle('AAAA TESTE AUTOMAÇÃO ESTADUAL')
+            .validaPesquisaTitle('AAAA TESTE AUTOMAÇÃO ESTADUAL')
         return this
     }
 
@@ -115,21 +115,21 @@ class FeriadoPage {
     NovoFeriado() {
         componente
             .clicaBotao('Novo feriado')
-            .validatexto('Preencha os campos abaixo para o cadastro do feriado')
+            .validaTexto('Preencha os campos abaixo para o cadastro do feriado')
         return this
     }
 
     visualizar() {
         componente
             .clicaBotaoVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     editar() {
         componente
             .clicaBotaoHomeEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

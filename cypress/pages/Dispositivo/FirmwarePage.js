@@ -118,14 +118,14 @@ class FirmwarePage {
     filtroPorNome() {
         componente
             .escreveNome('AAAA FIRMWARE AUTOMAÇÃO')
-            .validaDescriçãoTitle('AAAA FIRMWARE AUTOMAÇÃO')
+            .validaPesquisaTitle('AAAA FIRMWARE AUTOMAÇÃO')
         return this
     }
 
     filtroPorId() {
         componente
             .escreveNome('1094')
-            .validaDescricaoDataRowKey('1094')
+            .validaPesquisaDataRowKey('1094')
         return this
     }
 
@@ -336,21 +336,21 @@ class FirmwarePage {
     botaoNovoFirmWare() {
         componente
             .clicaBotao('Novo Firmware')
-            .validatexto('Preencha os campos abaixo para o cadastro do firmware')
+            .validaTexto('Preencha os campos abaixo para o cadastro do firmware')
         return this
     }
 
     botaoVisualizar() {
         componente
             .clicaBotao('Visualizar')
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     botaoEditar() {
         componente
             .clicaBotao('Editar')
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 }

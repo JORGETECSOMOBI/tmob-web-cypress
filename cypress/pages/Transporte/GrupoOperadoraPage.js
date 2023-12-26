@@ -51,7 +51,7 @@ class GrupoOperadoraPage {
     pesquisaPorNome() {
         componente
             .escreveDescricao('Nogueira')
-            .validaDescricao('Nogueira')
+            .validaPesquisa('Nogueira')
         return this
     }
 
@@ -73,7 +73,7 @@ class GrupoOperadoraPage {
         componente
             .escreveDescricao('22')
             .clicaBotao('Visualizar')
-            .validatexto('ID #22')
+            .validaTexto('ID #22')
         return this
     }
 
@@ -81,7 +81,7 @@ class GrupoOperadoraPage {
         componente
             .escreveDescricao('22')
             .clicaBotao('Editar')
-            .validatexto('ID #22')
+            .validaTexto('ID #22')
         return this
     }
 

@@ -18,28 +18,28 @@ class DispositivosPage {
         const guid = '2808aaa4-ef58-43fb-a353-d51c7d48753b'
         cy.get('#thingName').type(guid)
         componente
-            .validaDescriçãoTitle(guid)
+            .validaPesquisaTitle(guid)
         return this
     }
 
     pesquisaPorSerialHardware() {
         cy.get('#thingName').type()
         componente
-            .validaDescriçãoTitle()
+            .validaPesquisaTitle()
         return this
     }
 
     pesquisaPorUltimaComunicacao() {
-        cy.get('.ant-picker > :nth-child(1) > input').type('20/10/2023', { force: true }).type(`{enter}`)
-        cy.get('.ant-picker-input-active > input').type('20/12/2023', { force: true }).type(`{enter}`)
-        componente.validaDescriçãoTitle('08/12/2023 16:30:46')
+        cy.get('.ant-picker > :nth-child(1) > input').type('18/12/2023', { force: true }).type(`{enter}`)
+        cy.get('.ant-picker-input-active > input').type('18/12/2023', { force: true }).type(`{enter}`)
+        componente.validaPesquisaTitle('18/12/2023 17:55:20')
         return this
     }
 
     pesquisaPorOperadorDeTransporte() {
         cy.get('#rc_select_2', { force: true }).type('TMOB', { force: true })
         cy.get('.ant-select-item-option-content').contains('Operadora TMOB', { force: true }).click()
-        componente.validaDescricaoDataRowKey('110 Operadora TMOB')
+        componente.validaPesquisaDataRowKey('110 Operadora TMOB')
     }
 
     pesquisaPorTerminal() {
@@ -272,7 +272,7 @@ class DispositivosPage {
     visualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
 
         return this
     }
@@ -280,7 +280,7 @@ class DispositivosPage {
     editar() {
         componente
             .clicaBotaoHomeEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

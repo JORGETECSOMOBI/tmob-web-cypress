@@ -35,14 +35,14 @@ class ArquivosOperacionaisPage {
     filtrandoPorNomeConfiguracao() {
         this.botaoConfiguracaoOperacional()
         cy.get('.ant-input-affix-wrapper > #id').eq(1).type('1699367561436_op.enc')
-        componente.validaDescriçãoTitle('1699367561436_op.enc')
+        componente.validaPesquisaTitle('1699367561436_op.enc')
         return this
     }
 
     filtrandoPorIdConfiguracao() {
         this.botaoConfiguracaoOperacional()
         cy.get('.ant-input-affix-wrapper > #id').eq(1).type('34')
-        componente.validaDescricaoAntTableRow('34')
+        componente.validaPesquisaAntTableRow('34')
         return this
     }
 
@@ -112,7 +112,7 @@ class ArquivosOperacionaisPage {
     botaoVisualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 

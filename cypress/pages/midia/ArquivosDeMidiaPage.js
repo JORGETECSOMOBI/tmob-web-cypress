@@ -18,7 +18,7 @@ class ArquivoDeMidia {
 
     filtrandoPorId() {
         componente.pesquisaId('975')
-         .validaDescricaoAntTableRow('975')
+         .validaPesquisaAntTableRow('975')
         return this
     }
 

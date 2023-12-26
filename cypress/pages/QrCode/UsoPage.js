@@ -1,0 +1,166 @@
+import login from '../../pages/Login/LoginPage'
+import home from '../../pages/Home/HomePage'
+import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+
+class UsoPage {
+
+    beforeUso() {
+        login
+            .go()
+            .signin()
+        home
+            .tiposDeUso()
+            .qrCode()
+        componente
+            .selecionaIdioma('PT')
+            .clicaBotao('Uso')
+        return this
+    }
+
+    filtrandoPorId() {
+        componente
+            .escreveId('939980')
+            .validaPesquisaDataRowKey('939980')
+        return this
+    }
+
+    filtrandoPorEmpresa() {
+        cy.get('#rc_select_10').click().type('Operadora TMOB').wait(1000).type(`{enter}`)
+        componente
+            .validaPesquisaTitle('Operadora TMOB')
+        return this
+    }
+
+    filtrandoPorCodigoTerminal() {
+        cy.get('#toTerminalCode').click().type('2020').wait(1000).type(`{enter}`)
+        componente
+            .validaPesquisaTitle('2020')
+        return this
+    }
+
+    filtrandoPorDatadeUso() {
+        cy.get('input[placeholder="Data inicial"]').clear({ force: true })
+        cy.get('input[placeholder="Data inicial"]').type('26/12/2023', { force: true })
+        cy.get('input[placeholder="Data final"]').clear({ force: true })
+        cy.get('input[placeholder="Data final"]').type('26/12/2023', { force: true }).type(`{enter}`)
+        componente
+            .validaPesquisaTitle('26/12/2023 11:28:43')
+            .validaStatusAusente('22/12/2023 17:10:52')
+        return this
+    }
+
+    filtrandoPorLinha() {
+        cy.get('#rc_select_11').click().type('Miracatiba 1').wait(1000).type(`{enter}`)
+        componente
+            .validaPesquisaTitle('Miracatiba 1')
+        return this
+    }
+
+    filtrandoPorIdQrMidia() {
+        cy.get('#qrMediaId').click().type('3927358').wait(1000).type(`{enter}`)
+        componente
+            .validaPesquisaDataRowKey('3927358')
+        return this
+    }
+
+    filtrandoPorSistemaTopMercury() {
+        cy.get('#rc_select_12').click().type('TOP-Mercury')
+        cy.contains('TOP-Mercury').click({ force: true })
+        componente
+            .validaPesquisaTitle('TOP-Mercury')
+        return this
+    }
+
+    filtrandoPorOrigemDoUsoInterno() {
+        this
+            .selecionaOrigemDoUso('Interno')
+        componente
+            .validaTextoAusente('Externo')
+        return this
+    }
+
+    filtrandoPorStatusRevertido() {
+        this
+            .selecionaStatus('Revertido')
+        componente
+            .validaTextoAusente('Revertido')
+        return this
+    }
+
+    filtrandoPorStatusRejeitado() {
+        this
+            .selecionaStatus('Rejeitado')
+        componente
+            .validaTextoAusente('Uso Excessivo')
+            .validaTextoAusente('Esgotado')
+            .validaTextoAusente('Integrado')
+            .validaTextoAusente('Revertido')
+            .validaTextoAusente('Usado')
+        return this
+    }
+
+    filtrandoPorStatusEsgotado() {
+        this
+            .selecionaStatus('Esgotado')
+        componente
+        .validaTextoAusente('Uso Excessivo')
+        .validaTextoAusente('Rejeitado')
+        .validaTextoAusente('Integrado')
+        .validaTextoAusente('Revertido')
+        .validaTextoAusente('Usado')
+        return this
+    }
+
+    filtrandoPorStatusUsoExcessivo() {
+        this
+            .selecionaStatus('Uso Excessivo')
+        componente
+        .validaTextoAusente('Rejeitado')
+        .validaTextoAusente('Esgotado')
+        .validaTextoAusente('Integrado')
+        .validaTextoAusente('Revertido')
+        .validaTextoAusente('Usado')
+        return this
+    }
+
+    filtrandoPorStatusIntegrado() {
+        this
+            .selecionaStatus('Integrado')
+        componente
+        .validaTextoAusente('Uso Excessivo')
+        .validaTextoAusente('Esgotado')
+        .validaTextoAusente('Rejeitado')
+        .validaTextoAusente('Revertido')
+        .validaTextoAusente('Usado')
+        return this
+    }
+
+    filtrandoPorStatusUsado() {
+        this
+            .selecionaStatus('Usado')
+        componente
+        .validaTextoAusente('Uso Excessivo')
+        .validaTextoAusente('Esgotado')
+        .validaTextoAusente('Integrado')
+        .validaTextoAusente('Revertido')
+        .validaTextoAusente('Rejeitado')
+        return this
+    }
+
+    selecionaOrigemDoUso(origem) {
+        cy.get('#origin').click()
+        cy.contains(origem).click({ force: true })
+        componente
+            .validaPesquisaTitle(origem)
+        return this
+    }
+
+    selecionaStatus(status) {
+        cy.get('#isOverused').click()
+        cy.contains(status).click({ force: true })
+        componente
+            .validaPesquisaTitle(status)
+        return this
+    }
+}
+export default new UsoPage

@@ -395,7 +395,7 @@ class UsuarioPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -412,7 +412,7 @@ class UsuarioPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -429,7 +429,7 @@ class UsuarioPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -446,7 +446,7 @@ class UsuarioPage {
             .botaoSalvarStepAction()
         componente
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -462,7 +462,7 @@ class UsuarioPage {
             .botaoSalvarStepAction()
         componente
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -479,7 +479,7 @@ class UsuarioPage {
         componente
             .clicaBotao('Salvar')
             .clicaBotaoModal('Salvar')
-            .validatexto('Ver usuário')
+            .validaTexto('Ver usuário')
         return this
     }
 
@@ -487,7 +487,7 @@ class UsuarioPage {
         componente
             .clicaBotaoHomeVisualizar()
             .clicaBotao('Logs de alterações')
-            .validatexto('Histórico de alterações')
+            .validaTexto('Histórico de alterações')
         return this
     }
 
@@ -519,7 +519,7 @@ class UsuarioPage {
             .clicaBotaoModal('Salvar')
             .clicaBotao('Ver usuário')
             .clicaBotao('Logs de alterações')
-            .validatexto('Histórico de alterações')
+            .validaTexto('Histórico de alterações')
             .validaFormattedDate(formattedDate)
             .clicaBotao('OK')
         return this
@@ -1157,7 +1157,7 @@ class UsuarioPage {
             .pesquisaNomeId('Geraldo')
             .clicaBotaoHomepesquisar()
             .clicaBotaoHomeVisualizar()
-            .validatexto('Geraldo')
+            .validaTexto('Geraldo')
         return this
     }
 

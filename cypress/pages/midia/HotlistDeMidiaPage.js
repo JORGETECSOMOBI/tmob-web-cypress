@@ -19,7 +19,7 @@ class HotListMidiaPage {
     filtrandoPorId() {
         componente
             .pesquisaId('428')
-            .validaDescricaoDataRowKey('428')
+            .validaPesquisaDataRowKey('428')
 
         return this
     }
@@ -27,7 +27,7 @@ class HotListMidiaPage {
     filtrandoPorIdExterno() {
         componente
             .pesquisaId('5229000001197')
-            .validaDescricaoDataRowKey('5229000001197')
+            .validaPesquisaDataRowKey('5229000001197')
 
         return this
     }
@@ -35,7 +35,7 @@ class HotListMidiaPage {
     filtrandoPorNumeroCartao() {
         componente
             .pesquisaId('52.29.00000100-6')
-            .validaDescriçãoTitle('52.29.00000100-6')
+            .validaPesquisaTitle('52.29.00000100-6')
         return this
     }
 
@@ -43,13 +43,13 @@ class HotListMidiaPage {
     filtrandoPorTipoMidia() {
         componente
             .escreveDescricao('VTComum')
-            .validaDescriçãoTitle('VTComum')
+            .validaPesquisaTitle('VTComum')
         return this;
     }
 
     filtrandoPorMotivoHotlistRoubo() {
         this.filtroMotivoDeHotlist('Roubo')
-        componente.validaDescricaoDataRowKey('5 - Roubo - Bloquear')
+        componente.validaPesquisaDataRowKey('5 - Roubo - Bloquear')
         return this
     }
 
@@ -57,7 +57,7 @@ class HotListMidiaPage {
         this
             .filtroMotivoDeHotlist('Perda')
         componente
-            .validaDescricaoDataRowKey('4 - Perda - Bloquear')
+            .validaPesquisaDataRowKey('4 - Perda - Bloquear')
         return this
     }
 
@@ -75,19 +75,19 @@ class HotListMidiaPage {
 
     filtrandoPorProcessadoSim() {
         this.filtroProcesso('Sim')
-        componente.validaDescricaoDataRowKey('Sim')
+        componente.validaPesquisaDataRowKey('Sim')
         return this
     }
 
     filtrandoPorProcessadoNao() {
         this.filtroProcesso('Não')
-        componente.validaDescricaoDataRowKey('Não')
+        componente.validaPesquisaDataRowKey('Não')
         return this
     }
 
     botaoVisualizar() {
         componente.clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 

@@ -19,7 +19,7 @@ class HotListDeProdutoPage {
     filtrandoPorId() {
         componente
             .escreveDescricao('1165')
-            .validaDescricaoDataRowKey('1165')
+            .validaPesquisaDataRowKey('1165')
 
         return this
     }
@@ -27,7 +27,7 @@ class HotListDeProdutoPage {
     filtrandoPorIdExterno() {
         componente
             .pesquisaId('60')
-            .validaDescricaoDataRowKey('60')
+            .validaPesquisaDataRowKey('60')
 
         return this
     }
@@ -35,7 +35,7 @@ class HotListDeProdutoPage {
     filtrandoPorNumeroCartao() {
         componente
             .escreveDescricao('52.24.00000001-9')
-            .validaDescriçãoTitle('52.24.00000001-9')
+            .validaPesquisaTitle('52.24.00000001-9')
         return this
     }
 
@@ -43,13 +43,13 @@ class HotListDeProdutoPage {
     filtrandoPorTipoMidia() {
         componente
             .escreveDescricao('VTComum')
-            .validaDescriçãoTitle('VTComum')
+            .validaPesquisaTitle('VTComum')
         return this;
     }
 
     filtrandoPorMotivoHotlistPerda() {
         this.filtroMotivoDeHotlist('Perda')
-        componente.validaDescricaoDataRowKey('4 - Perda - Bloquear')
+        componente.validaPesquisaDataRowKey('4 - Perda - Bloquear')
         return this
     }
 
@@ -67,13 +67,13 @@ class HotListDeProdutoPage {
 
     filtrandoPorProcessadoSim() {
         this.filtroProcesso('Sim')
-        componente.validaDescricaoDataRowKey('Sim')
+        componente.validaPesquisaDataRowKey('Sim')
         return this
     }
 
     filtrandoPorProcessadoNao() {
         this.filtroProcesso('Não')
-        componente.validaDescricaoDataRowKey('Não')
+        componente.validaPesquisaDataRowKey('Não')
         return this
     }
 
@@ -83,7 +83,7 @@ class HotListDeProdutoPage {
 
     botaoVisualizar() {
         componente.clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 

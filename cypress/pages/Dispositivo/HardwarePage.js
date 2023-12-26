@@ -18,7 +18,7 @@ class HardwarePage {
 
     pesquisandoPorSerial() {
         this.escreveSerial('2431130')
-        componente.validaDescriçãoTitle('2431130')
+        componente.validaPesquisaTitle('2431130')
         return this
     }
 
@@ -100,14 +100,14 @@ class HardwarePage {
     botaoVisualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     botaoNovoHardware() {
         componente
             .clicaBotao('Novo hardware')
-            .validatexto('Preencha os campos abaixo para o cadastro do hardware')
+            .validaTexto('Preencha os campos abaixo para o cadastro do hardware')
         return this
     }
 

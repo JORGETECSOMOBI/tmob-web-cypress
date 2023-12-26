@@ -25,7 +25,7 @@ class ArquivosOperacionaisPage {
 
     filtrandoPorId() {
         componente.pesquisaId('1071')
-            .validaDescricaoAntTableRow('1071')
+            .validaPesquisaAntTableRow('1071')
         return this
     }
 
@@ -77,8 +77,8 @@ class ArquivosOperacionaisPage {
     gerandoUmArquivoJaAtualizado() {
         this.botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('O arquívo operacional já está atualizado.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('O arquívo operacional já está atualizado.')
         return this
     }
 
@@ -108,8 +108,8 @@ class ArquivosOperacionaisPage {
         this
             .botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('Seu arquívo operácional foi gerado com sucesso.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
 
     }
@@ -125,8 +125,8 @@ class ArquivosOperacionaisPage {
         this
             .botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('Seu arquívo operácional foi gerado com sucesso.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
 
     }
@@ -141,8 +141,8 @@ class ArquivosOperacionaisPage {
         this
             .botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('Seu arquívo operácional foi gerado com sucesso.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
     }
 
@@ -156,8 +156,8 @@ class ArquivosOperacionaisPage {
         this
             .botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('Seu arquívo operácional foi gerado com sucesso.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
 
     }
@@ -173,8 +173,8 @@ class ArquivosOperacionaisPage {
         this
             .botaoForcarGeração()
         componente
-            .validatexto('Estamos processando seu arquívo operacional.')
-            .validatexto('Seu arquívo operácional foi gerado com sucesso.')
+            .validaTexto('Estamos processando seu arquívo operacional.')
+            .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
 
     }

@@ -30,7 +30,7 @@ class RazoesDeHotlistPage {
             .selecionaStatus('Inativo')
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
-            .validatexto('Concluido')
+            .validaTexto('Concluido')
         return this
     }
 
@@ -50,7 +50,7 @@ class RazoesDeHotlistPage {
             .selecionaStatus('Inativo')
             .clicaBotaoSalvar()
             .clicaBotaoModal('Sim')
-            .validatexto('Hotlist foi editado com sucesso!')
+            .validaTexto('Hotlist foi editado com sucesso!')
         return this
     }
 
@@ -121,21 +121,21 @@ class RazoesDeHotlistPage {
     testandoBotaoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Preencha os campos abaixo para criar um hotlist')
+            .validaTexto('Preencha os campos abaixo para criar um hotlist')
         return this
     }
 
     testandoBotaoEditar() {
         componente
             .clicaBotaoEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 
     testandoBotaoVisualizar() {
         componente
             .clicaBotaoVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 

@@ -80,7 +80,7 @@ class LimiteDeUsoPage {
         const nome = 'Gerusa'
         componente
             .escreveDescricao(nome)
-        this.validaDescricao(nome)
+        this.validaPesquisa(nome)
         return this
     }
 
@@ -98,7 +98,7 @@ class LimiteDeUsoPage {
         componente
             .escreveDescricao(id)
             .clicaBotao('Visualizar')
-            .validatexto(texto)
+            .validaTexto(texto)
         return this
     }
 
@@ -121,7 +121,7 @@ class LimiteDeUsoPage {
         return this
     }
 
-    validaDescricao(nome) {
+    validaPesquisa(nome) {
         cy.get('.ant-table-row > .ant-table-cell-ellipsis').contains(nome)
         return this
     }

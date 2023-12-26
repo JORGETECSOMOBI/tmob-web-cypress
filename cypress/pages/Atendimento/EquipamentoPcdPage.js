@@ -66,7 +66,7 @@ class EquipamentoPcdPage {
     filtroDescricao() {
         componente
             .escreveDescricao('Equipamento editado')
-            .validaDescricao('Equipamento editado')
+            .validaPesquisa('Equipamento editado')
         return this
     }
 

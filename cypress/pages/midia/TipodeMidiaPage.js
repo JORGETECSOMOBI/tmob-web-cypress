@@ -69,14 +69,14 @@ class TipoDeMidiaPage {
     filtroDescricao() {
         componente
             .escreveDescricao('operator')
-            .validaDescricaoDataRowKey('operator')
+            .validaPesquisaDataRowKey('operator')
         return this
     }
 
     filtroPorId() {
         componente
             .escreveDescricao('31')
-            .validaDescricaoAntTableRow('31')
+            .validaPesquisaAntTableRow('31')
         return this
     }
 
@@ -84,7 +84,7 @@ class TipoDeMidiaPage {
         this
             .filtrandoPorTamanho('4 KB')
         componente
-            .validaDescricaoAntTableRow('4')
+            .validaPesquisaAntTableRow('4')
         return this
     }
 
@@ -92,7 +92,7 @@ class TipoDeMidiaPage {
         this
             .filtrandoPorTag('mifare2GO')
         componente
-            .validaDescricaoAntTableRow('mifare2GO')
+            .validaPesquisaAntTableRow('mifare2GO')
         return this
     }
 
@@ -113,7 +113,7 @@ class TipoDeMidiaPage {
     testandoBotaoEditar() {
         componente
             .clicaBotaoHomeEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
 
         return this
     }
@@ -121,14 +121,14 @@ class TipoDeMidiaPage {
     testandobotaoVisualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     TestandoBotaoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Preencha os campos abaixo para o cadastro do tipo de mídia')
+            .validaTexto('Preencha os campos abaixo para o cadastro do tipo de mídia')
         return this
     }
 

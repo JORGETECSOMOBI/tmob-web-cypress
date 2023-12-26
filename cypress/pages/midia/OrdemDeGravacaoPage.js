@@ -26,7 +26,7 @@ class OrdemDeGravacaoPage {
             .iniciarOrdemImediatamente()
         componente
             .clicaBotao('Sim')
-            .validatexto('Selecione um dispositivo')
+            .validaTexto('Selecione um dispositivo')
         return this
     }
 
@@ -42,7 +42,7 @@ class OrdemDeGravacaoPage {
             .clicaBotao('Sim')
             .validaMensagem('A ordem de gravação foi cadastrada com sucesso')
             .clicaBotao('Visualizar ordens')
-            .validatexto('Novo')
+            .validaTexto('Novo')
         return this
     }
 
@@ -60,7 +60,7 @@ class OrdemDeGravacaoPage {
             .iniciarOrdemImediatamente()
         componente
             .clicaBotao('Sim')
-            .validatexto('Selecione um dispositivo')
+            .validaTexto('Selecione um dispositivo')
         return this
     }
 
@@ -79,7 +79,7 @@ class OrdemDeGravacaoPage {
             .clicaBotao('Sim')
             .validaMensagem('A ordem de gravação foi cadastrada com sucesso')
             .clicaBotao('Visualizar ordens')
-            .validatexto('Novo')
+            .validaTexto('Novo')
         return this
     }
 
@@ -116,7 +116,7 @@ class OrdemDeGravacaoPage {
             .visualizar()
         componente
             .clicaBotao('Voltar')
-            .validatexto('Novo')
+            .validaTexto('Novo')
         return this
     }
 
@@ -269,7 +269,7 @@ class OrdemDeGravacaoPage {
         componente
             .clicaBotao('Gravar')
             .clicaBotao('Sim')
-            .validatexto('Selecione um dispositivo')
+            .validaTexto('Selecione um dispositivo')
         return this
     }
 
@@ -283,7 +283,7 @@ class OrdemDeGravacaoPage {
     visualizar() {
         componente
             .clicaBotao('Visualizar')
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 

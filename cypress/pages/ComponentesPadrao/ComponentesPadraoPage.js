@@ -227,7 +227,7 @@ class ComponentesPadraoPage {
         return this
     }
 
-    validaDescricao(descricao) {
+    validaPesquisa(descricao) {
         cy.contains(descricao).should('have.text', descricao)
         return this
     }
@@ -242,7 +242,7 @@ class ComponentesPadraoPage {
         return this
     }
 
-    validatexto(texto) {
+    validaTexto(texto) {
         cy.contains(texto).should('have.text', texto)
         return this
     }
@@ -367,27 +367,27 @@ class ComponentesPadraoPage {
         return this
     }
 
-    validaDescriçãoTitle(descricao) {
+    validaPesquisaTitle(descricao) {
         cy.get('[title]').contains(descricao).should('have.text', descricao)
         return this
     }
 
-    validaDescriçãoTitleTextoParcial(descricao) {
+    validaPesquisaTitleTextoParcial(descricao) {
         cy.get('[title]').contains(descricao).should('contain', descricao)
         return this
     }
 
-    validaDescricaoDataRowKey(descricao) {
+    validaPesquisaDataRowKey(descricao) {
         cy.get('[data-row-key]', { force: true }).contains(descricao, { force: true }).should('have.text', descricao)
         return this
     }
 
-    validaDescricaoAntTableRow(descricao) {
+    validaPesquisaAntTableRow(descricao) {
         cy.get('.ant-table-row').contains(descricao).should('have.text', descricao)
         return this
     }
 
-    validaDescricaoAntTableCell(descricao) {
+    validaPesquisaAntTableCell(descricao) {
         cy.get('.ant-table-cell').contains(descricao, { force: true }).should('have.text', descricao, { force: true })
         return this
     }

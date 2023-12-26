@@ -24,7 +24,7 @@ class GruposDeRelatoriosPage {
             .clicaBotaoSim()
             .validaMensagem('Seu Grupo de Relatório foi cadastrado com sucesso')
             .clicaBotao('Ver Grupos de Relatório')
-            .validaDescriçãoTitle('AAAA Grupo de relatórios automação')
+            .validaPesquisaTitle('AAAA Grupo de relatórios automação')
         return this
     }
 
@@ -39,14 +39,14 @@ class GruposDeRelatoriosPage {
             .clicaBotaoSim()
             .validaMensagem('Grupo de Relatório foi editado com sucesso!')
             .clicaBotao('Ver Grupos de Relatório')
-            .validaDescriçãoTitle('AAAA Grupo de relatórios editado')
+            .validaPesquisaTitle('AAAA Grupo de relatórios editado')
         return this
     }
 
     pesquisaPorDescricao() {
         componente
             .escreveDescricao('GRUPO RELATORIO')
-            .validaDescriçãoTitle('GRUPO RELATORIO ')
+            .validaPesquisaTitle('GRUPO RELATORIO ')
         return this
     }
 
@@ -62,21 +62,21 @@ class GruposDeRelatoriosPage {
     botaoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Novo')
+            .validaTexto('Novo')
         return this
     }
 
     visualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     editar() {
         componente
             .clicaBotaoEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

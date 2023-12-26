@@ -124,7 +124,7 @@ class GrupoOperadorPage {
         componente
             .escreveDescricao('12')
             .clicaBotao('Visualizar')
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
@@ -132,7 +132,7 @@ class GrupoOperadorPage {
         componente
             .escreveDescricao('12')
             .clicaBotao('Editar')
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

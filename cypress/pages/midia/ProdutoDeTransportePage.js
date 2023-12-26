@@ -117,7 +117,7 @@ class ProdutoDetransportePge {
         this
             .clicaBotaoVerProdutos()
         componente
-            .validaDescriçãoTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .validaPesquisaTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
             return this
     }
 
@@ -188,7 +188,7 @@ class ProdutoDetransportePge {
     testandoFiltroDescricao() {
         componente
             .escreveDescricao('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
-            .validaDescriçãoTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
+            .validaPesquisaTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
         return this
     }
 
@@ -209,21 +209,21 @@ class ProdutoDetransportePge {
     testandoBotãoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Novo')
+            .validaTexto('Novo')
         return this
     }
 
     testandoBotãoEditar() {
         componente
             .clicaBotaoEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 
     testandoBotãoVisualizar() {
         componente
             .clicaBotaoHomeVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 }

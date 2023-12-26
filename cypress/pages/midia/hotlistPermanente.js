@@ -64,7 +64,7 @@ class HotListPermanentePage {
         this.tipoDeOrdem('BOM')
             .numeroExternoCartao('22.11.11111111-1')
         componente.clicaBotao('Confirmar')
-        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        .validaTexto('Cartão adicionado com sucesso em Hotlist Permanente.')
         return this
     }
 
@@ -73,7 +73,7 @@ class HotListPermanentePage {
         this.tipoDeOrdem('TOP')
             .numeroExternoCartao('22.11.11111111-1')
         componente.clicaBotao('Confirmar')
-        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        .validaTexto('Cartão adicionado com sucesso em Hotlist Permanente.')
         return this
     }
 
@@ -83,7 +83,7 @@ class HotListPermanentePage {
         this.tipoDeOrdem('SPTrans')
             .numeroExternoCartao('22.11.11111111-1')
         componente.clicaBotao('Confirmar')
-        .validatexto('Cartão adicionado com sucesso em Hotlist Permanente.')
+        .validaTexto('Cartão adicionado com sucesso em Hotlist Permanente.')
         return this
     }
 

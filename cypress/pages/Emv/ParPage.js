@@ -55,7 +55,7 @@ class ParPage {
     botaoVisualizar() {
         componente
         .clicaBotao('Visualizar')
-        .validatexto('Detalhes')
+        .validaTexto('Detalhes')
         return this
     }
 

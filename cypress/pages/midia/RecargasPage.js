@@ -18,31 +18,31 @@ class RecargasPage {
 
     filtrandoPorId() {
         this.filtroProcurandoHoje('8704723')
-        componente.validaDescricaoAntTableRow('8704723')
+        componente.validaPesquisaAntTableRow('8704723')
         return this
     }
 
     filtrandoPorNumeroCartao() {
         this.filtroProcurandoHoje('52.29.00000111-1')
-        componente.validaDescricaoAntTableRow('52.29.00000111-1')
+        componente.validaPesquisaAntTableRow('52.29.00000111-1')
         return this
     }
 
     filtrandoPorCSN() {
         this.filtroProcurandoHoje('1107236589')
-        componente.validaDescricaoAntTableRow('1107236589')
+        componente.validaPesquisaAntTableRow('1107236589')
         return this
     }
 
     filtrandoPorIdExterno() {
         this.filtroProcurandoHoje('186')
-        componente.validaDescricaoAntTableRow('186')
+        componente.validaPesquisaAntTableRow('186')
         return this
     }
 
     filtrandoPorProduto() {
         this.filtroProduto('Operator Summary')
-        componente.validaDescricaoAntTableRow('Operator Summary')
+        componente.validaPesquisaAntTableRow('Operator Summary')
         return this
     }
 
@@ -53,13 +53,13 @@ class RecargasPage {
 
     filtrandoStatusRecarregadoSim() {
         this.filtroRecarregado('Sim')
-        componente.validaDescricaoAntTableRow('Sim')
+        componente.validaPesquisaAntTableRow('Sim')
         return this
     }
 
     filtrandoStatusRecarregadoNao() {
         this.filtroRecarregado('Não')
-        componente.validaDescricaoAntTableRow('Não')
+        componente.validaPesquisaAntTableRow('Não')
         return this
     }
 

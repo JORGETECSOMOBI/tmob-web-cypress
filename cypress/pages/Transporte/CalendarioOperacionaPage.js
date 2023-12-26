@@ -34,7 +34,7 @@ class CalendarioOperacionalPage {
         componente
         .pesquisa('18')
         .clicaBotao('Visualizar')
-        .validatexto('Detalhes')
+        .validaTexto('Detalhes')
         return this
     }
 
@@ -42,7 +42,7 @@ class CalendarioOperacionalPage {
         componente
         .pesquisa('18')
         .clicaBotao('Editar')
-        .validatexto('Editar')
+        .validaTexto('Editar')
         return this
     }
 

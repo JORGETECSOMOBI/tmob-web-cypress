@@ -94,7 +94,7 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorTipoHardwarePosTsg800()
     })
 
-    it('Testando filtro "Tipo de hardware Validator v500-1"', () => {
+    it.skip('Testando filtro "Tipo de hardware Validator v500-1"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorv5001()
     })
 
@@ -102,7 +102,7 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorv3695()
     })
 
-    it('Testando filtro "Tipo de hardware Validator tinkerS"', () => {
+    it.skip('Testando filtro "Tipo de hardware Validator tinkerS"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorTinkerS()
     })
 

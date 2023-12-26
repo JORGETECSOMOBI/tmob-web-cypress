@@ -54,14 +54,14 @@ class LinhaPage {
     testandoVisualizar() {
         componente
             .clicaBotao('Visualizar')
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 
     testandoEditar() {
         componente
             .clicaBotao('Editar')
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 

@@ -28,7 +28,7 @@ class CotasPage {
         componente.selecionaStatus('Inativo')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
-            .validatexto('Concluido')
+            .validaTexto('Concluido')
             .clicaBotao('Ver cotas')
         return this
     }
@@ -48,7 +48,7 @@ class CotasPage {
         componente.selecionaStatus('Ativo')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
-            .validatexto('Cota foi editada com sucesso!')
+            .validaTexto('Cota foi editada com sucesso!')
         return this
     }
 
@@ -81,21 +81,21 @@ class CotasPage {
     filtrandoPorDescricao() {
         componente
             .escreveDescricao('AAAA Cota Automação editada')
-            .validaDescricaoAntTableRow('AAAA Cota Automação editada')
+            .validaPesquisaAntTableRow('AAAA Cota Automação editada')
         return this
     }
 
     filtrandoPorValor() {
         componente
             .escreveDescricao('valor')
-            .validaDescricaoAntTableRow('Value')
+            .validaPesquisaAntTableRow('Value')
         return this
     }
 
     filtrandoPorLinha() {
         componente
             .escreveDescricao('Linha')
-            .validaDescricaoAntTableRow('Line')
+            .validaPesquisaAntTableRow('Line')
         return this
     }
 
@@ -116,21 +116,21 @@ class CotasPage {
     clicandoBotaoNovo() {
         componente
             .clicaBotaoNovo()
-            .validatexto('Preencha os campos abaixo para o cadastro da cota')
+            .validaTexto('Preencha os campos abaixo para o cadastro da cota')
         return this
     }
 
     botaoEditar() {
         componente
             .clicaBotaoEditar()
-            .validatexto('Editar')
+            .validaTexto('Editar')
         return this
     }
 
     botaoVisualizar() {
         componente
             .clicaBotaoVisualizar()
-            .validatexto('Detalhes')
+            .validaTexto('Detalhes')
         return this
     }
 }

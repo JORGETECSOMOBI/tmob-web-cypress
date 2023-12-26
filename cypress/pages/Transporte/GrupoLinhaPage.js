@@ -102,7 +102,7 @@ class GrupoLinhaPage {
         componente
         .escreveDescricao('313')
         .clicaBotao('Visualizar')
-        .validatexto('ID #313')
+        .validaTexto('ID #313')
         return this
     }
 
@@ -110,7 +110,7 @@ class GrupoLinhaPage {
         componente
         .escreveDescricao('313')
         .clicaBotao('Editar')
-        .validatexto('ID #313')
+        .validaTexto('ID #313')
         return this
     }
 

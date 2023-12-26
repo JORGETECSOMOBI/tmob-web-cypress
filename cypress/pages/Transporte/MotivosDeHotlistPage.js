@@ -74,8 +74,8 @@ class MotivosdeHotlistPage {
         componente
             .escreveDescricao('22')
             .clicaBotao('Visualizar')
-            .validatexto('ID #22')
-            .validatexto('Bloqueado')
+            .validaTexto('ID #22')
+            .validaTexto('Bloqueado')
         return this
     }
 
@@ -83,8 +83,8 @@ class MotivosdeHotlistPage {
         componente
             .escreveDescricao('02')
             .clicaBotao('Visualizar')
-            .validatexto('ID #2')
-            .validatexto('Desbloqueado')
+            .validaTexto('ID #2')
+            .validaTexto('Desbloqueado')
         return this
     }
 }
