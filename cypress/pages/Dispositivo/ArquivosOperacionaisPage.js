@@ -1,6 +1,7 @@
 import login from '../Login/LoginPage'
 import home from '../Home/HomePage'
 import componente from '../ComponentesPadrao/ComponentesPadraoPage'
+import feriado from '../../pages/Dispositivo/FeriadoPage'
 
 class ArquivosOperacionaisPage {
 
@@ -22,9 +23,9 @@ class ArquivosOperacionaisPage {
 
     filtrandoStatusdescontinuado() {
         this
-        .botaoConfiguracaoOperacional()
-        .selecionaStatus('Descontinuado')
-    return this
+            .botaoConfiguracaoOperacional()
+            .selecionaStatus('Descontinuado')
+        return this
     }
 
     filtrandoPorId() {
@@ -99,10 +100,10 @@ class ArquivosOperacionaisPage {
         return this
     }
 
-    alteraTag() {
+    alteraTag(tag) {
         cy.get('[data-row-key]').contains('Tag').click({ force: true })
-        cy.get('#rc_select_5', { force: true }).click({ force: true })
-        cy.get('.ant-select-item-option-content').contains(tag).click({ force: true })
+        cy.get('.ant-select-selection-search-input', { force: true }).eq(4).click({ force: true })
+        cy.get('.ant-select-item-option-content').contains(tag, { force: true }).click({ force: true })
         componente
             .clicaBotao('Confirmar')
             .validaMensagem('Tag alterada com sucesso')
@@ -124,6 +125,28 @@ class ArquivosOperacionaisPage {
 
     botaoConfiguracaoOperacional() {
         cy.get('#rc-tabs-0-tab-item2').click()
+        return this
+    }
+
+    forcarGeracaoAtualizada() {
+        componente
+            .clicaBotao('Forçar geração')
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Estamos processando seu arquívo operacional.')
+            .validaMensagem('O arquívo operacional já está atualizado.')
+        return this
+    }
+
+    forcarGeracaoNovaAtualizacaoFeriado() {
+        componente
+            .clicaBotao('Feriado')
+        feriado.editaFeriado()
+        componente
+            .clicaBotao('Arquivos operacionais')
+            .clicaBotao('Forçar geração')
+            .clicaBotaoModal('Sim')
+            .validaMensagem('Estamos processando seu arquívo operacional.')
+            .validaMensagem('Seu arquívo operácional foi gerado com sucesso.')
         return this
     }
 }

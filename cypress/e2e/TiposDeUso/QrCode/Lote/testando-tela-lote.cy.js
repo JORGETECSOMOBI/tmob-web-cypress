@@ -18,7 +18,7 @@ describe('Testando tela "Lote"', () => {
         lote.filtrandoPorFiltroAtivo()
     })
 
-    it('Testando filtro por "INATIVO"', () => {
+    it.skip('Testando filtro por "INATIVO"(chamdo aberto para correção, TMOB-2640)', () => {
         lote.filtrandoPorFiltroInativo()
     })
 

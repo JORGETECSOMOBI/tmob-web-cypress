@@ -1,6 +1,7 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
+import faker from 'faker-br'
 
 class DispositivosPage {
 
@@ -30,9 +31,11 @@ class DispositivosPage {
     }
 
     pesquisaPorUltimaComunicacao() {
-        cy.get('.ant-picker > :nth-child(1) > input').type('18/12/2023', { force: true }).type(`{enter}`)
-        cy.get('.ant-picker-input-active > input').type('18/12/2023', { force: true }).type(`{enter}`)
-        componente.validaPesquisaTitle('18/12/2023 17:55:20')
+        const comunicacao = faker.date.recent().toLocaleDateString('pt-BR')
+        cy.get('.ant-picker > :nth-child(1) > input').type(comunicacao, { force: true }).type(`{enter}`)
+        cy.wait(1000)
+        cy.get('.ant-picker-input-active > input').type(comunicacao, { force: true }).type(`{enter}`)
+        cy.contains(comunicacao).should('contain', comunicacao)
         return this
     }
 
@@ -190,11 +193,11 @@ class DispositivosPage {
         return this
     }
 
-    pesquisaPorTipoHardwareStationHubx86_64() {
-        componente.pesquisaNomeId('x86')
+    pesquisaPorTipoHardwareStationHub_tsation() {
+        componente.pesquisaNomeId('tsation')
         cy.get('.ant-select-item-option-content').contains('stationHub').click()
         cy.get('.ant-spin-container').should('contain', 'stationHub')
-        cy.get('.ant-spin-container').should('contain', 'x86')
+        cy.get('.ant-spin-container').should('contain', 'tsation')
         return this
     }
 

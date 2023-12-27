@@ -33,7 +33,7 @@ class FeriadoPage {
             .escreveNome('AAAA ')
             .clicaBotaoEditar()
             .limpaCampoNome()
-            .escreveNome('AAAA AUTOMAÇÃO CADASTRAR Editado')
+            .escreveNome('AAAA', `${faker.name.findName()}`)
             .clicaBotaoSalvar()
             .clicaBotaoSim()
             .validaMensagem('O feriado foi editada com sucesso')

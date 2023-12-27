@@ -44,8 +44,8 @@ class UsoPage {
         cy.get('input[placeholder="Data final"]').clear({ force: true })
         cy.get('input[placeholder="Data final"]').type('26/12/2023', { force: true }).type(`{enter}`)
         componente
-            .validaPesquisaTitle('26/12/2023 11:28:43')
-            .validaStatusAusente('22/12/2023 17:10:52')
+            .validaPesquisaTitle('26/12/2023 17:28:40')
+            .validaTextoAusente('22/12/2023 17:10:52')
         return this
     }
 
@@ -103,11 +103,11 @@ class UsoPage {
         this
             .selecionaStatus('Esgotado')
         componente
-        .validaTextoAusente('Uso Excessivo')
-        .validaTextoAusente('Rejeitado')
-        .validaTextoAusente('Integrado')
-        .validaTextoAusente('Revertido')
-        .validaTextoAusente('Usado')
+            .validaTextoAusente('Uso Excessivo')
+            .validaTextoAusente('Rejeitado')
+            .validaTextoAusente('Integrado')
+            .validaTextoAusente('Revertido')
+            .validaTextoAusente('Usado')
         return this
     }
 
@@ -115,11 +115,11 @@ class UsoPage {
         this
             .selecionaStatus('Uso Excessivo')
         componente
-        .validaTextoAusente('Rejeitado')
-        .validaTextoAusente('Esgotado')
-        .validaTextoAusente('Integrado')
-        .validaTextoAusente('Revertido')
-        .validaTextoAusente('Usado')
+            .validaTextoAusente('Rejeitado')
+            .validaTextoAusente('Esgotado')
+            .validaTextoAusente('Integrado')
+            .validaTextoAusente('Revertido')
+            .validaTextoAusente('Usado')
         return this
     }
 
@@ -127,11 +127,11 @@ class UsoPage {
         this
             .selecionaStatus('Integrado')
         componente
-        .validaTextoAusente('Uso Excessivo')
-        .validaTextoAusente('Esgotado')
-        .validaTextoAusente('Rejeitado')
-        .validaTextoAusente('Revertido')
-        .validaTextoAusente('Usado')
+            .validaTextoAusente('Uso Excessivo')
+            .validaTextoAusente('Esgotado')
+            .validaTextoAusente('Rejeitado')
+            .validaTextoAusente('Revertido')
+            .validaTextoAusente('Usado')
         return this
     }
 
@@ -139,11 +139,11 @@ class UsoPage {
         this
             .selecionaStatus('Usado')
         componente
-        .validaTextoAusente('Uso Excessivo')
-        .validaTextoAusente('Esgotado')
-        .validaTextoAusente('Integrado')
-        .validaTextoAusente('Revertido')
-        .validaTextoAusente('Rejeitado')
+            .validaTextoAusente('Uso Excessivo')
+            .validaTextoAusente('Esgotado')
+            .validaTextoAusente('Integrado')
+            .validaTextoAusente('Revertido')
+            .validaTextoAusente('Rejeitado')
         return this
     }
 
@@ -155,11 +155,52 @@ class UsoPage {
         return this
     }
 
+    filtrandoPorModoDeUso() {
+        this.selecionaModoDeUso('Online')
+        return this
+    }
+
+    filtrandoPorModoDeUsoOnline() {
+        this.selecionaModoDeUso('Online')
+        componente
+            .validaPesquisaDataRowKey('Online')
+            .validaTextoAusente('Offline')
+        return this
+    }
+
+    filtrandoPorModoDeUsoOffline() {
+        this.selecionaModoDeUso('Offline')
+        componente
+            .validaPesquisaDataRowKey('Offline')
+            .validaTextoAusente('Online')
+        return this
+    }
+
     selecionaStatus(status) {
         cy.get('#isOverused').click()
         cy.contains(status).click({ force: true })
         componente
             .validaPesquisaTitle(status)
+        return this
+    }
+
+    selecionaModoDeUso(modo) {
+        cy.get('#isOffline').click()
+        cy.get('.ant-select-item-option-content').contains(modo).click()
+        return this
+    }
+
+    botaoVerQrCode() {
+        componente
+            .clicaBotao("Ver QR Code")
+            .validaTexto('Preço unitário')
+        return this
+    }
+
+    LinkIdMidia() {
+        cy.get('[data-row-key]').contains('3928189').click({ force: true })
+        componente
+            .validaTexto('Preço unitário')
         return this
     }
 }

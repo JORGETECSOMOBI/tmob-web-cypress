@@ -1,17 +1,21 @@
 import arquivosOperacionais from '../../../../pages/Dispositivo/ArquivosOperacionaisPage'
 
-describe('Testando tela arquivos operacionais', () => {
+describe('Testando tela "Arquivos operacionais"', () => {
 
     beforeEach(() => {
         arquivosOperacionais.beforeArquivosOperacionais()
     })
 
     it('Testando filtro por Id do arquivo', () => {
-        arquivosOperacionais.filtrandoPorIdConfiguracao()
+        arquivosOperacionais.filtrandoPorId()
     })
 
     it('Testando filtro por nome do arquivo', () => {
-        arquivosOperacionais.filtrandoPorNomeConfiguracao()
+        arquivosOperacionais.filtrandoPorNome()
+    })
+
+    it('Altera Tag para "Tag Principal" ', () => {
+        arquivosOperacionais.alterandoParaTagPrincipal()
     })
 
     it('Testando filtro por "Tag Principal" ', () => {
@@ -20,6 +24,10 @@ describe('Testando tela arquivos operacionais', () => {
 
     it('Testando filtro por "Tag Atual" ', () => {
         arquivosOperacionais.filtrandoPorTagAtual()
+    })
+
+    it('Altera Tag para "Tag Alt" ', () => {
+        arquivosOperacionais.alterandoParaTagAlt()
     })
 
     it('Testando filtro por "Tag Alt" ', () => {
@@ -34,11 +42,11 @@ describe('Testando tela arquivos operacionais', () => {
         arquivosOperacionais.download()
     })
 
-    it.skip('Altera Tag para "Tag Principal" ', () => {
-        arquivosOperacionais.alterandoParaTagPrincipal()
+    it('Forçando a geração "arquivo atualizado"', () => {
+        arquivosOperacionais.forcarGeracaoAtualizada()
     })
 
-    it.skip('Altera Tag para "Tag Alt" ', () => {
-        arquivosOperacionais.alterandoParaTagAlt()
+    it('Forçando a geração arquivo nova atualização "feriado"', () => {
+        arquivosOperacionais.forcarGeracaoNovaAtualizacaoFeriado()
     })
 })

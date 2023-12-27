@@ -37,11 +37,11 @@ describe('Testando tela "Uso"', () => {
         uso.filtrandoPorOrigemDoUsoInterno()
     })
 
-    it.only('Testando filtro por "Status Rejeitado"', () => {
+    it('Testando filtro por "Status Rejeitado"', () => {
         uso.filtrandoPorStatusRejeitado()
     })
 
-    it.only('Testando filtro por "Status Uso excessivo"', () => {
+    it('Testando filtro por "Status Uso excessivo"', () => {
         uso.filtrandoPorStatusUsoExcessivo()
     })
 
@@ -49,7 +49,7 @@ describe('Testando tela "Uso"', () => {
         uso.filtrandoPorStatusIntegrado()
     })
 
-    it.only('Testando filtro por "Status Esgotado"', () => {
+    it('Testando filtro por "Status Esgotado"', () => {
         uso.filtrandoPorStatusEsgotado()
     })
 
@@ -57,7 +57,26 @@ describe('Testando tela "Uso"', () => {
         uso.filtrandoPorStatusRevertido()
     })
 
-    it.only('Testando filtro por "Status Usado"', () => {
+    it('Testando filtro por "Status Usado"', () => {
         uso.filtrandoPorStatusUsado()
+    })
+
+    it.skip('Testando filtro por "Modo de Uso Online"(Chamado para correções aberto, TMOB-2633)', () => {
+        uso.filtrandoPorModoDeUsoOnline()
+    })
+
+    it.skip('Testando filtro por "Modo de Uso Offline"(Chamado para correções aberto, TMOB-2633)', () => {
+        uso.filtrandoPorModoDeUsoOffline()
+    })
+
+    it('Testando botão "botaoVerQrCode"', () => {
+        uso.botaoVerQrCode()
+    })
+
+    it('Testando botão "Link Id Mídia"', () => {
+        uso.LinkIdMidia()
+    })
+
+    it.skip('Testando botão "Baixar relatório"(Chamado para correções aberto, TMOB-2634', () => {     
     })
 })

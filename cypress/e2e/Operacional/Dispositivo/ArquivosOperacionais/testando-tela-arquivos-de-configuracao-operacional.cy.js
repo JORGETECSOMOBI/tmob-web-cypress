@@ -1,6 +1,6 @@
 import arquivosOperacionais from '../../../../pages/Dispositivo/ArquivosOperacionaisPage'
 
-describe('Testando tela arquivos de configuração operacionail', () => {
+describe('Testando tela "Arquivos de configuração operacional"', () => {
 
     beforeEach(() => {
         arquivosOperacionais.beforeArquivosOperacionais()
