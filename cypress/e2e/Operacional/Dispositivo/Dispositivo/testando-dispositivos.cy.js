@@ -86,7 +86,7 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorTipoHardwareATMx86_64()
     })
 
-    it.only('Testando filtro "Tipo de hardware stationHub tsation"', () => {
+    it('Testando filtro "Tipo de hardware stationHub tsation"', () => {
         dispositivos.pesquisaPorTipoHardwareStationHub_tsation()
     })
 
