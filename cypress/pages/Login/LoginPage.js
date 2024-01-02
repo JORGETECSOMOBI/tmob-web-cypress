@@ -2,8 +2,7 @@ class LoginPage {
 
     go() {
         cy.on('uncaught:exception', (err, runnable) => {
-            // Retorne false para evitar que o Cypress falhe automaticamente
-            return false;
+            return false
         });
         cy.visit('/')
         return this
