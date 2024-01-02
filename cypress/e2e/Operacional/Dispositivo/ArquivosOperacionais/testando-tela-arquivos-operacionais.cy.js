@@ -46,7 +46,7 @@ describe('Testando tela "Arquivos operacionais"', () => {
         arquivosOperacionais.forcarGeracaoAtualizada()
     })
 
-    it('Forçando a geração arquivo nova atualização "feriado"', () => {
+    it('Forçando a geração arquivo nova atualização "Feriado"', () => {
         arquivosOperacionais.forcarGeracaoNovaAtualizacaoFeriado()
     })
 })

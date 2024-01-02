@@ -6,11 +6,11 @@ beforeEach(() => {
     produtoExterno.beforeProdutoExterno()
 })
 
-    it.skip('Criando um produto externo', () => {
+    it('Criando um produto externo', () => {
         produtoExterno.cadastraNovoProdutoexterno()
     })
 
-    it.skip('Editando um produto externo', () => {
+    it('Editando um produto externo', () => {
         produtoExterno.editaProdutoexterno()
     })
 })

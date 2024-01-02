@@ -6,7 +6,7 @@ describe('Testando "Consócio"', () => {
         emissor.beforeEmissor()
     })
 
-    it.skip('Editar um emissor', () => {
+    it.skip('Editar um emissor, (Tela Emissor foi ocultada, aguardando ser habilitada novamente)',  () => {
         emissor.editarEmissor()
     })
 })

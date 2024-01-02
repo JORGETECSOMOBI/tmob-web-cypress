@@ -95,8 +95,8 @@ class LinhaPage {
 
     pesquisaPorDescontoNaTarifa() {
         this
-            .filtroDescontoTarifa('rasb')
-            .validaPesquisaDescontotarifa('rasb')
+            .filtroDescontoTarifa('Desconto 02')
+            .validaPesquisaDescontotarifa('Tarifa Sato')
         return this
     }
 

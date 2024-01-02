@@ -98,7 +98,7 @@ class GrupoDetempoPage {
 
     editaUmGrupoDeTempo() {
         componente
-            .escreveDescricao('AAAA grupo de tempo')
+            .escreveDescricao('AAAA')
             .clicaBotaoEditar()
             .limpaDescricao()
         this

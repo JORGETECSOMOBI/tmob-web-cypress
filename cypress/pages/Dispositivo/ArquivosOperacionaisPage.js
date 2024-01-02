@@ -140,7 +140,8 @@ class ArquivosOperacionaisPage {
     forcarGeracaoNovaAtualizacaoFeriado() {
         componente
             .clicaBotao('Feriado')
-        feriado.editaFeriado()
+        feriado
+            .editaFeriado()
         componente
             .clicaBotao('Arquivos operacionais')
             .clicaBotao('Forçar geração')

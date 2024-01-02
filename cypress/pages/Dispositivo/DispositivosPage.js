@@ -24,9 +24,9 @@ class DispositivosPage {
     }
 
     pesquisaPorSerialHardware() {
-        cy.get('#thingName').type()
+        cy.get('#thingName').type('5401052143018483')
         componente
-            .validaPesquisaTitle()
+            .validaPesquisaTitle('5401052143018483')
         return this
     }
 
@@ -40,14 +40,14 @@ class DispositivosPage {
     }
 
     pesquisaPorOperadorDeTransporte() {
-        cy.get('#rc_select_2', { force: true }).type('TMOB', { force: true })
+        cy.get('.ant-select-selection-search-input', { force: true }).eq(1).type('TMOB', { force: true })
         cy.get('.ant-select-item-option-content').contains('Operadora TMOB', { force: true }).click()
         componente.validaPesquisaDataRowKey('110 Operadora TMOB')
     }
 
     pesquisaPorTerminal() {
         this.pesquisaPorOperadorDeTransporte()
-        cy.get('#rc_select_3', { force: true }).type('999999', { force: true }).wait(1000).type(`{enter}`, { force: true })
+        cy.get('.ant-select-selection-search-input', { force: true }).eq(2).type('999999', { force: true }).wait(1000).type(`{enter}`, { force: true })
         cy.get('.ant-table-row > :nth-child(3) > .ant-row-middle', { force: true }).should('have.text', '999999 ', { force: true })
         return this
     }
@@ -93,7 +93,7 @@ class DispositivosPage {
 
     pesquisaPorStatusFechado() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Fechado').click()
+        cy.contains('Fechado').click({ force: true })
         componente
             .validaStatusAusente('Aberto')
             .validaStatusAusente('Ocioso')
@@ -104,7 +104,7 @@ class DispositivosPage {
 
     pesquisaPorStatusOcioso() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Ocioso').click()
+        cy.contains('Ocioso').click({ force: true })
         componente
             .validaStatusAusente('Aberto')
             .validaStatusAusente('Fechado')
@@ -115,7 +115,7 @@ class DispositivosPage {
 
     pesquisaPorStatusAberto() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Aberto').click()
+        cy.contains('Aberto').click({ force: true })
         componente
             .validaStatusAusente('Fechado')
             .validaStatusAusente('Ocioso')
@@ -126,7 +126,7 @@ class DispositivosPage {
 
     pesquisaPorStatusSuspenso() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Suspenso').click()
+        cy.contains('Suspenso').click({ force: true })
         componente
             .validaStatusAusente('Fechado')
             .validaStatusAusente('Ocioso')
@@ -148,39 +148,39 @@ class DispositivosPage {
 
     pesquisaPorStatusNaoConfigurado() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Não configurado').click()
+        cy.contains('Não configurado').click({ force: true })
         return this
     }
 
     pesquisaPorStatusAbertoOuOcioso() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Aberto ou ocioso').click()
+        cy.contains('Aberto ou ocioso').click({ force: true })
         return this
     }
 
     pesquisaPorStatusFechadoOuSuspenso() {
         cy.get('#serviceStatus').click({ force: true })
-        cy.contains('Fechado ou suspenso')
+        cy.contains('Fechado ou suspenso').click({ force: true })
         return this
     }
 
     pesquisaPorVersaoAlfa() {
         cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
-        cy.get('svg[data-icon="plus-square"]').click()
-        cy.contains('Alfa').click()
+        cy.get('svg[data-icon="plus-square"]').click({ force: true })
+        cy.contains('Alfa').click({ force: true })
         return this
     }
 
     pesquisaPorVersaoBeta() {
         cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
         cy.get('svg[data-icon="plus-square"]').click()
-        cy.contains('Beta').click()
+        cy.contains('Beta').click({ force: true })
         return this
     }
 
     pesquisaPorVersaoEstavel() {
         cy.get('#rc_select_8', { force: true }).type('recharge-v770w')
-        cy.get('svg[data-icon="plus-square"]').click()
+        cy.get('svg[data-icon="plus-square"]').click({ force: true })
         cy.contains('Estável').click()
         return this
     }

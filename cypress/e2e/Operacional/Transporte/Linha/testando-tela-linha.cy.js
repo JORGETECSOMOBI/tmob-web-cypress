@@ -1,8 +1,6 @@
-import componente from '../../../../pages/ComponentesPadrao/ComponentesPadraoPage'
 import linha from '../../../../pages/Transporte/LinhaPage'
-import texto from '../../../../fixtures/textos.json'
 
-describe('Testando todos os elementos da página Linha', () => {
+describe('Testando tela Linha', () => {
 
     beforeEach(() => {
         linha.beforeLinha()
@@ -36,7 +34,7 @@ describe('Testando todos os elementos da página Linha', () => {
         linha.pesquisaPorTarifaremuneracao()
     })
 
-    it.skip("Pesquisa por desconto da tarifa", () => {
+    it("Pesquisa por desconto da tarifa", () => {
         linha.pesquisaPorDescontoNaTarifa()
     })
 

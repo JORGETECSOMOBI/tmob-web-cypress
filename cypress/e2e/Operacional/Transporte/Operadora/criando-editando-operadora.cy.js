@@ -10,7 +10,7 @@ describe('Testando Grupo de Operadora', () => {
        operadora.criandoOperadora()
     })
 
-    it.skip('Editando uma operadora', () => {
+    it('Editando uma operadora', () => {
       operadora.editandoOperadora()
     })
 })

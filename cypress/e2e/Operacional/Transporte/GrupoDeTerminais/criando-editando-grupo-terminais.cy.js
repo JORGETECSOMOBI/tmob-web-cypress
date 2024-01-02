@@ -27,7 +27,7 @@ describe('Testando Grupo de terminais', () => {
         grupoTerminais.adicionandoItemNoAgrupador()
     })
 
-    it.skip('Excluindo um grupo de terminais', () => {
+    it('Excluindo um grupo de terminais', () => {
         grupoTerminais.excluindoGrupoTerminais()
     })
 })

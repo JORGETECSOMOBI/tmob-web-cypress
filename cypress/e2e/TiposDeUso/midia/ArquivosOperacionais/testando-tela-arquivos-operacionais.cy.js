@@ -25,7 +25,7 @@ describe('Testando todas as funcionalidades de Arquivos Operacionais', () => {
         arquivosOperacionais.gerandoUmArquivoJaAtualizado()
     })
 
-    it.skip('Força geração de arquivo operacional com nova atualização de grupo de tempo', () => {
+    it('Força geração de arquivo operacional com nova atualização de grupo de tempo', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoGrupoDeTempo()
     })
 
@@ -33,11 +33,11 @@ describe('Testando todas as funcionalidades de Arquivos Operacionais', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoLimiteDeUso()
     })
 
-    it.skip('Força geração de arquivo operacional com nova atualização de Produto de transporte', () => {
+    it('Força geração de arquivo operacional com nova atualização de Produto de transporte', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoProdutoDeTransporte()
     })
 
-    it.skip('Força geração de arquivo operacional com nova atualização de Produto externo', () => {
+    it('Força geração de arquivo operacional com nova atualização de Produto externo', () => {
         arquivosOperacionais.gerandoUmArquivoNovaAtualizacaoProdutoExterno()
     })
 

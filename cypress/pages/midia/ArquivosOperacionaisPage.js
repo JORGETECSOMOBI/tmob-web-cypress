@@ -101,7 +101,6 @@ class ArquivosOperacionaisPage {
         componente
             .clicaBotao('Grupo de tempo')
         grupoDetempo
-            .criaNovoGrupoDetempo()
             .editaUmGrupoDeTempo()
         componente
             .clicaBotao('Arquivos Operacionais')

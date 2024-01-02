@@ -25,7 +25,7 @@ class ProdutoDetransportePge {
         this
             .selecionaTipoDeProduto('Valorado')
             .selecionaEmissor('Autopass')
-            .codigo('444')
+            .codigo(faker.random.number())
             .maximoDeIntegracoes('8')
             .grupoDerelatorio('TOP - Funcional')
             .displayValidador('Automação')
@@ -36,6 +36,7 @@ class ProdutoDetransportePge {
             .escreveDescricao('AAAA Automação Valorado')
             .clicaBotaoProximo()
         this
+            .inicioValidade()
             .selecionaPrioridade(faker.random.number())
         componente
             .clicaBotaoProximo()
@@ -95,7 +96,7 @@ class ProdutoDetransportePge {
         return this
     }
 
-     editandoUmGrupoDeTransporte() {
+    editandoUmGrupoDeTransporte() {
         componente
             .escreveDescricao('AAAA')
             .clicaBotaoEditar()
@@ -118,7 +119,7 @@ class ProdutoDetransportePge {
             .clicaBotaoVerProdutos()
         componente
             .validaPesquisaTitle('AAAAAA PRODUTO TRANSPORTE EDIÇÃO')
-            return this
+        return this
     }
 
     selecionaTipoDeProduto(produto) {
@@ -224,6 +225,11 @@ class ProdutoDetransportePge {
         componente
             .clicaBotaoHomeVisualizar()
             .validaTexto('Detalhes')
+        return this
+    }
+
+    inicioValidade() {
+        cy.get('#startDate').click({ force: true }).get('.ant-picker-today-btn').click({ force: true })
         return this
     }
 }

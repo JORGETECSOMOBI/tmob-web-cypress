@@ -170,7 +170,7 @@ class UsuarioPage {
             .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO ESPECIAL')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(faker.name.findName())
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -191,7 +191,7 @@ class UsuarioPage {
             .selecionaTipoUsuario('AAAAA AUTOMAÇÃO OPERADOR')
             .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
             .preencheNomeCompleto()
-            .preencheNomeSocial(cadastro.nomeSocial)
+            .preencheNomeSocial(faker.name.lastName())
             .selecionaGenero(cadastro.GeneroM)
             .emailnovoUsuario(cadastro.email)
             .filiacao1(cadastro.filiacao1)
@@ -213,7 +213,7 @@ class UsuarioPage {
 
     tipoDeUsuarioIdoso() {
         this
-            .selecionaDataRegistro('Hoje')
+            .selecionaDataRegistroIdoso('22/05/2021')
             .selecionaPostoAtendimento()
         componente
             .clicaBotao('Proximo')
@@ -222,7 +222,7 @@ class UsuarioPage {
 
     tipoDeUsuarioIdosoMultipreenchimento() {
         this
-            .selecionaDataRegistro('Hoje')
+            .selecionaDataRegistro('21/05/2021')
             .selecionaPostoAtendimento()
         return this
     }
@@ -241,7 +241,7 @@ class UsuarioPage {
 
     tipoDeUsuarioFuncionarioMultipreenchimento() {
         this
-            .selecionaInstituicao('TESTE WEB')
+            .selecionaInstituicao('AUTOMATICO')
             .selecionaDataAdmissao()
             .selecionaDataDemissao()
             .escreveCargo()
@@ -260,17 +260,32 @@ class UsuarioPage {
             .escreveSerie()
             .selecionaPeriodo('Gabriel teste')
             .selecionaTipoEstudante('Estudante')
-            .selecionaDataInicial('Hoje')
-            .selecionaDataFinal('Hoje')
+            .selecionaDataInicial('22/10/2021')
+            .selecionaDataFinal('22/12/2028')
         componente
-            .clicaBotao('Proximo')
+            .clicaBotaoProximo()
         return this
     }
 
     tipoDeUsuarioEstudanteMultipreenchimento() {
-        componente
-            .clicaBotao('Adicionar')
         this
+            .botaoAdicionarCadastroEstudante()
+            .selecionaEscolaridade()
+            .selecionaNomeInstituicao()
+            .escreveClasse()
+            .escreveQuota()
+            .escreveRa()
+            .escreveSerie()
+            .selecionaPeriodo('Gabriel teste')
+            .selecionaTipoEstudante('Estudante')
+            .selecionaDataInicial('Hoje')
+            .selecionaDataFinal('Hoje')
+        return this
+    }
+
+    tipoDeUsuarioEstudanteMultipreenchimento3() {
+        this
+            .botaoAdicionarCadastroEstudante3()
             .selecionaEscolaridade()
             .selecionaNomeInstituicao()
             .escreveClasse()
@@ -287,9 +302,9 @@ class UsuarioPage {
     tipoDeUsuarioOperador() {
         this
             .escreveMatriculaOperador()
-            .dataDeAdmissao('20/10/2018', '20')
-            .dataDeDemissao('26/08/2023', '26')
-            .selecionaOperadora('Moraes')
+            .dataDeAdmissao('20/10/2018')
+            .dataDeDemissao('26/08/2023')
+            .selecionaOperadora('Geraldo')
         componente
             .clicaBotao('Proximo')
         return this
@@ -298,9 +313,9 @@ class UsuarioPage {
     tipoDeUsuarioOperadorMultipreenchimento() {
         this
             .escreveMatriculaOperador()
-            .dataDeAdmissao('20/10/2018', '20')
-            .dataDeDemissao('26/08/2023', '26')
-            .selecionaOperadora('Moraes')
+            .dataDeAdmissao('20/10/2018')
+            .dataDeDemissao('26/08/2023')
+            .selecionaOperadora('Geraldo')
         return this
     }
 
@@ -313,7 +328,7 @@ class UsuarioPage {
             .selecionaEquipamentoPcd('Equipamento editado')
             .escreveCRM()
             .escreveNomeDoMedico()
-            .validadedoLaudo('Hoje')
+            .validadedoLaudo('22/10/2025')
         componente
             .clicaBotao('Proximo')
         return this
@@ -327,7 +342,7 @@ class UsuarioPage {
             .selecionaEquipamentoPcd('Equipamento editado')
             .escreveCRM()
             .escreveNomeDoMedico()
-            .validadedoLaudo('Hoje')
+            .validadedoLaudo('22/10/2025')
             .escreveNomeAcompanhante()
             .documentoAcompanhante(faker.br.cpf())
             .tipoDocumentoAcompanhante('CPF')
@@ -341,11 +356,11 @@ class UsuarioPage {
         this
             .selecionaDescricaoCID('A000')
             .selecionaTipoAprovacao('Aprovado')
-            .selecionaPostoAtendimentoEspecial('AAAAA')
+            .selecionaPostoAtendimentoEspecial('AAAAAA AUTOMAÇÃO')
             .selecionaEquipamentoPcd('Equipamento editado')
             .escreveCRM()
             .escreveNomeDoMedico()
-            .validadedoLaudo('Hoje')
+            .validadedoLaudo('22/10/2026')
             .escreveNomeAcompanhante()
             .tipoDocumentoAcompanhante('RNE')
             .documentoAcompanhante()
@@ -525,6 +540,17 @@ class UsuarioPage {
         return this
     }
 
+    botaoAdicionarCadastroEstudante() {
+        cy.get(':nth-child(2) > .ant-btn', { force: true }).click({ force: true })
+        return this
+    }
+
+    botaoAdicionarCadastroEstudante3() {
+        cy.get(':nth-child(3) > .ant-btn', { force: true }).click({ force: true })
+        return this
+    }
+
+
     tipoDocumentoAcompanhante(tipo) {
         cy.get('#createUser_createAttendants_usrDocumentTypeId').click({ force: true })
         cy.get('[title]').contains(tipo, { force: true }).click({ force: true })
@@ -605,8 +631,12 @@ class UsuarioPage {
     }
 
     selecionaDataRegistro(data) {
-        cy.get('.ant-picker-input').click({ force: true })
-        cy.contains(data, { force: true }).click({ force: true })
+        cy.get('#createUser_UsrElderlies_create_0_registration', { force: true }).type(data, { force: true }).type(`{enter}`)
+        return this
+    }
+
+    selecionaDataRegistroIdoso(data) {
+        cy.get('#createUser_UsrElderlies_create_0_registration', { force: true }).type(data, { force: true }).type(`{enter}`)
         return this
     }
 
@@ -651,20 +681,18 @@ class UsuarioPage {
     }
 
     selecionaTipoDeTelefone0(tipo) {
-        cy.get('#createUser_UsrPhones_createMany_data_0_type').click({ force: true })
+        cy.get('#createUser_UsrPhones_createMany_data_0_type', { force: true }).click({ force: true })
         cy.contains(tipo).click({ force: true })
         return this
     }
 
     selecionaPostoAtendimento() {
-        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).eq(2).click({ force: true })
+        cy.get('#createUser_UsrElderlies_create_0_UsrServiceStation_connect').type('AAAAA', { force: true }).type(`{enter}`, { force: true })
         return this
     }
 
     selecionaPostoAtendimentoEspecial(posto) {
-        cy.get('#createUser_UsrDisabilities_create_0_UsrServiceStation', { force: true }).click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).contains(posto).click({ force: true })
+        cy.get('#createUser_UsrDisabilities_create_0_UsrServiceStation', { force: true }).type(posto, { force: true }).type(`{enter}`)
         return this
     }
 
@@ -741,14 +769,12 @@ class UsuarioPage {
     }
 
     selecionaDataInicial(data) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_admissionDate', { force: true }).click({ force: true })
-        cy.contains(data).click()
+        cy.get('#createUser_UsrStudents_createMany_data_0_admissionDate', { force: true }).type(data, { force: true }).type(`{enter}`, { force: true })
         return this
     }
 
     selecionaDataFinal(data) {
-        cy.get('#createUser_UsrStudents_createMany_data_0_resignDate', { force: true }).click({ force: true })
-        cy.contains(data, { force: true }).click({ force: true })
+        cy.get('#createUser_UsrStudents_createMany_data_0_resignDate', { force: true }).type(data, { force: true }).type(`{enter}`, { force: true })
         return this
     }
 
@@ -797,9 +823,9 @@ class UsuarioPage {
         return this
     }
 
-    selecionaOperadora() {
-        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click({ force: true })
-        cy.get('.ant-select-item-option-content').eq(3).click({ force: true })
+    selecionaOperadora(operadora) {
+        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click({ force: true }).type(operadora, { force: true })
+        cy.get('.ant-select-item-option-content').contains(operadora).click({ force: true })
         return this
     }
 
@@ -840,8 +866,7 @@ class UsuarioPage {
     }
 
     validadedoLaudo(data) {
-        cy.get('#createUser_UsrDisabilities_create_0_validity', { force: true }).click({ force: true })
-        cy.contains(data).click({ force: true })
+        cy.get('#createUser_UsrDisabilities_create_0_validity', { force: true }).type(data, { force: true }).type(`{enter}`)
         return this
     }
 
@@ -959,21 +984,18 @@ class UsuarioPage {
         return this
     }
 
-    dataDeAdmissao(data, dia) {
-        cy.get('#createUser_UsrOperators_create_0_admissionDate', { force: true }).type(data, { force: true })
-        cy.get('.ant-picker-body').contains(dia).click({ force: true })
+    dataDeAdmissao(data) {
+        cy.get('#createUser_UsrOperators_create_0_admissionDate', { force: true }).click({ force: true }).type(data, { force: true }).type(`{enter}`)
         return this
     }
 
-    dataDeDemissao(data, dia) {
-        cy.get('#createUser_UsrOperators_create_0_resignDate', { force: true }).type(data, { force: true })
-        cy.get('.ant-picker-body').contains(dia).click({ force: true })
+    dataDeDemissao(data) {
+        cy.get('#createUser_UsrOperators_create_0_resignDate', { force: true }).click({ force: true }).type(data, { force: true }).type(`{enter}`)
         return this
     }
 
     operadora(operadora) {
-        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').click()
-        cy.contains(operadora).click()
+        cy.get('#createUser_UsrOperators_create_0_toTransportOperatorId').type(operadora).type(`{enter}`)
         return this
     }
 
@@ -1083,7 +1105,7 @@ class UsuarioPage {
             .documentacao()
             .tipoDeUsuarioFuncionarioMultipreenchimento()
             .tipoDeUsuarioOperadorMultipreenchimento()
-            .tipoDeUsuarioEstudanteMultipreenchimento()
+            .tipoDeUsuarioEstudanteMultipreenchimento3()
         componente.clicaBotaoProximo()
         this.contato()
             .criaçãoDeCartao()

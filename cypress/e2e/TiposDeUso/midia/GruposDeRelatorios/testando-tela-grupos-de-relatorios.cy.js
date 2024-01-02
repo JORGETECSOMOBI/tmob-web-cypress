@@ -9,8 +9,12 @@ describe('Testando todos os elementos da home de Grupos de relatórios', () => {
         grupoRelatorios.pesquisaPorDescricao()
     })
 
-    it('Testando filtro por Status', () => {
-        grupoRelatorios.testandoFiltroStatus()
+    it('Testando filtro por Status "Ativo"', () => {
+        grupoRelatorios.testandoFiltroStatusAtivo()
+    })
+
+    it('Testando filtro por Status "Inativo"', () => {
+        grupoRelatorios.testandoFiltroStatusInativo()
     })
 
     it('Testando botão "Novo"', () => {

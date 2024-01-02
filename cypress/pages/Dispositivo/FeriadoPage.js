@@ -29,11 +29,13 @@ class FeriadoPage {
     }
 
     editaFeriado() {
+        const descricao = 'AAAA'
+        const complemento = faker.name.lastName()
         componente
             .escreveNome('AAAA ')
             .clicaBotaoEditar()
             .limpaCampoNome()
-            .escreveNome('AAAA', `${faker.name.findName()}`)
+            .escreveNome(`${descricao} ${complemento}`)
             .clicaBotaoSalvar()
             .clicaBotaoSim()
             .validaMensagem('O feriado foi editada com sucesso')

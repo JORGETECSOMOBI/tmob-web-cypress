@@ -50,10 +50,15 @@ class GruposDeRelatoriosPage {
         return this
     }
 
-    testandoFiltroStatus() {
+    testandoFiltroStatusInativo() {
         componente
             .selecionaStatus('Inativo')
             .validaStatusAusente('Ativo')
+        return this
+    }
+
+    testandoFiltroStatusAtivo() {
+        componente
             .selecionaStatus('Ativo')
             .validaStatusAusente('Inativo')
         return this

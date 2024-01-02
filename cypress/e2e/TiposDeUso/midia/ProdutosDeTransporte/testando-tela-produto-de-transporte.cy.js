@@ -1,6 +1,6 @@
 import produtoDetransporte from '../../../../pages/midia/ProdutoDeTransportePage'
 
-describe('Testando Home Produto de Transporte', () => {
+describe('Testando tela Produto de Transporte', () => {
 
     beforeEach(() => {
         produtoDetransporte.beforeProdutoDeTrasnporte()

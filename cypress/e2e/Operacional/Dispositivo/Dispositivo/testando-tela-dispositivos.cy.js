@@ -10,7 +10,7 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorGuidSerial()
     })
 
-    it.skip('Testando filtro por Serial do Hardware', () => {
+    it.skip('Testando filtro por Serial do Hardware,(chamado aberto para correções, TMOB-2510)', () => {
         dispositivos.pesquisaPorSerialHardware()
     })
 
@@ -94,17 +94,10 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorTipoHardwarePosTsg800()
     })
 
-    it.skip('Testando filtro "Tipo de hardware Validator v500-1"', () => {
-        dispositivos.pesquisaPorTipoHardwareValidatorv5001()
-    })
-
     it('Testando filtro "Tipo de hardware Validator v3695"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorv3695()
     })
 
-    it.skip('Testando filtro "Tipo de hardware Validator tinkerS"', () => {
-        dispositivos.pesquisaPorTipoHardwareValidatorTinkerS()
-    })
 
     it('Testando filtro "Tipo de hardware Validator digiconMG"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorDigiconMG()
@@ -134,15 +127,15 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorVersaoEstavel()
     })
 
-    it('Testando filtro "Limpar filtro"', () => {
+    it('Testando botão "Limpar filtro"', () => {
         dispositivos.limparFiltro()
     })
 
-    it('Testando filtro "Visualizar"', () => {
+    it('Testando botão "Visualizar"', () => {
         dispositivos.visualizar()
     })
 
-    it('Testando filtro "Editar"', () => {
+    it('Testando botão "Editar"', () => {
         dispositivos.editar()
     })
 })

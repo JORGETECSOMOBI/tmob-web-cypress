@@ -1,6 +1,6 @@
 import hardware from '../../../../pages/Dispositivo/HardwarePage'
 
-describe('Testado tela Hardware', () => {
+describe('Testando tela Hardware', () => {
 
     beforeEach(() => {
         hardware.beforeHardware()
@@ -46,7 +46,7 @@ describe('Testado tela Hardware', () => {
         hardware.pesquisandoPorFiltroInativo()
     })
 
-    it.skip('Pesquisa por Filtro "Expirado" ', () => {
+    it.skip('Pesquisa por Filtro "Expirado", (aguardando massa de tstes para finalizar) ', () => {
         hardware.pesquisandoPorFiltroExpirado()
     })
 

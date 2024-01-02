@@ -1,6 +1,6 @@
 import consorcio from '../../../../pages/Transporte/ConsorcioPage'
 
-describe('Testando "Consócio"', () => {
+describe('Testando "Consórcio"', () => {
 
     beforeEach(() => {
         consorcio.beforeConsorcio()

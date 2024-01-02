@@ -32,9 +32,9 @@ class UsoPage {
     }
 
     filtrandoPorCodigoTerminal() {
-        cy.get('#toTerminalCode').click().type('2020').wait(1000).type(`{enter}`)
+        cy.get('#toTerminalCode').click().type('19393').wait(1000).type(`{enter}`)
         componente
-            .validaPesquisaTitle('2020')
+            .validaPesquisaTitle('19393')
         return this
     }
 
@@ -57,9 +57,9 @@ class UsoPage {
     }
 
     filtrandoPorIdQrMidia() {
-        cy.get('#qrMediaId').click().type('3927358').wait(1000).type(`{enter}`)
+        cy.get('#qrMediaId').click().type('3928310').wait(1000).type(`{enter}`)
         componente
-            .validaPesquisaDataRowKey('3927358')
+            .validaPesquisaDataRowKey('3928310')
         return this
     }
 

@@ -48,15 +48,17 @@ class OperadoraPage {
             .clicaBotao('+ Integrar Sistema')
         linha
             .selecionaSistema('TOP-Mercury')
-        this.
-            escreveIdExterno()
+        this
+            .clicaBotaoSalvar()
         componente
-            .clicaBotao('Salvar')
+            .clicaBotaoModal('Sim')
+            .validaMensagem('A operadora foi editada com sucesso')
         return this
     }
 
     escreveIdExterno() {
-        cy.get('#externalId').type(faker.random.number())
+        const id = faker.random.number()
+        cy.get('#externalId').type(id)
         return this
     }
 
@@ -81,6 +83,11 @@ class OperadoraPage {
     escreveIdLinha(id) {
         cy.get(':nth-child(1) > .ant-transfer-list-body > .ant-transfer-list-body-search-wrapper > ').type(id)
         cy.get('.ant-input-affix-wrapper ant-transfer-list-search css-12jzuas').click()
+    }
+
+    clicaBotaoSalvar() {
+        cy.get('.steps-action').contains('Salvar').click({ force: true })
+        return this
     }
 }
 export default new OperadoraPage
