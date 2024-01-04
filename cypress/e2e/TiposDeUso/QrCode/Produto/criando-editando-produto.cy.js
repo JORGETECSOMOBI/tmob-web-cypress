@@ -10,7 +10,7 @@ describe('Testando tela "Produto"', () => {
         produto.cadastroNovoProdutoLoteavel()
     })
 
-    it('Criando um "Novo Produto Loteável"', () => {
+    it('Editando um "Novo Produto Loteável"', () => {
         produto.editaProdutoLoteavel()
     })
 })

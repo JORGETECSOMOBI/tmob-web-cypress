@@ -13,11 +13,11 @@ describe('acessando emv e Testando a página Par', () => {
         par.filtroPorPeriodo()
     })
 
-    it(' Pesquisando usando como filtro o status do Hotlist', () => {
+    it(' Pesquisando usando como filtro o status do Hotlist Bloqueado', () => {
         par.filtroPorHotlistBloqueado()
     })
 
-    it(' Pesquisando usando como filtro o status do Hotlist', () => {
+    it(' Pesquisando usando como filtro o status do Hotlist Desbloqueado', () => {
         par.filtroPorHotlistDesbloqueado()
     })
 
