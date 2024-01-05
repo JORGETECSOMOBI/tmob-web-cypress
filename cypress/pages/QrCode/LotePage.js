@@ -90,8 +90,8 @@ class LotePage {
 
     filtrandoPorDescricao() {
         componente
-            .escreveDescricao('TESTE FABIO')
-            .validaPesquisaTitle('TESTE FABIO')
+            .escreveDescricao('AAAA LOTE TESTES AUTOMAÇÃO')
+            .validaPesquisaTitle('AAAA LOTE TESTES AUTOMAÇÃO')
         return this
     }
 

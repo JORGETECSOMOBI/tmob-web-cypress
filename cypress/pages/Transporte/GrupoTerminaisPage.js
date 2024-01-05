@@ -113,7 +113,7 @@ class GrupoTerminaisPage {
     }
 
     botaoExcluiAgupador() {
-        cy.get(':nth-child(5) > .ant-btn').eq(1).click({ force: true })
+        cy.get(':nth-child(5) > .ant-btn').eq(0).click({ force: true })
         return this
     }
 

@@ -18,6 +18,7 @@ class UsoPage {
     }
 
     filtrandoPorId() {
+        this.filtrandoPorDatadeUso()
         componente
             .escreveId('939980')
             .validaPesquisaDataRowKey('939980')
@@ -32,9 +33,10 @@ class UsoPage {
     }
 
     filtrandoPorCodigoTerminal() {
-        cy.get('#toTerminalCode').click().type('19393').wait(1000).type(`{enter}`)
+        this.filtrandoPorDatadeUso()
+        cy.get('#toTerminalCode').click({force:true}).type('5004').wait(1000).type(`{enter}`)
         componente
-            .validaPesquisaTitle('19393')
+            .validaPesquisaTitle('5004')
         return this
     }
 
@@ -57,9 +59,10 @@ class UsoPage {
     }
 
     filtrandoPorIdQrMidia() {
-        cy.get('#qrMediaId').click().type('3928310').wait(1000).type(`{enter}`)
+        this.filtrandoPorDatadeUso()
+        cy.get('#qrMediaId').click({ force: true }).type('3928189').wait(1000).type(`{enter}`)
         componente
-            .validaPesquisaDataRowKey('3928310')
+            .validaPesquisaDataRowKey('3928189')
         return this
     }
 
@@ -191,6 +194,7 @@ class UsoPage {
     }
 
     botaoVerQrCode() {
+        this.filtrandoPorDatadeUso()
         componente
             .clicaBotao("Ver QR Code")
             .validaTexto('Preço unitário')
@@ -198,6 +202,7 @@ class UsoPage {
     }
 
     LinkIdMidia() {
+        this.filtrandoPorDatadeUso()
         cy.get('[data-row-key]').contains('3928189').click({ force: true })
         componente
             .validaTexto('Preço unitário')
