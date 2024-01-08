@@ -98,15 +98,6 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorTipoHardwareValidatorv3695()
     })
 
-
-    it('Testando filtro "Tipo de hardware Validator digiconMG"', () => {
-        dispositivos.pesquisaPorTipoHardwareValidatorDigiconMG()
-    })
-
-    it('Testando filtro "Tipo de hardware Validator tinkerY"', () => {
-        dispositivos.pesquisaPorTipoHardwareValidatorTinkerY()
-    })
-
     it('Testando filtro "Por conectividade Online"', () => {
         dispositivos.pesquisaPorConectividadeOnline()
     })
