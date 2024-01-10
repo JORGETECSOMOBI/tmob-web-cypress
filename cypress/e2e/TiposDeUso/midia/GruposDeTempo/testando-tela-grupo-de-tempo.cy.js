@@ -1,6 +1,6 @@
 import grupoDeTempo from '../../../../pages/midia/GrupoDetempoPage'
 
-describe('Testando todos os elementos da home de Grupo de tempo', () => {
+describe('Testando tela de Grupo de tempo', () => {
     beforeEach(() => {
         grupoDeTempo.beforeGrupoDeTempo()
     })

@@ -1,6 +1,6 @@
 import bin from '../../../../pages/Emv/BinPage'
 
-describe('Criando e editando BIN', ()=>{
+describe('Testando a tela BIN', ()=>{
 
     beforeEach(()=>{
         bin.beforeBin()

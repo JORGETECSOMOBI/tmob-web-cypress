@@ -1,6 +1,6 @@
 import cotas from '../../../../pages/midia/CotasPage'
 
-describe('Criando e editando cotas', () => {
+describe('Testando tela de cotas', () => {
     beforeEach(() => {
         cotas.beforeCotas()
     })

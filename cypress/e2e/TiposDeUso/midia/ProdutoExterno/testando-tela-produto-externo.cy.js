@@ -1,6 +1,6 @@
 import produtoExterno from '../../../../pages/midia/ProdutoExternoPage'
 
-describe('Crinado e editando um produto externo', () => {
+describe('Testando tela produto externo', () => {
 
     beforeEach(() => {
         produtoExterno.beforeProdutoExterno()

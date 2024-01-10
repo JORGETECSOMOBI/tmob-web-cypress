@@ -1,6 +1,6 @@
 import emissor from '../../../../pages/Transporte/EmissorPage'
 
-describe('Testando "Consócio"', () => {
+describe('Testando "Emissor"', () => {
 
     beforeEach(() => {
         emissor.beforeEmissor()

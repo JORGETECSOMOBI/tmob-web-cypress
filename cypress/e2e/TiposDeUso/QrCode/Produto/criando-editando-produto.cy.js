@@ -1,6 +1,6 @@
 import produto from '../../../../pages/QrCode/ProdutoPage'
 
-describe('Testando tela "Produto"', () => {
+describe('Criando e editando "Produto"', () => {
 
     beforeEach(() => {
         produto.beforeProduto()

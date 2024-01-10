@@ -1,6 +1,6 @@
 import arquivosOperacionais from '../../../../pages/midia/ArquivosOperacionaisPage'
 
-describe('Testando todas as funcionalidades de Arquivos Operacionais', () => {
+describe('Testando tela Arquivos Operacionais', () => {
     beforeEach(() => {
         arquivosOperacionais.beforeArquivosOperacionais()
     })

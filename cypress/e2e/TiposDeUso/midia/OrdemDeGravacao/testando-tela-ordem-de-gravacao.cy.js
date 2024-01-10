@@ -1,6 +1,6 @@
 import gravacao from '../../../../pages/midia/OrdemDeGravacaoPage'
 
-describe('Testando todas as funcionalidades da home de Ordem de gravação', () => {
+describe('Testando tela Ordem de gravação', () => {
 
     beforeEach(() => {
         gravacao.beforeOrdemDegravacao()

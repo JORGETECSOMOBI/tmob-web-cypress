@@ -1,6 +1,6 @@
 import razoesHotilst from '../../../../pages/midia/RazoesDeHotlistPage'
 
-describe('Testando Home de hotlist', () => {
+describe('Testando tela de hotlist', () => {
     beforeEach(() => {
         razoesHotilst.beforeRazoesHotlist()
     })

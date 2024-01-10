@@ -1,6 +1,6 @@
 import recargas from '../../../../pages/midia/RecargasPage'
 
-describe('Testando todas as funcionalidades de Regargas', () => {
+describe('Testando tela de Regargas', () => {
 
     beforeEach(() => {
         recargas.beforeRecargas()

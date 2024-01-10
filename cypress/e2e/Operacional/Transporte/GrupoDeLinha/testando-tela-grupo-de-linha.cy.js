@@ -1,6 +1,6 @@
 import grupoLinha from '../../../../pages/Transporte/GrupoLinhaPage'
 
-describe('Testando todas funcionalidades da home Grupo de linha', () => {
+describe('Testando tela Grupo de linha', () => {
 
     beforeEach(() => {
         grupoLinha.beforeGrupoLinha()

@@ -1,6 +1,6 @@
 import midia from '../../../../pages/midia/MidiaHome'
 
-describe('Testando home "Midia"', () => {
+describe('Testando tela "Midia"', () => {
 
     beforeEach(() => {
         midia.beforeMidiaHome()
