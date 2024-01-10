@@ -17,8 +17,8 @@ class HardwarePage {
     }
 
     pesquisandoPorSerial() {
-        this.escreveSerial('2431130')
-        componente.validaPesquisaTitle('2431130')
+        this.escreveSerial('2712821')
+        componente.validaPesquisaTitle('2712821')
         return this
     }
 
@@ -111,7 +111,7 @@ class HardwarePage {
         return this
     }
 
-    escreveSerial() {
+    escreveSerialFaker() {
         cy.get('#hardwareSerial').type(faker.random.number())
         return this
     }
@@ -137,7 +137,7 @@ class HardwarePage {
         componente
             .clicaBotao('Novo hardware')
         this
-            .escreveSerial()
+            .escreveSerialFaker()
             .dataEspiracao('19/12/1963')
             .selecionaDevice('pos')
             .selecionaHardware('v500-1')

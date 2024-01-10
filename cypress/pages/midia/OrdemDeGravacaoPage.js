@@ -19,7 +19,7 @@ class OrdemDeGravacaoPage {
         this
             .novoCadastroOrdemDeGravacao()
             .selecionaTipoDeOrdem('Single')
-            .selecionaTipoDeMidiaSingle('52.01.00000004-1')
+            .selecionaTipoDeMidiaSingle('52.01.00000002-5')
         componente
             .clicaBotao('Salvar')
         this
@@ -34,7 +34,7 @@ class OrdemDeGravacaoPage {
         this
             .novoCadastroOrdemDeGravacao()
             .selecionaTipoDeOrdem('Single')
-            .selecionaTipoDeMidiaSingle('52.01.00000004-1')
+            .selecionaTipoDeMidiaSingle('52.01.00000002-5')
         componente
             .clicaBotao('Salvar')
         cy.wait(1000)
@@ -211,7 +211,7 @@ class OrdemDeGravacaoPage {
 
     filtroStatusPendente() {
         const status = 'Pendente'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status).should('have.text', status)
         return this
@@ -220,7 +220,7 @@ class OrdemDeGravacaoPage {
     filtroStatusProcessando() {
         const status = 'Processando'
         const status2 = ' Processando'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status2).should('have.text', status2)
         return this
@@ -228,7 +228,7 @@ class OrdemDeGravacaoPage {
 
     filtroStatusPausado() {
         const status = 'Pausado'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status).should('have.text', status)
         return this
@@ -236,7 +236,7 @@ class OrdemDeGravacaoPage {
 
     filtroStatusErro() {
         const status = 'Erro'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status).should('have.text', status)
         return this
@@ -244,7 +244,7 @@ class OrdemDeGravacaoPage {
 
     filtroStatusProcessado() {
         const status = 'Processado'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status).should('have.text', status)
         return this
@@ -252,7 +252,7 @@ class OrdemDeGravacaoPage {
 
     filtroStatusCancelado() {
         const status = 'Cancelado'
-        cy.get(':nth-child(4) > .ant-select > .ant-select-selector').click()
+        cy.get('#isActive').click()
         cy.get('[title]').contains(status).click({ force: true })
         cy.get('[data-row-key]').contains(status).should('have.text', status)
         return this

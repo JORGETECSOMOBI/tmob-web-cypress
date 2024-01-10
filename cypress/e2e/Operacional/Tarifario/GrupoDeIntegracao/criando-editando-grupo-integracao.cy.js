@@ -1,6 +1,6 @@
 import integracao from '../../../../pages/Tarifario/GrupoDeIntegracaoPage'
 
-describe('Testando tela de "Regras"', () => {
+describe('Testando tela de "grupo de Integração"', () => {
 
     beforeEach(() => {
         integracao.beforeGrupoDeIntegracao()

@@ -38,13 +38,14 @@ class CotasPage {
             .escreveDescricao('AAAA Cota Automação')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao('AAAA Cota Automação editada')
+            .escreveDescricao('AAAA Cota editada')
             .selecionaTipo('Por valor')
         this
+             .valorMensal('100')
             .limpaInicioMes()
             .inicioMes('10')
-            .limpaValorMensal()
-            .valorMensal('5')
+
+       
         componente.selecionaStatus('Ativo')
             .clicaBotaoSalvar()
             .clicaBotaoSim()
