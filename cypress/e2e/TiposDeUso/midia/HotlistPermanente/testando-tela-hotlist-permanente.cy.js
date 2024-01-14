@@ -1,6 +1,6 @@
 import hotlistPermanente from '../../../../pages/midia/hotlistPermanente'
 
-describe('Testando a Home de Hotlist Permanente', () => {
+describe('Testando a tela de Hotlist Permanente', () => {
     beforeEach(() => {
         hotlistPermanente.beforeHotListPermanente()
     })

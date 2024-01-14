@@ -1,6 +1,6 @@
 import limite from '../../../../pages/midia/LimiteDeUso'
 
-describe('Testando todos os elementos em Home limites de uso', () => {
+describe('Testando tela limites de uso', () => {
 
     beforeEach(() => {
         limite.beforeLimiteUso()

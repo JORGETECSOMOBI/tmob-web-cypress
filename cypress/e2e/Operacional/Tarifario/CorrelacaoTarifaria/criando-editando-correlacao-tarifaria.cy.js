@@ -1,6 +1,6 @@
 import correlacao from '../../../../pages/Tarifario/CorrelacaoTarifariaPage'
 
-describe('Testando tela de "Coreelação Tarifária"', () => {
+describe('Testando tela de "Correlação Tarifária"', () => {
 
     beforeEach(() => {
         correlacao.beforeCorrelacaoTarifaria()

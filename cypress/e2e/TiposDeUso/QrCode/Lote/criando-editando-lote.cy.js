@@ -1,6 +1,6 @@
 import lote from '../../../../pages/QrCode/LotePage'
 
-describe('Testando tela "Lote"', () => {
+describe('Criando e editando "Lote"', () => {
 
     beforeEach(() => {
         lote.beforeLote()

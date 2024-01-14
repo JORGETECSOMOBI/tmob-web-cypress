@@ -1,6 +1,6 @@
 import hotlistMidia from '../../../../pages/midia/HotlistDeMidiaPage'
 
-describe('Testando home Hotlist de midia', () => {
+describe('Testando tela Hotlist de midia', () => {
     beforeEach(() => {
         hotlistMidia.beforeHotListMidia()
     })

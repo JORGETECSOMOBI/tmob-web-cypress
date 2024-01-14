@@ -1,6 +1,6 @@
 import documento from '../../../../pages/Atendimento/TiposDeDocumentosPage'
 
-describe('Testando "tipo de Usuário', () => {
+describe('Testando "tipo de documento', () => {
 
     beforeEach(() => {
         documento.beforeTiposDocumentos()

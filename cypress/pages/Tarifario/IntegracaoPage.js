@@ -17,6 +17,7 @@ class IntegracaoPage {
         return this
     }
 
+<<<<<<< HEAD
     cadastroIntegracaoTodasasLinhas() {
         componente
             .clicaBotaoNovo()
@@ -267,17 +268,55 @@ class IntegracaoPage {
     filtroTipoDestino(tipoDestino) {
         cy.get('#toDestLineId').click()
         cy.get('.ant-select-item-option-content').contains(tipoDestino).click({ force: true })
+=======
+    cadastroIntegracao() {
+        componente
+            .clicaBotaoNovo()
+        return this
+    }
+
+    editaIntegracao() {
+        componente
+            .clicaBotaoEditar()
+        return this
+    }
+
+    selecionaPorTipoRegular() {
+        this.filtroPorTipo('Regular')
+        componente.validaPesquisaDataRowKey('Regular')
+        return this
+    }
+
+    selecionaPorTipoTranferencia() {
+        this.filtroPorTipo('Transferência')
+        componente.validaPesquisaDataRowKey('Transferência')
+>>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         return this
     }
 
     filtroPorId() {
         componente
+<<<<<<< HEAD
             .escreveId('21')
             .validaPesquisaAntTableRow('21')
         return this
     }
 
     selecionaTipo(tipo) {
+=======
+            .escreveId('281963')
+            .validaPesquisaAntTableRow('281963')
+        return this
+    }
+
+    filtroPorTipoOrigem(tipoOrigem) {
+        cy.get('#toOrigLineId').click()
+        cy.get('.ant-select-item-option-content').contains(tipoOrigem).click()
+        return this
+    }
+
+    filtroPorTipo(tipo) {
+>>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         cy.get('#type').click()
         cy.get('.ant-select-item-option-content').contains(tipo).click()
         return this
@@ -299,7 +338,10 @@ class IntegracaoPage {
         return this
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
     botaoNovo() {
         componente
             .clicaBotaoNovo()
@@ -323,8 +365,50 @@ class IntegracaoPage {
 
     botaoLimpaFiltro() {
         componente
+<<<<<<< HEAD
             .escreveId('Testando limpar filtros')
             .limpaFiltro()
+=======
+            .escreveId("Teste limpar filtro")
+            .limpaFiltro()
+        cy.get('#id').should('have.text', '')
+        return this
+    }
+
+    filtrandoPorTipoOrigemTodasAsLinhas() {
+        this.filtroPorTipoOrigem('Todas as linhas')
+        componente.validaPesquisaDataRowKey('Todas as linhas')
+        return this
+    }
+
+    filtrandoPorTipoOrigemLinha() {
+        this.filtroPorTipoOrigem('Linha')
+        componente.validaPesquisaDataRowKey('Linha')
+        return this
+    }
+
+    filtrandoPorTipoOrigemGrupoDeLinhas() {
+        this.filtroPorTipoOrigem('Grupo de linhas')
+        componente.validaPesquisaDataRowKey('Grupo de linhas')
+        return this
+    }
+
+    filtrandoPorTipoOrigemTodasAsIntegracoes() {
+        this.filtroPorTipoOrigem('Todas as integrações')
+        componente.validaPesquisaDataRowKey('Todas as integrações')
+        return this
+    }
+
+    filtrandoPorTipoOrigemIntegracao() {
+        this.filtroPorTipoOrigem('Integração')
+        componente.validaPesquisaDataRowKey('Integração')
+        return this
+    }
+
+    filtrandoPorTipoOrigemGrupoDeIntegracoes() {
+        this.filtroPorTipoOrigem('Grupo de integrações')
+        componente.validaPesquisaDataRowKey('Grupo de integrações')
+>>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         return this
     }
 }

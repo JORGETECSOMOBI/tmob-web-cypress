@@ -1,6 +1,6 @@
 import grupo from '../../../../pages/Tarifario/GrupoDeLinhaLtgPage'
 
-describe('Testando tela de "Regras"', () => {
+describe('Testando tela de "Grupo de linha"', () => {
 
     beforeEach(() => {
         grupo.beforeGrupoDeLinha()

@@ -1,6 +1,6 @@
 import organizacao from '../../../../pages/Atendimento/OrganizacaoPge'
 
-describe('Testando a tela "Usuário"', () => {
+describe('Testando a tela "Organização"', () => {
 
     beforeEach(() => {
         organizacao.beforeOrg()

@@ -1,6 +1,6 @@
 import arquivosMidia from '../../../../pages/midia/ArquivosDeMidiaPage'
 
-describe('Testando Home de Arquivos de mídia', () => {
+describe('Testando tela de Arquivos de mídia', () => {
     beforeEach(() => {
         arquivosMidia.beforeArquivoDeMidia()
     })

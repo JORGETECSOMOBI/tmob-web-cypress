@@ -1,6 +1,6 @@
 import hotlist from '../../../../pages/Transporte/MotivosDeHotlistPage'
 
-describe('Testando home de hotlist', () => {
+describe('Testando tela de hotlist', () => {
 
     beforeEach(() => {
         hotlist.beforeMotivosHotlist()

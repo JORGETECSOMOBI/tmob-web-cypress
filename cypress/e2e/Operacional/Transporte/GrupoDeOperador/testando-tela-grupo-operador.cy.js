@@ -1,6 +1,6 @@
 import grupoOperador from '../../../../pages/Transporte/GrupoOperadorPage'
 
-describe('Testando todas as funcionalidades da home Grupo de operador', () => {
+describe('Testando tela Grupo de operador', () => {
 
     beforeEach(() => {
         grupoOperador.beforeGrupoOperador()

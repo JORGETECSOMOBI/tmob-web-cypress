@@ -1,6 +1,6 @@
 import integracao from '../../../../pages/Tarifario/GrupoDeIntegracaoPage'
 
-describe('Testando tela de "Regras"', () => {
+describe('Testando tela de "Grupo de Integração"', () => {
 
     beforeEach(() => {
         integracao.beforeGrupoDeIntegracao()
@@ -14,11 +14,11 @@ describe('Testando tela de "Regras"', () => {
         integracao.filtroPorDescricao()
     })
 
-    it.skip('Testando filtro por "Status Ativo"', () => {
+    it.skip('Testando filtro por "Status Ativo", (Filtros ausentes na página, aguardando alinhamento sobre regra de negócio para finalizar)', () => {
         integracao.filtroPorStatusAtivo()
     })
 
-    it.skip('Testando filtro por "Status Inativo"', () => {
+    it.skip('Testando filtro por "Status Inativo", (Filtros ausentes na página, aguardando alinhamento sobre regra de negócio para finalizar', () => {
         integracao.filtroPorStatusInativo
     })
 

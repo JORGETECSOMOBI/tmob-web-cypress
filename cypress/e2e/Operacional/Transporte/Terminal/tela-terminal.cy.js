@@ -1,6 +1,6 @@
 import terminal from "../../../../pages/Transporte/TerminalPage"
 
-describe('Testando as funcionalidades da tela "Terminal"', () => {
+describe('Testando a tela "Terminal"', () => {
 
     beforeEach(() => {
         terminal.beforeTerminal()

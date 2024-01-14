@@ -1,6 +1,6 @@
 import usuario from '../../../../pages/Atendimento/UsuarioPage'
 
-describe('Acessando ususário e Testando Logs de alterações', () => {
+describe('Testando Logs de alterações', () => {
 
     beforeEach(() => {
         usuario.beforeUsuario()
