@@ -17,7 +17,6 @@ class IntegracaoPage {
         return this
     }
 
-<<<<<<< HEAD
     cadastroIntegracaoTodasasLinhas() {
         componente
             .clicaBotaoNovo()
@@ -268,7 +267,7 @@ class IntegracaoPage {
     filtroTipoDestino(tipoDestino) {
         cy.get('#toDestLineId').click()
         cy.get('.ant-select-item-option-content').contains(tipoDestino).click({ force: true })
-=======
+    }
     cadastroIntegracao() {
         componente
             .clicaBotaoNovo()
@@ -290,20 +289,18 @@ class IntegracaoPage {
     selecionaPorTipoTranferencia() {
         this.filtroPorTipo('Transferência')
         componente.validaPesquisaDataRowKey('Transferência')
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         return this
     }
 
     filtroPorId() {
         componente
-<<<<<<< HEAD
             .escreveId('21')
             .validaPesquisaAntTableRow('21')
         return this
     }
 
     selecionaTipo(tipo) {
-=======
+        componente
             .escreveId('281963')
             .validaPesquisaAntTableRow('281963')
         return this
@@ -316,7 +313,6 @@ class IntegracaoPage {
     }
 
     filtroPorTipo(tipo) {
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         cy.get('#type').click()
         cy.get('.ant-select-item-option-content').contains(tipo).click()
         return this
@@ -338,10 +334,6 @@ class IntegracaoPage {
         return this
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
     botaoNovo() {
         componente
             .clicaBotaoNovo()
@@ -365,10 +357,8 @@ class IntegracaoPage {
 
     botaoLimpaFiltro() {
         componente
-<<<<<<< HEAD
             .escreveId('Testando limpar filtros')
             .limpaFiltro()
-=======
             .escreveId("Teste limpar filtro")
             .limpaFiltro()
         cy.get('#id').should('have.text', '')
@@ -408,7 +398,6 @@ class IntegracaoPage {
     filtrandoPorTipoOrigemGrupoDeIntegracoes() {
         this.filtroPorTipoOrigem('Grupo de integrações')
         componente.validaPesquisaDataRowKey('Grupo de integrações')
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         return this
     }
 }

@@ -10,9 +10,6 @@ describe('Testando tela de "Integração"', () => {
         integracao.filtroPorId()
     })
 
-<<<<<<< HEAD
-    it('Testando filtro por "Status Ativo"', () => {
-=======
     it('Testando filtro por tipo "Regular"', () => {
         integracao.selecionaPorTipoRegular()
     })
@@ -22,7 +19,6 @@ describe('Testando tela de "Integração"', () => {
     })
 
     it('Testando filtro por "Status ativo"', () => {
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         integracao.filtroPorStatusAtivo()
     })
 
@@ -30,7 +26,6 @@ describe('Testando tela de "Integração"', () => {
         integracao.filtroPorStatusInativo()
     })
 
-<<<<<<< HEAD
     it('Testando filtro por "tipoDeOrigemLinha"', () => {
         integracao.filtrandoPorTipoDeOrigemLinha()
     })
@@ -97,45 +92,13 @@ describe('Testando tela de "Integração"', () => {
 
     it.skip('Testando filtro por "Destino", "Grupo de linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
         integracao.filtrandoPorDestinoGrupoDeLinhas()
-=======
-    it.skip('Testando filtro por tipo de origem "Todas as linhas"(Chamado aberto para correções, TMOB-2704', () => {
-        integracao.filtrandoPorTipoOrigemTodasAsLinhas()
-    })
-
-    it('Testando filtro por tipo de origem "Linha"', () => {
-        integracao.filtrandoPorTipoOrigemLinha()
-    })
-
-    it('Testando filtro por tipo de origem "Grupo de linhas"', () => {
-        integracao.filtrandoPorTipoOrigemGrupoDeLinhas()
-    })
-
-    it('Testando filtro por tipo de origem "Todas as integrações"', () => {
-        integracao.filtrandoPorTipoOrigemTodasAsIntegracoes()
-    })
-
-    it('Testando filtro por tipo de origem "Integração"', () => {
-        integracao.filtrandoPorTipoOrigemIntegracao()
-    })
-
-    it('Testando filtro por tipo de origem "Grupo de integrações"', () => {
-        integracao.filtrandoPorTipoOrigemGrupoDeIntegracoes()
-    })
-
-    it('Testando botão "Novo"', () => {
-        integracao.botaoNovo()
-    })
-
-    it('Testando botão "Editar"', () => {
-        integracao.botaoEditar()
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
     })
 
     it('Testando botão "Visualizar"', () => {
         integracao.botaoVisualizar()
     })
 
-<<<<<<< HEAD
+
     it('Testando Botão "Editar"', () => {
         integracao.botaoEditar()
     })
@@ -144,10 +107,7 @@ describe('Testando tela de "Integração"', () => {
         integracao.botaoNovo()
     })
 
-    it('Testando filtro por "Limpa Filtro"', () => {
-=======
     it('Testando botão "Limpa filtro"', () => {
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
         integracao.botaoLimpaFiltro()
     })
 })
