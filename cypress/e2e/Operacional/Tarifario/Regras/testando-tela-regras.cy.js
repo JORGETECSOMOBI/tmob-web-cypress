@@ -39,7 +39,7 @@ describe('Testando tela de "Regras"', () => {
     })
 
     it('Testando filtro por "Status Inativo"', () => {
-        regras.filtroPorStatusInativo
+        regras.filtroPorStatusInativo()
     })
 
     it('Testando filtro por "Padrão Sim"', () => {
