@@ -18,8 +18,8 @@ class HotListDeProdutoPage {
 
     filtrandoPorId() {
         componente
-            .escreveDescricao('1165')
-            .validaPesquisaDataRowKey('1165')
+            .escreveDescricao('5839')
+            .validaPesquisaDataRowKey('5839')
 
         return this
     }
@@ -34,8 +34,8 @@ class HotListDeProdutoPage {
 
     filtrandoPorNumeroCartao() {
         componente
-            .escreveDescricao('52.24.00000001-9')
-            .validaPesquisaTitle('52.24.00000001-9')
+            .escreveId('5229000000232')
+            .validaPesquisaTitle('5229000000232	')
         return this
     }
 

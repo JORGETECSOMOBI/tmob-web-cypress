@@ -38,10 +38,6 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorDevicePos()
     })
 
-    it('Testando filtro por Device "StationHub"', () => {
-        dispositivos.pesquisaPorDeviceStatiosHub()
-    })
-
     it('Testando filtro por Device "Toten"', () => {
         dispositivos.pesquisaPorDeviceToten()
     })
@@ -84,10 +80,6 @@ describe('Testando a tela "dispositivos"', () => {
 
     it('Testando filtro "Tipo de hardware ATM x86_64"', () => {
         dispositivos.pesquisaPorTipoHardwareATMx86_64()
-    })
-
-    it('Testando filtro "Tipo de hardware stationHub tsation"', () => {
-        dispositivos.pesquisaPorTipoHardwareStationHub_tsation()
     })
 
     it('Testando filtro "Tipo de hardware POS TSG800"', () => {

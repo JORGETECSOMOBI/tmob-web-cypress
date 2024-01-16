@@ -6,8 +6,8 @@ describe('Testando tela de "Integração"', () => {
         integracao.beforeIntegracao()
     })
 
-<<<<<<< HEAD
-    it.skip('cadastrando integração origem, "Todas as linhas", (Em desenvolvimento)', () => {
+ 
+    it.only('cadastrando integração origem, "Todas as linhas", (Em desenvolvimento)', () => {
         integracao.cadastroIntegracaoTodasasLinhas()
     })
 
@@ -29,13 +29,13 @@ describe('Testando tela de "Integração"', () => {
 
     it.skip('cadastrando integração origem, "integração única", (Em desenvolvimento)', () => {
         integracao.cadastroIntegracaoUnica()
-=======
+    })
+
     it('Cadastrando "Grupo de integração"', () => {
         integracao.cadastroIntegracao()
     })
 
     it('Editando "Grupo de integração"', () => {
         integracao.editaIntegracao()
->>>>>>> a571edddbf60f3c1300420b6d822867c1b565881
     })
 })

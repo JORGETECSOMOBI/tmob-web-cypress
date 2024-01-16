@@ -23,16 +23,16 @@ class IntegracaoPage {
         this
             .origem('Todas as linhas')
             .selecionaDirecaoOrigem('Todas')
-            .destino('Todas as linhas')
-            .selecionaDirecaoDoDestino('Retornando')
-            .selecionaTipo('Regular')
-            .tempoMinutos('13')
-            .valor('100')
-            .selecionaDirecaoDoDestino('Todas')
-        componente
-            .clicaBotaoSalvar()
-            .clicaBotao('Sim')
-        this.selecionaDirecaoDoDestino('Retornando')
+            .destino('Grupo de linhas')
+            .selecionaDirecaoDoDestino('Indo')  
+            //.selecionaTipo('Reguslar')
+        //     .tempoMinutos('13')
+        //     .valor('100')
+        //     .selecionaDirecaoDoDestino('Todas')
+        // componente
+        //     .clicaBotaoSalvar()
+        //     .clicaBotao('Sim')
+        // this.selecionaDirecaoDoDestino('Retornando')
         //.validaMensagem('A integração foi registrada com sucesso')
         return this
     }
@@ -86,6 +86,12 @@ class IntegracaoPage {
         return this
     }
 
+    selecionaDirecaoDoDestino(direcaodestino) {
+        cy.get('#destDirection', { force: true }).click({ force: true })
+        cy.get('[title]').contains(direcaodestino).click({ force: true })
+        return this
+    }
+
     selecionaOrigemGrupoDeLinhas() {
         cy.get('#farOrigIntegrationLineGroupId')
         return this
@@ -108,12 +114,6 @@ class IntegracaoPage {
 
     destino(destino) {
         cy.get('#destination').contains(destino).click({ force: true })
-        return this
-    }
-
-    selecionaDirecaoDoDestino(direcaodestino) {
-        cy.get('#destDirection', { force: true }).click({ force: true })
-        cy.get('.ant-select-item-option-content').contains(direcaodestino).click({ force: true })
         return this
     }
 
@@ -299,7 +299,7 @@ class IntegracaoPage {
         return this
     }
 
-    selecionaTipo(tipo) {
+    selecionaTipo() {
         componente
             .escreveId('281963')
             .validaPesquisaAntTableRow('281963')

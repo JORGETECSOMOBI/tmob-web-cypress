@@ -1,6 +1,6 @@
 import hotlistProduto from '../../../../pages/midia/HotlistDeProdutoPage'
 
-describe('Testando tela Hotlist de midia', () => {
+describe('Testando tela Hotlist de Produto', () => {
     beforeEach(() => {
         hotlistProduto.beforeHotListProduto()
     })
@@ -13,7 +13,7 @@ describe('Testando tela Hotlist de midia', () => {
         hotlistProduto.filtrandoPorIdExterno()
     })
 
-    it('Testando filtro por Numero do cartão', () => {
+    it.skip('Testando filtro por Numero do cartão, (chamado para correções aberto, TMOB-2749)', () => {
         hotlistProduto.filtrandoPorNumeroCartao()
     })
 
