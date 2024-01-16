@@ -22,18 +22,16 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Todas as linhas')
-            .selecionaDirecaoOrigem('Todas')
-            .destino('Grupo de linhas')
-            .selecionaDirecaoDoDestino('Indo')  
-            //.selecionaTipo('Reguslar')
-        //     .tempoMinutos('13')
-        //     .valor('100')
-        //     .selecionaDirecaoDoDestino('Todas')
-        // componente
-        //     .clicaBotaoSalvar()
-        //     .clicaBotao('Sim')
-        // this.selecionaDirecaoDoDestino('Retornando')
-        //.validaMensagem('A integração foi registrada com sucesso')
+            .selecionaDirecaoOrigem('Indo')
+            .destino('Todas as linhas')
+            .selecionaDirecaoDoDestino('Indo')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
         return this
     }
 
@@ -42,6 +40,18 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Grupo de linhas')
+            .selecionaDirecaoOrigem('Indo')
+            .selecionaOrigemGrupoDeLinhas('AAAAA AUTOMAÇÃO')
+            .destino('Todas as linhas')
+            .selecionaDirecaoDoDestino('Indo')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
+        return this
     }
 
     cadastroIntegracaoLinha() {
@@ -49,6 +59,20 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Linha')
+            .selecionaDirecaoOrigem('Indo')
+            .selecionaOrigemLinha('AAAA AUTOMAÇÃO LINHA')
+            .destino('Linha')
+            .selecionaDirecaoDoDestinoLinha('Todas')
+            .selecionaLinhaDodestino('miracatibos')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+            .maxIntegracao('5')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
+            return this
     }
 
     cadastroIntegracaoTodasIntegracoes() {
@@ -56,6 +80,18 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Todas as integrações')
+            .selecionaDirecaoOrigem('Indo')
+            .destino('Linha')
+            .selecionaDirecaoDoDestinoLinha('Indo')
+            .selecionaLinhaDodestino('miracatibos')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+            .maxIntegracao('5')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
         return this
     }
 
@@ -64,6 +100,18 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Grupo de integrações')
+            .selecionaDirecaoOrigem('Indo')
+            .destino('Linha')
+            .selecionaDirecaoDoDestinoLinha('Indo')
+            .selecionaLinhaDodestino('miracatibos')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+            .maxIntegracao('5')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
         return this
     }
 
@@ -72,6 +120,18 @@ class IntegracaoPage {
             .clicaBotaoNovo()
         this
             .origem('Integração única')
+            .selecionaDirecaoOrigem('Indo')
+            .destino('Linha')
+            .selecionaDirecaoDoDestinoLinha('Indo')
+            .selecionaLinhaDodestino('miracatibos')
+            .filtroPorTipo('Regular')
+            .tempoMinutos('13')
+            .valor('100')
+            .maxIntegracao('5')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi registrada com sucesso')
         return this
     }
 
@@ -86,19 +146,25 @@ class IntegracaoPage {
         return this
     }
 
-    selecionaDirecaoDoDestino(direcaodestino) {
-        cy.get('#destDirection', { force: true }).click({ force: true })
-        cy.get('[title]').contains(direcaodestino).click({ force: true })
+    selecionaDirecaoDoDestino(destino) {
+        cy.get('#destDirection').click({ force: true })
+        cy.get('.ant-select-item-option-content').eq(6).contains(destino).click({ force: true })
         return this
     }
 
-    selecionaOrigemGrupoDeLinhas() {
-        cy.get('#farOrigIntegrationLineGroupId')
+    selecionaDirecaoDoDestinoLinha(destino) {
+        cy.get('#destDirection').click({ force: true })
+        cy.get('.ant-select-item-option-content').eq(6).should('have.text', destino).click()
         return this
     }
 
-    selecionaOrigemLinha() {
-        cy.get('#toOrigLineId')
+    selecionaOrigemGrupoDeLinhas(origem) {
+        cy.get('#farOrigIntegrationLineGroupId').type(origem, { force: true },).type(`{enter}`)
+        return this
+    }
+
+    selecionaOrigemLinha(linha) {
+        cy.get('#toOrigLineId', { force: true }).type(linha, { force: true }).type(`{enter}`)
         return this
     }
 
@@ -123,9 +189,8 @@ class IntegracaoPage {
         return this
     }
 
-    selecionaLinhaDodestino() {
-        cy.get('#toDestLineId').click()
-        cy.get('.ant-select-item-option-content').contains('').click({ force: true })
+    selecionaLinhaDodestino(linha) {
+        cy.get('#toDestLineId').type(linha, { force: true }).type(`{enter}`)
         return this
     }
 
@@ -151,8 +216,13 @@ class IntegracaoPage {
         return this
     }
 
-    maxIntegracao() {
-        cy.get('#maxIntegrationCount').type('5')
+    maxIntegracao(max) {
+        cy.get('#maxIntegrationCount').type(max, { force: true })
+        return this
+    }
+
+    limpaMaxIntegracao() {
+        cy.get('#maxIntegrationCount').clear({ force: true })
         return this
     }
 
@@ -231,13 +301,9 @@ class IntegracaoPage {
         return this
     }
 
-    filtrandoPorDestinoTodasAsLinhas() {
-        this.filtroDestino('Todas as linhas')
-        return this
-    }
-
-    filtrandoPorDestinoLinha() {
-        this.filtroDestino('Linha')
+    filtrandoPorDestino() {
+        this.filtrandoPorTipoDestinoLinha()
+        cy.get('#rc_select_14').type('AAAA AUTOMAÇÃO LINHA').wait(2000).type(`{enter}`)
         return this
     }
 
@@ -277,6 +343,14 @@ class IntegracaoPage {
     editaIntegracao() {
         componente
             .clicaBotaoEditar()
+        this
+            .origem('Todas as integrações')
+            .limpaMaxIntegracao()
+            .maxIntegracao('20')
+        componente
+            .clicaBotaoSalvar()
+            .clicaBotao('Sim')
+            .validaMensagem('A integração foi editada com sucesso')
         return this
     }
 

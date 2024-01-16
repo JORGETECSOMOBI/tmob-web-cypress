@@ -46,31 +46,31 @@ describe('Testando tela de "Integração"', () => {
         integracao.filtrandoPorTipoDeOrigemGrupoDeIntegracoes()
     })
 
-    it.skip('Testando filtro por "Origem", "Linha", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Linha"', () => {
         integracao.filtrandoPorOrigemLinha()
     })
 
-    it.skip('Testando filtro por "Origem", "Todas as Linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Todas as Linhas"', () => {
         integracao.filtrandoPorOrigemTodasAsLinhas()
     })
 
-    it.skip('Testando filtro por "Origem", "Grupo de Linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Grupo de Linhas"', () => {
         integracao.filtrandoPorOrigemGrupoDeLinhas()
     })
 
-    it.skip('Testando filtro por "Origem", "Todas as Integracoes", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Todas as Integracoes"', () => {
         integracao.filtrandoPorOrigemTodasIntegracoes()
     })
 
-    it.skip('Testando filtro por "Origem", "Integracao", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Integracao"', () => {
         integracao.filtrandoPorOrigemIntegracao()
     })
 
-    it.skip('Testando filtro por "Origem", "Grupo de Integracoes", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Origem", "Grupo de Integracoes"', () => {
         integracao.filtrandoPorOrigemGrupoDeIntegracoes()
     })
 
-    it.skip('Testando filtro por "Tipo de destino", "Todas as linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
+    it('Testando filtro por "Tipo de destino", "Todas as linhas"', () => {
         integracao.filtrandoPorTipoDestinoTodasAsLinhas()
     })
 
@@ -82,16 +82,9 @@ describe('Testando tela de "Integração"', () => {
         integracao.filtrandoPorTipoDestinoGrupoDeLinhas()
     })
 
-    it.skip('Testando filtro por "Destino", "Todas as linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
-        integracao.filtrandoPorDestinoTodasAsLinhas()
-    })
-
-    it.skip('Testando filtro por "Destino", "Linha", ("Aguardando geração de massa de testes para finalizar")', () => {
-        integracao.filtrandoPorDestinoLinha()
-    })
-
-    it.skip('Testando filtro por "Destino", "Grupo de linhas", ("Aguardando geração de massa de testes para finalizar")', () => {
-        integracao.filtrandoPorDestinoGrupoDeLinhas()
+    it
+    ('Testando filtro por "Destino"', () => {
+        integracao.filtrandoPorDestino()
     })
 
     it('Testando botão "Visualizar"', () => {

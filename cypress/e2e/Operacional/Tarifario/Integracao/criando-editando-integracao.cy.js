@@ -7,35 +7,31 @@ describe('Testando tela de "Integração"', () => {
     })
 
  
-    it.only('cadastrando integração origem, "Todas as linhas", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "Todas as linhas"', () => {
         integracao.cadastroIntegracaoTodasasLinhas()
     })
 
-    it.skip('cadastrando integração origem, "Grupo de linhas", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "Grupo de linhas"', () => {
         integracao.cadastroIntegracaoGrupoDeLinhas()
     })
 
-    it.skip('cadastrando integração origem, "Linha", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "Linha"', () => {
         integracao.cadastroIntegracaoLinha()
     })
 
-    it.skip('cadastrando integração origem, "Todas as integrações", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "Todas as integrações"', () => {
         integracao.cadastroIntegracaoTodasIntegracoes()
     })
 
-    it.skip('cadastrando integração origem, "Grupo de integrações", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "Grupo de integrações"', () => {
         integracao.cadastroIntegracaoGrupoDeIntegracoes()
     })
 
-    it.skip('cadastrando integração origem, "integração única", (Em desenvolvimento)', () => {
+    it('cadastrando integração origem, "integração única"', () => {
         integracao.cadastroIntegracaoUnica()
     })
 
-    it('Cadastrando "Grupo de integração"', () => {
-        integracao.cadastroIntegracao()
-    })
-
-    it('Editando "Grupo de integração"', () => {
+    it.skip('Editando "Grupo de integração", (Chamado para correções aberto: TMOB 2767', () => {
         integracao.editaIntegracao()
     })
 })
