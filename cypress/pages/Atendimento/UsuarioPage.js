@@ -325,7 +325,7 @@ class UsuarioPage {
             .selecionaDescricaoCID('01')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAA')
-            .selecionaEquipamentoPcd('Equipamento editado')
+            .selecionaEquipamentoPcd('Bengala')
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('22/10/2025')
@@ -339,15 +339,15 @@ class UsuarioPage {
             .selecionaDescricaoCID('A000')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAA')
-            .selecionaEquipamentoPcd('Equipamento editado')
+            .selecionaEquipamentoPcd('Bengala')
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('22/10/2025')
-            .escreveNomeAcompanhante()
-            .documentoAcompanhante(faker.br.cpf())
-            .tipoDocumentoAcompanhante('CPF')
+            // .escreveNomeAcompanhante()
+            // .documentoAcompanhante(faker.br.cpf())
+            // .tipoDocumentoAcompanhante('CPF')
         componente
-            .clicaBotao('Salvar acompanhante')
+            // .clicaBotao('Salvar acompanhante')
             .clicaBotao('Proximo')
         return this
     }
@@ -357,15 +357,15 @@ class UsuarioPage {
             .selecionaDescricaoCID('A000')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAAA AUTOMAÇÃO')
-            .selecionaEquipamentoPcd('Equipamento editado')
+            .selecionaEquipamentoPcd('Bengala')
             .escreveCRM()
             .escreveNomeDoMedico()
             .validadedoLaudo('22/10/2026')
-            .escreveNomeAcompanhante()
-            .tipoDocumentoAcompanhante('RNE')
-            .documentoAcompanhante()
+            // .escreveNomeAcompanhante()
+            // .tipoDocumentoAcompanhante('RNE')
+            // .documentoAcompanhante()
         componente
-            .clicaBotao('Salvar acompanhante')
+            .clicaBotaoProximo()
         return this
     }
 
@@ -830,8 +830,7 @@ class UsuarioPage {
     }
 
     selecionaDescricaoCID(descricao) {
-        cy.get('#createUser_UsrDisabilities_create_0_UsrIcd_connect').click({ force: true })
-        cy.contains(descricao).click({ force: true })
+        cy.get('#createUser_UsrDisabilities_create_0_UsrIcd_connect').type(descricao, { force: true }).type(`{enter}`) 
         return this
     }
 

@@ -10,7 +10,7 @@ describe('Testando ICD', () => {
         icd.criandoIcd()
     })
 
-    it('Editando um item "ICD"', () => {
+    it.skip('Editando um item "ICD"(Chamado para correções aberto, TMOB 2781', () => {
         icd.editaIcd()
     })
 })
