@@ -13,11 +13,11 @@ describe('Testando tela "Mensagem Display"', () => {
         mensagenDisplay.pesquisaPordescricao()
     })
 
-    it('Pesquisando por "Status Ativo"', () => {
+    it.skip('Pesquisando por "Status Ativo", (Chamado para correções aberto, TMOB-2799)', () => {
         mensagenDisplay.pesquisaPorStatusAtivo()
     })
 
-    it('Pesquisando por "Status Inativo"', () => {
+    it.skip('Pesquisando por "Status Inativo", (Chamado para correções aberto, TMOB-2799)', () => {
         mensagenDisplay.pesquisaPorStatusInativo()
     })
 

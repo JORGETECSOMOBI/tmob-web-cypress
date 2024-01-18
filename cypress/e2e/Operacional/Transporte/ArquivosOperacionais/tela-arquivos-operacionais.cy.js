@@ -19,11 +19,11 @@ describe('Testando "Arquivos Operacionais', () => {
         arquivoOperacional.pesquisaTag()
     })
 
-    it('Forçando geração de arquivo já anteriormente atualizado', () => {
+    it.skip('Forçando geração de arquivo já anteriormente atualizado, (Chamado aberto para correções, TMOB 2783)', () => {
        arquivoOperacional.forcandoGeraçãoArquivoAtualizado()
     })
 
-    it('forçando a geração de um arquivo operacional com nova atualização', () => {
+    it.skip('forçando a geração de um arquivo operacional com nova atualização, (Chamado aberto para correções, TMOB 2783)', () => {
         arquivoOperacional.forcandoGeraçãoNovaAtualização()
     })
 

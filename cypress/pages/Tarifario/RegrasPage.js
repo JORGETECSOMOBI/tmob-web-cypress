@@ -135,17 +135,17 @@ class RegrasPage {
     }
 
     filtroPorModeloTarifaFlatFare() {
-        this.filtroPorModelo('flatFare', 'Tarifa Fixa')
+        this.filtroPorModelo('Tarifa fixa', 'Tarifa Fixa')
         return this
     }
 
     filtroPorModeloTarifaSection() {
-        this.filtroPorModelo('section', 'Seção')
+        this.filtroPorModelo('Sessão', 'Seção')
         return this
     }
 
     filtroPorModeloTarifaCheckinCheckout() {
-        this.filtroPorModelo('checkinCheckout', 'Entrada Saída')
+        this.filtroPorModelo('Check-in - Check-out', 'Entrada Saída')
         return this
     }
 

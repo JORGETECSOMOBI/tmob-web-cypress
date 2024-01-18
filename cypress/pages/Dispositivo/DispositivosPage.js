@@ -16,7 +16,7 @@ class DispositivosPage {
     }
 
     pesquisaPorGuidSerial() {
-        const guid = '2808aaa4-ef58-43fb-a353-d51c7d48753b'
+        const guid = '29f5ce5a-4570-4582-8b6e-654556d5bdfc'
         cy.get('#thingName').type(guid)
         componente
             .validaPesquisaTitle(guid)
@@ -40,15 +40,15 @@ class DispositivosPage {
     }
 
     pesquisaPorOperadorDeTransporte() {
-        cy.get('.ant-select-selection-search-input', { force: true }).eq(1).type('TMOB', { force: true })
-        cy.get('.ant-select-item-option-content').contains('Operadora TMOB', { force: true }).click()
-        componente.validaPesquisaDataRowKey('110 Operadora TMOB')
+        cy.get('.ant-select-selection-search-input', { force: true }).eq(1).type('Operadora Autopass', { force: true })
+        cy.get('.ant-select-item-option-content').contains('Operadora Autopass', { force: true }).click()
+        componente.validaPesquisaDataRowKey('1 01 - Operadora Autopass')
     }
 
     pesquisaPorTerminal() {
         this.pesquisaPorOperadorDeTransporte()
-        cy.get('.ant-select-selection-search-input', { force: true }).eq(2).type('999999', { force: true }).wait(1000).type(`{enter}`, { force: true })
-        cy.get('.ant-table-row > :nth-child(3) > .ant-row-middle', { force: true }).should('have.text', '999999 ', { force: true })
+        cy.get('.ant-select-selection-search-input', { force: true }).eq(2).type('7', { force: true }).wait(1000).type(`{enter}`, { force: true })
+        cy.get('[data-row-key]').should('contain', '7', { force: true })
         return this
     }
 

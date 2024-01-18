@@ -336,7 +336,7 @@ class UsuarioPage {
 
     tipoDeUsuarioEspecialComAcompanhante() {
         this
-            .selecionaDescricaoCID('A000')
+            .selecionaDescricaoCID('AAAA ICD')
             .selecionaTipoAprovacao('Aprovado')
             .selecionaPostoAtendimentoEspecial('AAAAA')
             .selecionaEquipamentoPcd('Bengala')
@@ -697,8 +697,7 @@ class UsuarioPage {
     }
 
     selecionaEquipamentoPcd(equipamento) {
-        cy.get('#createUser_UsrDisabilities_create_0_UsrDisabilityEquipment').click({ force: true })
-        cy.get('.ant-select-item-option-content', { force: true }).contains(equipamento).click({ force: true })
+        cy.get('#createUser_UsrDisabilities_create_0_UsrDisabilityEquipment').type(equipamento, { force: true }).type(`{enter}`)
         return this
     }
 

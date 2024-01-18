@@ -14,7 +14,7 @@ class SecoesPage {
             .tarifario()
         componente
             .selecionaIdioma('PT')
-            .clicaBotao('Sessões')
+            .clicaBotao('Seções')
         return this
     }
 
