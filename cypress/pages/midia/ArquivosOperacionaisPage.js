@@ -175,7 +175,6 @@ class ArquivosOperacionaisPage {
             .validaTexto('Estamos processando seu arquívo operacional.')
             .validaTexto('Seu arquívo operácional foi gerado com sucesso.')
         return this
-
     }
 }
 export default new ArquivosOperacionaisPage
