@@ -105,7 +105,6 @@ class ComponentesPadraoPage {
         return this
     }
 
-
     selecionaTipo(tipo) {
         cy.get('#type').click({ force: true })
         cy.contains(tipo).wait(1000).click({ force: true })
@@ -186,10 +185,6 @@ class ComponentesPadraoPage {
         cy.get('#id').type(id, { force: true })
         cy.wait(1000)
         return this
-    }
-
-    validaItemPesquisaPorId() {
-        cy.get('.ant-table-row > .ant-table-cell-ellipsis').should('have.text', 'cadeira de rodas')
     }
 
     selecionaOperadora(operadora) {
