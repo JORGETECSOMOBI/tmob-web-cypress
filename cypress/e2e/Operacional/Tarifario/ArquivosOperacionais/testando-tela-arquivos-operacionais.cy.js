@@ -22,7 +22,19 @@ describe('Testando tela "Arquivos Operacionais"', () => {
         arquivosoperacionais.filtrandoPorTagPrincipal()
     })
 
-    it('Testando filtro por tag "Alt"', () => {
-        arquivosoperacionais.filtrandoPorTagAlt()
+    it('Alternando tag para "Alt"', () => {
+        arquivosoperacionais.alternandoTagAlt() 
+    })
+        
+    it('Alternando tag para "Pricipal"', () => {
+        arquivosoperacionais.alternandoTagPrincipal()
+    })
+
+    it('Testando botão "Visualizar"', () => {
+        arquivosoperacionais.botaoVisualizar()
+    })
+
+    it('Testando botão "Download"', () => {
+        arquivosoperacionais.download()
     })
 })

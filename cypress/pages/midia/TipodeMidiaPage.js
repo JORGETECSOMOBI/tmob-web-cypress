@@ -36,7 +36,7 @@ class TipoDeMidiaPage {
 
     editandoTipoDeMidia() {
         const nome = 'AAAA MIDIA AUTOMAÇÃO'
-        const sobrenome = faker.name.lastName()
+        const sobrenome = faker.name.firstName()
         componente
             .escreveDescricao(nome)
             .clicaBotaoEditar()

@@ -9,7 +9,7 @@ describe('Criando e editando Tipo de mídia', () => {
         tipoDeMidia.criandoNovotipoDeMidia()
     })
 
-    it('Editando tipo de mídia', () => {
+    it.only('Editando tipo de mídia', () => {
         tipoDeMidia.editandoTipoDeMidia()
     })
 })

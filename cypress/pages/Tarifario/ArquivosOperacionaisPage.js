@@ -23,7 +23,7 @@ class ArquivosOperacionaisPage {
             .validaPesquisaAntTableRow('912')
         return this
     }
-    
+
     filtroPorNomeDoarquivo() {
         componente
             .escreveId('1704924401635_op.enc')
@@ -33,22 +33,22 @@ class ArquivosOperacionaisPage {
 
     filtrandoPorTagAtual() {
         this
-        .filtroPorStatus('Atual')
-        .validaTag('Atual')
+            .filtroPorStatus('Atual')
+            .validaTag('Atual')
         return this
     }
 
     filtrandoPorTagPrincipal() {
         this
-        .filtroPorStatus('Principal')
-        .validaTag('Principal')
+            .filtroPorStatus('Principal')
+            .validaTag('Principal')
         return this
     }
 
     filtrandoPorTagAlt() {
         this
-        .filtroPorStatus('Alt')
-        .validaTag('Alt')
+            .filtroPorStatus('Alt')
+            .validaTag('Alt')
         return this
     }
 
@@ -58,8 +58,41 @@ class ArquivosOperacionaisPage {
         return this
     }
 
+    alternandoTagAlt() {
+        this.alternaTag('Alt')
+        componente.validaPesquisaDataRowKey('Alt')
+        return this
+    }
+
+    alternandoTagPrincipal() {
+        this.alternaTag('Principal')
+        componente.validaPesquisaDataRowKey('Principal')
+        return this
+    }
+
     validaTag(tag) {
         cy.get(':nth-child(6) > .ant-tag').should('contain', tag)
+        return this
+    }
+
+    alternaTag(tag) {
+        cy.get('[data-row-key').eq(0).contains('Tag').click({ force: true })
+        cy.get('#rc_select_10').click({ force: true })
+        cy.wait(1000)
+        cy.get('.ant-select-item-option-content').contains(tag).click({ force: true })
+        cy.get('.ant-modal-footer > .ant-btn-primary').contains('Confirmar').click({ force: true })
+        return this
+    }
+
+    download() {
+        componente.clicaBotao('Download')
+        return this
+    }
+
+    botaoVisualizar() {
+        componente
+            .clicaBotaoHomeVisualizar()
+            .validaTexto('Detalhes')
         return this
     }
 }

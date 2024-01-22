@@ -26,11 +26,11 @@ describe('Testando tela de "Correlação tarifária"', () => {
         correlacao.botaoEditar()
     })
 
-    it.skip('Testando filtro por "Novo", Aguardando alinhamneto a respeito da regra de negócio para finalizar', () => {
+    it.skip('Testando botão "Novo", (Chamado aberto para correções, TMOB-2824)', () => {
         correlacao.botaoNovo()
     })
 
-    it('Testando filtro por "Limpa Filtro"', () => {
+    it('Testando botão "Limpa Filtro"', () => {
         correlacao.botaoLimpaFiltro()
     })
 
