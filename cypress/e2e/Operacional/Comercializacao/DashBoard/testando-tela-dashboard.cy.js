@@ -6,7 +6,7 @@ describe('Testando tela "Dashboard"', () => {
         dashboard.beforeDashboard()
     })
 
-    it.only('Filtrando por "Período"', () => {
+    it('Filtrando por "Período"', () => {
         dashboard.filtroPorPeriodo()
     })
 
