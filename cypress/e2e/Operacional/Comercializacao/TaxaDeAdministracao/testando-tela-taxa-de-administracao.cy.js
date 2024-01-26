@@ -46,11 +46,11 @@ describe('Testando tela "Taxa de administração"', () => {
         taxa.botaoEditar()
     })
 
-    it('Testando filtro por "Novo"', () => {
+    it('Testando Botão "Novo"', () => {
         taxa.botaoNovo()
     })
 
-    it('Testando filtro por "Limpa Filtro"', () => {
+    it('Testando Botão "Limpa Filtro"', () => {
         taxa.botaoLimpaFiltro()
     })
 })

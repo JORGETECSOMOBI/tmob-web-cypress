@@ -147,7 +147,7 @@ class TaxaDeAdministracaoPage {
 
     botaoLimpaFiltro() {
         componente
-            .escreveNome('Testando limpar filtro')
+            .escreveDescricao('Testando limpar filtro')
             .limpaFiltro()
         return this
     }

@@ -161,7 +161,7 @@ class ComponentesPadraoPage {
     }
 
     limpaFiltro() {
-        cy.contains('span', 'Limpar filtro').click({ force: true })
+        cy.contains('span', 'Limpar filtro', { force: true }).click({ force: true })
         return this
     }
 
