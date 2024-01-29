@@ -1,7 +1,6 @@
 import login from '../Login/LoginPage'
 import home from '../Home/HomePage'
 import componente from '../ComponentesPadrao/ComponentesPadraoPage'
-import faker from 'faker-br'
 
 class TaxaDeAdministracaoPage {
 

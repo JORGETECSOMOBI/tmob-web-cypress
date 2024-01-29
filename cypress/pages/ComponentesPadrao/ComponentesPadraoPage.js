@@ -346,6 +346,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    escreveGuid(guid) {
+        cy.get('#guid').type(guid, { force: true })
+        return this
+    }
+
     selecionaAcao(acao) {
         cy.get('#action').click({ force: true })
         cy.contains(acao).click({ force: true })
