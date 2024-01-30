@@ -31,7 +31,7 @@ describe('Testando tela de "Integração"', () => {
         integracao.cadastroIntegracaoUnica()
     })
 
-    it.skip('Editando "Grupo de integração", (Chamado para correções aberto: TMOB 2767', () => {
+    it.skip('Editando "Grupo de integração", (Chamado para correções aberto: TMOB 2767,  status 30/01/2024: Paking-Test)', () => {
         integracao.editaIntegracao()
     })
 })

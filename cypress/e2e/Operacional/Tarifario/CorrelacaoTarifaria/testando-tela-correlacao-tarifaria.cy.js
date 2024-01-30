@@ -26,7 +26,7 @@ describe('Testando tela de "Correlação tarifária"', () => {
         correlacao.botaoEditar()
     })
 
-    it.skip('Testando botão "Novo", (Chamado aberto para correções, TMOB-2824)', () => {
+    it.skip('Testando botão "Novo", (Chamado aberto para correções, TMOB-2824,  status 30/01/2024: waiting-DEV)', () => {
         correlacao.botaoNovo()
     })
 

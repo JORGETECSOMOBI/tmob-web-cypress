@@ -55,6 +55,8 @@ class IcdPage {
             .escreveDescricao('ICD editado')
         this
             .escreveCodigo('01')
+            .limpaValidade()
+            .validade('15')
         componente
             .escreveNomeId('ICD editado')
             .clicaBotao('Salvar')
@@ -70,6 +72,11 @@ class IcdPage {
 
     validade(dias) {
         cy.get('#validity').type(dias)
+        return this
+    }
+
+    limpaValidade() {
+        cy.get('#validity').clear()
         return this
     }
 

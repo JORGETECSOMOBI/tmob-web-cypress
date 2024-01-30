@@ -61,11 +61,11 @@ describe('Testando tela "Uso"', () => {
         uso.filtrandoPorStatusUsado()
     })
 
-    it.skip('Testando filtro por "Modo de Uso Online"(Chamado para correções aberto, TMOB-2633)', () => {
+    it.skip('Testando filtro por "Modo de Uso Online"(Chamado para correções aberto, TMOB-2633, status 30/01/2024: Waiting-DEV)', () => {
         uso.filtrandoPorModoDeUsoOnline()
     })
 
-    it.skip('Testando filtro por "Modo de Uso Offline"(Chamado para correções aberto, TMOB-2633)', () => {
+    it.skip('Testando filtro por "Modo de Uso Offline"(Chamado para correções aberto, TMOB-2633, status 30/01/2024: Waiting-DEV)', () => {
         uso.filtrandoPorModoDeUsoOffline()
     })
 
@@ -77,6 +77,6 @@ describe('Testando tela "Uso"', () => {
         uso.LinkIdMidia()
     })
 
-    it.skip('Testando botão "Baixar relatório"(Chamado para correções aberto, TMOB-2634', () => {     
+    it.skip('Testando botão "Baixar relatório"(Chamado para correções aberto, TMOB-2634, status 30/01/2024: Waiting-DEV)', () => {     
     })
 })

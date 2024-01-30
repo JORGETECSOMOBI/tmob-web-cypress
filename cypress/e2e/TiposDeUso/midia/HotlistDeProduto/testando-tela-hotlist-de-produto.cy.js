@@ -13,7 +13,7 @@ describe('Testando tela Hotlist de Produto', () => {
         hotlistProduto.filtrandoPorIdExterno()
     })
 
-    it.skip('Testando filtro por Numero do cartão, (chamado para correções aberto, TMOB-2749)', () => {
+    it('Testando filtro por Numero do cartão', () => {
         hotlistProduto.filtrandoPorNumeroCartao()
     })
 

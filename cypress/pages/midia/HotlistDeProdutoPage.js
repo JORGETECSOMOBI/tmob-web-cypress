@@ -35,10 +35,9 @@ class HotListDeProdutoPage {
     filtrandoPorNumeroCartao() {
         componente
             .escreveId('5229000000232')
-            .validaPesquisaTitle('5229000000232	')
+            .validaPesquisaTitle('52.29.00000023-2')
         return this
     }
-
 
     filtrandoPorTipoMidia() {
         componente

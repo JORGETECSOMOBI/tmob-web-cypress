@@ -10,7 +10,7 @@ describe('Testando a tela "dispositivos"', () => {
         dispositivos.pesquisaPorGuidSerial()
     })
 
-    it.skip('Testando filtro por Serial do Hardware,(chamado aberto para correções, TMOB-2510)', () => {
+    it('Testando filtro por Serial do Hardware,(chamado aberto para correções, TMOB-2510)', () => {
         dispositivos.pesquisaPorSerialHardware()
     })
 

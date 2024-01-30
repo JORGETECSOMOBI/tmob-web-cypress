@@ -6,19 +6,19 @@ describe('Testando tela produto externo', () => {
         produtoExterno.beforeProdutoExterno()
     })
 
-    it.skip('Testando filtro por descrição (Chamado para correções aberto, TMOB-2359)', () => {
+    it.skip('Testando filtro por descrição (Chamado para correções aberto, TMOB-2359, status 30/01/2024: waiting-DEV)', () => {
         produtoExterno.filtroPordescrição()
     })
 
-    it.skip('Testando filtro por ID (Chamado para correções aberto, TMOB-2359)', () => {
+    it('Testando filtro por ID', () => {
         produtoExterno.filtroPorId()
     })
 
-    it.skip('Testando filtro por emissor (Chamado para correções aberto, TMOB-2359)', () => {
+    it('Testando filtro por emissor', () => {
         produtoExterno.filtroPorEmissor()
     })
 
-    it.skip('Testando filtro por sistema (Chamado para correções aberto, TMOB-2359)', () => {
+    it('Testando filtro por sistema', () => {
         produtoExterno.sistema()
     })
 

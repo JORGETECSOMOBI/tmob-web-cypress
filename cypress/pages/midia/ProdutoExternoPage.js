@@ -73,7 +73,7 @@ class ProdutoExternoPage {
     }
 
     filtroPorSistema() {
-        this.sistema('TMOB')
+        this.sistema()
         return this
     }
 
@@ -122,9 +122,9 @@ class ProdutoExternoPage {
         return this
     }
 
-    sistema(sistema) {
+    sistema() {
         cy.get('#toSysCode').click({ force: true })
-        cy.contains(sistema, { force: true }).click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('TMOB').click({ force: true })
         return this
     }
 

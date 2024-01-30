@@ -30,11 +30,11 @@ describe('Testando tela "Taxa de administração"', () => {
         taxa.filtroPorPadraoNao()
     })
 
-    it.skip('Testando filtro por tipo "Taxa de Operação", (Chamado aberto para correções, TMOB-2850)', () => {
+    it.skip('Testando filtro por tipo "Taxa de Operação", (Chamado aberto para correções, TMOB-2850,  status 30/01/2024: waiting-DEV)', () => {
         taxa.filtroPorTipoService()
     })
 
-    it.skip('Testando filtro por tipo "Plano", (Chamado aberto para correções, TMOB-2850)', () => {
+    it.skip('Testando filtro por tipo "Plano", (Chamado aberto para correções, TMOB-2850,  status 30/01/2024: waiting-DEV)', () => {
         taxa.filtroPorTipoSubscription()
     })
 
