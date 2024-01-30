@@ -14,7 +14,7 @@ describe('Criando e editando "Forma de pagamento"', () => {
         formaDePagamento.criandoFormadePagamento()
     })
 
-    it.only('Editando "Forma de pagamento"', () => {
+    it('Editando "Forma de pagamento"', () => {
         formaDePagamento.editandoFormadePagamento()
     })
 })

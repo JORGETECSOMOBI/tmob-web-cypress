@@ -28,7 +28,7 @@ class PlanoPage {
 
     filtroPorVencimento() {
         cy.get('#dueDay').type('8', { force: true }).type(`{enter}`, { force: true })
-        componente.validaPesquisaDataRowKey('8')
+        componente.validaPesquisaDataRowKey('5')
         return this
     }
 

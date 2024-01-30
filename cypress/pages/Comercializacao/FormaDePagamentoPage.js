@@ -35,7 +35,7 @@ class FormaDePagamentoPage {
             .escreveDescricao('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO')
             .clicaBotaoEditar()
             .limpaDescricao()
-            .escreveDescricao('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO EDITADA')
+            .escreveDescricao('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO ')
             .selecionaStatus('Inativo')
             .clicaBotaoSalvar()
             .clicaBotaoModal('Salvar')

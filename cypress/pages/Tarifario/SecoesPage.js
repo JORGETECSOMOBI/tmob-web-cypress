@@ -53,7 +53,7 @@ class SecoesPage {
 
     editaSecaoExcluir() {
         componente
-            .escreveDescricao('AAAA AUTOMAÇÃO SEÇÃO EDITADA')
+            .escreveDescricao('AAAA AUTOMAÇÃO SEÇÃO')
             .clicaBotaoEditar()
             .limpaDescricao()
             .escreveDescricao('AAAA AUTOMAÇÃO DETALHE EXCLUIDO')

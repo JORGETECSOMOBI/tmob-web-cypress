@@ -14,6 +14,10 @@ describe('Testando tela Seções', () => {
         secao.editaSecaoIncluir()
     })
 
+    it('Cadastrando uma Seção', () => {
+        secao.cadastroSecao()
+    })
+
     it('Editando uma Seção excluindo detalhes da seção', () => {
         secao.editaSecaoExcluir()
     })

@@ -140,7 +140,7 @@ class TaxaDeAdministracaoPage {
     botaoEditar() {
         componente
             .clicaBotaoEditar()
-            .validaTexto('Editar')
+            .validaTexto('Editar taxa de administração')
         return this
     }
 

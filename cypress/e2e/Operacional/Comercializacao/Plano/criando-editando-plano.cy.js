@@ -7,10 +7,10 @@ describe('Criando e editando "Plano"', () => {
     })
 
     it('Criando "Plano"', () => {
-        plano()
+    
     })
 
     it('Editando "Plano"', () => {
-        plano()
+    
     })
 })

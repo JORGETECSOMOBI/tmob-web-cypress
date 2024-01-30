@@ -6,11 +6,11 @@ describe('Testando tela "Rede de vendas"', () => {
         rede.beforeRedeDeVendas()
     })
 
-    it.skip('Criando uma "Rede de vendas", (Chamado aberto para correções, TMOB-2834)', () => {
-        rede()
+    it('Criando uma "Rede de vendas"', () => {
+        rede.criandoRedeDeVendas()
     })
 
-    it.skip('Editando uma "Rede de vendas" (Chamado aberto para correções, TMOB-2834)', () => {
-        rede()
+    it('Editando uma "Rede de vendas"', () => {
+        rede.editandoRedeDeVendas()
     })
 })
