@@ -1,7 +1,6 @@
 import login from '../../pages/Login/LoginPage'
 import home from '../../pages/Home/HomePage'
 import componente from '../../pages/ComponentesPadrao/ComponentesPadraoPage'
-import usuario from '../../pages/Atendimento/UsuarioPage'
 import url from '../../fixtures/url.json'
 import faker from 'faker-br'
 
@@ -24,18 +23,20 @@ class ProdutoDetransportePge {
             .clicaBotaoNovo()
         this
             .selecionaTipoDeProduto('Valorado')
-            .selecionaEmissor('Autopass')
+            .selecionaTipoUsuario('Operador')
+            .selecionaEmissor('Teste Augusto Emissor')
             .codigo(faker.random.number())
             .maximoDeIntegracoes('8')
-            .grupoDerelatorio('TOP - Funcional')
+            .selecionaTipoDeChave('Padrão')
+            .grupoDeColeta('TOP - Funcional')
+            .grupoDeRelatorio('Botoeira')
             .displayValidador('Automação')
-        usuario
-            .selecionaTipoUsuario('AAAA AUTOMAÇÃO ESTUDANTE')
         componente
-            .clicaBotaoProximo()
             .escreveDescricao('AAAA Automação Valorado')
             .clicaBotaoProximo()
         this
+            .poderDeCompra('Manter tarifa da compra sempre')
+            .valorMaximo('100')
             .inicioValidade()
             .selecionaPrioridade(faker.random.number())
         componente
@@ -55,11 +56,12 @@ class ProdutoDetransportePge {
         componente
             .clicaBotaoNovo()
         this
+            .selecionaTipoUsuario('Operador')
             .selecionaTipoDeProduto('Gratuidade')
             .selecionaEmissor('Top')
             .codigo('666')
             .maximoDeIntegracoes('8')
-            .grupoDerelatorio('TOP - Funcional')
+            .grupoDeColeta('TOP - Funcional')
             .displayValidador('Automação')
         componente
             .escreveDescricao('AAAA Automação Gratuidade')
@@ -80,7 +82,6 @@ class ProdutoDetransportePge {
             .escreveDescricao('AAAA Automação Gratuidade funcional')
         return this
     }
-
 
     criandoUmProdutoDeTransporteEspecialAcompanhante() {
         componente
@@ -122,6 +123,29 @@ class ProdutoDetransportePge {
         return this
     }
 
+    valorMaximo(valor) {
+        cy.get('#maxValue').type(valor, { force: true })
+        return this
+    }
+
+    poderDeCompra(poder) {
+        cy.get('#fareGraceType').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains(poder).click({ force: true })
+        return this
+    }
+
+    grupoDeRelatorio(grupo) {
+        cy.get('#medTransitProductReportGroup').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains(grupo).click({ force: true })
+        return this
+    }
+
+    selecionaTipoDeChave(chave) {
+        cy.get('#keyType').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains(chave).click({ force: true })
+        return this
+    }
+
     selecionaTipoDeProduto(produto) {
         cy.contains(produto).click({ force: true })
         return this
@@ -148,6 +172,12 @@ class ProdutoDetransportePge {
         return this
     }
 
+    selecionaTipoUsuario(tipoUsuario) {
+        cy.get('.ant-select-selection-overflow').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains(tipoUsuario).click({ force: true })
+        return this
+    }
+
     maximoDeIntegracoes(maximo) {
         cy.get('#maxIntegrationCounter').type(maximo, { force: true })
         return this
@@ -158,7 +188,7 @@ class ProdutoDetransportePge {
         return this
     }
 
-    grupoDerelatorio(grupo) {
+    grupoDeColeta(grupo) {
         cy.get('#medTransitProductCollectorGroup').click({ force: true })
         cy.contains(grupo).click({ force: true })
         return this

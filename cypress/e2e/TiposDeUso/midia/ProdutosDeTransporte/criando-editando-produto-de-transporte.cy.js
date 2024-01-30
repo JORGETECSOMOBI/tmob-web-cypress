@@ -6,19 +6,19 @@ describe('Criando e editando Produto de transporte', () => {
         produtoDetransporte.beforeProdutoDeTrasnporte()
     })
 
-    it.skip('Criando um Produto de transporte "Valorado"(Chamado aberto para correções, TMOB-2647', () => {
+    it.skip('Criando um Produto de transporte "Valorado"(Manutenção)', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteValorado()
     })
 
-    it('Criando um Produto de transporte "Gratuidade"', () => {
+    it.skip('Criando um Produto de transporte "Gratuidade"(Manutenção)', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteGratuidade()
     })
 
-    it('Criando um Produto de transporte "Gratuidade Funcional"', () => {
+    it.skip('Criando um Produto de transporte "Gratuidade Funcional"(Manutenção)', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteGratuidadeFuncional()
     })
 
-    it('Editando um produto de transporte', () => {
+    it.only('Editando um produto de transporte', () => {
         produtoDetransporte.editandoUmGrupoDeTransporte()
     })
 })

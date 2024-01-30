@@ -16,7 +16,7 @@ class DispositivosPage {
     }
 
     pesquisaPorGuidSerial() {
-        const guid = '29f5ce5a-4570-4582-8b6e-654556d5bdfc'
+        const guid = '811e9f5b-d946-4b48-9adc-3bf0fc29a5f5'
         cy.get('#thingName').type(guid)
         componente
             .validaPesquisaTitle(guid)
@@ -24,9 +24,9 @@ class DispositivosPage {
     }
 
     pesquisaPorSerialHardware() {
-        cy.get('#thingName').type('5401052143018483')
+        cy.get('#thingName').type('60119')
         componente
-            .validaPesquisaTitle('5401052143018483')
+            .validaPesquisaTitle('60119')
         return this
     }
 

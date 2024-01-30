@@ -14,7 +14,7 @@ describe('Criando e editando "Lote"', () => {
         lote.cadastrandoNovoLote()
     })
 
-    it.skip('Editando lote (Chamado em aberto, https://pmtmob.atlassian.net/browse/TMOB-2627)', () => {
+    it.skip('Editando lote (Chamado em aberto, https://pmtmob.atlassian.net/browse/TMOB-2627), (Aguardando resposta do @alexandre.oliveira)', () => {
         lote.editandoLote()
     })
 })

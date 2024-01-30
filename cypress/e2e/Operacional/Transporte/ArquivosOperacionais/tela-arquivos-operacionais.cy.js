@@ -19,11 +19,11 @@ describe('Testando "Arquivos Operacionais', () => {
         arquivoOperacional.pesquisaTag()
     })
 
-    it.skip('Forçando geração de arquivo já anteriormente atualizado, (Chamado aberto para correções, TMOB 2783)', () => {
+    it.skip('Forçando geração de arquivo já anteriormente atualizado, (Chamado aberto para correções, TMOB 2783, status 30/01/2024: Waiting-DEV)', () => {
        arquivoOperacional.forcandoGeraçãoArquivoAtualizado()
     })
 
-    it.skip('forçando a geração de um arquivo operacional com nova atualização, (Chamado aberto para correções, TMOB 2783)', () => {
+    it.skip('forçando a geração de um arquivo operacional com nova atualização, (Chamado aberto para correções, TMOB 2783, status 30/01/2024: Waiting-DEV)', () => {
         arquivoOperacional.forcandoGeraçãoNovaAtualização()
     })
 

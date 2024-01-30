@@ -21,7 +21,7 @@ describe('Testando tela Arquivos Operacionais', () => {
         arquivosOperacionais.filtrandoPorTagAlt()
     })
 
-    it.skip('Força geração de arquivo operacional já anteriormente atualizado, (Chamado para correções aberto, TMOB-2798', () => {
+    it.skip('Força geração de arquivo operacional já anteriormente atualizado, (Chamado para correções aberto, TMOB-2798, status 30/01/2024:wating-DEV)', () => {
         arquivosOperacionais.gerandoUmArquivoJaAtualizado()
     })
 
