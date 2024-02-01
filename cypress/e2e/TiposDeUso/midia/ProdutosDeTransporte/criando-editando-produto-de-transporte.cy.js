@@ -18,7 +18,7 @@ describe('Criando e editando Produto de transporte', () => {
         produtoDetransporte.criandoUmProdutoDeTransporteGratuidadeFuncional()
     })
 
-    it.only('Editando um produto de transporte', () => {
+    it('Editando um produto de transporte', () => {
         produtoDetransporte.editandoUmGrupoDeTransporte()
     })
 })
