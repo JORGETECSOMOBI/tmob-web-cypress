@@ -289,6 +289,11 @@ class ComponentesPadraoPage {
         return this
     }
 
+    limpaDownloadsCypress() {
+        cy.limparPastaDownloads()
+        return this
+    }
+
     pesquisaNomeId(nome) {
         cy.get('#name').type(nome, { force: true }).wait(2000)
         return this

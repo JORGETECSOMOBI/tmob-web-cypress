@@ -98,6 +98,18 @@ class ListaDeTransacoesPage {
         return this
     }
 
+    filtroRelatorioTransacoesAnaliticas() {
+        cy.get('#name').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('Transações analiticas').wait(1000).click({ force: true })
+        return this
+    }
+
+    filtroRelatorioTransacoesSangria() {
+        cy.get('#name').click({ force: true })
+        cy.get('.ant-select-item-option-content').contains('Sangria').wait(1000).click({ force: true })
+        return this
+    }
+
     filtroPorTipoMidiaExterna() {
         cy.get('#type').click({ force: true })
         cy.get('.ant-select-item-option-content').contains('Mídia externa').wait(1000).click({ force: true })
@@ -165,6 +177,34 @@ class ListaDeTransacoesPage {
     filtroPorStatusNaoProcessado() {
         cy.get('#rc_select_10').click({ force: true })
         return this
+    }
+
+    relatorio() {
+        cy.get('span:contains("Relatório"):not(:contains("Relatórios"))').click({ force: true })
+        componente
+            .clicaBotaoModal('Baixar relatório')
+            .clicaBotaoModal('Download')
+        cy.wait(5000)
+        cy.exec('dir /b /o-d %userprofile%\\MeusProjetos\\tmob-web-cypress\\cypress\\downloads\\*', { log: true }).then((result) => {
+            const nomeArquivo = result.stdout.split('\n')[0];
+            cy.exec(`start excel.exe %userprofile%\\MeusProjetos\\tmob-web-cypress\\cypress\\downloads\\${nomeArquivo}`, { log: true })
+            cy.wait(5000)
+            cy.exec('taskkill /F /IM excel.exe', { log: true });
+        });
+        return this
+    }
+
+    botaoVisualizar() {
+        componente
+            .escreveGuid('c256f9a5-73ec-4770-a61e-d0ee31caf624')
+            .clicaBotaoVisualizar()
+            .validaTexto('Detalhes')
+            .validaTexto('Pix')
+        return this
+    }
+
+    limpaPastaDownload() {
+        componente.limpaDownloadsCypress()
     }
 }
 export default new ListaDeTransacoesPage
