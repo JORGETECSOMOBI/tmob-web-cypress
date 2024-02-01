@@ -30,10 +30,6 @@ describe('Testando tela "Lista de transações"', () => {
         lista.filtroPorGrupoTerminal()
     })
 
-    it.skip('Testando filtro por "Tipo de Operação Compra de recarga"', () => {
-        lista.filtroPorTipoOperaçãoCompraRecarga()
-    })
-
     it('Testando filtro por "Tipo de Operação Venda"', () => {
         lista.filtroPorTipoOperacaoVenda()
     })
@@ -66,15 +62,15 @@ describe('Testando tela "Lista de transações"', () => {
         lista.filtroPorMídia()
     })
 
-    it.only('Testando filtro por "Forma de Pagamento Dinheiro"', () => {
+    it('Testando filtro por "Forma de Pagamento Dinheiro"', () => {
         lista.filtroPorFormaPagamentoDinheiro()
     })
 
-    it.only('Testando filtro por "Forma de Pagamento Débito"', () => {
+    it('Testando filtro por "Forma de Pagamento Débito"', () => {
         lista.filtroPorFormaPagamentoDebito()
     })
 
-    it.only('Testando filtro por "Forma de Pagamento Voucher"', () => {
+    it('Testando filtro por "Forma de Pagamento Voucher"', () => {
         lista.filtroPorFormaPagamentoVoucher()
     })
 
@@ -88,5 +84,17 @@ describe('Testando tela "Lista de transações"', () => {
 
     it('Testando filtro por "Status Não Processado"', () => {
         lista.filtroPorStatusNaoProcessado()
+    })
+
+    it('Testando função "Visualizar"', () => {
+        lista.botaoVisualizar()
+    })
+
+    it('Testando função "Relatório"', () => {
+        lista.relatorio()
+    })
+
+    it('Limpando a pasta "Download"', () => {
+        lista.limpaPastaDownload()
     })
 })
