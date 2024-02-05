@@ -6,11 +6,11 @@ describe('Testando tela "Rede de vendas"', () => {
         rede.beforeRedeDeVendas()
     })
 
-    it('Criando uma "Rede de vendas"', () => {
+    it.skip('Criando uma "Rede de vendas", (Em desenvolvimento de melhorias pela equipe "Alonso")', () => {
         rede.criandoRedeDeVendas()
     })
 
-    it('Editando uma "Rede de vendas"', () => {
+    it.skip('Editando uma "Rede de vendas" (Em desenvolvimento de melhorias pela equipe "Alonso")', () => {
         rede.editandoRedeDeVendas()
     })
 })

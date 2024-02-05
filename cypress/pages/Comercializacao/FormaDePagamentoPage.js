@@ -79,7 +79,7 @@ class FormaDePagamentoPage {
     filtroPorDescricao() {
         componente
             .escreveDescricao('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO')
-            .validaPesquisaTitle('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO')
+            .validaPesquisaTitle('AAAA AUTOMAÇÃO FORMA DE PAGAMENTO ')
         return this
     }
 

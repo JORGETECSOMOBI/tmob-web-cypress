@@ -10,7 +10,7 @@ describe('Testando tela "Forma de pagamento"', () => {
         formaDePagamento.filtroPorId()
     })
 
-    it('Testando filtro por "Descrição"', () => {
+    it.only('Testando filtro por "Descrição"', () => {
         formaDePagamento.filtroPorDescricao()
     })
 

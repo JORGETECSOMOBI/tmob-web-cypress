@@ -17,8 +17,8 @@ class ArquivoDeMidia {
     }
 
     filtrandoPorId() {
-        componente.pesquisaId('975')
-         .validaPesquisaAntTableRow('975')
+        componente.pesquisaId('1740')
+         .validaPesquisaAntTableRow('1740')
         return this
     }
 
@@ -28,22 +28,22 @@ class ArquivoDeMidia {
     }
 
     botaoHotlist() {
-        cy.get('#rc-tabs-0-tab-1').click()
+        cy.get('#rc-tabs-0-tab-medias').click()
         return this
     }
 
     botaoProdutosEmHotlist() {
-        cy.get('#rc-tabs-0-tab-2').click()
+        cy.get('#rc-tabs-0-tab-products').click()
         return this
     }
 
     botaoHotlistPermanente() {
-        cy.get('#rc-tabs-0-tab-3').click()
+        cy.get('#rc-tabs-0-tab-external-hotlist').click()
         return this
     }
 
     botaoRegargas() {
-        cy.get('#rc-tabs-0-tab-4').click()
+        cy.get('#rc-tabs-0-tab-product-recharge').click()
         return this
     }
 

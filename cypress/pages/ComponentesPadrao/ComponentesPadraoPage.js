@@ -407,5 +407,13 @@ class ComponentesPadraoPage {
         cy.contains(periodo).click({ force: true })
         return this
     }
+
+    fecharJanelaCypress() {
+        cy.visit('about:blank');
+        cy.window().then((win) => {
+            win.close()
+        })
+        return this
+    }
 }
 export default new ComponentesPadraoPage

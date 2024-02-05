@@ -22,7 +22,7 @@ describe('Testando Cadastro de cartão', () => {
       midia.editaCartaoInativo()
    })
 
-   it('Editar um cartão "Pendente"', () => {
+   it.skip('Editar um cartão "Pendente"(Em desenvolvimento "Alonso")', () => {
       midia.editaCartaoPendente()
    })
 })

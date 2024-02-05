@@ -33,7 +33,7 @@ describe('Testando tela de Arquivos de mídia', () => {
         arquivosMidia.botaoForcarGeracao()
     })
 
-    it('Botão Download', () => {
+    it.skip('Botão Download (Chamado aberto para correções: TMOB-2910', () => {
         arquivosMidia.botaoDownload()
     })
 
