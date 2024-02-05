@@ -14,7 +14,7 @@ describe('Testando página visualizar Ordem de gravação', () => {
         visualizar.cancelandoOrdemGravacao()
     })
 
-    it('Imprimindo uma ordem de gravação', () => {
+    it.skip('Imprimindo uma ordem de gravação'('EM DESENVOLVIMENTO MELHORIAS EQUIPE ALONSO'), () => {
         visualizar.imprimindoOrdemDeGravacao()
     })
 

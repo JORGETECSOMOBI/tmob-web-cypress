@@ -28,6 +28,7 @@ class RelatoriosPage {
         componente
             .clicaBotao('Dashboard')
             .clicaBotao('Relatórios')
+        this.validaUltimoRelatorio()
         return this
     }
 
@@ -40,7 +41,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
-            .fecharJanelaCypress()
+        this.validaUltimoRelatorio()
         return this
     }
 
@@ -53,7 +54,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
-            .fecharJanelaCypress()
+        this.validaUltimoRelatorio()
         return this
     }
 
@@ -66,7 +67,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
-            .fecharJanelaCypress()
+        this.validaUltimoRelatorio()
         return this
     }
 
@@ -137,9 +138,11 @@ class RelatoriosPage {
     }
 
     validaUltimoRelatorio() {
-        const relatorio = 'Último relatório'
-        const data = faker.date.recent().toLocaleDateString()
-        cy.contains(relatorio).contains('contain',relatorio)
+        const data = faker.date.between(new Date(), new Date()).toLocaleDateString('pt-BR')
+        const regexData = new RegExp(data)
+        cy.get('article.ant-typography.css-12jzuas')
+            .invoke('text')
+            .should('have.text', regexData)
         return this
     }
 }

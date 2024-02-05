@@ -4,7 +4,7 @@ import '@testing-library/cypress/add-commands'
 
 // Comando personalizado para limpar a pasta de download
 Cypress.Commands.add('limparPastaDownloads', () => {
-  const downloadsFolder = 'C:/Users/cardo/meusProjetos/tmob-web-cypress/cypress/downloads'; // Substitua com o caminho real
+  const downloadsFolder = 'C:/Users/Jorge/MeusProjetos/tmob-web-cypress/cypress/downloads'; // Substitua com o caminho real
 
   // Use o cmd para excluir os arquivos na pasta de download
   cy.exec(`cmd /c "cd /d ${downloadsFolder} && del /q *.*"`);
