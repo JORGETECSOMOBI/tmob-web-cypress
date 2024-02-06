@@ -24,10 +24,9 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
-            .fecharJanelaCypress()
-        componente
             .clicaBotao('Dashboard')
             .clicaBotao('Relatórios')
+            .fecharJanelaCypress()
         this.validaUltimoRelatorio()
         return this
     }
@@ -41,6 +40,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
+            .fecharJanelaCypress()
         this.validaUltimoRelatorio()
         return this
     }
@@ -54,6 +54,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
+            .fecharJanelaCypress()
         this.validaUltimoRelatorio()
         return this
     }
@@ -67,6 +68,7 @@ class RelatoriosPage {
         componente
             .clicaBotaoModal('Gerar relatório')
             .clicaBotaoModal('Baixar relatório')
+            .fecharJanelaCypress()
         this.validaUltimoRelatorio()
         return this
     }
@@ -140,9 +142,9 @@ class RelatoriosPage {
     validaUltimoRelatorio() {
         const data = faker.date.between(new Date(), new Date()).toLocaleDateString('pt-BR')
         const regexData = new RegExp(data)
-        cy.get('article.ant-typography.css-12jzuas')
-            .invoke('text')
-            .should('have.text', regexData)
+        cy.contains('Comercialização').click({ force: true })
+        cy.contains('Relatórios').click({ force: true })
+        cy.get(':nth-child(2) > :nth-child(1) > .ant-col > .ant-typography').invoke('text').should('match', regexData)
         return this
     }
 }
