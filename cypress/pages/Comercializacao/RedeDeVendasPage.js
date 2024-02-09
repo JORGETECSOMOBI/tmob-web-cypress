@@ -49,7 +49,7 @@ class RedeDeVendasPage {
 
     editandoRedeDeVendas() {
         componente
-            .escreveNome('REDE DE VENDAS AUTOMAÇÃO')
+            .escreveNome('REDE DE EDITADA Consuelo')
             .clicaBotaoHomeEditar()
             .limpaNome()
         this
