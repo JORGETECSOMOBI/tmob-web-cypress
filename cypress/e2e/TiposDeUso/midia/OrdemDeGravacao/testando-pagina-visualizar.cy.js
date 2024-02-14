@@ -14,7 +14,7 @@ describe('Testando página visualizar Ordem de gravação', () => {
         visualizar.cancelandoOrdemGravacao()
     })
 
-    it.skip('Imprimindo uma ordem de gravação'('EM DESENVOLVIMENTO MELHORIAS EQUIPE ALONSO'), () => {
+    it.skip('Imprimindo uma ordem de gravação'('chamado para a correção de erros aberto:TMOB-2669)'), () => {
         visualizar.imprimindoOrdemDeGravacao()
     })
 
